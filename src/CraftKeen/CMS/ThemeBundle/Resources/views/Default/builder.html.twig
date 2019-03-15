@@ -1,0 +1,20 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+{% import 'CraftKeenCMSPageBundle:macro:content.html.twig' as P %}
+
+{% block meta_title %}{% if page.metaTitle %}{{ page.metaTitle }}{% endif %}{% endblock %}
+{% block meta_description %}{% if page.metaDescription %}{{ page.metaDescription }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if page.metaKeywords %}{{ page.metaKeywords }}{% endif %}{% endblock %}
+{% block meta_robots %}{% if page.isIndexed == false %}noindex{% else %}index,follow{% endif %}{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block footer_js %}
+	{{ parent() }}
+	<script src="{{ asset('assets/build/client-bundle.js') }}"></script>
+{% endblock%}
+
+{% block body %}
+	<div id="builder" class="container-fluid"></div>
+{% endblock %}

@@ -1,0 +1,20 @@
+.debentures-page {
+	.tab-content {
+		 h2 {
+		 	a {
+				font-size: 200%;
+			    font-family: $font-family-default-light;
+			}
+		 }
+	}
+	&.tables {
+		.table {	
+			tr {
+				td {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+@import "DebenturesMacro_queries";

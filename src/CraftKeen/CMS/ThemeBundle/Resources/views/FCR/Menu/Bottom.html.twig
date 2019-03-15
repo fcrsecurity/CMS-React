@@ -1,0 +1,9 @@
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+
+{% set currUrl = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+
+<ul class="text-muted text-center footer__bottom">
+	<li><span class="footer__bottom-links">© {{ "now"|date("Y") }} First Capital Realty Inc.</span></li>
+    {{ M.renderMenuTree(menu, currUrl) }}
+    <li><a class="footer__bottom-links" id="unsubscribeLink" href="#unsubscribeWindow">{{'Unsubscribe'|trans}}</a></li>
+</ul>

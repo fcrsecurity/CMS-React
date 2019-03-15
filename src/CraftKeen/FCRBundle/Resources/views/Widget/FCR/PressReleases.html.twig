@@ -1,0 +1,48 @@
+<div class="PreasReleases row">
+	<div class="accordionElement buffer-4-padding-top buffer-5-padding-bottom">
+        <div class="panel-group" id="pressreleases">
+		{% for key, item in DataPressReleases %}
+            <div class="panel panel-default">
+                <div class="panel-heading {% if key == "now"|date("Y") %}active{% endif %}" data-toggle="collapse" href="#pressreleases{{loop.index}}" data-parent="#pressreleases">
+                  <div class="panel-title">
+                   {{ key }}
+                  </div>
+                </div>
+                <div id="pressreleases{{loop.index}}" class="panel-collapse collapse {% if key == "now"|date("Y") %}in{% endif %}">
+                   <div class="panel-body">
+                        <div class="row">
+						  {% for element in item %}
+                            <div class="element">
+				                <div class="col-lg-2 col-md-2 col-sm-3 date">
+				                  <a href="{{ path('craftkeen_fcr_press_release_view', {'slug':element.slug}) }}">{{ element.date.date | date("M d, y") }}</a>
+				                </div>
+				                <div class="col-lg-9 col-md-9 col-sm-8">
+				                    <a href="{{ path('craftkeen_fcr_press_release_view', {'slug':element.slug}) }}">{{ element.title }}</a>
+				                </div>
+				                <div class="col-lg-1 col-md-1 col-sm-1">
+
+								{% if element.pdfFile|length %}
+				                  <a href="{{ element.pdfFile}}" target="_blank" class="download-btn">
+				                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg">
+				                      <g>
+				                        <g>
+				                          <path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"></path>
+				                          <path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"></path>
+				                          <text class="cls-4" transform="translate(85.9 112.31)">PDF</text>
+				                        </g>
+				                      </g>
+				                    </svg>
+				                  </a>
+								{% endif %}
+
+				                </div>
+				            </div>
+						  {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+		{% endfor %}
+        </div>
+    </div>
+</div>

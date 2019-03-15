@@ -1,0 +1,24 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}{{ 'New Site'|trans }}{% endblock %}
+
+{% set path_prefix = 'craftkeen_cms_admin_site_' %}
+
+{% block admin_block_breadcrumb %}
+	<li><a href="{{ path(path_prefix~'index') }}">{{ 'Sites'|trans }}</a></li>
+	<li class="active">{{ 'New Site'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="{{'Create' |trans}}" class="btn btn-default"/>
+    {{ form_end(form) }}
+
+    <ul class="list-inline list-unstyled ">
+        <li>
+            <a href="{{ path(path_prefix~'index') }}" class="btn btn-default">{{ 'Back to the list'|trans}}</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,234 @@
+@import "../../theme/variables";
+@import "portfolioLeasingMap";
+@import "grid";
+
+.hero-image {
+  ////min-height: 850px;
+  //background-color: $color-grey;
+  ////background: url( '../images/LE_MapCanada.png' ) no-repeat center center scroll;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  //background-size: cover;
+}
+
+.loader {
+  background:$color-maphead;
+  height:50vh;
+}
+.map-tittle {
+  display:none;
+}
+.intro {
+  font-size: 1em;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.province-facts-content {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.map-and-text {
+  margin-top: 40px;
+  .province-facts {
+	display: block;
+	min-height: 100px;
+	width: 120%;
+	margin-left: -15%;
+	.icon-left {
+	  width: 30%;
+	  margin-right: 5%;
+	  float: left;
+	  img,svg {
+		width: 100%;
+		max-width: 120px;
+	  }
+	}
+	.desc {
+	  width: 65%;
+	  float: left;
+	  line-height: 1.2;
+	  margin-top: 7px;
+	  .line1 {
+		color: $color-blue;
+	  }
+	  .line2 {
+		font-size: 0.8em;
+	  }
+	}
+  }
+  .slick-arrow {
+	background: none;
+	background-repeat: no-repeat;
+	top: 50%;
+	width: 11px;
+	height: 22px;
+	z-index: 200;
+	&::before {
+	  display: none;
+	}
+  }
+  .slick-prev {
+	background-image: url('../images/left_arrow_slick_docs.png');
+	left: 0;
+  }
+  .slick-next {
+	background-image: url('../images/right_arrow_slick_docs.png');
+	right: 0;
+  }
+}
+
+.province-facts-content {
+  // position: relative;
+}
+
+
+/*mobile more button and more span*/
+.more-button-link-mobile {
+  color:$color-teal;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  margin-top: 20px;
+  display: inline-block;
+  i {
+	margin-right: 15px;
+	position: relative;
+	top: 3px;
+  }
+}
+.more-span {
+  display: none;
+}
+.more-props-wrap {
+  float: left;
+  width: 100%;
+}
+.more-props {
+  padding: 5px 25px;
+  margin:0 auto;
+  max-width:125px;
+  margin-top: 20px;
+  background-color: $color-teal;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: $color-white;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  &:hover {
+	text-decoration: none;
+	background-color: $color-block-hover;
+  }
+  &:focus {
+	text-decoration: none;
+  }
+}
+
+.empty-informer {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0px;
+}
+
+/*Responsive Styles */
+@media screen and (min-width:480px) {
+  .more-button-link-mobile {
+	display: none;
+  }
+  .more-span {
+	display: inline;
+  }
+  .intro {
+	font-size: 1.3em;
+	text-align: center;
+  }
+}
+/* Small devices (tablets 768px  and up) */
+@media screen and (min-width: $small-devices-width ) {
+
+}
+
+/* Medium devices (desktops 960px and up) */
+@media screen and (min-width: $medium-devices-width ) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $large-devices-width) {
+  .properties {
+	.col-lg-3 {
+	  max-width: 400px;
+	}
+  }
+
+}
+
+/* Large devices (very large desktops, 1600px and up) */
+@media screen and (min-width: $verylarge-devices-width) {
+
+}
+@media screen and (max-width:$max-width-tables) {
+  .search-button {
+	span {
+	  padding-left:12px;
+	}
+	i {
+	  display:none;
+	}
+  }
+  .map-and-text {
+	.left-map {
+	  width: 100%;
+	  padding: 0 40px;
+	  img {
+		margin: 0 auto 50px auto;
+	  }
+	}
+	.right-text {
+	  width: 100%;
+	  .province-facts {
+		width: 100%;
+		margin-left: 0;
+		text-align: center;
+		.icon-left {
+		  float: none;
+		  width: 100%;
+		  margin: 0 auto;
+		  img,svg {
+			margin: 0 auto;
+		  }
+		}
+		.desc {
+		  float: none;
+		  width: 100%;
+		  margin-top: 10px;
+		  margin-bottom: 20px;
+		}
+	  }
+	}
+  }
+}
+/*@media screen and (max-width: 940px ) {
+    .grid {
+        .properties {
+            max-width: 290px;
+        }
+    }
+}*/
+@media screen and (max-width: 480px ) {
+  .leasing-wrapper {
+	width: 100%;
+	margin: 0;
+  }
+}
+@media screen and (max-width: 400px ) {
+  .accordionElement {
+	margin: 0;
+	.panel-body {
+	  padding: 20px 15px;
+	}
+  }
+}

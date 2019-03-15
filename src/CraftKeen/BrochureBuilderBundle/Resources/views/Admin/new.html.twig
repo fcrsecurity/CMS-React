@@ -1,0 +1,23 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}Add User{% endblock %}
+
+{% block admin_block_breadcrumb %}
+	<li><a href="{{ path('brochure_admin_user_index') }}">Users</a></li>
+	<li class="active">Add User</li>
+{% endblock %}
+
+{% block admin_block_body %}
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" class="btn btn-primary" />
+    {{ form_end(form) }}
+    <hr />
+    <ul class="list-inline list-unstyled">
+        <li>
+            <a href="{{ path('brochure_admin_user_index') }}" class="btn btn-default">Back to the list</a>
+
+        </li>
+    </ul>
+{% endblock %}

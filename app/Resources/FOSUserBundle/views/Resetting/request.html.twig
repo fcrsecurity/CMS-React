@@ -1,0 +1,16 @@
+{% extends '::fosuserbundle_layout.html.twig' %}
+
+{% block body %}
+	<!-- start main content -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="buffer-1-top buffer-4-bottom col-lg-6 col-lg-offset-4">
+					<h3>{{ 'Reset Password Request'|trans }}</h3>
+					{% include "@FOSUser/Resetting/request_content.html.twig" %}
+				</div><!-- end col -->            
+			</div>
+		</div><!-- end container -->
+	</section>
+	<!-- end main content -->
+{% endblock %}

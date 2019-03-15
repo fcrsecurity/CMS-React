@@ -1,0 +1,153 @@
+imports:
+    - { resource: widgets.yml }
+
+services:
+    craft_keen_cms.aoda.twig.extension:
+        class: 'CraftKeen\FCRBundle\Twig\AodaTwigExtension'
+        arguments:
+              - "@service_container"
+        tags:
+              - { name: twig.extension}
+
+    craft_keen_fcr.press_release.provide.translations:
+        class: 'CraftKeen\FCRBundle\Provider\PressReleaseTranslationProvider'
+        tags:
+            - { name: craft_keen.translation.provider, alias: press_releases }
+
+    craft_keen_fcr.property.provide.translations:
+        class: 'CraftKeen\FCRBundle\Provider\PropertyTranslationProvider'
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: craft_keen.translation.provider, alias: property }
+
+    craft_keen_fcr.retail_art.provide.translations:
+        class: 'CraftKeen\FCRBundle\Provider\RetailArtTranslationProvider'
+        arguments:
+            - '@doctrine'
+        tags:
+            - { name: craft_keen.translation.provider, alias: retailart }
+
+    craft_keen_fcr.service.stockwatch_handler:
+        class: 'CraftKeen\FCRBundle\Service\StockWatchHandler'
+        arguments: ['@doctrine']
+
+    craft_keen_fcr.service.catsone_connector:
+        class: 'CraftKeen\FCRBundle\Service\CatsOneConnector'
+        arguments: ['@doctrine']
+
+    craft_keen_fcr.property_search.twig_extension:
+        class: CraftKeen\FCRBundle\Twig\PropertySearchExtension
+        public: false
+        calls:
+            - ['setContainer', ['@service_container']]
+        tags:
+            - { name: twig.extension }
+
+    craft_keen_fcr.twig_extension:
+            class: CraftKeen\FCRBundle\Twig\FCRExtension
+            public: false
+            calls:
+                - ['setContainer', ['@service_container']]
+            tags:
+                - { name: twig.extension }
+
+    craft_keen_fcr.provider.property_search_provider:
+        class: 'CraftKeen\FCRBundle\Provider\PropertySearchProvider'
+        arguments: ['@doctrine']
+
+    craft_keen_fcr.form.property_search:
+        class: 'CraftKeen\FCRBundle\Form\PropertySearchType'
+        arguments:
+            - '@craft_keen_fcr.provider.property_search_provider'
+        tags:
+            - { name: form.type }
+
+    craft_keen_fcr.admin.fcr_voter:
+        class:  CraftKeen\FCRBundle\Security\FCRVoter
+        arguments: ['@security.access.decision_manager']
+        public: false
+        tags:
+            - { name: security.voter }
+
+    craft_keen.proeprty.search.indexer_listener:
+            class: 'CraftKeen\FCRBundle\EventListener\Search\SearchIndexerEventListener'
+            arguments: ["@craft_keen.search.indexer"]
+            tags:
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\Property', event: postPersist }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\Property', event: postUpdate }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\Property', event: postRemove }
+    
+    craft_keen.press_release.search.converter:
+            class: 'CraftKeen\FCRBundle\Service\PressReleaseSearchConverter'
+
+    craft_keen.press_release.search.indexer_listener:
+            class: 'CraftKeen\FCRBundle\EventListener\Search\PressReleaseSearchIndexerEventListener'
+            arguments: 
+                - '@craft_keen.search.indexer'
+                - '@craft_keen.press_release.search.converter'
+            tags:
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\PressRelease', event: postPersist }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\PressRelease', event: postUpdate }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\PressRelease', event: postRemove }
+
+    craft_keen.blog.search.converter:
+            class: 'CraftKeen\FCRBundle\Service\BlogSearchConverter'
+
+    craft_keen.blog.search.indexer_listener:
+            class: 'CraftKeen\FCRBundle\EventListener\Search\BlogSearchIndexerEventListener'
+            arguments:
+                - '@craft_keen.search.indexer'
+                - '@craft_keen.blog.search.converter'
+            tags:
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\RetailArt', event: postPersist }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\RetailArt', event: postUpdate }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\RetailArt', event: postRemove }
+
+    craft_keen.job_position.search.converter:
+            class: 'CraftKeen\FCRBundle\Service\JobPositionSearchConverter'
+
+    craft_keen.job_position.search.indexer_listener:
+            class: 'CraftKeen\FCRBundle\EventListener\Search\JobPositionSearchIndexerEventListener'
+            arguments:
+                - '@craft_keen.search.indexer'
+                - '@craft_keen.job_position.search.converter'
+            tags:
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\CareersPosition', event: postPersist }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\CareersPosition', event: postUpdate }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\CareersPosition', event: postRemove }
+
+    craft_keen.people.search.converter:
+            class: 'CraftKeen\FCRBundle\Service\PeopleSearchConverter'
+
+    craft_keen.people.search.indexer_listener:
+            class: 'CraftKeen\FCRBundle\EventListener\Search\PeopleSearchIndexerEventListener'
+            arguments:
+                - '@craft_keen.search.indexer'
+                - '@craft_keen.people.search.converter'
+            tags:
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\People', event: postPersist }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\People', event: postUpdate }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\People', event: postRemove }
+
+    craft_keen.faq.search.converter:
+            class: 'CraftKeen\FCRBundle\Service\FaqSearchConverter'
+
+    craft_keen.faq.search.indexer_listener:
+            class: 'CraftKeen\FCRBundle\EventListener\Search\FaqSearchIndexerEventListener'
+            arguments:
+                - '@craft_keen.search.indexer'
+                - '@craft_keen.faq.search.converter'
+            tags:
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\FAQ', event: postPersist }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\FAQ', event: postUpdate }
+                - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\FCRBundle\Entity\FAQ', event: postRemove }
+
+    craft_keen.page.search.converter:
+            class: 'CraftKeen\FCRBundle\Service\PageSearchConverter'
+            arguments:
+                - '@doctrine.orm.entity_manager'
+
+    craft_keen.historical_data_sync:
+            class: 'CraftKeen\FCRBundle\Service\HistoricalDataSync' 
+            arguments:
+                - '@doctrine.orm.entity_manager'

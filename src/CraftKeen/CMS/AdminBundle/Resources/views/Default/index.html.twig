@@ -1,0 +1,27 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+
+{% if path_prefix is not defined %}
+    {% set path_prefix='craftkeen_cms_admin_' %}
+{% endif %}
+{% if moduleTitle is not defined %}
+    {% set moduleTitle='Administration' %}
+{% endif %}
+
+{% if filterBy is not defined %}
+    {% set filterBy = [] %}
+{% endif %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path(path_prefix~'index') }}">{{ moduleTitle }}</a></li>
+    <li class="active">{{ 'List'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    {% if cacheSupported is not defined %}
+        {% set cacheSupported = false %}
+    {% endif %}
+	{% if pagination is defined %}
+		{{ CRUD.renderListingContent( pagination, path_prefix, filterBy, cacheSupported ) }}
+	{% endif %}
+{% endblock %}

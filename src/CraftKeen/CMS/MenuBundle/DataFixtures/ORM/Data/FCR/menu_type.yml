@@ -1,0 +1,15 @@
+CraftKeen\CMS\MenuBundle\Entity\MenuType:
+    MenuType0:
+        name: Top
+    MenuType1:
+        name: PortfolioLeasing
+    MenuType2:
+        name: Investors
+    MenuType3:
+        name: BottomHeaded
+    MenuType4:
+        name: Community
+    MenuType5:
+        name: About
+    MenuType6:
+        name: Bottom

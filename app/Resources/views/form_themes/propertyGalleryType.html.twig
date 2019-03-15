@@ -1,0 +1,17 @@
+{% block craftkeen_fcrbundle_property_gallery_label %}{% endblock %}
+{% block craftkeen_fcrbundle_property_gallery_errors %}{% endblock %}
+
+
+{% block craftkeen_fcrbundle_property_gallery_widget %}
+	<div class="col-lg-3">		
+		<img id="{{ form.vars.id }}_image" src="{{ form.vars.value }}" class="img-responsive img-thumbnail">
+		{{ form_widget(form) }}
+		<br/>
+		<p class="text-center">
+			<a href="#" class="collection-up btn btn-default">&lt;</a>
+			<a href="#" class="collection-remove btn btn-default">-</a>
+			<a href="#" class="collection-add btn btn-default">+</a>
+			<a href="#" class="collection-down btn btn-default">&gt;</a>
+		</p>
+	</div>
+{% endblock %}

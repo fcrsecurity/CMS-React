@@ -1,0 +1,23 @@
+{% form_theme form _self %}
+
+{{ form_start(form, {'attr': {'id': 'craftkeen_fcrbundle_newsletter', 'class':'subscribe-form'} }) }}
+<div class="alert message"></div>
+	{% block form_widget_email %}
+		<label for="email-subscribe-newsletters-carees" class="sr-only">{{'subscribe'|trans}}</label>
+		<div class = "input-group">
+		{{ form_widget(form.email, {'attr': { 'class':'subscribe input-s email', 'placeholder': 'your@email.com', 'id': 'email-subscribe-newsletters-carees' } } ) }}
+		<span class = "input-group-btn">
+			<button type="submit" class = "subscribe-btn">{{'subscribe'|trans}} <em class="fa fa-angle-right" aria-hidden="true"></em></button>
+		</span>
+		</div>
+	{% endblock %}	
+
+	{{ form_widget(form.email) }}
+	<div class="sr-only">
+	{{ form_row(form.leasing) }}
+	{{ form_row(form.news) }}
+	{{ form_row(form.careers, {'attr': { 'checked' : true } }) }}
+	</div>
+	
+{{ form_end(form) }}
+

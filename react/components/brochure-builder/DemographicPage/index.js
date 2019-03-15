@@ -1,0 +1,2 @@
+
+export { DemographicPage } from './DemographicPage';

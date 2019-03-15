@@ -1,0 +1,111 @@
+.press-release-detail {
+    padding: 116px 15px 171px 15px;
+
+    .table {
+      thead {
+
+         td, p {
+            color: $color-blue !important;
+          }
+      }
+        th {
+          p {
+            color: $color-blue !important;
+          }
+        }
+
+        .table-footnote {
+          font-size: 14px;
+          p {
+            font-size: 14px;
+          }
+        }
+    }
+
+    .tables {
+      .table {       
+        margin-bottom: 20px;
+      }
+    }
+    .left-block {
+      font-family: $font-family-default;
+      h1 {
+        font-size: 40px;
+        text-transform: uppercase;
+        line-height: 1.1;
+        color: $color-blue;
+        margin: 0;
+      }
+      .date {
+        font-size: 25px;
+        color: $color-grey;
+        margin-bottom: 50px;
+        line-height: 1;
+      }
+      p {
+        font-size: 16px;
+        color: $color-grey-dark1;
+        // margin-bottom: 30px;
+        &.contact {
+          padding-top: 15px;
+        }
+      }
+      .table {
+        
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+    }
+    .right-block {
+		
+		// TODO: Pending proper SVG, faking with positions for now.
+      .large-pdf-icon{
+        width: 100px;
+		position: relative;
+		top: -12px;
+		left: -28px;
+		margin-bottom: -25px;
+      }
+
+      .back-to-list {
+        color: $color-teal;
+        font-size: 15px;
+        i {
+          font-size: 14px;
+        }
+      }
+      .item {
+        padding-bottom: 20px;
+        margin-top: 25px;
+        position: relative;
+        &::after {
+          content: '';
+          height: 1px;
+          background-color: $color-teal;
+          width: 25%;//50px;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+        .date {
+          font-size: 17px;
+          font-family: $font-family-default-black;
+          color: $color-grey;
+          a {
+            font-size: 17px;
+            font-family: $font-family-default-black;
+            color: $color-grey;
+          }
+        }
+        .text {
+          font-size: 17px;
+          color: $color-grey-dark1;
+        }
+      }
+    }
+}
+
+@import "pressReleases_queries";

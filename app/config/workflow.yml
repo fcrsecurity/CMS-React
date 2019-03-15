@@ -1,0 +1,193 @@
+framework:
+    workflows:
+        page_publishing:
+            type: 'workflow'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'status'
+            supports:
+                - CraftKeen\CMS\PageBundle\Entity\Page
+            places:
+                - draft
+                - pending_approval
+                - live
+                - archived
+            transitions:
+                to_review:
+                    from: draft
+                    to:   pending_approval
+                publish:
+                    from: pending_approval
+                    to:   live
+                reject:
+                    from: pending_approval
+                    to:   draft
+                delete:
+                    from: [live, draft]
+                    to:   archived
+
+        property_publishing:
+            type: 'workflow'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'status'
+            supports:
+                - CraftKeen\FCRBundle\Entity\Property
+            places:
+                - draft
+                - pending_approval
+                - live
+                - archived
+            transitions:
+                to_review:
+                    from: draft
+                    to:   pending_approval
+                publish:
+                    from: pending_approval
+                    to:   live
+                reject:
+                    from: pending_approval
+                    to:   draft
+                delete:
+                    from: [live, draft]
+                    to:   archived
+
+        widget_publishing:
+            type: 'workflow'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'status'
+            supports:
+                - CraftKeen\CMS\PageBundle\Entity\PageWidget
+            places:
+                - draft
+                - pending_approval
+                - live
+                - archived
+            transitions:
+                to_review:
+                    from: draft
+                    to:   pending_approval
+                publish:
+                    from: pending_approval
+                    to:   live
+                reject:
+                    from: pending_approval
+                    to:   draft
+                delete:
+                    from: [live, draft]
+                    to:   archived
+
+        temporary_publishing:
+            type: 'workflow'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'status'
+            supports:
+                - CraftKeen\FCRBundle\Entity\ActiveProvince
+                - CraftKeen\FCRBundle\Entity\Manager
+                - CraftKeen\FCRBundle\Entity\Tenant
+                - CraftKeen\FCRBundle\Entity\PropertySubmission
+                - CraftKeen\FCRBundle\Entity\PressRelease
+                - CraftKeen\FCRBundle\Entity\FinancialReport
+                - CraftKeen\FCRBundle\Entity\FAQ
+                - CraftKeen\FCRBundle\Entity\AnalystCoverage
+                - CraftKeen\FCRBundle\Entity\Dividend
+                - CraftKeen\FCRBundle\Entity\Debenture
+                - CraftKeen\FCRBundle\Entity\ConferenceCall
+                - CraftKeen\FCRBundle\Entity\People
+                - CraftKeen\FCRBundle\Entity\Sustainability
+                - CraftKeen\FCRBundle\Entity\SustainabilitySlider
+                - CraftKeen\FCRBundle\Entity\CareersSlider
+                - CraftKeen\FCRBundle\Entity\CareersEmployee
+                - CraftKeen\FCRBundle\Entity\RetailArt
+                - CraftKeen\FCRBundle\Entity\RetailArtCategory
+                - CraftKeen\FCRBundle\Entity\RetailArtGallery
+                - CraftKeen\FCRBundle\Entity\PropertyFeatureSlider
+                - CraftKeen\FCRBundle\Entity\Office
+                - CraftKeen\CMS\MenuBundle\Entity\Menu
+            places:
+                - draft
+                - pending_approval
+                - live
+                - archived
+            transitions:
+                to_review:
+                    from: draft
+                    to:   pending_approval
+                publish:
+                    from: pending_approval
+                    to:   live
+                reject:
+                    from: pending_approval
+                    to:   draft
+                delete:
+                    from: [live, draft]
+                    to:   archived
+
+        property_publishing:
+            type: 'workflow'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'status'
+            supports:
+                - CraftKeen\FCRBundle\Entity\Property
+            places:
+                - draft
+                - pending_approval
+                - live
+                - archived
+            transitions:
+                to_review:
+                    from: draft
+                    to:   pending_approval
+                publish:
+                    from: pending_approval
+                    to:   live
+                reject:
+                    from: pending_approval
+                    to:   draft
+                delete:
+                    from: [live, draft]
+                    to:   archived
+        brochure_publishing:
+            type: 'state_machine'
+            marking_store:
+                type: 'single_state'
+                arguments:
+                    - 'status'
+            supports:
+                - CraftKeen\BrochureBuilderBundle\Entity\Brochure
+            places:
+                - draft
+                - pending_approval
+                - live
+                - archived
+                - deleted
+            transitions:
+                to_review:
+                    from: draft
+                    to:   pending_approval
+                publish:
+                    from: pending_approval
+                    to:   live
+                reject:
+                    from: pending_approval
+                    to:   draft
+                delete:
+                    from: [live, draft]
+                    to:   deleted
+                archive:
+                    from: live
+                    to:   archived
+                revert:
+                    from: archived
+                    to:   live
+                retract:
+                    from: live
+                    to:   draft

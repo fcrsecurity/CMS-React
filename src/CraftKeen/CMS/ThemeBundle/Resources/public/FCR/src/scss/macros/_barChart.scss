@@ -1,0 +1,52 @@
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+//Chart Colors
+.chart-blue{
+  fill: #83A3C4;
+}
+.chart-light-blue{
+  fill: #E6EFEE;
+}
+.bar-hover,
+.blue-label {
+  fill: #0079BC;
+}
+//for ColorList tool plugin
+.chart-blue{
+  background-color: #83A3C4;
+}
+.chart-light-blue{
+  background-color: #E6EFEE;
+}
+
+.color-tool-button {
+  width: 50px;
+  height: 25px;
+}
+.color-tool-ul {
+  padding: 0;
+  min-width: 50px;
+}
+.color-tool-li {
+  height: 25px;
+  &:hover {
+    border: 2px solid $color-green;
+  }
+}

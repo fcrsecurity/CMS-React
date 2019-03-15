@@ -1,0 +1,26 @@
+<div class="row inline-mode no-images-slider">
+    <a href="{{ path('admin_community_sustainability_slider_index') }}"
+       class="button-edit-element"
+       title="Edit element"></a>
+    <div class="slider-info-js slider-info">
+        {% for slide in sliders %}
+            <div class="item">
+                <div class="overlay">
+                    <div class="text-container">
+                        <div class="left">
+                            <p>{{ slide.number }}</p>
+                        </div>
+                        <div class="right">
+                            <div class="title">
+                                <p>{{ slide.header | raw }}</p>
+                            </div>
+                            <div class="description">
+                                <p>{{ slide.description | raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

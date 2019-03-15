@@ -1,0 +1,58 @@
+.cta-box-finance {
+    padding: 13px 17px;
+    background-color: $color-blue;
+    color: $color-white;
+    width: 100%;
+    height: 290px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin: 0 auto 20px auto;
+    .date {
+        line-height: 1;
+        font-size: 23px;
+        span {
+            font-size: 14px;
+        }
+    }
+    .wrap-index {
+        position: absolute;
+        left: 13px;
+        bottom: 13px;
+        overflow: hidden;
+        color: $color-teal;
+        .pink-arrow {
+            color: $color-pink-arrow;
+        }
+        .ind {
+            font-size: 65px;
+            font-family: $font-family-info;
+            line-height: 1;
+            color:$color-white;
+        }
+        .arrow {
+            font-size: 83px;
+            float: left;
+            height: 59px;
+            line-height: 1;
+            margin-right: 17px;
+            margin-left: 10px;
+            width: 53px;
+            em {
+                font-weight: bold !important;
+                position: relative;
+                top: -15px;
+            }
+        }
+        .usd {
+            float: left;
+            font-family: $font-family-info;
+            line-height: 1.2;
+            font-size: 23px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@import "ctaboxfinance_queries";

@@ -1,0 +1,26 @@
+{% extends 'error_base.html.twig' %}
+
+{% block meta_title %}{{ 'Access Forbidden'|trans }}{% endblock %}
+
+{% block hero %}
+	<section class="hero-image container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 text-center">
+				<h1 class="text-shadow">{{ 'Access Forbidden' }}</h1>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block body %}
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 buffer-7-top buffer-6-botom text-center">
+				<h2>{{ "You don't have permission to enter this page" }}</h2>
+				<p>
+					Sorry, but you cannot enter this page, you can <a href="/">return to the homepage</a> if you want.
+				</p>
+			</div>
+		</div>
+	</section>
+{% endblock %}

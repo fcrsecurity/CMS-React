@@ -1,0 +1,104 @@
+{% set latest = financialReports|last %}
+{% if financialReports is not empty and latest is not empty%}
+	<div class="buffer-6-padding-top buffer-6-padding-bottom FinancialReports inline-mode">
+	<a href="{{ path('admin_investors_financial-report_index') }}" class="button-edit-element" title="Edit element"></a>
+		<div class="row ">
+			<div class="col-md-6 col-lg-6 left-part">
+				<div class="row">
+					<div class="col-lg-12 text-center head-part">
+						<h2>{{ latest.year }}</h2>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-md-4 col-md-offset-2  text-center">
+						{% if latest.Q1 is defined and latest.Q1|length > 0 %}
+						<div class="thumbnails">
+							<a href="{{ latest.Q1 }}" target="_blank">
+								<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.09448819 1052.3622047" id="svg4580"><defs id="defs4582"><clipPath id="clipPath3456"><path d="m 0,2288.813 1938,0 L 1938,0 0,0 0,2288.813 Z" id="path3458"/></clipPath></defs><g id="layer1"><g id="g3452"><g id="g3454" clip-path="url(#clipPath3456)" transform="matrix(3.97813 0 0 -3.97813 -1596.345 6342.432)"><g id="g3460"><path class="path" d="m 0,0 0,-241.896 185.048,0 0,179.491 L 122.643,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3462" transform="translate(402.28 1593.302)"/></g><g id="g3464"><path class="path" d="M 0,0 -62.405,62.405 -62.405,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3466" transform="translate(586.88 1530.897)"/></g></g></g><text class="internal-text" y="770.14471" x="131.66409" transform="scale(.98475 1.0155)" id="text3448"><tspan x="131.66409 400.81534" y="770.14471" id="tspan3450">Q1</tspan></text></g></svg>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+					<div class="col-md-4  text-center">
+						{% if latest.Q2 is defined and latest.Q2|length > 0 %}
+						<div class="thumbnails">
+							<a href="{{ latest.Q2 }}" target="_blank">
+								<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.09448819 1052.3622047" id="svg4580"><defs id="defs4582"><clipPath id="clipPath3456"><path d="m 0,2288.813 1938,0 L 1938,0 0,0 0,2288.813 Z" id="path3458"/></clipPath></defs><g id="layer1"><g id="g3452"><g id="g3454" clip-path="url(#clipPath3456)" transform="matrix(3.97813 0 0 -3.97813 -1596.345 6342.432)"><g id="g3460"><path class="path" d="m 0,0 0,-241.896 185.048,0 0,179.491 L 122.643,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3462" transform="translate(402.28 1593.302)"/></g><g id="g3464"><path class="path" d="M 0,0 -62.405,62.405 -62.405,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3466" transform="translate(586.88 1530.897)"/></g></g></g><text class="internal-text" y="770.14471" x="131.66409" transform="scale(.98475 1.0155)" id="text3448"><tspan x="131.66409 400.81534" y="770.14471" id="tspan3450">Q2</tspan></text></g></svg>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+					<div class="col-md-4 col-md-offset-2 text-center">
+						{% if latest.Q3 is defined and latest.Q3|length > 0 %}
+						<div class="thumbnails">
+							<a href="{{ latest.Q3 }}" target="_blank">
+								<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.09448819 1052.3622047" id="svg4580"><defs id="defs4582"><clipPath id="clipPath3456"><path d="m 0,2288.813 1938,0 L 1938,0 0,0 0,2288.813 Z" id="path3458"/></clipPath></defs><g id="layer1"><g id="g3452"><g id="g3454" clip-path="url(#clipPath3456)" transform="matrix(3.97813 0 0 -3.97813 -1596.345 6342.432)"><g id="g3460"><path class="path" d="m 0,0 0,-241.896 185.048,0 0,179.491 L 122.643,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3462" transform="translate(402.28 1593.302)"/></g><g id="g3464"><path class="path" d="M 0,0 -62.405,62.405 -62.405,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3466" transform="translate(586.88 1530.897)"/></g></g></g><text class="internal-text" y="770.14471" x="131.66409" transform="scale(.98475 1.0155)" id="text3448"><tspan x="131.66409 400.81534" y="770.14471" id="tspan3450">Q3</tspan></text></g></svg>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+					<div class="col-md-4 text-center">
+						{% if latest.Q4 is defined and latest.Q4|length > 0 %}
+						<div class="thumbnails">
+							<a href="{{ latest.Q4 }}" target="_blank">
+								<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.09448819 1052.3622047" id="svg4580"><defs id="defs4582"><clipPath id="clipPath3456"><path d="m 0,2288.813 1938,0 L 1938,0 0,0 0,2288.813 Z" id="path3458"/></clipPath></defs><g id="layer1"><g id="g3452"><g id="g3454" clip-path="url(#clipPath3456)" transform="matrix(3.97813 0 0 -3.97813 -1596.345 6342.432)"><g id="g3460"><path class="path" d="m 0,0 0,-241.896 185.048,0 0,179.491 L 122.643,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3462" transform="translate(402.28 1593.302)"/></g><g id="g3464"><path class="path" d="M 0,0 -62.405,62.405 -62.405,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3466" transform="translate(586.88 1530.897)"/></g></g></g><text class="internal-text" y="770.14471" x="131.66409" transform="scale(.98475 1.0155)" id="text3448"><tspan x="131.66409 400.81534" y="770.14471" id="tspan3450">Q4</tspan></text></g></svg>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+					<div class="col-md-4 col-md-offset-2  text-center">
+						{% if latest.annual is defined and latest.annual|length > 0 %}
+						<div class="thumbnails">
+							<a href="{{ latest.annual }}" target="_blank">
+								<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.09448819 1052.3622047" id="svg4580"><defs id="defs4582"><clipPath id="clipPath3456"><path d="m 0,2288.813 1938,0 L 1938,0 0,0 0,2288.813 Z" id="path3458"/></clipPath></defs><g id="layer1"><g id="g3452"><g id="g3454" clip-path="url(#clipPath3456)" transform="matrix(3.97813 0 0 -3.97813 -1596.345 6342.432)"><g id="g3460"><path class="path" d="m 0,0 0,-241.896 185.048,0 0,179.491 L 122.643,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3462" transform="translate(402.28 1593.302)"/></g><g id="g3464"><path class="path" d="M 0,0 -62.405,62.405 -62.405,0 0,0 Z" style="fill:none;stroke:#0861aa;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path3466" transform="translate(586.88 1530.897)"/></g></g></g><text class="internal-text" y="770.14471" x="131.66409" transform="scale(.98475 1.0155)" id="text3448"><tspan x="131.66409 400.81534" y="770.14471" id="tspan3450">AR</tspan></text></g></svg>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-lg-6 right-part">
+				<div class="row visible-lg visible-md">
+					<div class="col-lg-12 text-center head-part">
+						<h2>{{ 'Previous Years'|trans([], 'messages', app.request.locale) }}</h2>
+					</div>
+				</div>
+				<div class="row visible-lg visible-md">
+					<div class="col-lg-7 col-md-6 text-center wrap-table">
+						<table class="table">
+							<tbody>
+								<tr class="under-line">
+									<th>{{ 'Year'|trans([], 'messages', app.request.locale) }}</th>
+									<th>Q1</th>
+									<th>Q2</th>
+									<th>Q3</th>
+									<th class="text-center">{{ 'Annual'|trans([], 'messages', app.request.locale) }}</th>
+								</tr>
+								{% for report in financialReports %}
+									{% if report.year != latest.year %}
+									<tr>
+										<td>{{ report.year }}</td>
+										<td><a href="{{ report.Q1 }}" target="_blank"><em class="fa fa-file-o" aria-hidden="true"></em></a></td>
+										<td><a href="{{ report.Q2 }}" target="_blank"><em class="fa fa-file-o" aria-hidden="true"></em></a></td>
+										<td><a href="{{ report.Q3 }}" target="_blank"><em class="fa fa-file-o" aria-hidden="true"></em></a></td>
+										<td class="text-center"><a href="{{ report.annual }}" target="_blank"><em class="fa fa-file-o" aria-hidden="true"></em></a></td>
+									</tr>
+									{% endif %}
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-lg-12 col-md-12 text-center">
+						<a class="button mobile-buffer" href="http://www.sedar.com/DisplayProfile.do?lang=EN&issuerType=03&issuerNo=00001730" target="_blank">
+							{{ 'For prior years visit sedar'|trans([], 'messages', app.request.locale)}}   &nbsp;&nbsp;<em class="fa fa-angle-right" aria-hidden="true"></em>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}

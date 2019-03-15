@@ -1,0 +1,33 @@
+/* 480px */
+@media screen and (min-width:$mobile-devices-width) {
+    .stock-price {
+        .info-bottom {
+            .name {
+                float: left;
+            }
+            .date {
+                float: right;
+            }
+        }
+    }
+}
+/* 960px */
+@media screen and (min-width:$medium-devices-width) {
+    .stock-price {
+        .info-head {
+            >div {
+                float: left;
+                position: relative;
+                bottom: -10px;
+                text-align: center;
+            }
+            .arrow {
+                margin-left: 15px;
+            }
+            .usd {
+                margin-top: 30px;
+                margin-left: 20px;
+            }
+        }
+    }
+}

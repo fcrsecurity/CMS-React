@@ -1,0 +1,8 @@
+craft_keen_cms_admin_menu:
+      resource: "@CraftKeenCMSMenuBundle/Controller/Admin/"
+      type:     annotation
+      prefix:   /admin
+
+craft_keen_cms_menu:
+    resource: "@CraftKeenCMSMenuBundle/Controller/MenuController.php"
+    type:     annotation

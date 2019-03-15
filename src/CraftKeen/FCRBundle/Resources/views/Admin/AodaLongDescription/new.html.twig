@@ -1,0 +1,15 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/new.html.twig' %}
+{% set moduleTitle = 'Aoda Long Description'|trans %}
+{% set path_prefix = 'admin_fcr_aoda_long_description_' %}
+
+
+{% block admin_block_body %}
+    {% if error is defined and error is not null %}
+    <div class="bs-component">
+        <div class="alert alert-dismissible alert-danger">
+        {{ error }}
+        </div>
+    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+    {% endif %}
+    {{ parent() }}
+{% endblock %}

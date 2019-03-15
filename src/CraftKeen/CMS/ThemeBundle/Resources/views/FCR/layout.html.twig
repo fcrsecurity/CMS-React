@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block meta_title 'First Capital Realty - owner and operator of urban retail properties'|trans %}
+
+{% block topmenu %}{% endblock %}
+
+{% block header %}{% include('CraftKeenCMSThemeBundle:'~theme~':header.html.twig') %}{% endblock %}
+
+{% block footer %}{% include('CraftKeenCMSThemeBundle:'~theme~':footer.html.twig') %}{% endblock %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{% stylesheets
+	'bower_components/ResponsiveMultiLevelMenu/css/component.css'
+	'bower_components/iCheck-wnd/skins/polaris/polaris.css'
+	'bower_components/slick-carousel/slick/slick.css'
+	'bower_components/slick-carousel/slick/slick-theme.css'
+	'bower_components/toastr/toastr.min.css'
+	'bundles/craftkeencmstheme/FCR/assets/fonts/copse/webfontkit/stylesheet.css'
+	'bundles/craftkeencmstheme/FCR/assets/fonts/yantramanav/webfontkit/stylesheet.css'
+	'bundles/craftkeencmstheme/FCR/assets/fonts/scheherazade/webfontkit/stylesheet.css'
+	'bundles/craftkeencmstheme/FCR/assets/cdn/jquery.dataTables.min.css'
+	filter='cssrewrite' %}
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+
+{#TODO: remove included js file (ir.js and other) #}
+{% block footer_js %}
+	{{parent()}}
+	{% javascripts
+	   'bower_components/ResponsiveMultiLevelMenu/js/modernizr.custom.js'
+	   'bower_components/ResponsiveMultiLevelMenu/js/jquery.dlmenu.js'
+	   'bower_components/vimeo-player-js/dist/player.min.js'
+	   'bower_components/iCheck-wnd/icheck.min.js'
+ 	   'bower_components/toastr/toastr.min.js'
+	   'bower_components/d3/d3.min.js'
+	   'bower_components/jquery-mask-plugin/dist/jquery.mask.min.js'
+	   'bower_components/isotope/dist/isotope.pkgd.min.js'
+	   'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
+	   'bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js'
+	   'bower_components/moment/min/moment.min.js'
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}

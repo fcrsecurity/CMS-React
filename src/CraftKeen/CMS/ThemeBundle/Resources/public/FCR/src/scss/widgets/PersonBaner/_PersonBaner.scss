@@ -1,0 +1,62 @@
+.person-baner {
+    background-color: $color-bg-grey-light;
+    div {
+        padding: 0;
+    }
+    .seo-image-block {
+        height: 349px;
+    }
+    img {
+        width: 100%;
+        position: relative;
+        bottom: 100px;
+    }
+    .blue-block {
+        background-color: $color-fcr-blue;
+        color: $color-grey-light2;
+    }
+    center {
+        margin: 0;
+        .signature {
+            text-align: left;
+            margin: auto 20px;
+            font-size: 14px;
+        }
+        blockquote, .blockquote {
+            padding: 0 20px;
+            color: $color-grey-light1;
+            border: none;
+            font-size: 20px;
+            font-family: $font-family-default-light;
+            text-align: left;
+            img {
+                display: inline-block;
+                max-width: 60px;
+                position: relative;
+                margin: auto 20px;
+                top: -15px;
+            }
+            &::after,
+            &::before {
+                content: '';
+                background-image: url('/bundles/craftkeencmstheme/FCR/assets/images/abt_qt_left.png');
+                background-repeat: no-repeat;
+                display: inline-block;
+                max-width: 35px;
+                height: 26px;
+                position: relative;
+                margin: auto 20px;
+                width: 100%;
+                background-size: contain;
+            }
+            &::after {
+                background-image: url('/bundles/craftkeencmstheme/FCR/assets/images/abt_qt_right.png');
+                top: 15px;
+                margin-top: -8px;
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+@import "PersonBaner_queries";

@@ -1,0 +1,92 @@
+
+/* Small devices (tablets 768px  and up) */
+
+@media screen and (min-width:$small-devices-width) {
+    .person-block {
+        .directors-grid {
+            .item {
+                min-height: 310px;
+            }
+        }
+        .modal-info-container {
+            .item {
+                .info {
+                    text-align: left;
+                    ol {
+                        list-style-position: inside;
+                        padding: 0;
+                        overflow: hidden;
+                        margin-top: 25px;
+                        li {
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal-dialog {
+        width: 75% !important;
+    }
+}
+
+
+/* Medium devices (desktops 960px and up) */
+
+@media screen and (min-width:$medium-devices-width) {
+    .person-block {
+        .directors-grid {
+            .item {
+                min-height: 330px;
+            }
+        }
+        /* Current Projects Section*/
+        .modal-info-container {
+            padding-top: $height-60;
+            padding-bottom: $height-60;
+            .item {
+                display: table;
+                .wrapper-photo {
+                    margin-right: 20px;
+                    max-width: 200px;
+                    width: 200px;
+                }
+                .info {
+                    padding-right: 20px;
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media screen and (min-width:$large-devices-width) {
+    .person-block {
+        .directors-grid {
+            .item {
+                min-height: 310px;
+            }
+        }
+        .flex-wrapper-grid {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .last-row-item {
+        margin-left: 12%;
+    }
+}
+/*1600*/
+@media screen and (min-width:$verylarge-devices-width) {
+    .person-block {
+        .directors-grid {
+            .item {
+                min-height: 440px;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{% set id = widget.id %}
+{% set data = widget.data %}
+{#	Set table header	#}
+{% set chartProps = '' %}
+{% for key, prop in data.propNames|split(',') %}
+    {% set chartProps = chartProps ~ prop|trans ~ ',' %}
+{% endfor %}
+{#	delete last comma	#}
+{% set chartProps = chartProps|slice(0, chartProps|length -1) %}
+{#	Set table footnotes	#}
+{% set tableFootnes = '' %}
+{% for key, prop in data.tableFootnes|split(',') %}
+    {% set tableFootnes = tableFootnes ~ prop|trans ~ ',' %}
+{% endfor %}
+{% set tableFootnes = tableFootnes|slice(0, tableFootnes|length -1) %}
+<div class="inline-mode">
+    <a data-toggle="modal" data-target="#TableModal-{{ id }}" class="button-edit-element" title="Edit element"></a>
+    <!-- Chart -->
+    <svg id='bar-chart-{{ id }}'
+         class="charts charts-{{ id }} {{ data.class }}"
+         data-id='{{ id }}'
+         chart-type="{{ data.type }}"
+         chart-data='{{ data.items|json_encode|raw }}'>
+    </svg>
+    <div id='chart-label-{{ id }}' class="chart-label" contenteditable="{{ editable }}">{{ data.label }}</div>
+    <!-- Modal box with editable table -->
+    <div id="TableModal-{{ id }}" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bar Chart items</h4>
+                </div>
+                <div class="modal-body"
+                     data-chart-type="{{ data.type }}"
+                     data-table="{{ chartProps }}"
+                     data-table-footnotes="{{ tableFootnes }}"
+                     data-tools="{{ data.tools|json_encode }}"
+                     data-tools-data="{% if data.toolsData is defined %}{{ data.toolsData|json_encode }}{% endif %}"
+                     data-chart-class="{{ data.class }}"
+                >
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="accept-changes-{{ id }}" class="btn btn-success">Accept</button>
+                    <button type="button" id="cancel-changes-{{ id }}" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

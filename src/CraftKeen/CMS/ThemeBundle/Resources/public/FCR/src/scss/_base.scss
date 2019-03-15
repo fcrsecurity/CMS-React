@@ -1,0 +1,57 @@
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body, html {
+    font-family: $font-family-default;
+    font-size: $font-size-default;
+    min-height: 870px;
+    color: $color-grey-text;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: $font-family-default-light;
+}
+h1, .h1 {
+    font-size: 400%;
+}
+h2, .h2 {
+    font-size: 335%;
+}
+h3, .h3 {
+    font-size: 260%;
+}
+h4, .h4 {
+    font-size: 200%;
+}
+h5, .h5 {
+    font-size: 38px;
+}
+h6, .h6 {
+    font-size: 30px;
+}
+
+.p {
+    margin: 0 0 10px;
+}
+//Used on shareholder-meeting pages
+.light-font {
+    font-family: $font-family-default-light;
+}
+//Used on Contact, shareholder-meeting pages
+.reset-h-margin {
+    margin: 0;
+}
+/* Sticky footer stylss */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.nav-bar-desctop, .flags {
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}

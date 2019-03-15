@@ -1,0 +1,10 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/index.html.twig' %}
+{% set moduleTitle = 'Download CSV'|trans %}
+{% set path_prefix = 'craftkeen_fcr_newsletter_download_csv_' %}
+
+{% block admin_block_body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary" value="{{ 'Download CSV'|trans }}"/>
+    {{ form_end(form) }}
+{% endblock %}

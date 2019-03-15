@@ -1,0 +1,60 @@
+
+@import "../variables";
+
+.content {
+	width: $pdf-page-width;
+	margin: 0 auto;
+	padding: 20px 0;
+	box-sizing: border-box;
+
+	font-family: $pdf-font !important;
+}
+
+.saving {
+	&::after {
+		position: absolute;
+		background: rgba(255, 255, 255, .5); 
+		display: block;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+	}
+}
+
+.add_button {
+	height: 60px;
+    text-align: center;
+}
+
+.save_button {
+	height: 60px;
+    text-align: center;
+}
+
+:global {
+	.BrochureBuilderLoader {
+		text-align: center;
+		font-size: 20px;
+		color: #aaa;
+		line-height: 3;
+	}
+
+	.BrochureBuilder {
+		background: #eee;
+		padding: 10px 0;
+		overflow: hidden;
+
+		.Popover-body {
+			background: white;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		.Popover-tip {
+			fill: white;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+<div class="faq buffer-6-padding-bottom">
+    <div class="page-content career-accordion user-accordion inline-mode" >
+    <a href="{{ path('admin_faq_index') }}?category=1" class="button-edit-element" title="Edit element" ></a>
+    <div id="collapse-init" class="pull-right expand-all " >{{ 'EXPAND ALL'|trans([], 'messages', app.request.locale) }} +</div>
+    <div class="clearfix"></div>
+        {% for item in faq %}
+            <div class="clearPanel">
+                <div class="accordionElement">
+                    <div class="panel-group " role="tablist" aria-multiselectable="true">
+                        <div key={i} class="panel panel-default">
+                            <div class="panel-heading" >
+                                <div class="panel-title">
+                                    <a class="accordion-toggle collapsed">
+                                        {% if item.question is defined %}
+                                            {{ item.question | raw }}
+                                        {% endif %}
+                                    </a>
+                                </div>
+                            </div>
+                            <div  class="panel-collapse collapse" >
+                                <div class="panel-body">
+                                    {% if item.answer is defined %}
+                                        {{ item.answer | raw }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

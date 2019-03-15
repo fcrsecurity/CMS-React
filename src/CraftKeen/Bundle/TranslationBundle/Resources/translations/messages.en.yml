@@ -1,0 +1,6 @@
+craft_keen.translation.admin.language: 'Language'
+craft_keen:
+  translation:
+    admin:
+      language:
+        add: 'Add'

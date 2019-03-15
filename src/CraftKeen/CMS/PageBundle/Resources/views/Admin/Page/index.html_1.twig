@@ -1,0 +1,107 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+
+{% block admin_block_title %}{{ 'Pages'|trans }}{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li class="active">{{ 'Pages'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    <div class="row">
+		<div class="col-lg-6">
+            <ul class="list-inline list-unstyled">
+                {% if is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_EDITOR') %}
+                    <li>
+                        <a href="{{ path('craftkeen_cms_page_admin_page_new') }}" class="btn btn-success">
+                            {{ 'Create a new page'|trans }}
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="col-lg-6">
+{#            {{ CRUD.renderListFilter__Site('form-inline', sites) }}#}
+            {{ CRUD.renderListFilter__PerPage('pull-right form-inline') }}
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-lg-12">
+            {% if page %}
+                {% set back_link = null %}
+
+                {% if page.parent %}
+                    {% set back_link = page.parent.id %}
+                {% endif %}
+
+                <h4>
+                    <a href="{{ path('craftkeen_cms_page_admin_page_index', {'parent': back_link  }) }}">
+                        <span class="glyphicon glyphicon-chevron-left"></span>&nbsp;&nbsp;{{ page.name }}:
+                    </a>
+                </h4>
+            {% endif %}
+
+            <ul class="box-three">
+                {% for item in pagination %}
+                    <li>
+                        <div class="row box-three-item">
+                            <div class="col-lg-11">
+                                <p>
+                                    {{ item.site }}::{{ item.name }}
+                                    {% if item.copyOf %}
+                                        {% if is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_EDITOR') or is_granted('ROLE_CONTRIBUTOR') %}
+                                            {% set path = path('craftkeen_cms_page_admin_page_edit', { 'id': item.copyOf}) %}
+                                        {% else %}
+                                            {% set path = path('craftkeen_cms_page_admin_page_show', { 'id': item.copyOf}) %}
+                                        {% endif %}
+                                        (<b>Copy of <a href="{{ path }}">{{ item.copyOf }}</a></b>)
+                                    {% endif %}
+                                </p>
+                                {% if item.status == 'live' %}
+                                    <span class="label label-success">{{ 'Approved'|trans }}</span>
+                                {% else %}
+                                    <span class="label label-warning">{{ 'Unapproved'|trans }}</span>
+                                {% endif %}
+
+                                {#{{ 'Revision'|trans }}: <b>{{ item.version }}</b>#}
+                            </div>
+
+                            <div class="col-lg-1 text-right">
+                                {% if is_granted('canedit', item) %}
+                                    <p>
+                                        <a href="{{ path('craftkeen_cms_page_admin_page_edit', { 'id': item.id}) }}">
+                                            <span class="action-box glyphicon glyphicon-pencil"></span>
+                                        </a>
+                                    </p>
+                                {% endif %}
+
+                                {% if is_granted('canview', item)%}
+                                    <p>
+                                        <a href="{{ path('craftkeen_cms_page_admin_page_show', { 'id': item.id}) }}">
+                                            <span class="action-box glyphicon glyphicon-eye-open"></span>
+                                        </a>
+                                    </p>
+                                {% endif %}
+
+                                {% if item.children.count > 0 %}
+                                    <a href="{{ path('craftkeen_cms_page_admin_page_index', {'parent': item.id }) }}">
+                                        <span class="action-box glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="navigation col-lg-12">
+            {{ knp_pagination_render(pagination) }}
+        </div>        
+    </div>
+{% endblock %}

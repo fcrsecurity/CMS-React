@@ -1,0 +1,100 @@
+/*480px*/
+
+@media only screen and (min-width: $mobile-devices-width) {
+    .person-baner {
+        img {
+            width: 400px;
+        }
+        .seo-image-block {
+            height: 460px;
+        }
+        center {
+            blockquote,.blockquote {
+                &::after,
+                &::before {
+                    max-width: 60px;
+                    height: 43px;
+                }
+                &::after {
+                    margin-top: -12px;
+                    top: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+/*768*/
+
+@media only screen and (min-width: $small-devices-width) {
+    .person-baner {
+        img {
+            width: 400px;
+            float: right;
+        }
+        .blue-block {
+            background-color: $color-bg-grey-light;
+            color: $color-blue;
+            min-height: 460px;
+        }
+        center {
+            margin: 0 75px;
+            blockquote,.blockquote {
+                margin-top: 55px;
+                font-size: 20px;
+                color: $color-blue;
+                &::after,
+                &::before {
+                    max-width: 35px;
+                    height: 26px;
+                }
+            }
+        }
+    }
+}
+
+
+/*960*/
+
+@media only screen and (min-width: $medium-devices-width) {
+    .person-baner {
+        padding-top: 0;
+        img {
+            width: 400px;
+            float: right;
+        }
+        .blue-block {
+            padding: 0;
+        }
+        center {
+            blockquote,.blockquote {
+                margin-top: 90px;
+                font-size: 20px;
+                &::after,
+                &::before {
+                    max-width: 78px;
+                    height: 56px;
+                }
+                &::after {
+                    margin-top: -23px;
+                    top: 26px;
+                }
+            }
+        }
+    }
+}
+
+
+/*1200*/
+
+@media only screen and (min-width: $large-devices-width) {
+    .person-baner {
+        center {
+            blockquote,.blockquote {
+                font-size: 20px;
+                padding-bottom: 30px;
+            }
+        }
+    }
+}

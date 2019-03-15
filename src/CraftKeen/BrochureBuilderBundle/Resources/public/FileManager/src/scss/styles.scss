@@ -1,0 +1,36 @@
+.elfinder-button-icon-editmeta {
+  background-position: 0px -336px;
+}
+
+.elfinder-dialog-editmeta {
+  .elfinder-dialog-icon {
+    background-position: 0px -330px;
+  }
+  .ui-dialog-content {
+    padding-left: 56px;
+    min-height: 35px
+  }
+}
+
+.meta-editor-span {
+  margin-top: 40px;
+  display: block;
+}
+
+.elfinder-editmeta-textarea {
+  margin-top: 15px;
+  width: 250px;
+  height: 100px;
+  resize: none;
+  overflow: auto;
+}
+
+.elfinder {
+  .elfinder-button-search {
+    width: 220px;
+
+    input {
+      width: 180px;
+    }
+  }
+}

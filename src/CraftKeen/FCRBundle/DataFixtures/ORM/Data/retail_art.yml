@@ -1,0 +1,191 @@
+CraftKeen\FCRBundle\Entity\RetailArtCategory:
+    RetailArtCategory0:
+        name: 'RETAIL LIFE & ARTS'
+        slug: 'retail-life-and-art'
+        lang: '@Lang0->id'
+        langParent: null
+    RetailArtCategory1:
+        name: 'COMMERCES ET ARTS'
+        slug: 'commerces-at-arts'
+        lang: '@Lang1->id'
+        status: 'live'
+        langParent: '@RetailArtCategory0'
+
+CraftKeen\FCRBundle\Entity\RetailArt:
+    RetailArt0:
+        head: 'The Yorkville Village Arts Festival'
+        slug: 'the-yorkvilley-village-arts-festival'
+        title: 'Yorkville Village Arts Festival – A collaboration of FCR and OCAD University'
+        text: '<p>In the best spirit of artistic collaboration, the Yorkville Village Arts Festival is a joint initiative between First Capital Realty and Faculty of Art at OCAD University. Held annually in the Oval Square at Yorkville Village, this cultural event showcases contemporary art works and events to promote the arts and cultural exchange in the heart of Toronto’s historic Yorkville district.</p><p>The Festival is a “one of a kind” project developed between FCR and OCAD U that features a juried exhibition of art by OCAD U students and recent graduates and a set of dynamic events that are programmed exclusively for the festival during the seven-day event.</p><p>The Festival welcomes all media, including painting, photography, printmaking, projections, medial installations and site-interventions.</p><section class="container-fluid"><div class="row"><div class="col-lg-12 arts-slider carousel"><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery2.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery3.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery4.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery5.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery9.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery11.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery12.jpg)"></div></div></div></section>'
+        short: 'In the best spirit of artistic collaboration, Yorkville Village Arts Festival is a joint initiative between First Capital Realty and Faculty of Art at OCAD University...'
+        image: 'https://fcr.ca/uploads/community/retail-life/yorkville_village_arts.jpg'
+        imageAlt: '@RetailArt0->head'
+        class: '--2w'
+        sortOrder: 0
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory0'
+        createdBy: '@User1->id'
+
+    RetailArt0-1:
+        head: 'Festival des arts du village de Yorkville'
+        slug: 'the-yorkvilley-village-arts-festival'
+        title: 'Yorkville Village Arts Festival - Une collaboration de FCR et OCAD University'
+        text: '<p>Yorkville Village Arts Festival (YVAF) est une collaboration entre First Capital Realty (FCR) et la Facult&eacute; d&#39;Art de l&#39;Universit&eacute; OCAD (OCAD U) qui se tient chaque ann&eacute;e sur la place ovale &agrave; Yorkville Village. Cet &eacute;v&eacute;nement culturel annuel pr&eacute;sente des &oelig;uvres d&#39;art et des &eacute;v&eacute;nements contemporains pour promouvoir les arts et les &eacute;changes culturels au c&oelig;ur du quartier historique de Yorkville &agrave; Toronto.</p>  <p>Le Festival est un projet &laquo;unique en son genre&raquo; d&eacute;velopp&eacute; entre FCR et OCAD U qui pr&eacute;sente une exposition d&#39;art organis&eacute;e par des &eacute;tudiants et des dipl&ocirc;m&eacute;s r&eacute;cents d&#39;OCAD U et un ensemble d&#39;&eacute;v&eacute;nements dynamiques qui sont programm&eacute;s exclusivement pour le festival pendant une p&eacute;riode de sept jours.</p> <p>Le Festival accueille tous les m&eacute;diums, y compris la peinture, la photographie, la gravure, les projections, les installations m&eacute;diales et les interventions sur le site ainsi que les pratiques publiques relationnelles. Tous les travaux sont disponibles &agrave; la vente sur le site.</p><section class="container-fluid"><div class="row"><div class="col-lg-12 arts-slider carousel"><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery2.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery3.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery4.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery5.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery9.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery11.jpg)"></div><div class="item" style="background-image:url(https://fcr.ca/uploads/community/retail-life/yvaf_gallery12.jpg)"></div></div></div></section>'
+        short: Dans le meilleur esprit de collaboration artistique, Yorkville Village Arts Festival est une initiative conjointe entre First Capital Realty et la Faculté d'Art de l'Université ...
+        image: '@RetailArt0->image'
+        imageAlt: '@RetailArt0-1->head'
+        class: '@RetailArt0->class'
+        sortOrder: '@RetailArt0->sortOrder'
+        lang: '@Lang1->id'
+        langParent: '@RetailArt0'
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory1'
+        createdBy: '@User1->id'
+
+    RetailArt1:
+        head: 'Public Sculpture Calls'
+        title: 'Public Sculpture Calls'
+        slug: 'public-sculpture-calls'
+        text: '<p>We believe art is meant to be seen, experienced, pondered and enjoyed on a daily basis, not just when you have time to visit the art gallery. To that end we hold public sculpture competitions with the winning entries showcased at our properties. See the images that follow for a taste of the incredible work these competitions have produced.</p><h3>Sarah McCaw – Friend, 2010</h3><ul><li>Winner of the first annual First Capital Realty Inc. Public Sculpture Competition</li><li>Location: Olde Oakville Market Place</li><li>Address: 271-361 Cornwall Road, Oakville, Ontario </li><li>Sidewalk Application</li><li>Aluminum casting (Friend face), formed landscape</li><li><img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/publicsculpture-detail-one.jpg" alt="Public Sculpture Competition Winner - 2010"></li></ul><br><br><h3>Nicholas Crombach – Billy, Nanny and the Kids – 2012</h3><ul><li>Winner of the second annual First Capital Realty Inc. Public Sculpture Competition</li><li>Location: Apple Village</li><li>Address: 5111 & 5000-5014 New Street Burlington, Ontario </li><li>Daylight Corner Application</li><li>4 Bronze Pieces</li><li><img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/publicsculpture-detail-two.jpg" alt="Public Sculpture Winner 2012">&nbsp;<img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/publicsculpture-detail-twoA.jpg" alt="Public Sculpture Winner 2012"></li></ul></p>'
+        short: 'We believe art is meant to be seen and experienced and pondered and enjoyed...'
+        image: 'https://fcr.ca/uploads/community/retail-life/public_sculpture.jpg'
+        imageAlt: '@RetailArt1->head'
+        class: '--1w'
+        sortOrder: 1
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory0'
+        createdBy: '@User1->id'
+
+    RetailArt1-1:
+        head: 'Appels de sculptures publiques'
+        title: 'Appels de sculptures publiques'
+        slug: 'public-sculpture-calls'
+        text: '<p>Nous croyons que l&#39;art est destin&eacute; &agrave; &ecirc;tre vu, exp&eacute;riment&eacute;, m&eacute;dit&eacute; et appr&eacute;ci&eacute; sur une base quotidienne, pas seulement quand vous avez le temps de visiter la galerie d&#39;art. &Agrave; cette fin, nous organisons des concours de sculpture publique avec les &oelig;uvres gagnantes pr&eacute;sent&eacute;es dans nos propri&eacute;t&eacute;s. Voyez les images qui suivent pour d&eacute;couvrir l&#39;incroyable travail de ces comp&eacute;titions.</p>  <h3>Sarah McCaw &ndash; Friend, 2010</h3>  <ul>  <li>Gagnant du premier concours annuel de sculptures publiques de First Capital Realty Inc.</li>  <li>Lieu: Olde Oakville Market Place</li>  <li>Adresse: 271-361, chemin Cornwall, Oakville (Ontario)</li>  <li>Application de trottoir</li>  <li>Aluminium coul&eacute;e (Friend face), paysage form&eacute;</li>  <li><img alt="Public Sculpture Competition Winner - 2010" src="https://fcr.ca/uploads/community/retail-life/publicsculpture-detail-one.jpg" /></li> </ul>  <p>&nbsp;</p>  <h3>Nicholas Crombach &ndash; Billy, Nanny and the Kids &ndash; 2012</h3>  <p>&nbsp;</p>  <p>&nbsp;</p>  <ul>  <li>Vainqueur du deuxi&egrave;me concours annuel de sculptures publiques de First Capital Realty Inc.</li>  <li>Localisation: Apple Village</li>  <li>Adresse: 5111 et 5000-5014, rue New Burlington, Ontario</li>  <li>Application Daylight Corner</li>  <li>4 morceaux de bronze</li>  <li><img alt="Public Sculpture Winner 2012" src="https://fcr.ca/uploads/community/retail-life/publicsculpture-detail-two.jpg" />&nbsp;<img alt="Public Sculpture Winner 2012" src="https://fcr.ca/uploads/community/retail-life/publicsculpture-detail-twoA.jpg" /></li> </ul>  <p>&nbsp;</p> '
+        short: Nous croyons que l'art est destiné à être vu et expérimenté et médité et apprécié ...
+        image: '@RetailArt1->image'
+        imageAlt: '@RetailArt1-1->head'
+        class: '@RetailArt1->class'
+        sortOrder: '@RetailArt1->sortOrder'
+        lang: '@Lang1->id'
+        langParent: '@RetailArt1'
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory1'
+        createdBy: '@User1->id'
+
+    RetailArt2:
+        head: 'The OCAD U Initiatives'
+        title: 'The OCAD U Initiatives'
+        slug: 'the-ocad-u-initiatives'
+        text: '<p>The First Capital Realty Inc. Public Sculpture Competition is open to students enrolled in 3<sup>rd</sup> or 4<sup>th</sup> year as well as recent graduates, this juried student sculpture competition calls for artists to produce artwork for a site designated by FCR from among its shopping centres in the Greater Toronto Area.</p><p>FCR also sponsors the following awards and events at OCAD U:<ul><li>Imagination Zone Competition</li><li>First Capital Realty Criticism & Curatorial Practice Award</li><li>First Capital Realty Sculpture/Installation Award</li><li>OCAD University’s Annual Grad Exhibition</li><li>OCAD University’s Project 31</li><li><a href="/community/retail-life/details?articleid=1">Yorkville Village Arts Festival</a></li></ul></p>'
+        short: 'The First Capital Realty Inc. Public Sculpture Competition is open to OCAD U students enrolled in 3<sup>rd</sup> or 4<sup>th</sup> year as well as recent graduates ...'
+        image: 'https://fcr.ca/uploads/community/retail-life/ocad.jpg'
+        imageAlt: '@RetailArt2->head'
+        class: '--1w'
+        sortOrder: 2
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory0'
+        createdBy: '@User1->id'
+
+    RetailArt2-1:
+        head: Les Initiatives de l'OCAD U
+        title: Les Initiatives de l'OCAD U
+        slug: 'the-ocad-u-initiatives'
+        text: '<p>La comp&eacute;tition de sculpture publique First Capital Realty inc. Est ouverte aux &eacute;tudiants inscrits en 3e ou 4e ann&eacute;e ainsi qu&#39;aux nouveaux dipl&ocirc;m&eacute;s. Cette comp&eacute;tition de sculpture &eacute;tudiante organis&eacute;e en juron appelle les artistes &agrave; produire des &oelig;uvres pour un site d&eacute;sign&eacute; par FCR parmi ses centres commerciaux du Grand R&eacute;gion de Toronto.</p>  <p>FCR sponsorise &eacute;galement les prix et &eacute;v&eacute;nements suivants &agrave; OCAD U:</p>  <ul>  <li>Concours Imagination Zone</li>  <li>Prix d&#39;excellence First Capital Realty Criticism &amp; Curatorial Practice</li>  <li>Prix de la sculpture / installation de First Capital Realty</li>  <li>Exposition annuelle des dipl&ocirc;m&eacute;s de l&#39;Universit&eacute; OCAD</li>  <li>Projet de l&#39;Universit&eacute; OCAD 31</li>  <li><a href="/community/retail-life/details?articleid=1">Festival des arts du village de Yorkville</a></li> </ul>'
+        short: La compétition de sculpture publique de First Capital Realty Inc. est ouverte aux étudiants de l'OCAD U inscrits en 3<sup>rd</sup> ou 4<sup>th</sup> année ainsi que des diplômés récents ...
+        image: '@RetailArt2->image'
+        imageAlt: '@RetailArt2-1->head'
+        class: '@RetailArt2->class'
+        sortOrder: '@RetailArt2->sortOrder'
+        lang: '@Lang1->id'
+        langParent: '@RetailArt2'
+        categories:
+            - '@RetailArtCategory1'
+        createdBy: '@User1->id'
+
+    RetailArt3:
+        head: Concordia University Sculpture Competition
+        title: Concordia University Sculpture Competition
+        slug: concordia-university-sculpture-competition
+        text: '<p>FCR sponsors Concordia University through a juried student sculpture competition, to produce artwork for a site designated by FCR from among its shopping centres in the Montreal Metropolitan Community. The First Capital Realty Inc. Public Sculpture Competition is open to currently enrolled students in the Masters of Fine Arts Program at Concordia University.</p><h3>Philippe C. Lefebvre – Oaxaca - 2013</h3><ul><li>Winner of the first annual First Capital Realty Inc. Public Sculpture Competition</li><li>Location of Sculpture: Centre Commercial Beaconsfield</li><li>Address: 50,114,106,110 & 40-44 Boulevard St-Charles, Beaconsfield, Quebec</li><li>Indoor Section of shopping centre</li><li>Materials: Metal, polyester resin, fiber glass, colored acrylic, automobile paint and varnish and wood base.</li><li><img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/concordia-detail-one.jpg" alt="Concordia Sculpture Contest Winner"></li></ul>'
+        short: FCR sponsors Concordia University through a juried student sculpture competition, to produce artwork for a site designated by FCR from among its shopping centres in the Montreal Metropolitan Community...
+        image: https://fcr.ca/uploads/community/retail-life/concordia_sculpture.jpg
+        imageAlt: '@RetailArt3->head'
+        class: ''
+        sortOrder: 3
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory0'
+        createdBy: '@User1->id'
+
+    RetailArt3-1:
+        head: Concours de sculpture d'université Concordia
+        title: Concours de sculpture d'université Concordia
+        slug: concordia-university-sculpture-competition
+        text: '<p>FCR sponsorise l&#39;Universit&eacute; Concordia par l&#39;entremise d&#39;un concours de sculpture &eacute;tudiante organis&eacute; par un jury afin de produire des &oelig;uvres d&#39;art pour un site d&eacute;sign&eacute; par FCR parmi ses centres commerciaux de la communaut&eacute; m&eacute;tropolitaine de Montr&eacute;al. La comp&eacute;tition de sculpture publique de First Capital Realty Inc. est ouverte aux &eacute;tudiants actuellement inscrits au programme de ma&icirc;trise en arts plastiques de l&#39;Universit&eacute; Concordia.</p>  <h3>Philippe C. Lefebvre &ndash; Oaxaca - 2013</h3>  <ul>  <li>Gagnant du premier concours annuel de sculptures publiques de First Capital Realty Inc.</li>  <li>Emplacement de la sculpture: Centre Commercial Beaconsfield</li>  <li>Adresse: 50,114,106,110 &amp; 40-44, boulevard St-Charles, Beaconsfield (Qu&eacute;bec)</li>  <li>Section int&eacute;rieure du centre commercial</li>  <li>Mat&eacute;riaux: M&eacute;tal, r&eacute;sine polyester, fibre de verre, acrylique color&eacute;, peinture automobile et vernis et base bois.</li>  <li><img alt="Concordia Sculpture Contest Winner" src="https://fcr.ca/uploads/community/retail-life/concordia-detail-one.jpg" /></li> </ul> '
+        short: FCR sponsorise l'Université Concordia par l'entremise d'un concours de sculpture étudiant organisé pour produire des œuvres d'art pour un site désigné par FCR parmi ses centres commerciaux de la communauté métropolitaine de Montréal ...
+        image: '@RetailArt3->image'
+        imageAlt: '@RetailArt3-1->head'
+        class: '@RetailArt3->class'
+        sortOrder: '@RetailArt3->sortOrder'
+        lang: '@Lang1->id'
+        langParent: '@RetailArt3'
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory1'
+        createdBy: '@User1->id'
+
+    RetailArt4:
+        head: Emily Carr University of Arts + Design
+        title: Emily Carr University of Arts + Design
+        slug: emily-carr-university-of-arts-design
+        text: '<p>FCR sponsors Emily Carr University through a juried student sculpture contest, to produce artwork for a site designated by FCR from among its shopping centres in Metro Vancouver. The First Capital Realty Inc. Public Sculpture Competition is open to all fourth year undergraduate students and graduate students currently enrolled at Emily Carr University and Emily Carr Alumni who graduated within the last 3 prior years.</p><h3>Christian Huizenga – Bench Way - 2013</h3><ul><li>Winner of the first annual First Capital Realty Inc. Public Sculpture Competition</li><li>Location of Sculpture: Harbour Front Centre/Harbour Plaza</li><li>Address: 1131 & 1350 Main Street, North Vancouver, British Columbia</li></ul><img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/emilycarr-detail-one.jpg" alt="Emily Carr Contest Winner">&nbsp;<img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/emilycarr-detail-oneA.jpg" alt="Emily Carr Contest Winner"><br><br><h3>Kai Choufour – Hide and Seek – 2014</h3><ul><li>Winner of the second annual First Capital Realty Inc. Public Sculpture Competition</li><li>Location: Scott 72</li><li>Address: 7227 - 120th Street (Scott Road), Surrey, BC</li><li><img class="detail-image" src="https://fcr.ca/uploads/community/retail-life/emilycarr-detail-two.jpg" alt="Emily Carr Contest Winner 2014"></li></ul>'
+        short: FCR sponsors Emily Carr University through a juried student sculpture contest, to produce artwork for a site designated by FCR from among its shopping centres in Metro Vancouver...
+        image: https://fcr.ca/uploads/community/retail-life/emily_carr.jpg
+        imageAlt: '@RetailArt4->head'
+        class: ''
+        sortOrder: 4
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory0'
+        createdBy: '@User1->id'
+
+    RetailArt4-1:
+        head: Emily Carr University of Arts + Design
+        title: Emily Carr University of Arts + Design
+        slug: emily-carr-university-of-arts-design
+        text: '<p>FCR sponsorise l&#39;Universit&eacute; Emily Carr par le biais d&#39;un concours de sculpture organis&eacute; par des jurys pour produire des &oelig;uvres d&#39;art pour un site d&eacute;sign&eacute; par FCR parmi ses centres commerciaux de Metro Vancouver. Le concours de sculpture publique First Capital Realty inc. Est ouvert &agrave; tous les &eacute;tudiants de quatri&egrave;me ann&eacute;e et aux &eacute;tudiants des cycles sup&eacute;rieurs actuellement inscrits &agrave; l&#39;Universit&eacute; Emily Carr et aux anciens de Emily Carr qui ont obtenu leur dipl&ocirc;me au cours des trois derni&egrave;res ann&eacute;es pr&eacute;c&eacute;dentes.</p>  <h3>Christian Huizenga &ndash; Bench Way - 2013</h3>  <ul>  <li>Gagnant du premier concours annuel de sculptures publiques de First Capital Realty Inc.</li>  <li>Emplacement de la sculpture: Harbour Front Centre / Harbour Plaza</li>  <li>Adresse: 1131 et 1350, rue Main, North Vancouver, Colombie-Britannique</li> </ul>  <p><img alt="Emily Carr Contest Winner" src="https://fcr.ca/uploads/community/retail-life/emilycarr-detail-one.jpg" />&nbsp;<img alt="Emily Carr Contest Winner" src="https://fcr.ca/uploads/community/retail-life/emilycarr-detail-oneA.jpg" /></p>  <p>&nbsp;</p>  <h3>Kai Choufour &ndash; Hide and Seek &ndash; 2014</h3>  <p>&nbsp;</p>  <p>&nbsp;</p>  <ul>  <li>Vainqueur du deuxi&egrave;me concours annuel de sculptures publiques de First Capital Realty Inc.</li>  <li>Lieu: Scott 72</li>  <li>Adresse: 7227 - 120th Street (chemin Scott), Surrey, C.-B.</li>  <li><img alt="Emily Carr Contest Winner 2014" src="https://fcr.ca/uploads/community/retail-life/emilycarr-detail-two.jpg" /></li> </ul> '
+        short: FCR sponsorise l'Université Emily Carr par l'entremise d'un concours de sculpture pour étudiants, afin de produire des œuvres d'art pour un site désigné par FCR parmi ses centres commerciaux de Metro Vancouver ...
+        image: '@RetailArt4->image'
+        imageAlt: '@RetailArt4-1->head'
+        class: '@RetailArt4->class'
+        sortOrder: '@RetailArt4->sortOrder'
+        lang: '@Lang1->id'
+        langParent: '@RetailArt4'
+        status: 'live'
+        site: '@Site0->id'
+        categories:
+            - '@RetailArtCategory1'
+        createdBy: '@User1->id'

@@ -1,0 +1,12 @@
+<div class="search-result-item page-result">
+    <h4><a href="{{ path('craftkeen_fcr_property_view', {'code':item.object.code}) }}">{{ item.title }}</a></h4>
+    <div>{{ item.shortBody|slice(0, 300)|raw }}...</div>
+    <a href="{{ path('craftkeen_fcr_property_view', {'code':item.object.code}) }}">{{ 'More'|trans }}</a>
+    {#{% if app.environment == 'dev' %}#}
+        {#<br>#}
+        {#<span>#}
+            {#{{ item.objectClass }}:{{ item.objectId }}#}
+        {#</span>#}
+    {#{% endif %}#}
+    <hr><br>
+</div>

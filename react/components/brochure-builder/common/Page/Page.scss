@@ -1,0 +1,17 @@
+
+@import "../../variables";
+
+.content {
+	background: $pdf-bg;
+	color: $pdf-color;
+
+	position: relative;
+	
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	width: $pdf-page-width;
+	height: $pdf-page-height;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

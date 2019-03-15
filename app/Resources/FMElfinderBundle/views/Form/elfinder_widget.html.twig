@@ -1,0 +1,24 @@
+{% block elfinder_widget %}
+    <input type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %} data-type="elfinder-input-field" class="form-control" />
+    {% if enable and instance is defined %}
+        <script type="text/javascript" charset="utf-8">			
+            document.addEventListener("DOMContentLoaded", function(event) {				
+                $('[data-type="elfinder-input-field"][id="{{ id }}"]').on("click",function() {
+                    var childWin = window.open("{{path('elfinder', {'instance': instance, 'homeFolder': homeFolder })}}?id={{ id }}", "popupWindow", "height=450, width=900");
+                });
+            });
+            
+            function setValue(value, element_id) {				
+                var thisItem = $('[data-type="elfinder-input-field"]' + (element_id ? '[id="'+ element_id +'"]': ''));
+				thisItem.val(value).change();	
+            }
+			function itemCallback(file, element_id) {
+				var thisItem = $('[data-type="elfinder-input-field"]' + (element_id ? '[id="'+ element_id +'"]': ''));								
+				var elementData = $(thisItem).data();
+				if (elementData.onchangeCallback !== undefined) {
+					window[elementData.onchangeCallback](file, thisItem);
+				}
+			}
+        </script>
+    {% endif %}
+{% endblock %}

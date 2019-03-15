@@ -1,0 +1,136 @@
+// TODO: It is necessary to optimize this code
+.portfolio{
+    form{
+        .form-control{
+            font-size: $font-size-default;
+        }
+    }
+}
+/*.portfolio {
+	.min-max {
+        float: right;
+	}
+	.third_column_wide{
+		color: $color-blue;
+		vertical-align:middle;
+
+		input, span, button {
+			display: inline-block;
+			width: auto;
+			float:none;
+		}
+		input {
+			width: 60%;
+			outline: none;
+		}
+		span {
+			margin-top: 20px;
+			margin-right: 10px;
+			position: relative;
+			left: -5px;
+		}
+		.search-button {
+			padding: 14px 17px;
+			height: 58px;
+			font-size: 26px;
+			float: right;
+			outline: none;
+			span {
+				display: none;
+			}
+		}
+	}
+
+	label{
+		font-weight: normal;
+		span{
+			margin-right: 3%;
+			color: $color-blue;
+		}
+	}
+	.tgl-ios + .tgl-btn:after {
+		background: $color-black-shadow;
+	}
+
+	.tgl:checked + .tgl-btn:after {
+		background: $color-blue;
+	}
+
+	.tgl-ios:checked + .tgl-btn{
+		background: $color-white;
+	}
+	.dropdown_container,
+	.tg-list{
+		.tg-list-item{
+			margin-bottom:$form-portfolio-inputs-spacing;
+			span{
+				line-height: 1.5em;
+			}
+		}
+	}
+
+	input, select, textarea, .selectric {
+		padding:0;
+		border: none;
+		background: $form-bg-color-white;
+		border-radius: 15px;
+	}
+	.selectric-open {
+		.selectric {
+			border-radius: 15px 15px 0 0;
+		}
+	}
+
+	button {
+		border-radius: 50%;
+		color:$color-white;
+		min-height: auto;
+		min-width: auto;
+
+		&:hover,
+			&:active,
+			&:focus {
+			color: $color-black;
+		}
+
+	}
+
+	input{
+		padding: 0 $form-portfolio-inputs-spacing;
+		color:$color-grey;
+		&:active,
+			&:focus {
+			border-bottom: none;
+		}
+	}
+
+	.selectric-wrapper{
+		margin-bottom: $form-portfolio-inputs-spacing;
+
+		.selectric {
+			border: none;
+			height:1.5em;
+			.button{
+				width: 22px;
+				height: 22px;
+			}
+			.label{
+				padding: 0;
+				background: $form-bg-color-white;
+				height:1.5em;
+				line-height:1.5em;
+				color:$color-grey;
+			}
+		}
+
+		.selectric-items{
+			background: $form-bg-color-white;
+
+			li {
+				background:$form-bg-color-white;
+				border-bottom:none;
+
+			}
+        }
+	}
+}*/

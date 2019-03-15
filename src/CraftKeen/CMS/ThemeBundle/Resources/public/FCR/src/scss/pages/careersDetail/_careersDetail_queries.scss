@@ -1,0 +1,22 @@
+@media only screen and (max-width:1200px) {
+	.properties-careers {
+		.thumbnails {
+			>div {
+				margin-left: 10px;
+
+				span {
+					font-size: 115%;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width:$max-width-tables) {
+	.properties-careers {
+		.thumbnails {
+			overflow: hidden;
+			width: 190px;
+			margin: 0 auto 20px auto;
+		}
+	}
+}

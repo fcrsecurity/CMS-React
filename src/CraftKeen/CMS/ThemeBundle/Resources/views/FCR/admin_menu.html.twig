@@ -1,0 +1,156 @@
+{% if ((route == 'craftkeen_cms_page_index' or route == 'craftkeen_cms_page_inner') and not(page is null)) %}
+    {% if pageCopy is defined and pageCopy and ( editMode == 'Y' or approveMode == 'Y' )%}
+        {% set currPage = pageCopy %}
+    {% else %}
+        {% set currPage = page %}
+    {% endif %}
+
+    <section class="container-fluid admin-navbars">
+		<div class="row">
+			<div class="navbars-wrapper">
+				<nav>
+					<div class="left-nav">
+                        {% if is_granted('canedit', page) and not ( editMode or approveMode ) %}
+                            <a id="edit-icon" href="?editMode=Y" title="Edit Mode">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if (editMode or approveMode) and pageCopy %}
+                            {% if editMode %}
+                                {% set mode = 'Edit' %}
+                            {% else %}
+                                {% set mode = 'Approve' %}
+                            {% endif %}
+                            <a id="edit-icon" href="{{ pathInfo }}" title="Exit {{ mode }} Mode">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        {% if canDelete and hasDraft %}
+                            <a id="delete-icon" href="{{ path('craftkeen_cms_page_delete_draft', {'id':currPage.id})}}" title="Delete Draft">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_EDITOR') %}
+                            <a href="{{ path('craftkeen_cms_page_admin_page_new') }}">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if is_granted('canedit', currPage) and editMode == 'Y' %}
+                            <a id="save-changes-icon" href="#adminSidebarLeft" class="show-panel" title="Save changes">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if workflow_can(currPage, 'to_review') and (is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_EDITOR') or is_granted('ROLE_CONTRIBUTOR') ) %}
+                            <a id="send-to-approval" style="display:none" href="{{ path('craftkeen_cms_page_apply_transition', {'transition':'to_review', 'id':currPage.id}) }}" title="Send for Apporoval">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {# For approve #}
+                        {% if workflow_can(currPage, 'reject') and is_granted('canapprove', currPage) %}
+                            <a href="{{ path('craftkeen_cms_page_apply_transition', {'transition':'reject', 'id':currPage.id}) }}" title="Reject">
+                                <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if workflow_can(currPage, 'publish') and is_granted('canapprove', currPage) %}
+                            <a href="{{ path('craftkeen_cms_page_apply_transition', {'transition':'publish', 'id':currPage.id}) }}" title="Publish">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if currPage.status == 'pending_approval' and not is_granted('ROLE_APPROVER') %}
+                            <p class="bg-danger message">{{ "This page was sent for approval and can't be edited"|trans }}</p>
+                        {% endif %}
+
+						{% if currPage.status == 'draft' and not canDelete %}
+							<p class="bg-warning message">{{ 'To Delete the Draft, please contact creator: '|trans }} <b>{{ currPage.createdBy }}</b></p>
+						{% endif %}
+
+						{# TODO: Fix issue with Live pages and issues with crated draft #}
+                        {% if currPage.status != 'live' and pageCopy and not (editMode or approveMode) and is_granted('canedit', pageCopy) %}
+                            <p class="bg-danger message">
+                                {{ 'This page has unaproved draft'|trans}}. <a class="edit-draft" href="?editMode=Y">{{'Edit Draft'|trans}}</a>?
+                            </p>
+                        {% endif %}
+
+					</div>
+
+					<div class="right-nav">
+						<span class="label label-info">PageId: {{ currPage.id }}</span>
+                        {% if currPage.status == "published" %}
+                            <span class="label page-status label-success">{{ currPage.status }}</span>
+                        {% elseif page.status ==  "draft" %}
+                            <span class="label page-status label-warning">{{ currPage.status }}</span>
+                        {% else %}
+                            <span class="label page-status label-default">{{ currPage.status }}</span>
+                        {% endif %}
+
+                        {% if currPage.status == 'live'  %}
+                            <span class="label label-success">{{ 'Approved'|trans }}</span>
+                        {% else %}
+                            <span class="label label-default">{{ 'Not Approved'|trans }}</span>
+                        {% endif %}
+
+						<a href="#adminSidebarRight" class="show-panel">
+                            <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </a>
+					</div>
+					<div class="clearfix"></div>
+				</nav>
+
+				<div class="admin-sidebar-left" id="adminSidebarLeft">
+					Are you sure you want to save this changes?
+					<ul class="list-unstyled list-inline" >
+						<li><button class="btn btn-success" id="save-page-changes">Yes</button></li>
+						<li><button class="btn btn-danger" id="cancel-changes-saving">No</button></li>
+					</ul>
+					<p>Add comment about changes:</p>
+					<textarea id="system_page-version-comment"
+							  name="system[page][versionComment]"
+							  placeholder="{{ 'Provide Revision Description'|trans }}"
+							  style="
+									width: 100%;
+									min-height: 200px;
+									color: black;
+					"></textarea>
+				</div>
+
+				<div class="right-style">
+                    <div class="admin-sidebar-right" id="adminSidebarRight">
+                        <br />
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ path('craftkeen_cms_admin_inbox_index') }}">
+                                    <span class="glyphicon glyphicon-inbox"></span>
+                                    {{ render(controller('CraftKeenCMSAdminBundle:Inbox:getNewMessagesNumber')) }} {{ 'Inbox'|trans }}
+                                </a><br /><br />
+                            </li>
+							<li>
+                                {% if is_granted("ROLE_USER") %}
+                                    Hi, {{ app.user.username }}
+                                {% endif %}
+							</li>
+							<li>
+                                <a href="{{ path('craftkeen_cms_admin_index') }}">
+                                    <i class="fa fa-cog" aria-hidden="true"></i> {{ 'Dashboard'|trans }}
+                                </a>
+                            </li>
+							<li>&nbsp;</li>
+							<li>
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> {{'Logout'|trans }}
+                                </a>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

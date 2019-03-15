@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')|first }}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app.request.locale|split('_')|first }}">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="{% block meta_description %}{% endblock %}">
+		<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+		<meta name="author" content="First Capital Realty">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block meta_custom %}{% endblock %}
+		<title>{% block meta_title %}Welcome{% endblock %}</title>
+		{% block stylesheets %}
+			{% stylesheets
+			'bower_components/bootstrap/dist/css/bootstrap.min.css'
+			'bower_components/fontawesome/css/font-awesome.min.css'
+			'bower_components/fancybox/source/jquery.fancybox.css'
+			'bower_components/Yamm3/yamm/yamm.css'
+			'@theme_css'
+			filter='cssrewrite' %}
+			<link rel="stylesheet" href="{{ asset_url }}" />
+			{% endstylesheets %}
+		{% endblock %}
+		{#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
+	</head>
+    {% if page is defined or property is defined or post is defined or article is defined %}
+
+    	{% if page is defined and page %}
+        	{% set object = page %}
+	    {% elseif property is defined and property %}
+	        {% set object = property %}
+	    {% elseif post is defined and post %}
+	    	{% set object = post %}
+        {% elseif article is defined and article %}
+	    	{% set object = article %}
+	    {% endif %}
+    {% endif %}
+
+    <body {% if is_granted('ROLE_USER') %} class="admin-panel" {% endif %}>
+		<div class="loading">Loading&#8230;</div>
+        <input type="hidden" id="system-locale" value="{{app.request.locale}}" />
+		{# PREVIEW BUTTONS BEGINS #}
+	    {% block admin_preview %}{% endblock %}
+		{# PREVIEW BUTTONS ENDS #}
+
+		<div class="container-wrapper">
+			{% block admin_panel %}
+                {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+                {% set data = {
+                    exitUrl : path('craftkeen_cms_page_inner', {slug: app.request.attributes.get('slug')}),
+                    editUrl : path('craftkeen_cms_page_inner_edit', {slug: app.request.attributes.get('slug')}),
+                    addUrl  : path('craftkeen_cms_page_admin_page_new'),
+                    applyTransitionPath : 'craftkeen_cms_page_apply_transition',
+                    delPath : 'craftkeen_cms_page_delete_draft',
+                    copy    : copy,
+                    mode    : mode,
+                } %}
+                {{ AP.AdminPanel(page, data) }}
+            {% endblock %}
+
+			{# TOP MENU BEGINS #}
+			{% block topmenu %}
+               {{ renderMenu('Top')|raw }}
+			{% endblock %}
+			{# TOP MENU ENDS #}
+
+			{# HEADER BEGINS #}
+			{% block header %}{% endblock %}
+			{# HEADER ENDS #}
+
+			{# HERO BEGINS #}
+			{% block hero %}{% endblock %}
+			{# HERO ENDS #}
+
+			{# BODY BEGINS #}
+			{% block body %}
+				{% for type, flash_messages in app.session.flashBag.all %}
+					{% for flash_message in flash_messages %}
+						<div class="alert alert-{{ type }} alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							{{ flash_message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+			{% endblock %}
+			{# BODY ENDS #}
+
+			{# FOOTER BEGINS #}
+			{% block footer %}
+				<footer>
+					<div class="row footer-top">
+						<div class="wrapper">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								{# SOCIAL MEDIA #}
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+									<ul class="social-links list-inline list-unstyled">
+										<li><a href="#" target="_blank"><em class="fa fa-twitter"></em></a></li>
+										<li><a href="#" target="_blank"><em class="fa fa-facebook"></em></a></li>
+										<li><a href="#" target="_blank"><em class="fa fa-instagram"></em></a></li>
+										<li><a href="#" target="_blank"><em class="fa fa-google-plus"></em></a></li>
+									</ul>
+								</div>
+								{# ./SOCIAL MEDIA #}
+							</div>
+						</div>
+					</div>
+					{# COPYRIGHT BAR #}
+					<div class="row footer-bottom">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+							<span>&copy;{{ "now"|date("Y") }} {{ website_name }}</span>
+						</div>
+					</div>
+					{# ./COPYRIGHT BAR #}
+				</footer>
+			{% endblock %}
+			{# FOOTER ENDS #}
+
+			{# SYSTEM VALUES BEGINS #}
+			{% block system_values %}
+				<input
+					type="hidden"
+					name="system[user][id]"
+					id="system_user-id"
+					value="{% if is_granted("ROLE_USER") %}{{ app.user.id }}{% endif %}"
+				>
+			{% endblock %}
+			{# SYSTEM VALUES ENDS #}
+
+			{% block footer_js %}
+				{% javascripts
+					'bower_components/jquery/dist/jquery.min.js'
+					'bower_components/jquery-validation/dist/jquery.validate.min.js'
+					'bower_components/jquery-validation/dist/additional-methods.min.js'
+					'bower_components/jquery.cookie/jquery.cookie.js'
+					'bower_components/bootstrap/dist/js/bootstrap.min.js'
+					'bower_components/datatables.net/js/jquery.dataTables.min.js'
+					'bower_components/slick-carousel/slick/slick.min.js'
+					'bower_components/fancybox/source/jquery.fancybox.pack.js'
+					'@theme_js'
+				%}
+				<script src="{{ asset_url }}"></script>
+				{% endjavascripts %}
+			{% endblock %}
+		</div>		
+    </body>
+</html>

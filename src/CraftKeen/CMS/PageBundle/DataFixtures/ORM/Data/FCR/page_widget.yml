@@ -1,0 +1,858 @@
+CraftKeen\CMS\PageBundle\Entity\PageWidget:
+# Home page
+    PageWidget0:
+        page: '@Page0->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:15:"buffer-4-bottom";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:508:"For us, a shopping centre is not just where people buy groceries, grab a coffee or fill a prescription. For us, shopping centres are part of creating thriving urban neighbourhoods. They are where neighbours run into each other; where businesses succeed; where day-to-day life happens. That s why First Capital Realty is renowned for our highly selective and strategic retail locations, our functional designs, our thoughtfully assembled mix of tenants and our commitment to excellence in property operations.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    PageWidget1:
+        page: '@Page0->id'
+        widget: '@Widget2->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-4-padding-bottom";s:13:"widgetClasses";s:10:"blue-white";s:4:"htag";s:2:"h1";}'
+        data: 'a:3:{s:5:"title";s:14:"By The Numbers";s:8:"subtitle";s:13:"as at Q4 2016";s:5:"items";a:3:{s:5:"item1";a:3:{s:4:"icon";s:35:"https://fcr.ca/images/MalliconA.svg";s:5:"title";s:3:"160";s:8:"subtitle";s:19:"Canadian Properties";}s:5:"item2";a:3:{s:4:"icon";s:36:"https://fcr.ca/images/ruler-icon.svg";s:5:"title";s:12:"23.8 million";s:8:"subtitle";s:19:"Gross Leasable Area";}s:5:"item3";a:3:{s:4:"icon";s:37:"https://fcr.ca/images/dollar-note.svg";s:5:"title";s:12:"$9.2 billion";s:8:"subtitle";s:22:"Total Enterprise Value";}}}'
+        dataType: 'Result'
+        status: 'live'
+        tplArea: '[widget-result-callback]'
+    PageWidget3:
+        page: '@Page0->id'
+        widget: '@Widget3->id'
+        config: null
+        data: 'a:4:{s:5:"title";s:19:"Portfolio & Leasing";s:11:"description";s:169:"With a well-established presence across the Canadian retail landscape, First Capital Realty properties provide exceptional urban locations for Canadas leading retailers.";s:5:"image";s:58:"/bundles/craftkeencmstheme/FCR/assets/images/home-cta1.jpg";s:4:"link";s:18:"/portfolio-leasing";}'
+        dataType: 'CTABox'
+        status: 'live'
+        tplArea: '[widget-ctabox-callback1]'
+    PageWidget4:
+        page: '@Page0->id'
+        widget: '@Widget3->id'
+        config: null
+        data: 'a:4:{s:5:"title";s:12:"Company Life";s:11:"description";s:199:"Our people are our strength. That is why we work collectively to build a company culture similarly to when we build a new shopping centre, by focusing on community and excellence in everything we do.";s:5:"image";s:58:"/bundles/craftkeencmstheme/FCR/assets/images/home-cta2.jpg";s:4:"link";s:8:"/careers";}'
+        dataType: 'CTABox'
+        status: 'live'
+        tplArea: '[widget-ctabox-callback2]'
+    PageWidget5:
+        page: '@Page0->id'
+        widget: '@Widget3->id'
+        config: null
+        data: 'a:4:{s:5:"title";s:11:"In the News";s:11:"description";s:110:"We are a dynamic company in a dynamic industry. Follow the latest news and updates about First Capital Realty.";s:5:"image";s:58:"/bundles/craftkeencmstheme/FCR/assets/images/home-cta3.jpg";s:4:"link";s:24:"/investors/press-release";}'
+        dataType: 'CTABox'
+        status: 'live'
+        tplArea: '[widget-ctabox-callback3]'
+    PageWidget6:
+        page: '@Page0->id'
+        widget: '@Widget4->id'
+        config: null
+        data: ''
+        dataType: 'StockPriceMacro'
+        status: 'live'
+        tplArea: '[widget-ctaboxfinance-callback]'
+    PageWidget7:
+        page: '@Page0->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";N;s:13:"widgetClasses";s:25:"blue-center home-title h1";s:4:"htag";s:2:"h1";}'
+        data: 'a:1:{s:4:"text";s:20:"First Capital Realty";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title-callback]'
+    PageWidget8:
+        page: '@Page0->id'
+        widget: '@Widget40->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:14:"link-icon-list";}'
+        data: 'a:1:{s:5:"items";a:3:{s:5:"item1";a:3:{s:3:"url";s:86:"https://fcr.ca/uploads/investors/investors-presentations/FCR_INVESTOR_PRESENTATION.pdf";s:4:"icon";s:8601:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#000" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="21.6,22.9 21.6,31.2 23.9,31.2 23.9,24.2 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="21.6,22.9 19.3,25.5 19.3,28.3 19.3,31.2 21.6,31.2 21.6,22.9 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="19.3,25.5 19.3,28.3 19.3,25.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="26.1,25.5 23.9,24.2 23.9,31.2 26.1,31.2 26.1,25.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="30.7,31.2 30.7,31.2 30.7,21.6 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="28.4,23.6 28.4,31.2 30.7,31.2 30.7,21.6 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="26.1,25.5 26.1,31.2 28.4,31.2 28.4,23.6 "/> <polyline fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="19,23.5 21.4,20.8 23.8,22.2 26.2,23.5 28.6,21.5 31,19.5 "/> <polyline fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="31.1,20.6 31.2,19.4 29.9,19.2 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> </g> </svg>";s:4:"text";s:21:"Investor Presentation";}s:5:"item2";a:3:{s:3:"url";s:66:"https://fcr.ca/uploads/investors/financial-reports/pdf/2017/Q1.pdf";s:4:"icon";s:7981:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="21.1" x2="30.7" y2="21.1"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="23.4" x2="30.7" y2="23.4"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="25.8" x2="30.7" y2="25.8"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="28.1" x2="30.7" y2="28.1"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="30.5" x2="30.7" y2="30.5"/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> </g> </svg>";s:4:"text";s:24:"Q1 2017 Quarterly Report";}s:5:"item3";a:3:{s:3:"url";s:64:"https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf";s:4:"icon";s:7863:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> <path fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" d="M21.2,23.9c1.7,1.7,3.6,1.6,4.5,0.8 c0.8-0.8,0.9-2.7-0.8-4.5c-1.7-1.7-5-1.3-5-1.3S19.5,22.1,21.2,23.9z"/> <path fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" d="M29.6,28.2c-1,1-2,1.1-2.6,0.5 C26.4,28,26.5,27,27.5,26c1-1,2.9-0.8,2.9-0.8S30.7,27.1,29.6,28.2z"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="26.4" y1="23.6" x2="26.4" y2="31.9"/> </g> </svg>";s:4:"text";s:36:"2015 Corporate Sustainability Report";}}}'
+        dataType: 'LinkIconListMacro'
+        status: 'live'
+        tplArea: '[widget-LinkIconList-callback]'
+    PageWidget9:
+        page: '@Page0->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:16:"row buffer-6-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:3:{s:11:"wrapClasses";s:4:"texs";s:13:"widgetClasses";s:4:"texs";s:4:"text";s:43:"Making The Arts A Part Of The Neighbourhood";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title-callback2]'
+    PageWidget10:
+        page: '@Page0->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:12:"buffer-6-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:3:{s:11:"wrapClasses";s:4:"texs";s:13:"widgetClasses";s:4:"texs";s:4:"text";s:17:"Document Download";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title-callback3]'
+    PageWidget11:
+        page: '@Page0->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:3:{s:11:"wrapClasses";s:4:"texs";s:13:"widgetClasses";s:5:"intro";s:4:"text";s:256:"First Capital Realty is well known for our bricks and mortar shopping centres that help urban neighborhoods flourish. What is less well known, is our support for the arts in these neighbourhoods. We believe the arts help reveal the soul of a neighbourhood.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback2]'
+    PageWidget12:
+        page: '@Page0->id'
+        widget: '@Widget7->id'
+        config: null
+        data: 'a:1:{s:5:"items";a:5:{i:0;a:5:{s:7:"picture";s:81:"https://fcr.ca/uploads/sliders/gallery_development_yorkville-village-entrance.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:17:"Yorkville Village";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}i:1;a:5:{s:7:"picture";s:62:"https://fcr.ca/uploads/sliders/gallery_development_brewery.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:16:"Brewery District";s:4:"city";s:12:"Edmonton, AB";s:4:"link";s:1:"#";}i:2;a:5:{s:7:"picture";s:66:"https://fcr.ca/uploads/sliders/gallery_development_mount-royal.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:16:"Mount Royal West";s:4:"city";s:11:"Calgary, AB";s:4:"link";s:1:"#";}i:3;a:5:{s:7:"picture";s:65:"https://fcr.ca/uploads/sliders/gallery_development_3080-Yonge.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:17:"3080 Yonge Street";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}i:4;a:5:{s:7:"picture";s:68:"https://fcr.ca/uploads/sliders/gallery_development_king-highline.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:14:"1100 King St W";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}}}'
+        dataType: 'FeatureSlider'
+        status: 'live'
+        tplArea: '[widget-featureslider-callback]'
+    PageWidget13:
+        page: '@Page0->id'
+        widget: '@Widget8->id'
+        config: 'a:4:{s:11:"wrapClasses";s:12:"buffer-5-top";s:13:"widgetClasses";s:27:"video-thumbnail text-center";s:11:"iconClasses";s:15:"play playVideo2";s:10:"buttonText";s:11:"Close video";}'
+        data: 'a:3:{s:5:"image";s:47:"https://fcr.ca/_pages/home/images/home-arts.jpg";s:8:"videoUrl";s:40:"https://player.vimeo.com/video/196023038";s:4:"icon";s:808:"<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.4 352.5" style="enable-background:new 0 0 352.4 352.5;" xml:space="preserve"> <style type="text/css"> .st0{fill:#FFFFFF;}</style> <title>playbutton</title> <path class="st0" d="M262.2,172.5c2.3,1.3,3.1,4.3,1.8,6.6c-0.4,0.7-1,1.4-1.8,1.8l-65.1,37.6L132,256c-2.3,1.3-5.3,0.6-6.6-1.8 c-0.4-0.7-0.7-1.6-0.7-2.4V101.6c0-2.7,2.2-4.8,4.8-4.9c0.9,0,1.7,0.2,2.4,0.7l65.1,37.6L262.2,172.5z"></path> <g> <path class="st0" d="M176.2,349C80.9,349,3.4,271.5,3.4,176.2C3.4,81,80.9,3.5,176.2,3.5S349,81,349,176.2 C349,271.5,271.5,349,176.2,349z M176.2,12.5c-90.3,0-163.8,73.5-163.8,163.8S85.9,340,176.2,340c90.3,0,163.8-73.5,163.8-163.8 S266.5,12.5,176.2,12.5z"></path> </g> </svg>";}'
+        dataType: 'Video'
+        status: 'live'
+        tplArea: '[widget-video-callback]'
+# Executive Leadership
+    PageWidget14:
+        page: '@Page14->id'
+        widget: '@Widget34->id'
+        config: null
+        data: ''
+        dataType: 'ExecutivePersonBlockMacro'
+        status: 'live'
+        tplArea: '[widget-ExecutivePersonBlockMacro-callback]'
+        
+# not using
+    PageWidget15:
+        page: '@Page14->id'
+        widget: '@Widget9->id'
+        config: null
+        data: 'a:1:{s:5:"items";a:4:{i:0;a:4:{s:5:"photo";s:88:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/gaerth-burton.jpg";s:4:"name";s:13:"GARETH BURTON";s:8:"position";s:35:"Senior Vice President, Construction";s:11:"description";s:506:"Joined the Company in 2016. Previously, Construction Director of Laing O Rourke; and Project/Bid Director of PCL Constructors. Mr. Burton has over 25 years of experience in the construction industry and a proven track record of successfully delivering complex, high-value, high-risk construction and civil engineering projects. During his career, Mr. Burton has gained valuable experience in various roles related to large complex construction projects in the UK, Europe, North America and the Middle East.";}i:1;a:4:{s:5:"photo";s:82:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/roger-c.jpg";s:4:"name";s:18:"ROGER J. CHOUINARD";s:8:"position";s:39:"General Counsel and Corporate Secretary";s:11:"description";s:677:"Joined the Company in 2010. Previously Partner, McCarthy Tétrault LLP. Mr. Chouinard has over 15 years of experience representing real estate and other companies in connection with some of their most critical transactions, including mergers, acquisitions, dispositions, public and private offerings of equity and debt securities, and numerous other commercial transactions. He also has strong expertise advising public companies and their boards of directors on corporate governance and regulatory compliance matters. Mr. Chouinard holds an LL.B. (Civil Law) from Université Laval, an LL.B. (Common Law) from University of Victoria, and an LL.M. from Osgoode Hall Law School.";}i:2;a:4:{s:5:"photo";s:84:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/carmine-f.jpg";s:4:"name";s:17:"CARMINE FRANCELLA";s:8:"position";s:30:"Senior Vice President, Leasing";s:11:"description";s:373:"Joined the Company in 2016. He was previously the global head of retail lease transactions in his role as Vice President, Leasing of Scotiabank. Prior to Scotiabank he was the head of real estate for Walmart Canada in the role of Senior Director, Real Estate & Development. Mr. Francella holds a Professional Leadership Development Certificate from Harvard Business School.";}i:3;a:4:{s:5:"photo";s:83:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/sandra-l.jpg";s:4:"name";s:11:"SANDRA LEVY";s:8:"position";s:44:"Vice President, People and Corporate Affairs";s:11:"description";s:511:"Joined the Company in 2015. She was previously a senior Human Resources executive with Ply Gem Canada and Magna International. Ms. Levy has sat on a number of corporate and volunteer boards and has served as a trustee of Res REIT. Ms. Levy has over 17 years of experience in human resources and legal roles. She has expertise in aligning Human Resources with business strategy, legal compliance, talent management, change management and employee engagement. Ms. Levy holds an LL.B. from Osgoode Hall Law School.";}}}'
+        dataType: 'PersonBlock'
+        status: 'live'
+        tplArea: '[widget-PersonBlock-callback2]'
+    PageWidget16:
+        page: '@Page14->id'
+        widget: '@Widget9->id'
+        config: 'a:1:{s:12:"wrapperClass";s:23:"buffer-7-padding-bottom";}'
+        data: 'a:1:{s:5:"items";a:3:{i:0;a:4:{s:5:"photo";s:85:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/maryanne-m.jpg";s:4:"name";s:18:"MARYANNE MCDOUGALD";s:8:"position";s:33:"Senior Vice President, Operations";s:11:"description";s:445:"Joined the Company in 2003. Previously, Senior Vice President, Retail Management and National Client Services at O&Y Enterprise. Ms. McDougald has over 20 years of experience in shopping centre operations and asset management encompassing a diverse range of national real estate portfolios. She is a LEED Accredited Professional. Ms. McDougald is Chair of BOMA Toronto and a member of the University of Guelph Real Estate Program Advisory Board.";}i:1;a:4:{s:5:"photo";s:81:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/greg-m.jpg";s:4:"name";s:18:"GREGORY J. MENZIES";s:8:"position";s:31:"Project Lead, Yorkville Village";s:11:"description";s:331:"Joined the Company in 2010. Previously, Executive Vice-President, Eastern Canada for the Company; President of Mingus Capital Inc.; and Co-founder and President of Crofton Moore. Mr. Menzies has over 25 years of real estate experience encompassing development, acquisition and management of office, mixed-use and retail properties.";}i:2;a:4:{s:5:"photo";s:82:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/jodie-s.jpg";s:4:"name";s:15:"JODI M. SHPIGEL";s:8:"position";s:34:"Senior Vice President, Development";s:11:"description";s:399:"Joined the Company in 2008. Previously, Senior Vice-President, Central Canada for the Company; and Real Estate Manager at Sobeys. Ms. Shpigel has over 15 years of real estate experience, including retail and mixed use development, acquisitions and leasing. Ms. Shpigel holds a Master of Science degree in Planning from the University of Toronto and is a member of the Canadian Institute of Planners.";}}}'
+        dataType: 'PersonBlock'
+        status: 'live'
+        tplArea: '[widget-PersonBlock-callback3]'
+# not using
+
+    PageWidget17:
+        page: '@Page14->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:39:"row buffer-6-padding-bottom text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:18:"Board of Directors";s:4:"href";s:19:"/board-of-directors";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button-callback]'
+# Board of Directors
+    PageWidget18:
+        page: '@Page15->id'
+        widget: '@Widget33->id'
+        config: null
+        data: ''
+        dataType: 'BoardPersonBlockMacro'
+        status: 'live'
+        tplArea: '[widget-BoardPersonBlockMacro-callback]'
+
+# not using
+    PageWidget19:
+        page: '@Page15->id'
+        widget: '@Widget9->id'
+        config: null
+        data: 'a:1:{s:5:"items";a:3:{i:0;a:4:{s:5:"photo";s:89:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/allen-kimberly.jpg";s:4:"name";s:18:"ALLAN S. KIMBERLEY";s:8:"position";s:37:"Corporate Director - Toronto, Ontario";s:11:"description";s:663:"Trustee of Partners Real Estate Investment Trust; director of Orlando Corporation; member of the board of the Ontario Science Centre; Previously, Vice-Chair and Managing Director at CIBC World Markets Inc. from 1996 to 2014. During his tenure with CIBC he worked predominantly with the real estate investment banking team and accumulated extensive experience in transactional activities which included debt and equity capital markets origination and execution, and mergers and acquisitions advisory services. Mr. Kimberley previously served for 10 years on the board of the Toronto Symphony Orchestra, including a term as Board Chair. Board member since May 2014.";}i:1;a:4:{s:5:"photo";s:83:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/annalisa.jpg";s:4:"name";s:13:"ANNALISA KING";s:8:"position";s:48:"Corporate Director - Vancouver, British Columbia";s:11:"description";s:378:"Director of Saputo Inc., director of The North West Company Inc., director of Vancouver Airport Authority, and director of McArthurGlen Designer Outlet Centre (a joint venture between McArthurGlen Group and the Vancouver Airport Authority). Previously, Chief Financial Officer, Chief Information Officer and Senior Vice-President of Best Buy Canada Ltd. Board member since 2016.";}i:2;a:4:{s:5:"photo";s:82:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/susan-m.jpg";s:4:"name";s:17:"SUSAN J. MCARTHUR";s:8:"position";s:63:"Managing Partner of Greensoil Investments – Toronto, Ontario ";s:11:"description";s:674:"Managing Partner of Greensoil Investments; director of Great West Lifeco.; director of IGM Financial Inc.; trustee of Chemtrade Logistics Income Fund; sits on the Member Council of Sustainability Development Technology Canada. Previously, Senior Investment Banker at Jacob Securities Inc.; Chair of the Board of Management of the Canada Revenue Agency; director of Globalive Wireless Management (Wind Mobile); director of UBS Bank Canada; director of Orvana Minerals Inc.; director of Bonus Resources Services; director of Les Jardins de Metis Inc.; and director of the Canadian Club of Toronto, Luminato, and the Toronto International Film Festival. Board member since 2007";}}}'
+        dataType: 'PersonBlock'
+        status: 'live'
+        tplArea: '[widget-PersonBlock-callback2]'
+    PageWidget20:
+        page: '@Page15->id'
+        widget: '@Widget9->id'
+        config: 'a:1:{s:12:"wrapperClass";s:23:"buffer-7-padding-bottom";}'
+        data: 'a:1:{s:5:"items";a:3:{i:0;a:4:{s:5:"photo";s:91:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/bernard_mcdonell.png";s:4:"name";s:16:"BERNARD MCDONELL";s:8:"position";s:40:"Corporate Director - Apple Hill, Ontario";s:11:"description";s:231:"Chairman of Performance Sports Group Ltd.; director of Glengarry Mutual Insurance Company. Previously, Vice-Chairman, CEO and director of Investus Real Estate Inc.; Vice-Chairman and President, Provigo Inc. Board member since 2007.";}i:1;a:4:{s:5:"photo";s:84:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/adam_paul.jpg";s:4:"name";s:26:"ADAM E. PAUL, C.P.A., C.A.";s:8:"position";s:83:"President and Chief Executive Officer, First Capital Realty Inc. - Toronto, Ontario";s:11:"description";s:428:"Joined the Company in 2015. As President and CEO, Mr. Paul has overall responsibility for First Capital’s strategy, operations and performance. Prior to joining First Capital, Mr. Paul was a senior executive at Canadian Real Estate Investment Trust (“CREIT”), where he had direct responsibility for various aspects of CREIT’s business across Canada. Mr. Paul is a Chartered Professional Accountant, Chartered Accountant.";}i:2;a:4:{s:5:"photo";s:89:"https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/andrea-stephen.jpg";s:4:"name";s:28:"ANDREA STEPHEN, C.P.A., C.A.";s:8:"position";s:37:"Corporate Director - Toronto, Ontario";s:11:"description";s:481:"Trustee of Boardwalk REIT and director of Macerich Company. Past experience includes, Executive Vice President, Investments for The Cadillac Fairview Corporation; director of Multiplan Empreendimentos Imobiliaros; director, Pension Real Estate Association (PREA); director, Real Estate with the Ontario Teachers’ Pension Plan Board. Previous member of the Investor Advisory Committee of the National Association of Real Estate Investment Trusts (NAREIT). Board member since 2012.";}}}'
+        dataType: 'PersonBlock'
+        status: 'live'
+        tplArea: '[widget-PersonBlock-callback3]'
+# not using
+
+    PageWidget21:
+        page: '@Page15->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:39:"row buffer-6-padding-bottom text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:20:"Executive Leadership";s:4:"href";s:21:"/executive-leadership";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button-callback]'
+# About
+    PageWidget22:
+        page: '@Page13->id'
+        widget: '@Widget2->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:10:"white-blue";s:4:"htag";s:2:"h1";}'
+        data: 'a:3:{s:5:"title";s:0:"";s:8:"subtitle";s:0:"";s:5:"items";a:3:{s:5:"item1";a:3:{s:4:"icon";s:66:"/bundles/craftkeencmstheme/FCR/assets/images/content/MalliconA.svg";s:5:"title";s:3:"160";s:8:"subtitle";s:19:"Canadian Properties";}s:5:"item2";a:3:{s:4:"icon";s:67:"/bundles/craftkeencmstheme/FCR/assets/images/content/ruler-icon.svg";s:5:"title";s:12:"23.8 million";s:8:"subtitle";s:19:"Gross Leasable Area";}s:5:"item3";a:3:{s:4:"icon";s:44:"https://fcr.ca/uploads/about/dollar-note.svg";s:5:"title";s:12:"$9.2 billion";s:8:"subtitle";s:22:"Total Enterprise Value";}}}'
+        dataType: 'Result'
+        status: 'live'
+        tplArea: '[widget-result-callback]' 
+    PageWidget23:
+        page: '@Page13->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-6-padding-bottom";s:13:"widgetClasses";s:14:"intro big-text";}'
+        data: 'a:1:{s:4:"text";s:435:"Our story at its most basic is simple. For our retailers, our customers and our investors, First Capital Realty develops, owns and operates urban retail properties that deliver a strategic mix of leading retailers who together provide communities with their daily shopping needs. We strongly believe by investing in urban shopping centres, we help neighbourhoods flourish as vibrant communities and consequently us as a public company.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-intro-callback]'    
+    PageWidget24:
+        page: '@Page13->id'
+        widget: '@Widget7->id'
+        config: null
+        data: 'a:1:{s:5:"items";a:5:{i:0;a:5:{s:7:"picture";s:81:"https://fcr.ca/uploads/sliders/gallery_development_yorkville-village-entrance.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:17:"Yorkville Village";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}i:1;a:5:{s:7:"picture";s:62:"https://fcr.ca/uploads/sliders/gallery_development_brewery.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:16:"Brewery District";s:4:"city";s:12:"Edmonton, AB";s:4:"link";s:1:"#";}i:2;a:5:{s:7:"picture";s:66:"https://fcr.ca/uploads/sliders/gallery_development_mount-royal.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:16:"Mount Royal West";s:4:"city";s:11:"Calgary, AB";s:4:"link";s:1:"#";}i:3;a:5:{s:7:"picture";s:65:"https://fcr.ca/uploads/sliders/gallery_development_3080-Yonge.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:17:"3080 Yonge Street";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}i:4;a:5:{s:7:"picture";s:68:"https://fcr.ca/uploads/sliders/gallery_development_king-highline.jpg";s:5:"title";s:29:"Featured Development Projects";s:4:"name";s:14:"1100 King St W";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}}}'
+        dataType: 'FeatureSlider'
+        status: 'live'
+        tplArea: '[widget-featureslider-callback]'
+    PageWidget25:
+        page: '@Page13->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-8-padding-top buffer-7-padding-bottom";s:13:"widgetClasses";s:14:"blue-center h3";s:4:"htag";s:2:"h3";}'
+        data: 'a:1:{s:4:"text";s:31:"Corporate Social Responsibility";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title1-callback]'
+    PageWidget26:
+        page: '@Page13->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:14:"intro big-text";}'
+        data: 'a:1:{s:4:"text";s:366:"First Capital Realty believes that living up to its social and environmental responsibilities simply makes good business sense to support our goal of creating sustainable shopping environments. As such our focus on corporate social responsibility is designed to deliver real results as well as trust, trust that generates long term success and value for the company.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text1-callback]' 
+    PageWidget27:
+        page: '@Page13->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:60:"row buffer-8-padding-top buffer-4-padding-bottom text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:10:"LEARN MORE";s:4:"href";s:15:"/sustainability";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button1-callback]'
+    PageWidget28:
+        page: '@Page13->id'
+        widget: '@Widget11->id'
+        config: null
+        data: 'a:4:{s:5:"photo";s:44:"https://fcr.ca/uploads/about/Abt_CEO_Img.png";s:4:"name";s:12:"ADAM E. PAUL";s:11:"description";s:37:"President and Chief Executive Officer";s:4:"text";s:314:"Day to day our talented team executes our vision by creating and operating urban retail shopping centres and generating long term value for our stakeholders. Our track record in this regard is something we are very very proud of at First Capital Realty and is the main reason we are so optimistic as we look ahead.";}'
+        dataType: 'PersonBaner'
+        status: 'live'
+        tplArea: '[widget-personbaner-callback]'
+    PageWidget29:
+        page: '@Page13->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-8-padding-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:13:"Join Our Team";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget30:
+        page: '@Page13->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:239:"Are you ready to join a dynamic and rewarding work place in which to succeed, grow and enjoy each and every day? Click the careers button to discover what positions we currently have open. After all, we are always shopping for good people.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text2-callback]' 
+    PageWidget31:
+        page: '@Page13->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:60:"row buffer-9-padding-top buffer-8-padding-bottom text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:7:"CAREERS";s:4:"href";s:8:"/careers";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button2-callback]'
+    PageWidget32:
+        page: '@Page13->id'
+        widget: '@Widget12->id'
+        config: 'a:2:{s:11:"wrapClasses";s:12:"buffer-6-top";s:13:"widgetClasses";s:44:"buffer-6-padding-top buffer-6-padding-bottom";}'
+        data: 'a:4:{s:5:"title";s:15:"Conference Call";s:8:"subtitle";s:10:"Listen Now";s:4:"href";s:167:"https://event.on24.com/eventRegistration/EventLobbyServlet?target=registration.jsp&eventid=1387740&sessionid=1&key=9D327F9A919EABD7E01A55F79D479B07&sourcepage=register";s:4:"icon";s:825:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.08 233.08" class="about-phone-icon"><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="116.54" cy="116.54" r="116.04"/><path class="cls-2" d="M137.84 140a6.54 6.54 0 0 0-4.66-1.83 7.13 7.13 0 0 0-5 2l-8.24 8.22-2.22-1.24A77.3 77.3 0 0 1 99 133.7 77.25 77.25 0 0 1 85.48 115l-1.2-2.16 8.23-8.23a6.9 6.9 0 0 0 .2-9.7L77.5 79.7a6.5 6.5 0 0 0-4.66-1.84 7.16 7.16 0 0 0-5 2.06l-3.74 3.75-.35.58a23.67 23.67 0 0 0-3.38 6 24.64 24.64 0 0 0-1.5 6.05c-2 16.3 5.54 31.27 26 51.67C109 172.1 129.16 174 134.78 174c1 0 1.53-.06 1.7-.07a25 25 0 0 0 6.05-1.53 23.9 23.9 0 0 0 6-3.37l.85-.67 3.5-3.44a6.86 6.86 0 0 0 .2-9.68zm0 0M107.84 59.1a66.72 66.72 0 0 1 66.72 66.7M107.84 77.46a48.35 48.35 0 0 1 48.35 48.35M107.84 95.83a30 30 0 0 1 30 30"/></g></g></svg>";}'
+        dataType: 'ConferenceCall'
+        status: 'live'
+        tplArea: '[widget-conferenceCall-callback]'
+    PageWidget33:
+        page: '@Page13->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-5-padding-top buffer-6-padding-bottom";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:17:"Document Download";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title3-callback]'
+    PageWidget34:
+        page: '@Page13->id'
+        widget: '@Widget40->id'
+        config: 'a:2:{s:11:"wrapClasses";s:23:"buffer-5-padding-bottom";s:13:"widgetClasses";s:14:"link-icon-list";}'
+        data: 'a:1:{s:5:"items";a:3:{s:5:"item1";a:3:{s:3:"url";s:86:"https://fcr.ca/uploads/investors/investors-presentations/FCR_INVESTOR_PRESENTATION.pdf";s:4:"icon";s:8601:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#000" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="21.6,22.9 21.6,31.2 23.9,31.2 23.9,24.2 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="21.6,22.9 19.3,25.5 19.3,28.3 19.3,31.2 21.6,31.2 21.6,22.9 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="19.3,25.5 19.3,28.3 19.3,25.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="26.1,25.5 23.9,24.2 23.9,31.2 26.1,31.2 26.1,25.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="30.7,31.2 30.7,31.2 30.7,21.6 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="28.4,23.6 28.4,31.2 30.7,31.2 30.7,21.6 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="26.1,25.5 26.1,31.2 28.4,31.2 28.4,23.6 "/> <polyline fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="19,23.5 21.4,20.8 23.8,22.2 26.2,23.5 28.6,21.5 31,19.5 "/> <polyline fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="31.1,20.6 31.2,19.4 29.9,19.2 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> </g> </svg>";s:4:"text";s:21:"Investor Presentation";}s:5:"item2";a:3:{s:3:"url";s:66:"https://fcr.ca/uploads/investors/financial-reports/pdf/2017/Q1.pdf";s:4:"icon";s:7981:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="21.1" x2="30.7" y2="21.1"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="23.4" x2="30.7" y2="23.4"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="25.8" x2="30.7" y2="25.8"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="28.1" x2="30.7" y2="28.1"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="30.5" x2="30.7" y2="30.5"/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> </g> </svg>";s:4:"text";s:24:"Q1 2017 Quarterly Report";}s:5:"item3";a:3:{s:3:"url";s:64:"https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf";s:4:"icon";s:7863:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> <path fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" d="M21.2,23.9c1.7,1.7,3.6,1.6,4.5,0.8 c0.8-0.8,0.9-2.7-0.8-4.5c-1.7-1.7-5-1.3-5-1.3S19.5,22.1,21.2,23.9z"/> <path fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" d="M29.6,28.2c-1,1-2,1.1-2.6,0.5 C26.4,28,26.5,27,27.5,26c1-1,2.9-0.8,2.9-0.8S30.7,27.1,29.6,28.2z"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="26.4" y1="23.6" x2="26.4" y2="31.9"/> </g> </svg>";s:4:"text";s:36:"2015 Corporate Sustainability Report";}}}'
+        dataType: 'LinkIconListMacro'
+        status: 'live'
+        tplArea: '[widget-LinkIconList-callback]'
+    #Careers
+    PageWidget35:
+        page: '@Page17->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-6-padding-bottom";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:373:"As one of Canada s largest owners, developers and managers of grocery anchored, retail-focused urban properties, we offer a dynamic and rewarding work place and an opportunity to succeed and grow each and every day. Scroll down to see what positions we currently have open and to explore more about working at First Capital Realty… we are always shopping for good people.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-intro-callback]'
+    PageWidget36:
+        page: '@Page17->id'
+        widget: '@Widget30->id'
+        config: null
+        data: ''
+        dataType: 'CareersSliderInfoMacro'
+        status: 'live'
+        tplArea: '[widget-CareersSliderInfoMacro-callback]'
+    PageWidget37:
+        page: '@Page17->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-7-padding-bottom buffer-6-padding-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:22:"Get To Know Some of Us";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title1-callback]'
+    PageWidget38:
+        page: '@Page17->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:249:"As a dynamic organization that boasts a robust track record of growth, our team is as diverse as the country we call home. We put some fun questions to a few of our team members so you can get a sense of what it is like to be part of the FCR family.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text1-callback]'
+    PageWidget39:
+        page: '@Page17->id'
+        widget: '@Widget31->id'
+        config: null
+        data: ''
+        dataType: 'CareersPersonBlockMacro'
+        status: 'live'
+        tplArea: '[widget-CareersPersonBlockMacro-callback]'
+    #remove 40 pagewidget
+    PageWidget41:
+        page: '@Page17->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:36:"row buffer-7-padding-top text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:30:"FIND OUT WHAT WE ARE ALL ABOUT";s:4:"href";s:6:"/about";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button-callback]'
+    PageWidget42:
+        page: '@Page17->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:3:"FAQ";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget43:
+        page: '@Page17->id'
+        widget: '@Widget32->id'
+        config: null
+        data: ''
+        dataType: 'CareersFAQMacro'
+        status: 'live'
+        tplArea: '[widget-CareersFAQMacro-callback]'
+    PageWidget44:
+        page: '@Page17->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:13:"Join Our Team";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title0-callback]'
+    PageWidget45:
+        page: '@Page17->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:79:"Please explore our open positions. There might be an opportunity right for you.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text0-callback]'
+    PageWidget46:
+        page: '@Page17->id'
+        widget: '@Widget17->id'
+        config: null
+        data: ''
+        dataType: 'TeamTabs'
+        status: 'live'
+        tplArea: '[widget-teamTabs-callback]'
+#page name
+    PageWidget47:
+        page: '@Page16->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:25:"contact_us-padding-top-60";s:13:"widgetClasses";s:30:"blue-center h2 reset-h2-margin";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:22:"Corporate Headquarters";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title-callback]'
+    PageWidget48:
+        page: '@Page16->id'
+        widget: '@Widget15->id'
+        config: 'a:1:{s:11:"wrapClasses";s:60:"contact_us-h2-padding-bottom-40 contact_us-padding-bottom-60";}'
+        data: 'a:6:{s:5:"title";s:25:"First Capital Realty Inc.";s:7:"addres1";s:23:"85 Hanna Ave, Suite 400";s:7:"addres2";s:19:"Toronto, ON M6K 3S3";s:3:"tel";s:12:"416-504-4114";s:8:"tollFree";s:14:"1-877-504-4114";s:3:"fax";s:12:"416-941-1655";}'
+        dataType: 'HeadQuarters'
+        status: 'live'
+        tplArea: '[widget-headquarters-callback]'
+    PageWidget49:
+        page: '@Page16->id'
+        widget: '@Widget16->id'
+        config: 'a:1:{s:11:"wrapClasses";s:0:"";}'
+        data: 'a:1:{s:5:"items";a:4:{i:0;a:7:{s:5:"title";s:7:"Calgary";s:8:"subTitle";s:25:"First Capital Realty Inc.";s:5:"place";s:19:"Mount Royal Village";s:7:"addres1";s:25:"1550 8th St SW, Suite 400";s:7:"addres2";s:19:"Calgary, AB T2R 1K1";s:3:"tel";s:12:"403-257-6888";s:3:"fax";s:12:"403-257-6888";}i:1;a:7:{s:5:"title";s:8:"Edmonton";s:8:"subTitle";s:25:"First Capital Realty Inc.";s:5:"place";s:16:"Northgate Centre";s:7:"addres1";s:23:"9499-137 Ave, Unit 2004";s:7:"addres2";s:20:"Edmonton, AB T5E 5R8";s:3:"tel";s:12:"780-475-3695";s:3:"fax";s:12:"780-478-6716";}i:2;a:7:{s:5:"title";s:8:"Montreal";s:8:"subTitle";s:25:"First Capital Realty Inc.";s:5:"place";s:10:"Place Viau";s:7:"addres1";s:25:"RDC 113, 7600 boul. Viau,";s:7:"addres2";s:20:"Montreal, QC H1S 2P3";s:3:"tel";s:12:"514-332-0031";s:3:"fax";s:12:"514-332-5135";}i:3;a:7:{s:5:"title";s:9:"Vancouver";s:8:"subTitle";s:25:"First Capital Realty Inc.";s:5:"place";s:17:"Shops at New West";s:7:"addres1";s:27:"800 Carnarvon St, Suite 320";s:7:"addres2";s:27:"New Westminster, BC V3M 0G3";s:3:"tel";s:12:"604-278-0056";s:3:"fax";s:12:"604-242-0266";}}}'
+        dataType: 'OtherOffices'
+        status: 'live'
+        tplArea: '[widget-otheroffices-callback]'
+    PageWidget50:
+        page: '@Page4->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:12:"buffer-6-top";s:13:"widgetClasses";s:40:"blue-center h2 reset-h-margin light-font";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:29:"May 30, 2017 | 10:00 AM (EST)";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title-callback]'
+    PageWidget51:
+        page: '@Page4->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:15:"buffer-6-bottom";s:13:"widgetClasses";s:11:"text-center";}'
+        data: 'a:1:{s:4:"text";s:74:"136 Yorkville Avenue, The Oval, Concourse Level, Toronto, Ontario, M5R 1C2";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    PageWidget52:
+        page: '@Page4->id'
+        widget: '@Widget6->id'
+        config: 'a:2:{s:11:"wrapClasses";s:15:"buffer-6-bottom";s:13:"widgetClasses";s:22:"link-icon-list svg-124";}'
+        data: 'a:1:{s:5:"items";a:5:{s:5:"item1";a:3:{s:3:"url";s:86:"https://fcr.ca/uploads/investors/investors-presentations/FCR_INVESTOR_PRESENTATION.pdf";s:4:"icon";s:447:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"></circle><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"></path><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"></path><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";s:4:"text";s:40:"Notice of Annual Meeting of shareholders";}s:5:"item2";a:3:{s:3:"url";s:66:"https://fcr.ca/uploads/investors/financial-reports/pdf/2017/Q1.pdf";s:4:"icon";s:447:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"></circle><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"></path><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"></path><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";s:4:"text";s:31:"Management Information Circular";}s:5:"item3";a:3:{s:3:"url";s:64:"https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf";s:4:"icon";s:447:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"></circle><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"></path><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"></path><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";s:4:"text";s:22:"2016 Annual Report PDF";}s:5:"item4";a:3:{s:3:"url";s:64:"https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf";s:4:"icon";s:447:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"></circle><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"></path><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"></path><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";s:4:"text";s:6:"Notice";}s:5:"item5";a:3:{s:3:"url";s:64:"https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf";s:4:"icon";s:731:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.47 121.47" class="pdf-icon-svg"><defs><style>.a{fill:none;stroke:#0861a8;stroke-miterlimit:10;stroke-width:2px;}</style></defs><title>icon-interior-play</title><path class="a cls-1" d="M30.75,9a58.44,58.44,0,0,1,30-8,58.44,58.44,0,0,1,30,8,59.49,59.49,0,0,1,21.74,21.74,58.44,58.44,0,0,1,8,30,58.44,58.44,0,0,1-8,30,59.47,59.47,0,0,1-21.74,21.74,58.44,58.44,0,0,1-30,8,58.44,58.44,0,0,1-30-8A59.45,59.45,0,0,1,9,90.72a58.42,58.42,0,0,1-8-30,58.43,58.43,0,0,1,8-30A59.47,59.47,0,0,1,30.75,9ZM90.6,65a4.92,4.92,0,0,0,0-8.56L48.29,31.57a4.66,4.66,0,0,0-5-.08,4.76,4.76,0,0,0-2.49,4.36V85.62A4.76,4.76,0,0,0,43.31,90a5.5,5.5,0,0,0,2.49.62,4.76,4.76,0,0,0,2.49-.7Z"></path></svg>";s:4:"text";s:33:"2017 Annual General Meeting Video";}}}'
+        dataType: 'LinkIconList'
+        status: 'live'
+        tplArea: '[widget-LinkIconList-callback]'
+    PageWidget53:
+        page: '@Page9->id'
+        widget: '@Widget18->id'
+        config: 'a:1:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";}'
+        data: 'a:1:{s:5:"items";a:3:{s:5:"item1";a:2:{s:5:"title";s:23:"Equity Analyst Coverage";s:7:"content";a:8:{s:5:"item0";a:3:{s:5:"title";s:19:"BMO Capital Markets";s:6:"person";s:12:"Heather Kirk";s:5:"phone";s:12:"416-359-4030";}s:5:"item1";a:3:{s:5:"title";s:17:"Canaccord Capital";s:6:"person";s:15:"Mark Rothschild";s:5:"phone";s:12:"416-869-7280";}s:5:"item2";a:3:{s:5:"title";s:18:"CIBC World Markets";s:6:"person";s:10:"Alex Avery";s:5:"phone";s:12:"416-594-8179";}s:5:"item3";a:3:{s:5:"title";s:23:"National Bank Financial";s:6:"person";s:12:"Matt Kornack";s:5:"phone";s:12:"416-507-8104";}s:5:"item4";a:3:{s:5:"title";s:13:"Raymond James";s:6:"person";s:10:"Ken Avalos";s:5:"phone";s:12:"727-567-1756";}s:5:"item5";a:3:{s:5:"title";s:19:"RBC Capital Markets";s:6:"person";s:13:"Michael Smith";s:5:"phone";s:12:"416-842-7805";}s:5:"item6";a:3:{s:5:"title";s:14:"Scotia Capital";s:6:"person";s:9:"Pammi Bir";s:5:"phone";s:12:"416-863-7218";}s:5:"item7";a:3:{s:5:"title";s:13:"TD Securities";s:6:"person";s:11:"Sam Damiani";s:5:"phone";s:12:"416-983-9640";}}}s:5:"item2";a:2:{s:5:"title";s:21:"Debt Analyst Coverage";s:7:"content";a:2:{s:5:"item0";a:3:{s:5:"title";s:19:"BMO Capital Markets";s:6:"person";s:11:"Joanne Chen";s:5:"phone";s:12:"416-359-8108";}s:5:"item1";a:3:{s:5:"title";s:19:"RBC Capital Markets";s:6:"person";s:11:"Vivek Selot";s:5:"phone";s:12:"416-842-5165";}}}s:5:"item3";a:2:{s:5:"title";s:22:"Rating Agency Coverage";s:7:"content";a:2:{s:5:"item0";a:3:{s:5:"title";s:33:"Dominion Bond Rating Service Ltd.";s:6:"person";s:11:"Mark Newman";s:5:"phone";s:12:"416-597-7559";}s:5:"item1";a:3:{s:5:"title";s:25:"Moody`s Investors Service";s:6:"person";s:15:"Griselda Bisono";s:5:"phone";s:12:"212-553-4985";}}}}}'
+        dataType: 'AnalystCoverage'
+        status: 'live'
+        tplArea: '[widget-analyst-coverage-callback]'
+    #investors
+    PageWidget54:
+        page: '@Page1->id'
+        widget: '@Widget19->id'
+        config: null
+        data: ''
+        dataType: 'IRStockPriceMacro'
+        status: 'live'
+        tplArea: '[widget-FinanceBlock-callback]'
+    PageWidget55:
+        page: '@Page1->id'
+        widget: '@Widget6->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:14:"link-icon-list";}'
+        data: 'a:1:{s:5:"items";a:3:{s:5:"item1";a:3:{s:3:"url";s:76:"http://event.on24.com/r.htm?e=1387740&s=1&k=9D327F9A919EABD7E01A55F79D479B07";s:4:"icon";s:825:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.08 233.08" class="about-phone-icon"><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="116.54" cy="116.54" r="116.04"/><path class="cls-2" d="M137.84 140a6.54 6.54 0 0 0-4.66-1.83 7.13 7.13 0 0 0-5 2l-8.24 8.22-2.22-1.24A77.3 77.3 0 0 1 99 133.7 77.25 77.25 0 0 1 85.48 115l-1.2-2.16 8.23-8.23a6.9 6.9 0 0 0 .2-9.7L77.5 79.7a6.5 6.5 0 0 0-4.66-1.84 7.16 7.16 0 0 0-5 2.06l-3.74 3.75-.35.58a23.67 23.67 0 0 0-3.38 6 24.64 24.64 0 0 0-1.5 6.05c-2 16.3 5.54 31.27 26 51.67C109 172.1 129.16 174 134.78 174c1 0 1.53-.06 1.7-.07a25 25 0 0 0 6.05-1.53 23.9 23.9 0 0 0 6-3.37l.85-.67 3.5-3.44a6.86 6.86 0 0 0 .2-9.68zm0 0M107.84 59.1a66.72 66.72 0 0 1 66.72 66.7M107.84 77.46a48.35 48.35 0 0 1 48.35 48.35M107.84 95.83a30 30 0 0 1 30 30"/></g></g></svg>";s:4:"text";s:18:"Q1 Conference Call";}s:5:"item2";a:3:{s:3:"url";s:86:"https://fcr.ca/uploads/investors/investors-presentations/FCR_INVESTOR_PRESENTATION.pdf";s:4:"icon";s:8601:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#000" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="21.6,22.9 21.6,31.2 23.9,31.2 23.9,24.2 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="21.6,22.9 19.3,25.5 19.3,28.3 19.3,31.2 21.6,31.2 21.6,22.9 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="19.3,25.5 19.3,28.3 19.3,25.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="26.1,25.5 23.9,24.2 23.9,31.2 26.1,31.2 26.1,25.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="30.7,31.2 30.7,31.2 30.7,21.6 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="28.4,23.6 28.4,31.2 30.7,31.2 30.7,21.6 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="26.1,25.5 26.1,31.2 28.4,31.2 28.4,23.6 "/> <polyline fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="19,23.5 21.4,20.8 23.8,22.2 26.2,23.5 28.6,21.5 31,19.5 "/> <polyline fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="31.1,20.6 31.2,19.4 29.9,19.2 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> </g> </svg>";s:4:"text";s:21:"Investor Presentation";}s:5:"item3";a:3:{s:3:"url";s:66:"https://fcr.ca/uploads/investors/financial-reports/pdf/2017/Q1.pdf";s:4:"icon";s:7981:"<svg class="home-doc-icon" version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMinYMin meet" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve"> <metadata> <sfw xmlns="&ns_sfw;"> <slices></slices> <sliceSourceBounds height="-32766" width="-32766" x="8498" y="24970" bottomLeftOrigin="true"></sliceSourceBounds> </sfw> </metadata> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="2" stroke-miterlimit="10" cx="-460.6" cy="2171.9" r="104.5"/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -475.5,2199 -465.6,2199 -465.6,2168.5 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-475.5,2162.8 -485.5,2174.3 -485.5,2186.2 -485.5,2199 -475.5,2199 -475.5,2162.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-485.5,2174.3 -485.5,2186.2 -485.5,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -465.6,2168.5 -465.6,2199 -455.7,2199 -455.7,2174.3 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-435.8,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-445.7,2165.7 -445.7,2199 -435.8,2199 -435.8,2157.1 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-455.7,2174.3 -455.7,2199 -445.7,2199 -445.7,2165.7 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-486.8,2165.6 -476.4,2153.8 -465.9,2159.7 -455.4,2165.6 -444.9,2156.8 -434.4,2148 "/> <polyline fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-434.2,2153 -433.7,2147.3 -439.4,2146.8 "/> <polygon fill="none" stroke="#0E62AB" stroke-width="5" stroke-miterlimit="10" points="-504.1,2108 -504.1,2222.6 -416.4,2222.6 -416.4,2137.6 -446,2108 "/> <polygon fill="none" stroke="#0E62AB" stroke-miterlimit="10" points="-416.4,2137.6 -446,2108 -446,2137.6 "/> <rect x="-934.7" y="-3884.3" fill="none" width="1920" height="7819"/> </g> <g> <circle fill="none" stroke="#0E62AB" stroke-width="0.4593" stroke-miterlimit="10" cx="25" cy="25" r="24"/> <polygon fill="none" stroke="#0E62AB" stroke-width="1.1483" stroke-miterlimit="10" points="15,10.3 15,36.6 35.1,36.6 35.1,17.1 28.4,10.3 "/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="21.1" x2="30.7" y2="21.1"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="23.4" x2="30.7" y2="23.4"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="25.8" x2="30.7" y2="25.8"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="28.1" x2="30.7" y2="28.1"/> <line fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" x1="19.1" y1="30.5" x2="30.7" y2="30.5"/> <polygon fill="none" stroke="#0E62AB" stroke-width="0.2297" stroke-miterlimit="10" points="35.1,17.1 28.4,10.3 28.4,17.1 "/> </g> </svg>";s:4:"text";s:24:"Q1 2017 Quarterly Report";}}}'
+        dataType: 'LinkIconList'
+        status: 'live'
+        tplArea: '[widget-LinkIconList-callback]'
+    PageWidget56:
+        page: '@Page1->id'
+        widget: '@Widget2->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:10:"white-blue";s:4:"htag";s:2:"h1";}'
+        data: 'a:3:{s:5:"title";s:0:"";s:8:"subtitle";s:0:"";s:5:"items";a:3:{s:5:"item1";a:3:{s:4:"icon";s:66:"/bundles/craftkeencmstheme/FCR/assets/images/content/MalliconA.svg";s:5:"title";s:3:"160";s:8:"subtitle";s:19:"Canadian Properties";}s:5:"item2";a:3:{s:4:"icon";s:67:"/bundles/craftkeencmstheme/FCR/assets/images/content/ruler-icon.svg";s:5:"title";s:12:"23.8 million";s:8:"subtitle";s:19:"Gross Leasable Area";}s:5:"item3";a:3:{s:4:"icon";s:44:"https://fcr.ca/uploads/about/dollar-note.svg";s:5:"title";s:12:"$9.2 billion";s:8:"subtitle";s:22:"Total Enterprise Value";}}}'
+        dataType: 'Result'
+        status: 'live'
+        tplArea: '[widget-result-callback]' 
+    PageWidget57:
+        page: '@Page1->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:45:"buffer-6-padding-top buffer-4-padding-bottom ";s:13:"widgetClasses";s:14:"intro big-text";}'
+        data: 'a:1:{s:4:"text";s:759:"First Capital Realty Inc. (FCR: TSX) has a strong presence across the Canadian retail landscape. Our properties – both operating and in development – provide exceptional urban locations for Canada s leading retailers. Our unique approach has resulted in notable growth in one of the most stable asset classes in real estate. Founded on excellent site selection and anchored by retail categories that provide customers with their everyday requirements, our shopping centres serve the needs of their neighbourhoods, our tenants and our investors. As of March 31, 2017, our real estate investments were valued at $9.1 billion and were comprised of 160 properties, totaling approximately 23.8 million square feet (25.2 million at 100%) of gross leasable area.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-intro-callback]'
+    PageWidget58:
+        page: '@Page1->id'
+        widget: '@Widget2->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-4-padding-bottom";s:13:"widgetClasses";s:21:"blue-white custom-sub";s:4:"htag";s:2:"h2";}'
+        data: 'a:3:{s:5:"title";s:21:"Defensive Asset Class";s:8:"subtitle";s:13:"as at Q1 2017";s:5:"items";a:6:{s:5:"item1";a:3:{s:4:"icon";s:73:"/bundles/craftkeencmstheme/FCR/assets/images/content/ir/grocerystores.svg";s:5:"title";s:3:"132";s:8:"subtitle";s:14:"Grocery Stores";}s:5:"item2";a:3:{s:4:"icon";s:70:"/bundles/craftkeencmstheme/FCR/assets/images/content/ir/pharmacies.svg";s:5:"title";s:3:"135";s:8:"subtitle";s:10:"Pharmacies";}s:5:"item3";a:3:{s:4:"icon";s:72:"/bundles/craftkeencmstheme/FCR/assets/images/content/ir/liquorstores.svg";s:5:"title";s:2:"97";s:8:"subtitle";s:13:"Liquor Stores";}s:5:"item4";a:3:{s:4:"icon";s:74:"/bundles/craftkeencmstheme/FCR/assets/images/content/ir/fitnesscentres.svg";s:5:"title";s:2:"81";s:8:"subtitle";s:15:"Fitness Centres";}s:5:"item5";a:3:{s:4:"icon";s:76:"/bundles/craftkeencmstheme/FCR/assets/images/content/ir/restaurantscafes.svg";s:5:"title";s:3:"958";s:8:"subtitle";s:19:"Restaurants & Cafes";}s:5:"item6";a:3:{s:4:"icon";s:74:"/bundles/craftkeencmstheme/FCR/assets/images/content/ir/daycarecentres.svg";s:5:"title";s:2:"88";s:8:"subtitle";s:25:"Daycare Centres & Schools";}}}'
+        dataType: 'Result'
+        status: 'live'
+        tplArea: '[widget-result1-callback]'
+    PageWidget59:
+        page: '@Page1->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-5-padding-top";s:13:"widgetClasses";s:11:"blue-center";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:30:"Superior Portfolio Demographic";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title1-callback]'
+    PageWidget60:
+        page: '@Page1->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:14:"intro big-text";}'
+        data: 'a:1:{s:4:"text";s:26:"FCR Portfolio Demographics";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text1-callback]'
+    PageWidget61:
+        page: '@Page1->id'
+        widget: '@Widget41->id'
+        config: null
+        data: 'a:8:{s:5:"items";a:2:{i:0;a:4:{s:4:"labl";s:4:"2009";s:3:"val";s:6:"134000";s:2:"sv";s:7:"134,000";s:3:"clr";s:10:"chart-blue";}i:1;a:4:{s:4:"labl";s:4:"2010";s:3:"val";s:6:"207000";s:2:"sv";s:7:"207,000";s:3:"clr";s:16:"chart-light-blue";}}s:5:"label";s:28:"Population Within 5km Radius";s:4:"type";s:8:"BarChart";s:9:"propNames";s:29:"Label,Value,Value label,Color";s:12:"tableFootnes";s:81:"*Make sure the label is unique,*For proper scalability please use the same format";s:5:"tools";a:1:{s:3:"clr";s:9:"ColorList";}s:9:"toolsData";a:1:{s:9:"ColorList";s:27:"chart-blue,chart-light-blue";}s:5:"class";s:9:"bar-chart";}'
+        dataType: 'ChartMacro'
+        status: 'live'
+        tplArea: '[macros-chart1-callback]'
+    PageWidget1061:
+        page: '@Page1->id'
+        widget: '@Widget41->id'
+        config: null
+        data: 'a:8:{s:5:"items";a:2:{i:0;a:4:{s:4:"labl";s:4:"2009";s:3:"val";s:5:"76000";s:2:"sv";s:6:"76,000";s:3:"clr";s:10:"chart-blue";}i:1;a:4:{s:4:"labl";s:4:"2017";s:3:"val";s:6:"106000";s:2:"sv";s:7:"106,000";s:3:"clr";s:16:"chart-light-blue";}}s:5:"label";s:27:"Household Income Within 5km";s:4:"type";s:8:"BarChart";s:9:"propNames";s:29:"Label,Value,Value label,Color";s:12:"tableFootnes";s:81:"*Make sure the label is unique,*For proper scalability please use the same format";s:5:"tools";a:1:{s:3:"clr";s:9:"ColorList";}s:9:"toolsData";a:1:{s:9:"ColorList";s:27:"chart-blue,chart-light-blue";}s:5:"class";s:9:"bar-chart";} '
+        dataType: 'ChartMacro'
+        status: 'live'
+        tplArea: '[macros-chart2-callback]'
+    PageWidget2060:
+        page: '@Page1->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:44:"buffer-7-padding-top buffer-5-padding-bottom";s:13:"widgetClasses";s:17:"intro custom-grey";}'
+        data: 'a:1:{s:4:"text";s:40:"Canadian Median Household Income $78,870";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-introChart-callback]'  
+    PageWidget62:
+        page: '@Page1->id'
+        widget: '@Widget7->id'
+        config: 'a:1:{s:11:"wrapClasses";s:20:"buffer-7-padding-top";}'
+        data: 'a:1:{s:5:"items";a:15:{i:0;a:5:{s:7:"picture";s:65:"https://fcr.ca/uploads/sliders/gallery_featured_shops-on-king.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:21:"Shops at King Liberty";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}i:1;a:5:{s:7:"picture";s:59:"https://fcr.ca/uploads/sliders/gallery_featured_leaside.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:15:"Leaside Village";s:4:"city";s:11:"Toronto, ON";s:4:"link";s:1:"#";}i:2;a:5:{s:7:"picture";s:68:"https://fcr.ca/uploads/sliders/gallery_featured_carrefour-girves.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:20:"Carrefour du Plateau";s:4:"city";s:12:"Gatineau, QC";s:4:"link";s:1:"#";}i:3;a:5:{s:7:"picture";s:59:"https://fcr.ca/uploads/sliders/gallery_featured_lucerne.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:13:"Carre Lucerne";s:4:"city";s:20:"Ville Mont-Royal, QC";s:4:"link";s:1:"#";}i:4;a:5:{s:7:"picture";s:61:"https://fcr.ca/uploads/sliders/gallery_featured_mackenzie.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:21:"McKenzie Towne Centre";s:4:"city";s:11:"Calgary, AB";s:4:"link";s:1:"#";}i:5;a:5:{s:7:"picture";s:59:"https://fcr.ca/uploads/sliders/gallery_featured_loblaws.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:13:"Loblaws Plaza";s:4:"city";s:10:"Ottawa, ON";s:4:"link";s:1:"#";}i:6;a:5:{s:7:"picture";s:62:"https://fcr.ca/uploads/sliders/gallery_featured_maplegrove.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:19:"Maple Grove Village";s:4:"city";s:12:"Oakville, ON";s:4:"link";s:1:"#";}i:7;a:5:{s:7:"picture";s:63:"https://fcr.ca/uploads/sliders/gallery_featured_mount-royal.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:16:"Mount Royal West";s:4:"city";s:11:"Calgary, AB";s:4:"link";s:1:"#";}i:8;a:5:{s:7:"picture";s:63:"https://fcr.ca/uploads/sliders/gallery_featured_false-creek.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:19:"False Creek Village";s:4:"city";s:13:"Vancouver, BC";s:4:"link";s:1:"#";}i:9;a:5:{s:7:"picture";s:61:"https://fcr.ca/uploads/sliders/gallery_featured_hunt-club.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:21:"Hunt Club Marketplace";s:4:"city";s:10:"Ottawa, ON";s:4:"link";s:1:"#";}i:10;a:5:{s:7:"picture";s:62:"https://fcr.ca/uploads/sliders/gallery_featured_rutherford.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:22:"Rutherford Marketplace";s:4:"city";s:11:"Vaughan, ON";s:4:"link";s:1:"#";}i:11;a:5:{s:7:"picture";s:61:"https://fcr.ca/uploads/sliders/gallery_featured_northgate.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:16:"Northgate Centre";s:4:"city";s:12:"Edmonton, AB";s:4:"link";s:1:"#";}i:12;a:5:{s:7:"picture";s:56:"https://fcr.ca/uploads/sliders/gallery_featured_viau.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:10:"Place Viau";s:4:"city";s:14:"St Leonard, QC";s:4:"link";s:1:"#";}i:13;a:5:{s:7:"picture";s:60:"https://fcr.ca/uploads/sliders/gallery_featured_faubourg.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:21:"Faubourg des Prairies";s:4:"city";s:12:"Montreal, QC";s:4:"link";s:1:"#";}i:14;a:5:{s:7:"picture";s:73:"https://fcr.ca/uploads/sliders/gallery_featured_carrefour-versant-est.jpg";s:5:"title";s:19:"Featured Properties";s:4:"name";s:24:"Carrefour du Versant Est";s:4:"city";s:12:"Gatineau, QC";s:4:"link";s:1:"#";}}}'
+        dataType: 'FeatureSlider'
+        status: 'live'
+        tplArea: '[widget-featureslider-callback]'
+    PageWidget63:
+        page: '@Page1->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-5-padding-top";s:13:"widgetClasses";s:11:"blue-center";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:41:"Industry Leading Same Property NOI Growth";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget64:
+        page: '@Page1->id'
+        widget: '@Widget41->id'
+        config: null
+        data: 'a:8:{s:5:"items";a:11:{i:0;a:3:{s:5:"years";s:2:"07";s:4:"rate";s:3:"4.9";s:3:"avg";s:1:"n";}i:1;a:3:{s:5:"years";s:2:"08";s:4:"rate";s:3:"3.8";s:3:"avg";s:1:"n";}i:2;a:3:{s:5:"years";s:2:"09";s:4:"rate";s:3:"6.8";s:3:"avg";s:1:"n";}i:3;a:3:{s:5:"years";s:2:"10";s:4:"rate";s:3:"3.4";s:3:"avg";s:1:"n";}i:4;a:3:{s:5:"years";s:2:"11";s:4:"rate";s:3:"2.5";s:3:"avg";s:1:"n";}i:5;a:3:{s:5:"years";s:2:"12";s:4:"rate";s:3:"2.3";s:3:"avg";s:1:"n";}i:6;a:3:{s:5:"years";s:2:"13";s:4:"rate";s:3:"3.7";s:3:"avg";s:1:"n";}i:7;a:3:{s:5:"years";s:2:"14";s:4:"rate";s:3:"3.2";s:3:"avg";s:1:"n";}i:8;a:3:{s:5:"years";s:2:"15";s:4:"rate";s:3:"3.7";s:3:"avg";s:1:"n";}i:9;a:3:{s:5:"years";s:2:"16";s:4:"rate";s:3:"1.1";s:3:"avg";s:1:"y";}i:10;a:3:{s:5:"years";s:5:"Q1 17";s:4:"rate";s:3:"2.4";s:3:"avg";s:1:"n";}}s:5:"label";s:30:"Total Same Property NOI Growth";s:4:"type";s:11:"BarChartAvg";s:9:"propNames";s:25:"Label,Value,Average limit";s:12:"tableFootnes";s:0:"";s:5:"tools";a:1:{s:3:"avg";s:9:"AvgBorder";}s:9:"toolsData";a:1:{s:9:"AvgBorder";s:6:"nodata";}s:5:"class";s:13:"bar-chart-avg";} '
+        dataType: 'ChartMacro'
+        status: 'live'
+        tplArea: '[macros-chart3-callback]'
+    PageWidget65:
+        page: '@Page1->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:60:"row buffer-5-padding-bottom buffer-7-padding-top text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:10:"LEARN MORE";s:4:"href";s:112:"https://fcr.ca/uploads/investors/investors-presentations/FCR-Investor-Presentation-Q1-2017-FINAL-June-5-2017.pdf";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button-callback]'
+    PageWidget66:
+        page: '@Page1->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-5-padding-top buffer-7-padding-bottom";s:13:"widgetClasses";s:11:"blue-center";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:21:"Recent Press Releases";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title3-callback]'
+    PageWidget67:
+        page: '@Page1->id'
+        widget: '@Widget22->id'
+        config: 'a:1:{s:11:"wrapClasses";s:23:"buffer-5-padding-bottom";}'
+        data: 'a:1:{s:5:"items";a:3:{i:0;a:3:{s:4:"date";s:12:"May 30, 2017";s:11:"description";s:52:"First Capital Realty Announces Election Of Directors";s:4:"href";s:47:"https://fcr.ca/ir/press-releases/details?id=288";}i:1;a:3:{s:4:"date";s:12:"May 09, 2017";s:11:"description";s:57:"First Capital Realty Announces First Quarter 2017 Results";s:4:"href";s:47:"https://fcr.ca/ir/press-releases/details?id=287";}i:2;a:3:{s:4:"date";s:14:"April 10, 2017";s:11:"description";s:71:"First Capital Realty Announces Date For Q1 2017 Results Conference Call";s:4:"href";s:47:"https://fcr.ca/ir/press-releases/details?id=286";}}}'
+        dataType: 'LastPressReleases'
+        status: 'live'
+        tplArea: '[widget-advanced-link-callback]'
+    #Dividends 
+    PageWidget68:
+        page: '@Page7->id'
+        widget: '@Widget23->id'
+        config: null
+        data: ''
+        dataType: 'DividendsMacro'
+        status: 'live'
+        tplArea: '[widget-CustomTabs-callback]'
+    #Community
+    PageWidget69:
+        page: '@Page11->id'
+        widget: '@Widget2->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:10:"white-blue";s:4:"htag";s:2:"h1";}'
+        data: 'a:3:{s:5:"title";s:0:"";s:8:"subtitle";s:0:"";s:5:"items";a:3:{s:5:"item1";a:3:{s:4:"icon";s:35:"https://fcr.ca/images/boma_logo.svg";s:5:"title";s:3:"104";s:8:"subtitle";s:30:"Properties BOMA BEST Certified";}s:5:"item2";a:3:{s:4:"icon";s:35:"https://fcr.ca/images/leed_logo.svg";s:5:"title";s:3:"103";s:8:"subtitle";s:25:"Properties LEED Certified";}s:5:"item3";a:3:{s:4:"icon";s:39:"https://fcr.ca/images/ghg_emissions.svg";s:5:"title";s:4:"-10%";s:8:"subtitle";s:23:"GHG Emissions From 2014";}}}'
+        dataType: 'Result'
+        status: 'live'
+        tplArea: '[widget-result-callback]' 
+    PageWidget70:
+        page: '@Page11->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-6-padding-bottom";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:725:"At the heart of our business is a belief that by investing in urban shopping centres, we help neighbourhoods flourish as vibrant communities. And we live this belief every day in how we develop and manage our properties. But that only represents one dimension of helping communities flourish. That’s why we also bring great energy to initiatives that focus on the arts and sustainability. The arts and sustainability complement each other well. While one nourishes the mind and community, the other serves the environment in which we live and work. We’re proud of what we have been able to accomplish. We believe it makes us a better company that is more deeply woven in the fabric of the communities in which we operate.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-intro-callback]'
+    PageWidget71:
+        page: '@Page11->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:23:"buffer-7-padding-bottom";s:13:"widgetClasses";s:11:"blue-center";s:4:"htag";s:2:"h3";}'
+        data: 'a:1:{s:4:"text";s:24:"Retail Life and The Arts";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title-callback]'
+    PageWidget72:
+        page: '@Page11->id'
+        widget: '@Widget8->id'
+        config: 'a:4:{s:11:"wrapClasses";s:15:"buffer-5-bottom";s:13:"widgetClasses";s:27:"video-thumbnail text-center";s:11:"iconClasses";s:15:"play playVideo2";s:10:"buttonText";s:11:"Close video";}'
+        data: 'a:3:{s:5:"image";s:54:"https://fcr.ca/_pages/community/images/HLAF2014-43.jpg";s:8:"videoUrl";s:40:"https://player.vimeo.com/video/196023166";s:4:"icon";s:808:"<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 352.4 352.5" style="enable-background:new 0 0 352.4 352.5;" xml:space="preserve"> <style type="text/css"> .st0{fill:#FFFFFF;}</style> <title>playbutton</title> <path class="st0" d="M262.2,172.5c2.3,1.3,3.1,4.3,1.8,6.6c-0.4,0.7-1,1.4-1.8,1.8l-65.1,37.6L132,256c-2.3,1.3-5.3,0.6-6.6-1.8 c-0.4-0.7-0.7-1.6-0.7-2.4V101.6c0-2.7,2.2-4.8,4.8-4.9c0.9,0,1.7,0.2,2.4,0.7l65.1,37.6L262.2,172.5z"></path> <g> <path class="st0" d="M176.2,349C80.9,349,3.4,271.5,3.4,176.2C3.4,81,80.9,3.5,176.2,3.5S349,81,349,176.2 C349,271.5,271.5,349,176.2,349z M176.2,12.5c-90.3,0-163.8,73.5-163.8,163.8S85.9,340,176.2,340c90.3,0,163.8-73.5,163.8-163.8 S266.5,12.5,176.2,12.5z"></path> </g> </svg>";}'
+        dataType: 'Video'
+        status: 'live'
+        tplArea: '[widget-video-callback]'
+    #Debentures
+    PageWidget73:
+        page: '@Page8->id'
+        widget: '@Widget24->id'
+        config: null
+        data: ''
+        dataType: 'DebenturesMacro'
+        status: 'live'
+        tplArea: '[widget-CustomTabs-callback]'
+    #FinancialReports 
+    PageWidget74:
+        page: '@Page2->id'
+        widget: '@Widget25->id'
+        config: null
+        data: ''
+        dataType: 'FinancialReportsMacro'
+        status: 'live'
+        tplArea: '[widget-FinancialReports-callback]'
+    #sustainability
+    PageWidget75:
+        page: '@Page12->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:486:"Today, companies that minimize their impact on the natural environment not only positively affect the people and their communities; they also enhance their long-term value. It’s a reality we embrace and work at every day. After all, delivering on our environmental responsibilities builds a stronger foundation on which to prosper; ensures viability; attracts and retains great tenants and defines our reputation as a positive contributor to the communities in which we live and work.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-intro-callback]'
+    PageWidget76:
+        page: '@Page12->id'
+        widget: '@Widget10->id'
+        config: null
+        data: 'a:4:{s:11:"wrapClasses";s:60:"row buffer-6-padding-bottom buffer-6-padding-top text-center";s:13:"widgetClasses";s:6:"button";s:4:"text";s:61:"2015 Corporate Responsibility and Sustainability (CRS) Report";s:4:"href";s:64:"https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf";}'
+        dataType: 'Button'
+        status: 'live'
+        tplArea: '[widget-button-callback]'
+    PageWidget77:
+        page: '@Page12->id'
+        widget: '@Widget13->id'
+        config: 'a:2:{s:12:"wrapperClass";s:27:"row buffer-7-padding-bottom";s:13:"widgetClasses";s:16:"no-images-slider";}'
+        data: 'a:1:{s:5:"items";a:3:{i:0;a:4:{s:7:"picture";s:0:"";s:5:"title";s:27:"ENERGY CONSUMPTION DECREASE";s:11:"description";s:61:"In 2015, energy consumption decreased by 8% compared to 2014.";s:8:"leftText";s:2:"8%";}i:1;a:4:{s:7:"picture";s:0:"";s:5:"title";s:28:"MILLION SQ FT CERTIFIED LEED";s:11:"description";s:128:"As of December 31, 2015, 103 properties comprising 3.3 million square feet or 13% of the Company’s GLA were certified to LEED.";s:8:"leftText";s:3:"3.3";}i:2;a:4:{s:7:"picture";s:0:"";s:5:"title";s:23:"MILLION SQ FT BOMA BEST";s:11:"description";s:138:"As of December 31, 2015, 104 properties comprising 9.5 million square feet or 39% of the Company’s GLA received BOMA BEST certification.";s:8:"leftText";s:3:"9.5";}}}'
+        dataType: 'SliderInfo'
+        status: 'live'
+        tplArea: '[widget-sliderWithInfo-callback]'
+    PageWidget78:
+        page: '@Page12->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:23:"buffer-7-padding-bottom";s:13:"widgetClasses";s:14:"text-center h1";s:4:"htag";s:2:"h1";}'
+        data: 'a:1:{s:4:"text";s:20:"2015 Accomplishments";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title0-callback]'
+    PageWidget79:
+        page: '@Page12->id'
+        widget: '@Widget27->id'
+        config: null
+        data: ''
+        dataType: 'RichTextMacro'
+        status: 'live'
+        tplArea: '[widget-richtext-callback]'
+    PageWidget80:
+        page: '@Page12->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-bottom buffer-6-padding-top";s:13:"widgetClasses";s:14:"blue-center h2";s:4:"htag";s:2:"h2";}'
+        data: 'a:1:{s:4:"text";s:57:"Corporate Responsibility and Sustainability (CRS) Reports";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title1-callback]'
+    PageWidget81:
+        page: '@Page12->id'
+        widget: '@Widget28->id'
+        config: null
+        data: ''
+        dataType: 'SustainabilityReportsMacro'
+        status: 'live'
+        tplArea: '[widget-sustainabilityReports-callback]'
+    PageWidget81-1:
+        page: '@Page12->id'
+        widget: '@Widget28-1->id'
+        config: null
+        data: ''
+        dataType: 'SustainabilitySliderMacro'
+        status: 'live'
+        tplArea: '[widget-sustainabilitySlider-callback]'
+    #page name
+    PageWidget82:
+        page: '@Page5->id'
+        widget: '@Widget26->id'
+        config: 'a:1:{s:11:"wrapClasses";s:0:"";}'
+        data: 'a:1:{s:5:"items";a:3:{s:5:"item1";a:2:{s:5:"title";s:8:"Charters";s:7:"content";a:4:{s:5:"item1";a:3:{s:3:"url";s:76:"https://fcr.ca/COPY/governance/charters/160217---Audit-Committee-Charter.pdf";s:4:"text";s:23:"Audit Committee Charter";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}s:5:"item2";a:3:{s:3:"url";s:69:"https://fcr.ca/uploads/investors/governance/charters/ccgc-charter.pdf";s:4:"text";s:55:"Compensation and Corporate Governance Committee Charter";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}s:5:"item3";a:3:{s:3:"url";s:70:"https://fcr.ca/uploads/investors/governance/charters/board-mandate.pdf";s:4:"text";s:13:"Board Mandate";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}s:5:"item4";a:3:{s:3:"url";s:108:"https://fcr.ca/COPY/governance/charters/Exec%20Committee%20Charter%20-%20Revised%20February%2011,%202015.pdf";s:4:"text";s:27:"Executive Committee Charter";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}}}s:5:"item2";a:2:{s:5:"title";s:8:"Policies";s:7:"content";a:3:{s:5:"item1";a:3:{s:3:"url";s:94:"https://fcr.ca/uploads/investors/governance/policies/disclosure-and-insider-trading-policy.pdf";s:4:"text";s:35:"Disclosure & Insider Trading Policy";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}s:5:"item2";a:3:{s:3:"url";s:83:"https://fcr.ca/uploads/investors/governance/policies/code-of-conduct-and-ethics.pdf";s:4:"text";s:26:"Code of Conduct and Ethics";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}s:5:"item3";a:3:{s:3:"url";s:82:"https://fcr.ca/uploads/investors/governance/policies/majority-voting-policy_fr.pdf";s:4:"text";s:22:"Majority Voting Policy";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}}}s:5:"item3";a:2:{s:5:"title";s:23:"Annual Information Form";s:7:"content";a:1:{s:5:"item1";a:3:{s:3:"url";s:55:"https://fcr.ca/uploads/investors/governance/aif/AIF.pdf";s:4:"text";s:23:"Annual Information Form";s:4:"icon";s:427:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/><path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/><path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/><text class="cls-4" transform="translate(85.9 112.31)">PDF</text></g></g></svg>";}}}}}'
+        dataType: 'GovernanceTabs'
+        status: 'live'
+        tplArea: '[widget-governance-tabs-callback]'
+    #Portfolio Leaisng text
+    PageWidget83:
+        page: '@Page19->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:571:"With a well-established presence across the Canadian retail landscape, First Capital Realty properties provide exceptional locations for Canada s leading retailers. Our strategic development approach in areas with superior demographic profiles has resulted in notable growth. Founded on excellent site selection and anchored by food stores, we build neighborhood shopping centres with a strategic and thoughtfully assembled mix of tenants to meet consumers’ everyday shopping needs… shopping centres that deliver for their neighborhood, our tenants and our investors.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    #Retail Life & Arts
+    PageWidget84:
+        page: '@Page11-blog->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-6-padding-bottom";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:503:"Through our collaborations with OCAD University, Emily Carr University of Art and Design (Emily Carr), and Concordia University, we have sponsored several competitions giving students/emerging artists an opportunity to showcase their talent and art as well as go through a process of real life modeling, presentations and other related interactions for their public art with a “client”/corporation. We also support our local established artists through public calls and hold an annual arts festival.";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-intro-callback]'
+    PageWidget85:
+        page: '@Page11-blog->id'
+        widget: '@Widget29->id'
+        config: null
+        data: ''
+        dataType: 'RetailArtMacro'
+        status: 'live'
+        tplArea: '[widget-RetailLifeArts-callback]'
+    #Investors FAQ
+    PageWidget86:
+        page: '@Page10->id'
+        widget: '@Widget36->id'
+        config: null
+        data: ''
+        dataType: 'IrFAQMacro'
+        status: 'live'
+        tplArea: '[widget-faq-callback]'
+    #Investors Conference Calls
+    PageWidget87:
+        page: '@Page3->id'
+        widget: '@Widget35->id'
+        config: null
+        data: ''
+        dataType: 'ConferenceCallsMacro'
+        status: 'live'
+        tplArea: '[widget-ConferenceCallsMacro-callback]'
+    PageWidget88:
+        page: '@Page16->id'
+        widget: '@Widget37->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:0:"";}'
+        data: 'a:2:{s:3:"lat";s:9:"43.640060";s:3:"lng";s:10:"-79.419812";}'
+        dataType: 'GoogleMap'
+        status: 'live'
+        tplArea: '[widget-googlemap-callback]'
+    #Terms
+    PageWidget89:
+        page: '@Page20->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-7-padding-bottom";s:13:"widgetClasses";s:0:"";s:4:"htag";s:2:"h4";}'
+        data: 'a:1:{s:4:"text";s:27:"Terms Of Use And Disclaimer";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget90:
+        page: '@Page20->id'
+        widget: '@Widget1->id'
+        config: null
+        data: 'a:1:{s:4:"text";s:24:"Content is not available";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    #Suppliers
+    PageWidget91:
+        page: '@Page21->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-7-padding-bottom";s:13:"widgetClasses";s:0:"";s:4:"htag";s:2:"h4";}'
+        data: 'a:1:{s:4:"text";s:35:"SUPPLIER CODE OF CONDUCT AND ETHICS";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget92:
+        page: '@Page21->id'
+        widget: '@Widget1->id'
+        config: null
+        data: 'a:1:{s:4:"text";s:24:"Content is not available";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    #Privacy
+    PageWidget93:
+        page: '@Page22->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-7-padding-bottom";s:13:"widgetClasses";s:0:"";s:4:"htag";s:2:"h4";}'
+        data: 'a:1:{s:4:"text";s:14:"PRIVACY POLICY";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget94:
+        page: '@Page22->id'
+        widget: '@Widget1->id'
+        config: null
+        data: 'a:1:{s:4:"text";s:24:"Content is not available";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    #Accessible
+    PageWidget95:
+        page: '@Page23->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:44:"buffer-6-padding-top buffer-7-padding-bottom";s:13:"widgetClasses";s:0:"";s:4:"htag";s:2:"h4";}'
+        data: 'a:1:{s:4:"text";s:34:"Accessible Customer Service Policy";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-title2-callback]'
+    PageWidget96:
+        page: '@Page23->id'
+        widget: '@Widget1->id'
+        config: null
+        data: 'a:1:{s:4:"text";s:24:"Content is not available";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-text-callback]'
+    #About ConferenceCall
+    PageWidget97:
+        page: '@Page13->id'
+        widget: '@Widget5->id'
+        config: 'a:3:{s:11:"wrapClasses";s:20:"buffer-6-padding-top";s:13:"widgetClasses";s:0:"";s:4:"htag";s:2:"h3";}'
+        data: 'a:1:{s:4:"text";s:15:"Conference Call";}'
+        dataType: 'Title'
+        status: 'live'
+        tplArea: '[widget-titleCall-callback]'
+    PageWidget98:
+        page: '@Page13->id'
+        widget: '@Widget1->id'
+        config: 'a:2:{s:11:"wrapClasses";s:0:"";s:13:"widgetClasses";s:5:"intro";}'
+        data: 'a:1:{s:4:"text";s:10:"Listen Now";}'
+        dataType: 'Text'
+        status: 'live'
+        tplArea: '[widget-textCall-callback]'
+    PageWidget99:
+        page: '@Page13->id'
+        widget: '@Widget6->id'
+        config: 'a:2:{s:11:"wrapClasses";s:23:"buffer-6-padding-bottom";s:13:"widgetClasses";s:23:"link-icon-list call-btn";}'
+        data: 'a:1:{s:5:"items";a:1:{s:5:"item1";a:3:{s:3:"url";s:167:"https://event.on24.com/eventRegistration/EventLobbyServlet?target=registration.jsp&eventid=1387740&sessionid=1&key=9D327F9A919EABD7E01A55F79D479B07&sourcepage=register";s:4:"icon";s:839:"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.08 233.08" class="about-phone-icon"><g id="Layer_2" data-name="Layer 2"><g id="nav"><circle class="cls-1" cx="116.54" cy="116.54" r="116.04"></circle><path class="cls-2" d="M137.84 140a6.54 6.54 0 0 0-4.66-1.83 7.13 7.13 0 0 0-5 2l-8.24 8.22-2.22-1.24A77.3 77.3 0 0 1 99 133.7 77.25 77.25 0 0 1 85.48 115l-1.2-2.16 8.23-8.23a6.9 6.9 0 0 0 .2-9.7L77.5 79.7a6.5 6.5 0 0 0-4.66-1.84 7.16 7.16 0 0 0-5 2.06l-3.74 3.75-.35.58a23.67 23.67 0 0 0-3.38 6 24.64 24.64 0 0 0-1.5 6.05c-2 16.3 5.54 31.27 26 51.67C109 172.1 129.16 174 134.78 174c1 0 1.53-.06 1.7-.07a25 25 0 0 0 6.05-1.53 23.9 23.9 0 0 0 6-3.37l.85-.67 3.5-3.44a6.86 6.86 0 0 0 .2-9.68zm0 0M107.84 59.1a66.72 66.72 0 0 1 66.72 66.7M107.84 77.46a48.35 48.35 0 0 1 48.35 48.35M107.84 95.83a30 30 0 0 1 30 30"></path></g></g></svg>";s:4:"text";s:0:"";}}}'
+        dataType: 'LinkIconList'
+        status: 'live'
+        tplArea: '[widget-LinkIconCall-callback]'
+    #PressReleases
+    PageWidget100:
+        page: '@Page24->id'
+        widget: '@Widget38->id'
+        config: null
+        data: ''
+        dataType: 'PressReleases'
+        status: 'live'
+        tplArea: '[widget-PressReleases-callback]'
+    #PQuote & Charts
+    PageWidget120:
+        page: '@Page6->id'
+        widget: '@Widget39->id'
+        config: null
+        data: ''
+        dataType: 'QuotesCharts'
+        status: 'live'
+        tplArea: '[quotes-charts-callback]'

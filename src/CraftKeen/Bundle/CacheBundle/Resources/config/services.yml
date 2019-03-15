@@ -1,0 +1,8 @@
+services:
+    craft_keen.cache.provider.abstract:
+        abstract: true
+        class: 'Doctrine\Common\Cache\ArrayCache'
+
+    craft_keen.cache.chain.abstract:
+        abstract: true
+        class: 'CraftKeen\Bundle\CacheBundle\Model\CacheChain'

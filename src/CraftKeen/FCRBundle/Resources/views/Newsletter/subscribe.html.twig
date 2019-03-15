@@ -1,0 +1,72 @@
+{% form_theme form _self %}
+
+{{ form_start(form, {'attr': {'id': 'craftkeen_fcrbundle_newsletter', 'class':'subscribe-form'} }) }}
+<div class="alert message"></div>
+	{% block form_widget_email %}
+		<label for="email-subscribe-newsletters" class="sr-only">{{'subscribe'|trans([], 'messages', app.request.locale)}}</label>
+		<div class = "input-group">
+		{{ form_widget(form.email, {'attr': { 'class':'subscribe email', 'placeholder': 'your@email.com'|trans([], 'messages', app.request.locale), 'id': 'email-subscribe-newsletters' } } ) }}
+		<span class = "input-group-btn">
+			<button type="submit" class = "subscribe-btn">{{'subscribe'|trans([], 'messages', app.request.locale)}} <em class="fa fa-angle-right" aria-hidden="true"></em></button>
+		</span>
+		</div>
+	{% endblock %}	
+
+	{{ form_row(form.email) }}
+	<ul class="icheck dark list-unstyled list-icheck">
+		<label for="craftkeen_fcrbundle_newsletter_leasing" class="sr-only">{{'footer.Leasing'|trans([], 'messages', app.request.locale)}}</label>
+		<li>{{ form_row(form.leasing, {'label': 'footer.Leasing'|trans([], 'messages', app.request.locale), 'attr': {'class':'require-one'} }) }}</li>
+		<label for="craftkeen_fcrbundle_newsletter_news" class="sr-only">{{'footer.News'|trans([], 'messages', app.request.locale)}}</label>
+		<li>{{ form_row(form.news, {'label': 'footer.News'|trans([], 'messages', app.request.locale),'attr': {'class':'require-one'} }) }}</li>
+		<label for="craftkeen_fcrbundle_newsletter_careers" class="sr-only">{{'footer.Careers'|trans([], 'messages', app.request.locale)}}</label>
+		<li>{{ form_row(form.careers, {'label': 'footer.Careers'|trans([], 'messages', app.request.locale), 'attr': {'class':'require-one'} }) }}</li>
+	</ul>
+{{ form_end(form) }}
+
+<div style="display:none">
+    <div id="unsubscribeWindow">
+		<form id="unsubscribeForm" method="post">
+
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token("unsubscribeForm") }}" />
+			<div class="form-group">
+			    <label for="emailAddress">{{ 'Provide your Email address'|trans([], 'messages', app.request.locale) }}</label>
+			    <input type="email" class="form-control" id="emailAddress" name="email" placeholder="{{'email_address'|trans([], 'messages', app.request.locale)}}">
+	 	 	</div>
+			<div class="message alert"></div>
+
+	 	 	<strong>{{ 'Mail Lists'|trans([], 'messages', app.request.locale) }}</strong><br>
+	 	 	<ul class="list-group">
+		  		<li class="list-group-item">
+		  			<div class="checkbox">
+					    <label>
+					    	<label for="craftkeen_fcrbundle_unsubscribe_leasing" class="sr-only">{{'Careers'|trans([], 'messages', app.request.locale)}}</label>
+				      		<input id="craftkeen_fcrbundle_unsubscribe_leasing" type="checkbox" name="list[carrers]" value="{{ mailchimp_list_careers }}"> {{ 'Careers'|trans([], 'messages', app.request.locale) }}</label>
+				  	</div>
+		  		</li>
+		  		<li class="list-group-item">
+		  			<div class="checkbox">
+					    <label>
+					    	<label for="craftkeen_fcrbundle_unsubscribe_news" class="sr-only">{{'Careers'|trans([], 'messages', app.request.locale)}}</label>
+				      		<input id="craftkeen_fcrbundle_unsubscribe_news" type="checkbox" name="list[leasing]" value="{{ mailchimp_list_leasing }}"> {{ 'Leasing'|trans([], 'messages', app.request.locale) }}</label>
+				  	</div>
+		  		</li>
+		  		<li class="list-group-item">
+		  			<div class="checkbox">
+					    <label>
+					    	<label for="craftkeen_fcrbundle_unsubscribe_careers" class="sr-only">{{'Careers'|trans([], 'messages', app.request.locale)}}</label>
+				      		<input id="craftkeen_fcrbundle_unsubscribe_careers" type="checkbox" name="list[news]" value="{{ mailchimp_list_news }}"> {{ 'News'|trans([], 'messages', app.request.locale) }}</label>
+				  	</div>
+		  		</li>
+			</ul>
+
+			<strong>{{ 'Or From All'|trans([], 'messages', app.request.locale) }}</strong><br>
+			<div class="checkbox">
+			    <label>
+			    	<label for="craftkeen_fcrbundle_unsubscribe_from_all" class="sr-only">{{ 'Unsubscribe from all lists'|trans([], 'messages', app.request.locale) }}</label>
+		      		<input id="craftkeen_fcrbundle_unsubscribe_from_all" type="checkbox" name="fromAll" value="yes"> {{ 'Unsubscribe from all lists'|trans([], 'messages', app.request.locale) }}</label>
+		  	</div>
+
+	 	 	<button type="submit" class="btn btn-default">{{ 'Update'|trans([], 'messages', app.request.locale) }}</button>
+		</form>
+	</div>
+</div>

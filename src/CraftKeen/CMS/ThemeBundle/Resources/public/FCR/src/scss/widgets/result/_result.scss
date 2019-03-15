@@ -1,0 +1,58 @@
+.results{
+	&.custom-sub {
+		.thumbnails {
+			span.line2 {
+				font-family: $font-family-default-light;
+			}
+			img {
+			    height: inherit;
+			    width: 90%;
+			    max-width: 150px;
+			}
+		}
+		.h2, h2 {
+			font-size: 300%;
+		}
+	}
+  .thumbnails {
+	img {
+	  display: inline;
+	  margin-bottom: 20px;
+	  height: 90px;
+	}
+	svg {
+	  margin-bottom: 20px;
+	  max-width: 120px;
+	}
+	//div.line for admin mode
+	span.line1, div.line1 {
+	  font-size: 2em;
+	  line-height: 1;
+	  font-family: $font-family-info;
+	}
+	span.line2, div.line2 {
+	  font-size: 1em;
+	  line-height: 1;
+	  font-family: $font-family-default-bold;
+	}
+  }
+}
+//Sets in widget config
+.blue-white {
+  background-color: $color-blue;
+  color: $color-white;
+}
+.white-blue {
+  background-color: $color-white;
+  color: $color-blue;
+}
+.community{
+	.thumbnails{
+		img{
+			width: 190px;
+			height: 124px
+		}
+	}
+}
+
+@import "result_queries";

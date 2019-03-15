@@ -1,0 +1,40 @@
+{% extends 'CraftKeenFCRBundle:Property:propertyLayout.html.twig' %}
+
+{% block meta_title %}{{ 'Property Add Demographic'|trans([], 'messages', app.request.locale) }}{% endblock %}
+
+{% block hero %}
+	{% set heroImage = ckcms_library_url~'/properties/hero/default_header.png' %}		
+	<section class="hero-image container-fluid" style="
+		background: {{ hero_overlay }} ,url( '{{ heroImage }}' ) no-repeat center center scroll;
+		-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    	background-size: cover;
+			 ">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+				<div class="container-content">
+					<h1 class="text-shadow">New Property Wizard, Vacancy</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block body %}
+<section class="container-fluid">
+	<div class="row grid">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+			<div class="buffer-7-top">
+				<p class="text-center"><b>{{ 'Vacancies'|trans([], 'messages', app.request.locale) }}</b> for: {{ propertyVacancy.property.parentName }} {{ propertyVacancy.property.childName }}</p>
+				<div class="label label-warning">{{'Status:'|trans([], 'messages', app.request.locale)}} {{ propertyVacancy.property.status }}</div>
+				{{ form_start(form) }}
+					{{ form_widget(form) }}
+					<input type="submit" class="btn btn-primary" value="{{ 'Next'|trans([], 'messages', app.request.locale) }}" />
+				{{ form_end(form) }}
+				<br />
+			</div>
+		</div>
+	</div>
+</section>						
+{% endblock %}

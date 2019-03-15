@@ -1,0 +1,64 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+
+{% block stylesheets %}
+	{{parent()}}
+	{% stylesheets
+	'@CraftKeenCMSThemeBundle/Resources/public/FCR/dist/css/styles.css'
+	%}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+
+{% block footer_js %}
+	{{ parent() }}
+	<script src="{{ asset('assets/build/client-bundle.js') }}"></script>
+	<script data-main="/assets/elfinder/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
+	<script>
+        $(document).ready(function() {
+            $("#editor").click(function(e) {
+                var elfinder = $('#linkIconListElfinder').elfinder({
+                    url: '/assets/elfinder/php/connector.php',
+                    resizable: false,
+                    getfile : {
+                        onlyURL  : true,
+                        multiple : false,
+                        folders  : false,
+                        oncomplete : ''
+                    },
+                    handlers: {
+                        dblclick: function(event, elfinderInstance) {
+                            var fileInfo = elfinderInstance.file(event.data.file);
+                            if (fileInfo.mime != 'directory') {
+                                $("#editor").val(elfinderInstance.url(event.data.file));
+                                elfinderInstance.destroy();
+                                //$('#elfinder').dialog('close');
+                                return false; // stop elfinder
+                            }
+                        },
+                        destroy: function(event, elfinderInstance) {
+                            elfinder.dialog('close');
+                        },
+                    }
+                }).dialog({
+                    title: 'filemanager',
+                    resizable: true,
+                    width: 920,
+                    height: 500
+                });
+            });
+        });
+	</script>
+	{#		RichEdit Scripts	#}
+	{#'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
+	'bower_components/moment/min/moment.min.js'#}
+	{% javascripts
+	'@CraftKeenCMSThemeBundle/Resources/public/FCR/src/js/barChart.js'
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock%}
+{% block body %}
+	<div id="linkIconListElfinder" ></div>
+	<input type="text" id="editor" style="width:500px;margin-top: 200px">
+{% endblock %}

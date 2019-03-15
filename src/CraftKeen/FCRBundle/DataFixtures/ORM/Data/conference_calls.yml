@@ -1,0 +1,40 @@
+CraftKeen\FCRBundle\Entity\ConferenceCall:
+    ConferenceCall1:
+        category: 'Upcoming'
+        title: 'Second Quarter 2017'
+        date: '<dateTimeBetween("-200 days", "now")>'
+        listenLink: null
+        slidesLink: null
+        pressRelease: null
+        quarterlyReport: null
+        status: 'live'
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+    ConferenceCall2:
+        category: 'Previous'
+        title: 'First Quarter 2017'
+        date: '<dateTimeBetween("-200 days", "now")>'
+        listenLink: http://event.on24.com/r.htm?e=1387740&s=1&k=9D327F9A919EABD7E01A55F79D479B07
+        slidesLink: https://fcr.ca/uploads/investors/conference-calls/files/q1-2017/2017-Q1---Conference-Call-Slides---FINAL.pdf
+        pressRelease: null
+        quarterlyReport: null
+        status: 'live'
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+    ConferenceCall3:
+        category: 'AGM'
+        title: 'Annual and Special Meeting'
+        date: '<dateTimeBetween("-200 days", "now")>'
+        listenLink: http://firstcapital2017agm.postelvideo.com/archive/agm2017.html
+        slidesLink: null
+        pressRelease: null
+        quarterlyReport: null
+        status: 'live'
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'

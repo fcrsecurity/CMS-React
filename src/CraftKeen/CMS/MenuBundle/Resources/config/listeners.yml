@@ -1,0 +1,10 @@
+services:
+    craft_keen.menu.listener.orm.cache_cleaner:
+        class: 'CraftKeen\CMS\MenuBundle\Listener\OrmListener'
+        arguments:
+            - '@craft_keen.menu.cache.menu'
+        tags:
+            - { name: doctrine.orm.entity_listener, entity: \CraftKeen\CMS\MenuBundle\Entity\Menu, event: preFlush, method: invalidateCache}
+            - { name: doctrine.orm.entity_listener, entity: \CraftKeen\CMS\MenuBundle\Entity\MenuType, event: preFlush, method: invalidateCache}
+            - { name: doctrine.orm.entity_listener, entity: \CraftKeen\CMS\PageBundle\Entity\Page, event: preFlush, method: invalidateCache}
+            - { name: kernel.event_listener, event: ck_cms.clear_cache, method: invalidateCache}

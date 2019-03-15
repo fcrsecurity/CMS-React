@@ -1,0 +1,16 @@
+{% macro result(widget) %}
+	{# There we can check users roles and another data that available in twig #}
+	{{
+		react_component(
+			widget.dataType, {
+				'props':{
+					"isLoggedIn": false,
+					"title": widget.data.title,
+					"subtitle": widget.data.text,
+					"items": widget.data.items,
+					"config": widget.data.config
+				}
+			}
+		)
+	}}
+{% endmacro %}

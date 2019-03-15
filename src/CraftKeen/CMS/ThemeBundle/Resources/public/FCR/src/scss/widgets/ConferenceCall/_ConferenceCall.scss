@@ -1,0 +1,46 @@
+.conference-call {
+    color: $color-grey-light1;
+    background-color: $color-fcr-blue;
+    background-size: 16%;
+    background-repeat: no-repeat;
+    background-position: 3% 224%;
+    .text-call-block {
+        opacity: 0.8;
+    }
+    h3 {
+        font-size: 3em;
+        margin: 0;
+    }
+    p {
+        font-size: 1.3em;
+    }
+    .call-btn {
+        a {
+            display: block;
+            margin: 25px auto auto;
+            width: 160px;
+            height: 160px;
+            svg {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    }
+    .link-icon-list {
+        .thumbnails {
+            a {
+                &:hover {
+                    svg {
+                        g {
+                            circle {
+                                fill: #00a399!important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import "ConferenceCall_queries";

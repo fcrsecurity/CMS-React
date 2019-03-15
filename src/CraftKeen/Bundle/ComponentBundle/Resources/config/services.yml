@@ -1,0 +1,12 @@
+services:
+    craft_keen.component.provider.entity_link:
+        class: CraftKeen\Bundle\ComponentBundle\Provider\EntityLinkProvider
+        public: false
+        arguments: ['@annotations.reader', '@router', '@craft_keen.translation.provider.language']
+
+    craft_keen.component.twig_extension.entity_link:
+        class: CraftKeen\Bundle\ComponentBundle\Twig\EntityLinkExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+        arguments: ['@craft_keen.component.provider.entity_link']

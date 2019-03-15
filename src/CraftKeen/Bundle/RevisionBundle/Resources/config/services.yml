@@ -1,0 +1,3 @@
+services:
+    craft_keen.revision.registry:
+        class: 'CraftKeen\Bundle\RevisionBundle\Registry\RevisionRegistry'

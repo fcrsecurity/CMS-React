@@ -1,0 +1,31 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}Route edit{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('craftkeen_cms_page_admin_route_index') }}">Routes</a></li>
+    <li class="active">Route Edit</li>
+{% endblock %}
+
+{% block admin_block_body %}
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" class="btn btn-success" value="Save" />
+    {{ form_end(edit_form) }}
+
+    <hr />
+
+    <ul class="list-inline list-unstyled ">
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_route_index') }}" class="btn btn-default">Back to the list</a>
+        </li>
+        {% if is_granted('ROLE_ADMINISTRATOR') %}
+            <li>
+                {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}

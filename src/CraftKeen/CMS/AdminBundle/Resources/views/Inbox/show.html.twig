@@ -1,0 +1,51 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}{{ 'Message View'|trans }}{% endblock %}
+
+{% set path_prefix = 'craftkeen_cms_admin_inbox_' %}
+
+{% block admin_block_breadcrumb %}
+	<li><a href="{{ path(path_prefix~'index') }}">{{ 'Inbox'|trans }}</a></li>
+	<li class="active">{{ 'Message View'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-bordered table-hover">
+            <tbody>
+				<tr>
+                    <th>From</th>
+                    <td>{{ inbox.sender }}</td>
+				</tr>
+				<tr>
+					<th>To</th>
+                    <td>{{ inbox.recipient }}</td>
+				</tr>
+				<tr>
+					<th>At</th>
+                    <td>{{ inbox.created }}</td>
+                </tr>
+                <tr>
+                    <th>Subject</th>
+                    <td>{{ inbox.subject }}</td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td>{{ inbox.message|raw }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <ul class="list-inline list-unstyled">
+        <li>
+            <a href="{{ path(path_prefix~'index') }}" class="btn btn-default">{{ 'Back to the list'|trans }}</a>
+        </li>
+
+        <li>
+            {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+            <input type="submit" class="btn btn-danger" value="{{ 'Delete'|trans }}">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

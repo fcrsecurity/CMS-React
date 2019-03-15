@@ -1,0 +1,31 @@
+services:
+   brochure_builder.service:
+       class: CraftKeen\BrochureBuilderBundle\Service\BrochureBuilder
+       arguments: [
+           "@service_container",
+           "@router",
+           "@doctrine.orm.entity_manager",
+           "@validator",
+           "@state_machine.brochure_publishing",
+           "@session",
+           "@knp_snappy.pdf",
+           "@templating",
+           "@file_manager.service"
+        ]
+   file_manager.service:
+       class: CraftKeen\BrochureBuilderBundle\Service\FileManagerService
+       arguments: ["@service_container", "@doctrine"]
+   brochure_builder.image_decode_extension:
+       class: CraftKeen\BrochureBuilderBundle\Twig\ImageDecodeExtension
+       arguments: ["@doctrine"]
+       tags:
+           - { name: twig.extension }
+   brochure_builder.string_helpers_extension:
+       class: CraftKeen\BrochureBuilderBundle\Twig\StringHelpersExtension
+       tags:
+           - { name: twig.extension }
+   brochure_builder.brochure_publishing:
+           class: CraftKeen\BrochureBuilderBundle\EventSubscriber\BrochureWorkflowSubscriber
+           arguments: ["@service_container", "@doctrine"]
+           tags:
+               - { name: kernel.event_subscriber }

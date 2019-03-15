@@ -1,0 +1,21 @@
+<div class="row headquarters-content inline-mode">
+<a href="{{ path('admin_about_office_index') }}" class="button-edit-element" title="Edit element" ></a>
+    <div class="col-xs-9 col-xs-offset-3 col-sm-8 col-sm-offset-4 col-md-7 col-md-offset-5 col-lg-7 col-lg-offset-5">
+        <div class="row">
+            <div class="col-xs-10 col-sm-6 col-md-6 ">
+                {% if office is defined and office is not empty %}
+                <p>
+                    <strong>{{ office.header }}</strong><br>
+                    {{ office.address|raw }}<br>
+                    {{ office.city }}, {{ office.province }}, {{ office.postal }}
+                </p>
+                <p class="phones">
+                    {{'Tel'|trans}}: <a href="tel:{{ office.tel }}">{{ office.tel }}</a><br>
+                    {% if office.tollfree %}{{'Toll Free'|trans}}: <a href="tel:{{ office.tollfree }}">{{ office.tollfree }}</a><br>{% endif %}
+                    {% if office.fax %}{{'Fax'|trans}}: {{ office.fax }}{% endif %}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

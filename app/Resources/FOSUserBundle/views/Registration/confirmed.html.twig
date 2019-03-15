@@ -1,0 +1,15 @@
+{% extends '::fosuserbundle_layout.html.twig' %}
+
+{% block body %}
+<!-- start main content -->
+<section >
+    <div class="container">
+        <div class="row">
+            <div class="buffer-1-top buffer-4-bottom col-lg-4 col-lg-offset-4">
+                <h3>{{ 'Thank you for your Registration. Your account is now active, please'|trans }} <a href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans }}</a>.</h3>
+            </div><!-- end col -->            
+        </div>
+    </div><!-- end container -->
+</section>
+<!-- end main content -->
+{% endblock %}

@@ -1,0 +1,23 @@
+/*    Buffer classes  */
+$spaceamounts: (40, 50, 20, 75, 95, 130, 160, 185, 195);
+$items: 9;
+
+@mixin generate-margin-padding() {
+  @each $space in $spaceamounts {
+	.buffer-#{$items}-bottom {
+	  margin-bottom: #{$space}px;
+	}
+	.buffer-#{$items}-top {
+	  margin-top: #{$space}px;
+	}
+	.buffer-#{$items}-padding-bottom {
+	  padding-bottom: #{$space}px;
+	}
+	.buffer-#{$items}-padding-top {
+	  padding-top: #{$space}px;
+	}
+	$items: $items - 1;
+  }
+}
+
+@include generate-margin-padding();

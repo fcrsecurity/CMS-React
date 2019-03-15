@@ -1,0 +1,33 @@
+imports:
+    - { resource: widgets.yml }
+
+services:
+    craft_keen_widget.factory:
+        class: 'CraftKeen\Bundle\WidgetBundle\Factory\WidgetFactory'
+        calls:
+            - ['setContainer', ['@service_container']]
+
+    craft_keen_widget.cache:
+        class: 'Doctrine\Common\Cache\PhpFileCache'
+        public: false
+        arguments: ['%kernel.cache_dir%/craftkeen_data/widget']
+        calls:
+            - ['setNamespace', ['widgets']]
+
+    craft_keen_widget.renderer:
+        class: 'CraftKeen\Bundle\WidgetBundle\Templating\WidgetRenderer'
+        arguments:
+            - '@templating'
+            - '@craft_keen_widget.cache'
+            - '@theme_bundle.provider.theme'
+            - '%ckcms.use_widget_cache%'
+
+    craft_keen_widget.twig.extension:
+        class: 'CraftKeen\Bundle\WidgetBundle\Twig\WidgetExtension'
+        public: false
+        calls:
+            - ['setLogger', ['@logger']]
+            - ['setContainer', ['@service_container']]
+        tags:
+            - {name: 'monolog.logger', channel: 'widgets' }
+            - { name: twig.extension }

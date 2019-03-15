@@ -1,0 +1,34 @@
+{% macro renderMenuTree(menu, currUrl) %}
+    {% for item in menu %}
+		{% set active = '' %}
+		{% set dropdown = '' %}
+		{% set targetblank = '' %}
+
+		{% if item.link == currUrl %}
+			{% set active = 'active' %}
+		{% endif %}
+
+		{% if item.childs is defined %}
+			{% set dropdown = 'dropdown' %}
+		{% endif %}
+
+		{% if item.targetblank is defined and item.targetblank == 1 %}
+			{% set targetblank = ' target="_blank"' %}
+		{% endif %}
+
+		<li class="{{ dropdown }} {{ active }}">
+			{% if dropdown == 'dropdown' %}
+			  <a href="{{ item.link }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ item.name|raw }} <span class="caret"></span></a>
+			{% else %}
+			  <a href="{{ item.link }}"{{ targetblank }}>{{ item.name|raw }}</a>
+			{% endif %}
+
+			{% if item.childs is defined %}
+				<ul class="dropdown-menu" role="menu">
+					{% import _self as M %}
+					{{ M.renderMenuTree(item.childs, currUrl) }}
+				</ul>
+			{% endif %}
+		</li>
+	{% endfor %}
+{% endmacro %}

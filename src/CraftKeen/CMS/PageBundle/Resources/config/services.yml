@@ -1,0 +1,41 @@
+services:
+    page.twig_extension:
+        class: CraftKeen\CMS\PageBundle\Twig\PageExtension
+        public: false
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: twig.extension }
+
+    page.inline_editor:
+        class: CraftKeen\CMS\PageBundle\Service\PageEditor
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    cms.form.type.page:
+        class: CraftKeen\CMS\PageBundle\Form\PageType
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: form.type }
+
+    craft_keen.page.search.indexer_listener:
+        class: 'CraftKeen\CMS\PageBundle\EventListener\Search\SearchIndexerEventListener'
+        arguments:
+            - '@craft_keen.search.indexer'
+            - '@service_container'
+        tags:
+            - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\CMS\PageBundle\Entity\Page', event: postPersist }
+            - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\CMS\PageBundle\Entity\Page', event: postUpdate }
+            - { name: doctrine.orm.entity_listener, entity: 'CraftKeen\CMS\PageBundle\Entity\Page', event: postRemove }
+
+    craft_keen.page.provider.revision:
+        class: 'CraftKeen\CMS\PageBundle\Provider\PageRevisionProvider'
+        arguments:
+            - '@doctrine'
+        tags:
+            - { name: craft_keen.revision.provider, alias: page }
+
+    craft_keen_page.provider.translations.page:
+        class: 'CraftKeen\CMS\PageBundle\Provider\PageTranslationProvider'
+        arguments: ['@doctrine']
+        tags:
+            - { name: craft_keen.translation.provider, alias: page }

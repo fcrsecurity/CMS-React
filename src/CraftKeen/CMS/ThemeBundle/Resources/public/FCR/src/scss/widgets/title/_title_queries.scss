@@ -1,0 +1,13 @@
+/*480*/
+@media screen and (min-width:$mobile-devices-width) {
+	h1, .h1 {
+	    font-size: 250%;
+	}
+}
+
+/*1200*/
+@media screen and (min-width:$large-devices-width) {
+	h1, .h1 {
+	    font-size: 400%;
+	}
+}

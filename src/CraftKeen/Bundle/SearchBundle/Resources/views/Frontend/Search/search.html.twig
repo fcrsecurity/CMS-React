@@ -1,0 +1,78 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+
+{% block admin_panel %}{% endblock %}
+
+{% block hero %}
+	<section class="hero-image container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+				<div class="container-content">
+					<h1 class="text-shadow">{{ 'Search'|trans }}</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{#}
+{% block footer_js %}
+	{{ parent() }}
+	{% javascripts
+		'@CraftKeenFCRBundle/Resources/public/Property/dist/js/*'
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+
+{% endblock %}#}
+
+{% block body %}	
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+				<div class="row forms">
+					<div class="col-lg-8 col-lg-offset-2 buffer-6-top">
+						<div class="form-container">
+							<div class="form-grey portfolio main-search">
+                                {{ form_start(form, {'attr': {'id': 'nav-search'}}) }}
+									<div class="third_column_wide">
+										<label for="search_input" class="sr-only">Search input</label>
+                                        {{ form_errors(form.search_input) }}
+                                        {{ form_widget(form.search_input, { 'attr': {'class':'search-text form-control', 'placeholder': 'Search'|trans} }) }}
+										<button class="search-button " type="submit"><span>{{ 'Search'|trans }}</span><em class="glyphicon glyphicon-search" aria-hidden="true"></em></button>
+									</div>
+                                {{ form_end(form) }}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row buffer-7-top">
+					<div class="col-lg-8 col-lg-offset-2">	
+						{% for item in searchResult.matches %}
+                            {% if ( item.objectClass|classOf('Property') ) %}
+                                {% include 'CraftKeenFCRBundle:Property:search.property.html.twig' %}
+                            {% endif %}
+                            {% if ( item.objectClass|classOf('Page') ) %}
+                                {% include 'CraftKeenCMSPageBundle:Default:search.page.html.twig' %}
+                            {% endif %}
+                            {% if ( item.objectClass|classOf('PressRelease') ) %}
+                                {% include 'CraftKeenFCRBundle:PressRelease:search.press_release.html.twig' %}
+                            {% endif %}
+                            {% if ( item.objectClass|classOf('RetailArt') ) %}
+                                {% include 'CraftKeenFCRBundle:Blog:search.blog.html.twig' %}
+                            {% endif %}
+                            {% if ( item.objectClass|classOf('CareersPosition') ) %}
+                                {% include 'CraftKeenFCRBundle:Careers:search.career_position.html.twig' %}
+                            {% endif %}
+                            {% if ( item.objectClass|classOf('People') ) %}
+                                {% include 'CraftKeenFCRBundle:Careers:search.career_people.html.twig' %}
+                            {% endif %}
+                            {% if ( item.objectClass|classOf('FAQ') ) %}
+                                {% include 'CraftKeenFCRBundle:Investors:search.faq.html.twig' %}
+                            {% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+

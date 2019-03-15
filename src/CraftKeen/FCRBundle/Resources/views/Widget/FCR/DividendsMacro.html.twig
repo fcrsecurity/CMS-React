@@ -1,0 +1,136 @@
+{% set latest = dividends|first %}
+{% if dividends is not empty and latest is not empty %}
+	<div class=" buffer-5-padding-bottom">
+        <div class="tables">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active">
+					<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">{{ latest.0.declaredDate|date('Y') }} {{ 'Dividends'|trans([], 'messages', app.request.locale) }}</a>
+				</li>
+				<li>
+					<a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">{{ 'Archive'|trans([], 'messages', app.request.locale) }}</a>
+				</li>
+            </ul>
+            <div class="tab-content">
+				
+				<div class="tab-pane fade in active" id="tab1">
+					<div class="container-fluid">
+						<div class=" table-responsive inline-mode">
+							<a href="{{ path('admin_investors_dividend_index') }}" class="button-edit-element" title="Edit element" ></a>
+							<div class="table_container">
+								<table class="table table-hover text-left">
+									<thead>
+										<tr>
+											<th>{{'Declared Date'|trans([], 'messages', app.request.locale) }}</th>
+											<th>{{'Ex-Dividend Date'|trans([], 'messages', app.request.locale) }}</th>
+											<th>{{'Record Date'|trans([], 'messages', app.request.locale) }}</th>
+											<th>{{'Payable Date'|trans([], 'messages', app.request.locale) }}</th>
+											<th>{{'Dividend Amount'|trans([], 'messages', app.request.locale) }} <sup>1</sup></th>
+										</tr>
+									</thead>
+									<tbody>										
+										{% for item in latest %}
+										<tr>
+											<td>{{ item.declaredDate|date('M j') }}</td>
+											<td>{{ item.exDividendDate|date('M j') }}</td>
+											<td>{{ item.recordDate|date('M j') }}</td>
+											<td>{{ item.payableDate|date('M j') }}</td>
+											<td>${{ item.dividendAmount }}</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+								<small>
+									<span style="color:#2f4f4f; font-weight:bold;">{{'Eligible Dividend Information'|trans([], 'messages', app.request.locale) }}</span>
+									<br>
+									{{ 'For purposes of the enhanced dividend tax credit rules contained in the Income Tax Act (Canada) and any corresponding provincial and territorial tax legislation, all dividends (and deemed dividends) paid by First Capital Realty to Canadian residents on our common shares after December 31, 2005, are designated as “eligible dividends”. Unless stated otherwise, all dividends (and deemed dividends) are designated as “eligible dividends” for the purposes of these rules.'|trans([], 'messages', app.request.locale) }}
+								</small>
+							</div>
+						</div>
+						<br>
+						<h4 class="text-center h4">{{ dividends|length }} {{ 'Historical Years'|trans([], 'messages', app.request.locale) }}</h4>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<svg id="bar-chart-dividends" class="charts-dividends"></svg>
+								<div class="chart-label">
+									{{ 'Years'|trans([], 'messages', app.request.locale) }}
+									<p>
+										<sup>1</sup>{{'Includes Special dividend of $0.13 paid on April 6, 2005.'|trans([], 'messages', app.request.locale) }}<br>
+										<sup>2</sup>{{'Includes Gazit America dividend-in-kind of $0.28 distributed on August 14, 2009'|trans([], 'messages', app.request.locale) }}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="tab2">
+					<div class="container-fluid text-left">
+						<div class="table-responsive">
+							<div class="table_container">
+								<table class="table table-hover">
+									<tbody>
+										{% for year,years in dividends %}
+											{% if latest != years %}
+											<tr>
+												<td rowspan="2">
+													<h4 class="h4">{{ year }}</h4>
+												</td>
+												<td class="headers">{{ 'Declared Date'|trans([], 'messages', app.request.locale) }}</td>
+												{% set key = 0 %}
+												{% for k,dividend in years %}
+													{% set key = k %}
+													<td>
+														{{ dividend.declaredDate|date('M j') }}													
+														{% if key == 4 %}
+															<sup>*</sup>
+														{% endif %}
+													</td>
+												{% endfor %}
+
+												{% if key == 2 %}
+													<td></td>
+													<td></td>
+												{% endif %}
+												{% if key == 3 %}
+													<td></td>
+												{% endif %}
+											</tr>
+											<tr>
+												<td class="headers">{{'Dividend Amount'|trans}}<sup>1</sup></td>
+												{% set key = 0 %}
+												{% for k,dividend in years %}
+													{% set key = k %}
+													<td>${{ dividend.dividendAmount }}</td>
+												{% endfor %}
+
+												{% if key == 2 %}
+													<td></td>
+													<td></td>
+												{% endif %}
+												{% if key == 3 %}
+													<td></td>
+												{% endif %}
+											</tr>
+											{% endif %}
+										{% endfor %}
+									</tbody>
+								</table>
+								<p style="margin-top:-40px;margin-bottom:20px;">
+									<small>
+										<sup>1</sup><span class="">{{'All dividend amounts are adjusted to reflect the May 25, 2010 3.2:2 stock split.'|trans}}</span><br>
+										<sup>*</sup><span class="">{{'Denotes "Special Dividend-in-Kind"'|trans}}</span>								
+									</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endif %}

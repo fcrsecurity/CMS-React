@@ -1,0 +1,409 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+{% import 'CraftKeenCMSThemeBundle:'~theme~':admin_menu_property.html.twig' as A %}
+{% import 'CraftKeenCMSThemeBundle:'~theme~':brochure_editor_menu_property.html.twig' as B %}
+
+{% block meta_custom %}
+    {% if not property.details.seoIsIndex %}
+        <meta name="robots" content="noindex">
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block meta_title %}
+    {% if property.details.seoTitle %}
+        {{ property.details.seoTitle }}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block meta_description %}{% if property.details.seoDescription %}{{ property.details.seoDescription }}{% else %}{{ parent() }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if property.details.seoKeywords %}{{ property.details.seoKeywords }}{% else %}{{ parent() }}{% endif %}{% endblock %}
+
+{% block admin_panel %}
+    {% if property is defined %}
+        {% if is_granted('canedit', property) or is_granted('canapprove', property) or is_granted('ROLE_EDITOR') %}
+            {{ A.AdminMenuPanel(property, 'property' ) }}
+        {% elseif is_granted('ROLE_BROCHURE_EDITOR') %}
+            {{ B.AdminMenuPanel(property) }}
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block hero %}
+    {% set heroImage = ckcms_library_url~'/properties/hero/default_header.png' %}
+    {% if property.details.heroImage %}
+        {% set heroImage = property.details.heroImage %}
+    {% endif %}
+    <section class="hero-image  container-fluid"
+             style="
+                     background: {{ hero_overlay }} ,url( '{{ heroImage }}' ) no-repeat center center scroll;
+                     -webkit-background-size: cover;
+                     -moz-background-size: cover;
+                     -o-background-size: cover;
+                     background-size: cover;
+                     ">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+                <div class="container-content">
+                    <h1 class="text-shadow"></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js" type="text/javascript"></script>
+    {% javascripts
+
+    '@CraftKeenCMSThemeBundle/Resources/public/FCR/dist/js/googleMap.js'
+    '@CraftKeenFCRBundle/Resources/public/Property/dist/js/demopgraphics.charts.js'
+    '@CraftKeenFCRBundle/Resources/public/Property/dist/js/property-details.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+
+{% block body %}
+
+    <input type="hidden" id="property_lat" name="property_lat" value="{{ property.details.geoLat }}">
+    <input type="hidden" id="property_lng" name="property_lng" value="{{ property.details.geoLng }}">
+
+    <section class="container-fluid yorkville-village">
+        <div class="inner-row clearfix">
+            <div class="inner-container text-center leftpart">
+                <h2>{{ property.childName }}</h2>
+                <div>{{ property.details.geoAddress1 }} {{ property.details.geoAddress2 }}</div>
+                <div>{{ property.details.geoCity }}, {{ property.details.geoProvince }} {{ property.details.geoPostal }}</div>
+
+                <div class="line"></div>
+            </div>
+            <div class="inner-container text-center rightpart">
+                <h2>{{ property.details.sqft|number_format(0, '.', ',') }}</h2>
+                <div>{{ 'Approximate Sq Ft'|trans([], 'messages', app.request.locale) }}</div>
+            </div>
+        </div>
+        {% if property.details.leedDescription or property.isBoma %}
+            <div class="row leed-row">
+                {% if property.details.leedDescription %}
+                    <img class="certification-logo" src="{{ckcms_library_url}}/icons/leed_logo.svg" alt="Leed Logo" width="96"/>
+                {% endif %}
+                {% if property.isBoma %}
+                    <img class="certification-logo" src="{{ckcms_library_url}}/icons/boma_logo.svg" alt="Boma Logo" width="125"/>
+                {% endif %}
+                {% if property.details.leedDescription %}
+                    <p>{{ property.details.leedDescription }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if property.details.description %}
+        <div class="row description">
+            <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center" style="margin-top: 20px;">
+                {{ property.details.description|raw }}
+                <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <div class="row cta-button">
+                        <div class="text col-lg-12 text-center ">
+                            <a href="#propertyDetailsCTAform" class="learn-more cta-link">{{ 'Leasing Inquiry'|trans([], 'messages', app.request.locale) }} &nbsp;<em class="fa fa-angle-right" aria-hidden="true"></em></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+
+    {% if property.gallery|length > 0 %}
+        <section class="container-fluid feature-slider">
+            <div class="row">
+                <div class="feature-slider-js">
+
+                    {% if property.details.videoUrl|default is not empty %}
+                        <div class="item">
+                            <div class="image-container" >
+                                <video controls height="100%" width="100%" id="slide-video">
+                                    <source src="{{ property.details.videoUrl }}" />
+                                </video>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% for gallery in property.gallery %}
+                        <div class="item">
+                            <div
+                                    class="image-container"
+                                    style="background-image:url({{ gallery.image }})"></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+
+    <section class="container-fluid ">
+        {% if property.tenants|length > 2 %}
+            <div class="row top-tenants">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <div class="row">
+                        <div class="col-lg-12 text-center slick-3-item-line">
+                            {% for tenant in property.tenants %}
+                                {% if tenant.image is null or tenant.image is empty %}
+                                    <span class="alternative-tenant-logo"><span class="inner-wrap">{{ tenant.name|upper }}</span></span>
+                                {% else %}
+                                    <div class="thumbnails">
+                                        <img style="max-height:80px;" class="" src="{{ tenant.image }}" alt="{{ tenant.imageAlt }}">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if property.demographic|validateDemographics %}
+        <div class="row demographics">
+            <div class="col-xs-12">
+                <div class="row title">
+                    <div class="col-xs-12 text-center">
+                        <h2 style="margin-bottom:0; margin-top:30px;">{{ 'Demographics'|trans([], 'messages', app.request.locale) }}</h2>
+                        <!-- <p>{{ 'Source: Environics Analytics'|trans([], 'messages', app.request.locale) }}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row top-tenants">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="chart-label">{{ 'Population'|trans([], 'messages', app.request.locale) }}</div>
+                        <svg id="population-bar-chart" class="charts bar-chart"
+                             data-rate3="{{ property.demographic.population5km }}"
+                             data-label3="5km"
+                             data-rate2="{{ property.demographic.population3km }}"
+                             data-label2="3km"
+                             data-rate1="{{ property.demographic.population1km }}"
+                             data-label1="1km"
+                             data-dollar="false"
+                        ></svg>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chart-label">{{ 'Households'|trans([], 'messages', app.request.locale) }}</div>
+                        <svg id="households-bar-chart" class="charts bar-chart"
+                             data-rate3="{{ property.demographic.household5km }}"
+                             data-label3="5km"
+                             data-rate2="{{ property.demographic.household3km }}"
+                             data-label2="3km"
+                             data-rate1="{{ property.demographic.household1km }}"
+                             data-label1="1km"
+                             data-dollar="false"
+                        ></svg>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chart-label">{{ 'Household Income'|trans([], 'messages', app.request.locale) }}</div>
+                        <svg id="households-income-bar-chart" class="charts bar-chart"
+                             data-rate3="{{ property.demographic.householdIncome5km }}"
+                             data-label3="5km"
+                             data-rate2="{{ property.demographic.householdIncome3km }}"
+                             data-label2="3km"
+                             data-rate1="{{ property.demographic.householdIncome1km }}"
+                             data-label1="1km"
+                             data-dollar="true"
+                        ></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if property.demographic.annualAverageDailyTraffic > 0 %}
+            <div class="row description">
+                <div class="col-xs-12 text-center">
+                    <img src="{{ckcms_library_url}}/icons/traffic-count-icon.svg" alt="Traffic Count Icon" height="70"><br>
+                    <span class="number">{{ property.demographic.annualAverageDailyTraffic|number_format() }}</span><br />
+                    <span>{{ 'Traffic Count (AADT)'|trans([], 'messages', app.request.locale) }}</span><br />
+                    <div class="name">{{ property.details.geoIntersetion }}</div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row marketing-pdf">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-4 col-lg-offset-4">
+                <div class="row">
+                    {% set colclass = 'col-lg-12' %}
+
+                    {% if property.details.sitePlanPdf and property.details.marketingPdf %}
+                        {% set colclass = 'col-lg-6' %}
+                    {% endif %}
+
+                    {% if property.details.sitePlanPdf %}
+                    <div class="{{ colclass }}">
+                        <div class="wrapper-pdf-icons">
+                            <a href="{{ property.details.sitePlanPdf }}" target="_blank">
+                                <div class="pdf-icon">
+                                    <!-- svg pdf-icon-svg -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg">
+                                        <g id="Layer_2" data-name="Layer 2">
+                                            <g id="nav">
+                                                <circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/>
+                                                <path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/>
+                                                <path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/>
+                                                <text class="cls-4" transform="translate(85.9 112.31)">PDF</text>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <!-- svg end -->
+                                </div>
+                                <span class="title-pdf">{{ 'Download Site Plan'|trans([], 'messages', app.request.locale) }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if property.details.marketingPdf %}
+                        <div class="{{ colclass }}">
+                            <div class="wrapper-pdf-icons">
+                                <a href="{{ property.details.marketingPdf }}" target="_blank">
+                                    <div class="pdf-icon">
+                                        <!-- svg pdf-icon-svg -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg">
+                                            <g id="Layer_2" data-name="Layer 2">
+                                                <g id="nav">
+                                                    <circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/>
+                                                    <path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/>
+                                                    <path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/>
+                                                    <text class="cls-4" transform="translate(85.9 112.31)">PDF</text>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <!-- svg end -->
+                                    </div>
+                                    <span class="title-pdf">{{ 'Download Brochure'|trans([], 'messages', app.request.locale) }}</span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="hr-grey"></div>
+
+    <section class="container-fluid form_block" id="propertyDetailsCTAform">
+        <div class="row demographics">
+            <div class="col-lg-12">
+                <div class="row title">
+                    <div class="col-lg-12 text-center">
+                        <h2>{{ 'Leasing Inquiry'|trans([], 'messages', app.request.locale) }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center description">
+                <p class="">{{ 'Thank you Message'|trans([], 'messages', app.request.locale) }}</p>
+            </div>
+        </div>
+
+        <div class="row forms">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="form-container cta-form">
+                    <div class="wrapper-form-step">
+                        {{ form_start(form, {'action':path('craftkeen_fcr_property_view', {'code':property.code}),'attr': {'id': 'leasing-cta-form'}}) }}
+                        <div class="message alert"></div>
+                        <img class="center-block loader-gif" src="{{ckcms_library_url}}/icons/squares.gif" alt="Loader" >
+
+                        <div class="inputs_container">
+                            <a href="#" class="next-step"><em class="fa fa-angle-right" aria-hidden="true"></em></a>
+                            <div class="group active">
+                                {#									<input type="text" name="name" class="inputMaterial " placeholder="{{ 'Full Name*'|trans }}" required>#}
+                                {{ form_widget(form.name, {'attr': {'class': 'inputMaterial', 'placeholder': 'Full Name*'|trans([], 'messages', app.request.locale)} }) }}
+                                {{ form_label(form.name, 'Full Name*'|trans([], 'messages', app.request.locale) , {'label_attr': {'class': 'sr-only'} }) }}
+                            </div>
+                            <div class="group hide">
+                                {#									<input type="email" name="email" class="inputMaterial" placeholder="{{ 'Email*'|trans }}" required>#}
+                                {{ form_widget(form.email, {'attr': {'class': 'inputMaterial', 'placeholder': 'Email*'|trans([], 'messages', app.request.locale)} }) }}
+                                {{ form_label(form.email, 'Email*'|trans([], 'messages', app.request.locale) , {'label_attr': {'class': 'sr-only'} }) }}
+                            </div>
+                            <div class="group hide">
+                                {#									<input type="text" name="phone" class="inputMaterial phoneField" placeholder="{{ 'Phone Number*'|trans }}" required>							#}
+                                {{ form_widget(form.phone, {'attr': {'class': 'inputMaterial phoneField', 'placeholder': 'Phone Number*'|trans([], 'messages', app.request.locale)} }) }}
+                                {{ form_label(form.phone, 'Phone Number*'|trans([], 'messages', app.request.locale) , {'label_attr': {'class': 'sr-only'} }) }}
+                            </div>
+                            <div class="group hide">
+                                {{ form_widget(form.inquryType, {'attr': {'class': 'inputMaterial ctaTypeSelect' } }) }}
+                                {{ form_label(form.inquryType, 'Email*'|trans([], 'messages', app.request.locale) , {'label_attr': {'class': 'sr-only'} } ) }}
+                            </div>
+                            <div class="group hide">
+                                {#									<input type="text" name="square_footage" class="inputMaterial" placeholder="{{ 'Square Footage'|trans }}" required>#}
+                                {{ form_widget(form.squareFootage, {'attr': {'class': 'inputMaterial', 'placeholder': 'Square Footage*'|trans([], 'messages', app.request.locale)} }) }}
+                                {{ form_label(form.squareFootage, 'Square Footage*'|trans([], 'messages', app.request.locale) , {'label_attr': {'class': 'sr-only'} } ) }}
+                            </div>
+                            <div class="group hide">
+                                {#									<input type="text" name="comment" class="inputMaterial" placeholder="{{'Comments'|trans}}" required>#}
+                                <!-- <label>Comments</label> -->
+                                {{ form_widget(form.comment, {'attr': {'class': 'inputMaterial', 'placeholder': 'Comments*'|trans([], 'messages', app.request.locale)} }) }}
+                                {{ form_label(form.comment, 'Comments*'|trans([], 'messages', app.request.locale) , {'label_attr': {'class': 'sr-only'} } ) }}
+                            </div>
+                        </div>
+                        <div class="progress-bar-form" >
+                            <div class="inner-bar" style="width: 20%;"></div>
+                        </div>
+                        <div class="count-step-block"></div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if property.managers|length > 0 %}
+        <section class="container-fluid theposts ">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 {% if property.managers|length <= 2 %}col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 {%else%}col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2{%endif%} ">
+                    <div class="row slick-{{ property.managers|length }}-item-line-dontuse">
+                        {% set cnum =  12 / property.managers|length %}
+                        {% for manager in property.managers %}
+                            <div class="col-lg-{{ cnum }} col-md-{{ cnum }} col-sm-{{ cnum }}">
+                                <div class="item">
+                                    {% if manager.image %}
+                                        <img class="img-responsive" src="{{ manager.image }}" alt="{{ manager.imageAlt }}" longdesc="{{ aoda_long_description_url('CraftKeenFCRBundle:Manager', manager.id, 'image' ) }}"/>
+                                    {% else %}
+                                        <img class="img-responsive" src="{{ckcms_library_url}}/icons/default-representative-icon.jpg" alt="{{ manager.firstName }} {{ manager.lastName }}"/>
+                                    {% endif %}
+                                    <div class="info">
+                                        <div class="top">
+                                            <span class="name">{{ manager.firstName }} {{ manager.lastName }}</span>
+                                            <span class="thepost">{{ manager.title }}</span>
+                                        </div>
+                                        <div class="middle">
+                                            <a href="mailto:{{ manager.email }}?subject=[{{ property.code }}] {{ property.details.geoAddress1 }} {{ property.details.geoAddress2 }}">{{ manager.email }}</a><br />
+                                            <a href="tel:{{ manager.email }}">{{manager.phone|phone_number_format}}</a>
+                                            {% if manager.phoneExtension %}ext{{ manager.phoneExtension }}{% endif %}
+                                            {% if manager.tollfree %}
+                                                <br />{{'Toll-Free'|trans([], 'messages', app.request.locale)}}
+                                                <a href="tel:{{ manager.tollfree }}">{{manager.tollfree|phone_number_format}}</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {%endif%}
+
+    <div id="google_map" style="width:100%; height:450px;"></div>
+{% endblock %}

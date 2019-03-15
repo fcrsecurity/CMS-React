@@ -1,0 +1,20 @@
+{% extends '::fosuserbundle_layout.html.twig' %}
+
+{% block body %}
+	<!-- start main content -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="buffer-1-top buffer-4-bottom col-lg-4 col-lg-offset-4">
+					<h3>{{ 'Registration'|trans }}</h3>
+					<small>{{ 'Already have an account?'|trans }} <a href="{{ path('fos_user_security_login') }}">{{ 'Login here!'|trans }}</a></small>
+					<!-- start login form -->
+					<div class="filterContent defaultTab sidebarWidget">                                        
+						{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+					</div><!-- end login form -->
+				</div><!-- end col -->            
+			</div>
+		</div><!-- end container -->
+	</section>
+	<!-- end main content -->
+{% endblock body %}

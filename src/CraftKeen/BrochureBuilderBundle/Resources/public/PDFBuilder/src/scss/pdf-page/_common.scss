@@ -1,0 +1,68 @@
+/* common */
+body, html {
+    font-family: $font-regular;
+    font-size: 20px;
+    margin:0;
+}
+.bb-{
+    &page-wrapper {
+        width: 1276px;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    &page {
+        &-controls {
+            text-align: right;
+            margin-bottom: 60px;
+            &-list {
+                display: block;
+                .item {
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+        &-section {
+            // border-bottom: 5px solid $gray;
+            height: 1650px;
+            overflow-y: hidden;
+            position: relative;
+            width: 1276px;
+        }
+    }
+    &h2 {
+        font-size: 76px;
+        margin-bottom: 10px;
+        font-family: 'yantramanavblack';
+        font-weight: bold;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+    &h3 {
+        font-size: 45px;
+        margin-bottom: 10px;
+        color:$blue-type1;
+        font-family: $font-medium;
+        font-weight: normal;
+        margin-top: -20px;
+    }
+    &underheader {
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+    &cmp-caption {
+        vertical-align: middle;
+    }
+}
+h1 {
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+h2.bb-h2 {
+    margin-bottom: 0;
+    margin-top: 5px;
+    line-height: 0.9;
+    font-size: 66px;
+}

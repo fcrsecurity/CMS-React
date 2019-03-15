@@ -1,0 +1,22 @@
+{% macro renderDialog(prefix, title, helpText) %}
+    <div id="{{ prefix }}-dialog" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ title|trans }}</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="{{ prefix }}-reject-form" method="POST">
+                        <div class="form-group">
+                            <label for="{{ prefix }}-comment">Comment:</label>
+                            <textarea name="comment" class="form-control textarea-comment" rows="5" id="{{ prefix }}-comment"></textarea>
+                            <small id="{{ prefix }}-commentHelp" class="form-text text-muted">{{ helpText|trans }}</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary" >{{ 'Submit'|trans }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

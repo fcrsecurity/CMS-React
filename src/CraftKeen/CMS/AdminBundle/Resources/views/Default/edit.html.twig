@@ -1,0 +1,27 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+
+{% if path_prefix is not defined %}
+    {% set path_prefix='craftkeen_cms_admin_' %}
+{% endif %}
+{% if moduleTitle is not defined %}
+    {% set moduleTitle='Administration' %}
+{% endif %}
+{% if front_page_preview is not defined %}
+    {% set front_page_preview='' %}
+{% endif %}
+{% if draft is not defined %}
+    {% set draft=null %}
+{% endif %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path(path_prefix~'index') }}">{{ moduleTitle }}</a></li>
+    <li class="active">{{ 'Edit'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    {% if edit_form is defined and delete_form is defined and path_prefix is defined and object is defined %}
+        {{ CRUD.renderEditFormContent(edit_form, delete_form, path_prefix, object, draft) }}
+    {% endif %}
+{% endblock %}
+

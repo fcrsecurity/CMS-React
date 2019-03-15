@@ -1,0 +1,6 @@
+<div class="search-result-item page-result">
+    <h4><a href="{{ path('craftkeen_fcr_press_release_view', {'slug':item.hiddenMeta}) }}">{{ item.title }}</a></h4>
+    <div>{{ item.shortBody|slice(0, 300)|raw }}...</div>
+    <a href="{{ path('craftkeen_fcr_press_release_view', {'slug':item.hiddenMeta}) }}">{{ 'More'|trans([], 'messages', app.request.locale) }}</a>
+    <hr><br>
+</div>

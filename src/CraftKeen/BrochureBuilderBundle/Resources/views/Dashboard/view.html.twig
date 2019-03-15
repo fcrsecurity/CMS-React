@@ -1,0 +1,46 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% set moduleTitle='View Brochure'|trans %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('brochure_dashboard_list') }}">{{ 'Brochures'|trans }}</a></li>
+    <li class="active">{{'View'|trans}}</li>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    '@BrochureBuilderBundle/Resources/public/Brochure/dist/css/styles.css'
+    filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block admin_block_body %}
+    <div class="row">
+        {% if is_granted('ROLE_BROCHURE_APPROVER') and brochure.status == constant('CraftKeen\\BrochureBuilderBundle\\Entity\\Brochure::STATUS_PENDING_APPROVAL') %}
+            <div class="col-lg-1">
+                <form id="approve-form" method="GET" action="{{ path('brochure_approve', {'id': brochure.id}) }}">
+                    <button type="submit" class="btn btn-success" >{{ 'Approve'|trans }}</button>
+                </form>
+            </div>
+        {% endif %}
+        {% if is_granted('ROLE_BROCHURE_APPROVER') and brochure.status == constant('CraftKeen\\BrochureBuilderBundle\\Entity\\Brochure::STATUS_PENDING_APPROVAL') %}
+            <div class="col-lg-4">
+                <form id="reject-form" method="POST" action="{{ path('brochure_admin_brochure_reject', {'id': brochure.id}) }}">
+                    <button type="submit" class="btn btn-danger" >{{ 'Reject'|trans }}</button>
+                    <div class="form-group">
+                        <label for="reject-comment">Comment:</label>
+                        <textarea name="comment" class="form-control textarea-comment" rows="5" id="reject-comment"></textarea>
+                        <small id="commentHelp" class="form-text text-muted">{{ 'Please specify the reason for the rejection here'|trans }}</small>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+    <div class="loader-div">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="iframe-content-div"><iframe style="border:none; width:100%; min-height:700px " src="{{ path('brochure_view_pdf', {'id': brochure.id}) }}"></iframe></div>
+{% endblock %}

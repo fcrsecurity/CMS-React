@@ -1,0 +1,20 @@
+@media screen and (min-width: $large-devices-width) {
+    .page-conference-calls {
+        .hr-line {
+            display: none;
+        }
+        .left-part {
+            border-bottom: none;
+            border-right: 1px solid $color-grey-dark4;
+        }
+        .right-part,
+        .left-part {
+            padding-top: $height-22;
+            ul {
+                max-width: 100%;
+                padding-top: 0;
+                margin: 8px 0 0 0;
+            }
+        }
+    }
+}

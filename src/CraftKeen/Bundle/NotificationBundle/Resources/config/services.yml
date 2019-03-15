@@ -1,0 +1,18 @@
+services:
+    craft_keen_notification.email.parameters_bag:
+        public: false
+        class: 'CraftKeen\Bundle\NotificationBundle\Model\EmailParametersBag'
+        calls:
+            - ['setFcrPropertyCtaEmailFrom',['%fcr_property_cta_email_from%']]
+            - ['setFcrPropertyCtaEmailLabel',['%fcr_property_cta_email_label%']]
+
+    craft_keen_notification.manager.email:
+        class: 'CraftKeen\Bundle\NotificationBundle\Manager\EmailManager'
+        arguments:
+            - '@templating'
+            - '@mailer'
+            - '@craft_keen_notification.email.parameters_bag'
+        calls:
+            - ['setLogger', ['@logger']]
+        tags:
+            - {name: 'monolog.logger', channel: 'email_notifications'}

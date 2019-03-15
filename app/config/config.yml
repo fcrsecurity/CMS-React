@@ -1,0 +1,297 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: workflow.yml }
+    - { resource: "@CraftKeenFCRBundle/Resources/config/services.yml" }
+    - { resource: "@CraftKeenCMSAdminBundle/Resources/config/services.yml" }
+    - { resource: "@BrochureBuilderBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en-ca
+
+craft_keen_cms_menu:
+    use_menu_cache: true
+craft_keen_widget:
+    use_widget_cache: false # temporally disabled until fixed cache
+
+framework:
+    #esi:             ~
+    translator:
+        enabled: true
+        fallback: en
+        logging: true
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection:
+        enabled: true
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  '%locale%'
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+    profiler:
+        collect: false
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    form_themes: ['bootstrap_3_layout.html.twig']
+    globals:
+       global_assets: '/bundles/craftkeenbundletheme/'
+       ckcms_library_url: "%ckcms_library_url%"
+       hero_overlay: "%hero_overlay%"
+       theme: "%theme_name%"
+       website_name: "%website_name%"
+       stockwatch_handler: "@craft_keen_fcr.service.stockwatch_handler"
+       google_api_key: "%google_api_key%"
+       mailchimp_list_news: "%mailchimp_list_news%"
+       mailchimp_list_leasing: "%mailchimp_list_leasing%"
+       mailchimp_list_careers: "%mailchimp_list_careers%"
+       default_formats:
+           datetime: "%default_formats_datetime%"
+
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        mapping_types:
+                  enum: string
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/../var/data/data.sqlite"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        entity_managers:
+            default:
+                filters:
+                    softdeleteable:
+                        class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                        enabled: true
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: true
+                mappings:
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        alias: GedmoLoggable # (optional) it will default to the name set for the mappingmapping
+                        is_bundle: false
+                dql:
+                    numeric_functions:
+                        rand: 'CraftKeen\Bundle\ComponentBundle\DQL\Functions\RandFunction'
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport:  "%mailer_transport%"
+    host:       "%mailer_host%"
+    port:       "%mailer_port%"
+    encryption: "%mailer_encryption%"
+    username:   "%mailer_user%"
+    password:   "%mailer_password%"
+    auth_mode:  "%mailer_auth_mode%"
+    spool:      { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: CraftKeen\CMS\UserBundle\Entity\User
+    service:
+        mailer: fos_user.mailer.twig_swift
+    from_email:
+        address: "%admin_email%"
+        sender_name: "%admin_name%"
+    resetting:
+        email:
+            template:   email/password_resetting.email.twig
+    registration:
+        confirmation:
+            enabled: true
+            #template:   email/register.email.twig
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
+
+fm_elfinder:
+    #assets_path: / # default is /assets, this is where css/js elfinder files are
+    instances:
+        default:
+            editor: ckeditor # other options are tinymce, tinymce4, fm_tinymce, form, simple, custom
+            #editor_template: custom template for your editor # default null
+            #path_prefix: / # for setting custom assets path prefix, useful for non vhost configurations, i.e. http://127.0.0.1/mysite/
+            #fullscreen: true|false # default is true, applies to simple and ckeditor editors
+            theme: smoothness # jquery theme, default is 'smoothness'
+            include_assets: true # disable if you want to manage loading of javascript and css assets manually
+            #visible_mime_types: ['image/png', 'image/jpg', 'image/jpeg'] # only show these mime types, defaults to show all
+            connector:
+                debug: true #|false # defaults to false
+                roots:       # at least one root must be defined, defines root filemanager directories
+                    uploads:
+                        #show_hidden: true|false # defaults to false, hides dotfiles
+                        driver: LocalFileSystem
+                        path: '%ckcms_library_path%'
+                        url: '%ckcms_library_url%'
+                        upload_allow: ['image/png', 'application/mp4', 'video/mp4', 'image/jpg', 'image/jpeg', 'application/pdf','application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                        upload_deny: ['all']
+                        upload_max_size: 100M # also file upload sizes restricted in php.ini
+                        #attributes: example of setting attributes permission
+                        #    - { pattern: '/(.*?)/', read: true, write: false, locked: true }
+        form:
+            relative_path: false
+            editor: form # other choices are tinymce or simple, and form
+            fullscreen: true # defaults true, applies to simple and ckeditor editors
+            include_assets: true # disable if you want to handle loading of the javascript and css assets yourself
+            connector:
+                debug: true # defaults to false
+                roots:       # at least one root must be defined
+                    uploads:
+                        driver: LocalFileSystem
+                        url: '%ckcms_library_url%'
+                        path: '%ckcms_library_path%'
+                        upload_allow: ['image/png', 'image/jpg', 'application/mp4', 'video/mp4', 'image/jpeg', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                        upload_deny: ['all']
+                        upload_max_size: 100M
+        brochure:
+            editor: custom
+            editor_template: 'BrochureBuilderBundle::FileManager\editor.html.twig'
+            fullscreen: true
+            include_assets: true
+            theme: smoothness
+            connector:
+                debug: true # defaults to false
+                roots:       # at least one root must be defined
+                    properties:
+                        driver: LocalFileSystem
+                        url: 'brochure/filemanager/content/properties'
+                        path: '%kernel.root_dir%/../var/files/brochure/properties'
+                        alias: 'Property'
+                        upload_allow: ['image/png', 'image/jpg', 'application/mp4', 'video/mp4', 'image/jpeg', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/plain']
+                        upload_deny: ['all']
+                        upload_max_size: 100M
+                    storage:
+                        driver: LocalFileSystem
+                        url: 'brochure/filemanager/content/storage'
+                        path: '%kernel.root_dir%/../var/files/brochure/storage'
+                        alias: 'Files'
+                        upload_allow: ['image/png', 'image/jpg', 'application/mp4', 'video/mp4', 'image/jpeg', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/plain']
+                        upload_deny: ['all']
+                        upload_max_size: 100M
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+    assets:
+        theme_css:
+            inputs:
+                - '@CraftKeenCMSThemeBundle/Resources/public/%theme_name%/dist/css/styles.css'
+        theme_js:
+            inputs:
+                - '@CraftKeenCMSThemeBundle/Resources/public/%theme_name%/dist/js/functions.js'
+        admin_theme_css:
+            inputs:
+                - '@CraftKeenCMSThemeBundle/Resources/public/%admin_theme_name%/dist/css/styles.css'
+        admin_theme_js:
+            inputs:
+                - '@CraftKeenCMSThemeBundle/Resources/public/%admin_theme_name%/dist/js/helper.lib.js'
+                - '@CraftKeenCMSThemeBundle/Resources/public/%admin_theme_name%/dist/js/functions.js'
+
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: 'KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
+        sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template
+
+limenius_react:
+    # Other options are "server_side" and "client_side"
+    default_rendering: "both"
+
+    serverside_rendering:
+        # In case of error in server-side rendering, throw exception
+        fail_loud: false
+
+        # Replay every console.log message produced during server-side rendering
+        # in the JavaScript console
+        # Note that if enabled it will throw a (harmless) React warning
+        trace: false
+
+        # Mode can be `"phpexecjs"` (to execute Js from PHP using PhpExecJs),
+        # or `"external_server"` (to rely on an external node.js server)
+        # Default is `"phpexecjs"`
+        mode: "phpexecjs"
+
+        # Location of the server bundle, that contains React and React on Rails.
+        # null will default to `%kernel.root_dir%/Resources/webpack/server-bundle.js`
+        # Only used with mode `phpexecjs`
+        server_bundle_path: null
+
+        # Only used with mode `external`
+        # Location of the socket to communicate with a dummy node.js server.
+        # Socket type must be acceptable by php function stream_socket_client. Example unix://node.sock, tcp://127.0.0.1:5000
+        # More info: http://php.net/manual/en/function.stream-socket-client.php
+        # Example of node server:
+        # https://github.com/Limenius/symfony-react-sandbox/blob/master/app/Resources/node-server/server.js
+        # null will default to `unix://%kernel.root_dir%/Resources/node-server/node.sock`
+        server_socket_path: null
+
+ewz_recaptcha:
+    public_key:  %recaptcha_public_key%
+    private_key: %recaptcha_private_key%
+    # Not needed as "%kernel.default_locale%" is the default value for the locale key
+    locale_key:  %kernel.default_locale%
+
+ivory_ck_editor:
+    toolbars:
+        configs:
+            minimal: [ [ "Source", "-", "Link","Unlink", "Anchor", "-", 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'  ] ]
+            description: [ [ "Source", "-", 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', "-", "Link","Unlink", '-', 'Undo', 'Redo'] ]
+
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            loggable: true
+            softdeleteable: true
+    class:
+        loggable: CraftKeen\CMS\AdminBundle\EventListener\CustomLoggableListener
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     ../vendor/bin/wkhtmltopdf-amd64
+        options:   
+            lowquality: false
+            dpi: 300
+            image-dpi: 300

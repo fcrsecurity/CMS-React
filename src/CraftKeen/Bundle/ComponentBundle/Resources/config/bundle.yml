@@ -1,0 +1,2 @@
+bundle:
+    class: 'CraftKeen\Bundle\ComponentBundle\CraftKeenComponentBundle'

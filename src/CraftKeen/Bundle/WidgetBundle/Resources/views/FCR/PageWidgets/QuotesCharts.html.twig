@@ -1,0 +1,146 @@
+<script type="text/javascript">
+    window.portfolioPageTranslations = {
+        'stoke_price' : '{{ 'fcr.quotes-charts.stoke-price' |trans([], 'messages', app.request.locale) }}',
+        'volume' : '{{ 'fcr.quotes-charts.volume' |trans([], 'messages', app.request.locale) }}',
+        'date' : '{{ 'fcr.quotes-charts.date' |trans([], 'messages', app.request.locale) }}',
+        'open' : '{{ 'fcr.quotes-charts.open' |trans([], 'messages', app.request.locale) }}',
+        'high' : '{{ 'fcr.quotes-charts.high' |trans([], 'messages', app.request.locale) }}',
+        'low' : '{{ 'fcr.quotes-charts.low' |trans([], 'messages', app.request.locale) }}',
+        'close' : '{{ 'fcr.quotes-charts.close' |trans([], 'messages', app.request.locale) }}'
+    };
+</script>
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
+
+
+            <div class="stock-price">
+            <img class="loader-gif" src="/uploads/icons/squares.gif">
+                <div class="info-head">
+                    <div class="ind"></div>
+                    <div class="arrow">
+                        <em class="" aria-hidden="true"></em>
+                    </div>
+                    <div class="usd"></div>
+                </div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>{{ 'fcr.quotes-charts.volume' |trans([], 'messages', app.request.locale) }}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> {{ 'fcr.quotes-charts.week-high' |trans([], 'messages', app.request.locale) }}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> {{ 'fcr.quotes-charts.week-low' |trans([], 'messages', app.request.locale) }}</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="info-bottom">
+                    <div class="name">TSX:FCR</div>
+                    <div class="date">{{'As'|trans}}</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid quotes-charts">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <div class="historical-prices-wrapper row">
+                <div class="col-lg-6">
+                    <div class="time-link">
+                        <span class="time-frame">{{ 'fcr.quotes-charts.time-frame' |trans([], 'messages', app.request.locale) }}</span>
+                        <ul>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.1d' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.5d' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.1m' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.3m' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.6m' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#" class="active">{{ 'fcr.quotes-charts.t-f.1y' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.2y' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.5y' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.10y' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.max' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.ytd' |trans([], 'messages', app.request.locale) }}</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="wrap-inputs">
+                        <label for="date-1" class="sr-only" >Date From</label>
+                        <span>{{ 'fcr.quotes-charts.t-f.from' |trans([], 'messages', app.request.locale) }}</span>
+                        <input id="date-1" type="text" class="datetimepickerFrom" placeholder="dd/mm/yyyy">
+                        <label for="date-2" class="sr-only" >Date To</label>
+                        <span>{{ 'fcr.quotes-charts.t-f.to' |trans([], 'messages', app.request.locale) }}</span>
+                        <input id="date-2" type="text" class="datetimepickerTo" placeholder="dd/mm/yyyy">
+                        <a href="#" class="button getPrice">{{ 'fcr.quotes-charts.t-f.button' |trans([], 'messages', app.request.locale) }}
+                            <em class="fa fa-angle-right" aria-hidden="true"></em>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="average-percents"></div>
+                    <svg id="area-chart" class="charts">
+                    </svg>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <svg id="volume-bar-chart" class="charts">
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid historical">
+    <div class="row tables">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+            <h1>{{ 'fcr.quotes-charts.historical-prices' |trans([], 'messages', app.request.locale) }}</h1>
+            <div class="historical-prices-wrapper row ">
+                <div class="col-lg-6">
+                    <div class="time-link">
+                        <span class="time-frame">{{ 'fcr.quotes-charts.time-frame' |trans([], 'messages', app.request.locale) }}</span>
+                        <ul>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.daily' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.weekly' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.monthly' |trans([], 'messages', app.request.locale) }}</a></li>
+                            <li><a href="#">{{ 'fcr.quotes-charts.t-f.dividens-only' |trans([], 'messages', app.request.locale) }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="wrap-inputs">
+                        <label for="date-3" class="sr-only" >Date From</label>
+                        <span>{{ 'fcr.quotes-charts.t-f.from' |trans([], 'messages', app.request.locale) }}</span>
+                        <input id="date-3" class="datetimepickerFrom" type="text" name="from_date_time" placeholder="dd/mm/yyyy">
+                        <label for="date-4" class="sr-only" >Date To</label>
+                        <span>{{ 'fcr.quotes-charts.t-f.to' |trans([], 'messages', app.request.locale) }}</span>
+                        <input id="date-4" class="datetimepickerTo" type="text" name="to_date_time" placeholder="dd/mm/yyyy">
+                        <a href="#" class="button getPrice">{{ 'fcr.quotes-charts.t-f.button' |trans([], 'messages', app.request.locale) }}
+                            <em class="fa fa-angle-right" aria-hidden="true"></em>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table_container table-responsive">
+                <table id="dataTable-qc" class="table table-hover">
+                    <thead class="text-center"></thead>
+                    <tbody class="text-center"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

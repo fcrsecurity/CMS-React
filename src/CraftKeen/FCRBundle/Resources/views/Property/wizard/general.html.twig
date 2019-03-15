@@ -1,0 +1,108 @@
+{% extends 'CraftKeenFCRBundle:Property:propertyLayout.html.twig' %}
+
+{% block meta_title %}{{ 'Property Add General'|trans }}{% endblock %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+        exitUrl : path('craftkeen_fcr_property_view', {code: property.code}),
+        copy    : copy,
+        mode    : mode,
+    } %}
+    {{ AP.AdminPanel(property, data) }}
+{% endblock %}
+
+{% block hero %}
+	{% set heroImage = ckcms_library_url~'/properties/hero/default_header.png' %}
+	<section class="hero-image container-fluid" style="
+        background: {{ hero_overlay }} ,url( '{{ heroImage }}' ) no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+             ">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+                <div class="container-content">
+                    <h1 class="text-shadow">New Property Wizard</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    'bower_components/selectize/dist/css/selectize.bootstrap3.css'
+    filter='cssrewrite' %}
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    {% javascripts
+    'bower_components/selectize/dist/js/standalone/selectize.min.js'
+    'bower_components/symfony-collection/jquery.collection.js'
+    %}
+	<script src="{{ asset_url }}"></script>
+
+	<script>
+        $(function() {
+            $('#craftkeen_fcrbundle_property_tenants').selectize({
+                plugins: ['remove_button'],
+                create: false,
+                allowEmptyOption:false
+            });
+            $('#craftkeen_fcrbundle_property_managers').selectize({
+                plugins: ['remove_button'],
+                maxItems: 3,
+                allowEmptyOption:false,
+                create: false
+            });
+            $('.vacancyList-collection').collection({
+                drag_drop: true
+            });
+
+            // Enable JQ validation
+            $("form[name=craftkeen_fcrbundle_property]").validate({
+                rules: {
+                    "craftkeen_fcrbundle_property[parentName]": {
+                        required: true
+                    },
+                    "craftkeen_fcrbundle_property[managers][]": {
+                        required: true,
+                        min: 1
+                    }
+                },
+                messages: {
+                    "craftkeen_fcrbundle_property[parentName]": "Property Parent Name is required.",
+                }
+            });
+        });
+	</script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+<section class="container-fluid">
+	<div class="row grid">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+			<div class="buffer-7-top">
+				<p class="text-center"><b>{{ 'General'|trans }}</b></p>
+				<div class="label label-warning">{{'Status:'|trans}} {{ property.status }}</div>
+                {% form_theme form
+                'form_themes/jquery.collection.html.twig' %}
+				{{ form_start(form) }}
+					{{ form_widget(form) }}
+					<input type="submit" class="btn btn-primary" value="{{ 'Next'|trans }}" />
+				{{ form_end(form) }}
+				<br />
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

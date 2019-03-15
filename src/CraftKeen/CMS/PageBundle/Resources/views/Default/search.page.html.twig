@@ -1,0 +1,12 @@
+<div class="search-result-item page-result">
+    <h4><a href="{{ item.object|entity_slug_link|raw }}">{{ item.title|capitalize }}</a></h4>
+    {{ item.hiddenMeta |raw}}
+    <a href="{{ item.object|entity_slug_link|raw }}">{{ 'More'|trans }}</a>
+    {#{% if app.environment == 'dev' %}#}
+        {#<br>#}
+        {#<span>#}
+            {#{{ item.objectClass }}:{{ item.objectId }}#}
+        {#</span>#}
+    {#{% endif %}#}
+    <hr><br>
+</div>

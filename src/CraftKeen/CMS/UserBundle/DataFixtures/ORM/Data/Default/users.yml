@@ -1,0 +1,35 @@
+CraftKeen\CMS\UserBundle\Entity\User:
+    User0:
+        username: superadmin
+        email: superadmin@email.lo
+        enabled: 1
+        plainPassword: superadmin
+        roles: [ROLE_SUPERADMINISTRATOR, ROLE_ADMINISTRATOR, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_USER]
+
+    User1:
+        username: admin
+        email: admin@email.lo
+        enabled: 1
+        plainPassword: F&A%87M*inD
+        roles: [ROLE_ADMINISTRATOR, ROLE_USER]
+
+    User2:
+        username: contributor
+        email: contributor@email.lo
+        enabled: 1
+        plainPassword: F&A%87M*inD
+        roles: [ROLE_CONTRIBUTOR, ROLE_USER]
+
+    User3:
+        username: editor
+        email: editor@email.lo
+        enabled: 1
+        plainPassword: F&A%87M*inD
+        roles: [ROLE_EDITOR, ROLE_USER]
+
+    User4:
+        username: approver
+        email: approver@email.lo
+        enabled: 1
+        plainPassword: F&A%87M*inD
+        roles: [ROLE_APPROVER, ROLE_USER]

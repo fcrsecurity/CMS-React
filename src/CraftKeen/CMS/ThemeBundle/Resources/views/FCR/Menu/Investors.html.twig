@@ -1,0 +1,7 @@
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+
+{% set currUrl = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+
+<ul class="list-unstyled">
+    {{ M.renderMenuTree(menu, currUrl) }}
+</ul>

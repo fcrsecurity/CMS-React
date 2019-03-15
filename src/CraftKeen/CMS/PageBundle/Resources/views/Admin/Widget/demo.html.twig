@@ -1,0 +1,8 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSPageBundle:macro:content.html.twig' as P %}
+
+{% block admin_block_body %}
+    {% for widget in widgets %}
+        {{ P.renderExactWidget(widget) }}
+    {% endfor %}
+{% endblock admin_block_body %}

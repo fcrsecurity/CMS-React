@@ -1,0 +1,80 @@
+CraftKeen\FCRBundle\Entity\ActiveProvince:
+    L_Province0:
+        status: 'live'
+        site: '@Site0->id'
+        version: 1
+        versionComment: 'Initial'
+        provinceCode: 'BC'
+        provinceName: 'British Columbia'
+        totalArea: 945
+        population: 4.7
+        households: 1764635
+        icon: 'https://fcr.ca/uploads/icons/BritishColumbia.svg'
+        iconWidth: '200'
+        labelLat: 54.087358
+        labelLng: -126.407326
+        markerLat: 48.407326
+        markerLng: -123.329773
+        description: '%prop_count% properties featuring over 2 million square feet in retail space underpin our strong presence in British Columbia marketplace. Viewed as a growth market, we continue to aggressively pursue opportunities in the province’s dynamic urban markets.'
+        lang: '@Lang0->id'
+        createdBy: '@User1->id'
+
+    L_Province1:
+        status: 'live'
+        site: '@Site0->id'
+        version: 1
+        versionComment: 'Initial'
+        provinceCode: 'AB'
+        provinceName: 'Alberta'
+        totalArea: 661
+        population: 4.2
+        households: 1390275
+        icon: 'https://fcr.ca/uploads/icons/Alberta.svg'
+        iconWidth: '190'
+        labelLat: 56.948821
+        labelLng: -116.570801
+        markerLat: 51.048615
+        markerLng: -114.070846
+        description: 'With %prop_count% properties ranging from 40,000 to 500,000 square feet, FCR has a robust presence in the Calgary and Edmonton marketplace. Highlighted by projects such as the revitalization of McKenzie Town Centre, the Edmonton Brewery District and Mount Royal Village in Calgary, we are currently executing our growth and development plans for these key markets.'
+        lang: '@Lang0->id'
+        createdBy: '@User1->id'
+
+    L_Province2:
+        status: 'live'
+        site: '@Site0->id'
+        version: 1
+        versionComment: 'Initial'
+        provinceCode: 'ON'
+        provinceName: 'Ontario'
+        totalArea: 1076
+        population: 13.8
+        households: 4887510
+        icon: 'https://fcr.ca/uploads/icons/Ontario.svg'
+        iconWidth: '290'
+        labelLat: 52.06982
+        labelLng: -87.022949
+        markerLat: 43.829853
+        markerLng: -81.254028
+        description: 'Driven by the dynamic GTA, Southwestern Ontario and the Capital Region markets, FCR has %prop_count% properties in the province ranging from 13,000 to 550,000 square feet. Dominated by the gentrification of many downtown Toronto neighbourhoods and complemented by robust economic activity in London, Kitchener-Waterloo and Ottawa, Ontario remains a growth engine for the company.'
+        lang: '@Lang0->id'
+        createdBy: '@User1->id'
+
+    L_Province3:
+        status: 'live'
+        site: '@Site0->id'
+        version: 1
+        versionComment: 'Initial'
+        provinceCode: 'QC'
+        provinceName: 'Quebec'
+        totalArea: 1667
+        population: 7.9
+        households: 3395340
+        icon: 'https://fcr.ca/uploads/icons/Quebec.svg'
+        iconWidth: '290'
+        labelLat: 52.053636
+        labelLng: -72.14585
+        markerLat: 46.813878
+        markerLng: -71.207981
+        description: 'With %prop_count% properties totalling over 6 million square feet of retail space across the province, the Quebec retail sector continues to drive growth and opportunity for FCR. Indeed, as one of the first markets in which we operated, we are excited about the future with exciting properties such as Griffintown and Carre Lucerne in Montreal.'
+        lang: '@Lang0->id'
+        createdBy: '@User1->id'

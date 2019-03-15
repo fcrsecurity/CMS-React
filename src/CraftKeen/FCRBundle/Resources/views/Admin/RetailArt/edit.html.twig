@@ -1,0 +1,100 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% set moduleTitle = 'Retail & Art'|trans %}
+{% set path_prefix = 'admin_community_retail-art_' %}
+
+{% block admin_block_breadcrumb %}
+	<li><a href="{{ path(path_prefix~'index') }}">{{ moduleTitle }}</a></li>
+	<li class="active">{{'Edit'|trans}}</li>
+{% endblock %}
+
+{% block footer_js %}
+	{{ parent() }}
+	{% javascripts
+		'bower_components/symfony-collection/jquery.collection.js'
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	<script>
+		/**
+		* Initialize Collection for Gallery Media Items
+		*/
+	    $('.media-gallery-collection').collection({
+		   drag_drop: true,
+		   after_add: function(collection, element) {
+			   var id = $(element).attr('id');
+			   var eidm = id.replace(id.split("_").pop(), "image");
+			   var inputs = $(element).find('input');
+			   $(inputs[0]).on("click", function() {
+				   var childWin = window.open("/elfinder/form?id=" + eidm, "popupWindow", "height=450, width=900");
+			   });
+		   }
+	    });
+		/**
+		* Custom Callback for Media Gallery image field.
+		* 
+		* @param object file
+		* @returns void
+		*/
+		function galleryImageChangeCallback(file, item) {
+		var galleryImageId = $(item).attr('id');
+			   $('#' + galleryImageId).attr('src', file.url);
+		}
+	</script>
+{% endblock %}
+
+{% block admin_block_body %}
+{% form_theme edit_form
+	'form_themes/jquery.collection.html.twig'
+	'form_themes/retailArtGalleryType.html.twig'
+%}
+{{ form_start(edit_form) }}
+        {% if object.status %}
+            <div class="form-group">
+                {{'Status'|trans }}: <label class="label label-default" for="">{{ object.status|capitalize }}</label>
+				{% if object.lang is defined %}
+					{{'Language'|trans }}: <label class="label label-info" for="">{{ object.lang|capitalize }}</label>
+				{% endif %}
+            </div>
+        {% endif %}
+		{{ form_row(edit_form.categories) }}
+		{{ form_row(edit_form.head) }}
+		{{ form_row(edit_form.title) }}
+		{{ form_row(edit_form.slug) }}
+		{{ form_row(edit_form.image) }}
+		{{ form_row(edit_form.imageAlt) }}
+		{{ form_row(edit_form.text) }}
+		{{ form_row(edit_form.short) }}
+		<div class="panel panel-default">
+			<div class="panel-heading">Gallery</div>
+			<div class="panel-body">
+				<div class="row">
+					{{ form_widget(edit_form.gallery) }}
+				</div>
+			</div>
+		</div>
+		{{ form_widget(edit_form) }}
+		
+        {% if is_granted('canedit', object) %}
+            <input type="submit" class="btn btn-primary" value="{{ 'Save'|trans }}" />
+        {% endif %}
+
+        {% if workflow_can(object, 'to_review') and is_granted('canedit', object) %}
+            <button name="transition" value="to_review" type="submit" class="btn btn-warning">{{'Send for Apporval'|trans}}</button>
+        {% endif %}		
+		
+    {{ form_end(edit_form) }}
+
+	<hr />
+    <ul class="list-unstyled list-inline">
+        <li>
+            <a class="btn btn-info" href="{{ path(path_prefix~'index') }}">{{ "Back to the list"|trans }}</a>
+        </li>
+        <li>
+            {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+                {% if is_granted('candelete', object) %}
+                    <input class="btn btn-danger" type="submit" value="{{ 'Delete'|trans }}">
+                {% endif %}
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

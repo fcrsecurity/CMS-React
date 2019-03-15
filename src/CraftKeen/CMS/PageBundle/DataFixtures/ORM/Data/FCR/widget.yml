@@ -1,0 +1,173 @@
+CraftKeen\CMS\PageBundle\Entity\Widget:
+    Widget0:
+        name: Plain Text
+        type: text
+        macros: text
+    Widget1:
+        name: Text Widget
+        type: text
+        macros: text
+    Widget2:
+        name: Result Widget
+        type: result
+        macros: result
+    Widget3:
+        name: CTABox Widget
+        type: ctabox
+        macros: ctabox
+    Widget4:
+        name: CTABoxFinance Widget
+        type: StockPriceMacro
+        macros: StockPriceMacro
+    Widget5:
+        name: Title Widget
+        type: title
+        macros: title
+    Widget6:
+        name: LinkIconList Widget
+        type: LinkIconList
+        macros: LinkIconList
+    Widget7:
+        name: FeatureSlider Widget
+        type: FeatureSlider
+        macros: FeatureSlider
+    Widget8:
+        name: Video Widget
+        type: Video
+        macros: Video
+    Widget9:
+        name: PersonBlock Widget
+        type: PersonBlock
+        macros: PersonBlock
+    Widget10:
+        name: Button Widget
+        type: Button
+        macros: Button
+    Widget11:
+        name: PersonBaner Widget
+        type: PersonBaner
+        macros: PersonBaner
+    Widget12:
+        name: ConferenceCall Widget
+        type: ConferenceCall
+        macros: ConferenceCall
+    Widget13:
+        name: SliderInfo Widget
+        type: SliderInfo
+        macros: SliderInfo
+    Widget14:
+        name: FAQ Widget
+        type: FAQ
+        macros: FAQ
+    Widget15:
+        name: HeadQuarters Widget
+        type: HeadQuarters
+        macros: HeadQuarters
+    Widget16:
+        name: OtherOffices Widget
+        type: OtherOffices
+        macros: OtherOffices
+    Widget17:
+        name: TeamTabs Widget
+        type: TeamTabs
+        macros: TeamTabs
+    Widget18:
+        name: AnalystCoverage Widget
+        type: AnalystCoverage
+        macros: AnalystCoverage
+    Widget19:
+        name: IRStockPrice Widget
+        type: IRStockPriceMacro
+        macros: IRStockPriceMacro
+    Widget20:
+        name: ChartBarInvestors1 Widget
+        type: ChartBarInvestors1
+        macros: ChartBarInvestors1
+    Widget21:
+        name: ChartBarInvestors2 Widget
+        type: ChartBarInvestors2
+        macros: ChartBarInvestors2
+    Widget22:
+        name: LastPressReleases Widget
+        type: LastPressReleases
+        macros: LastPressReleases
+    Widget23:
+        name: DividendsMacro Widget
+        type: DividendsMacro
+        macros: DividendsMacro
+    Widget24:
+        name: DebenturesMacro Widget
+        type: DebenturesMacro
+        macros: DebenturesMacro
+    Widget25:
+        name: FinancialReportsMacro Widget
+        type: FinancialReportsMacro
+        macros: FinancialReportsMacro
+    Widget26:
+        name: Governance Tabs Widget
+        type: GovernanceTabs
+        macros: GovernanceTabs
+    Widget27:
+        name: RichTextMacro Widget
+        type: RichTextMacro
+        macros: RichTextMacro
+    Widget28:
+        name: SustainabilityReportsMacro Widget
+        type: SustainabilityReportsMacro
+        macros: SustainabilityReportsMacro
+    Widget28-1:
+        name: SustainabilitySliderMacro Widget
+        type: SustainabilitySliderMacro
+        macros: SustainabilitySliderMacro
+    Widget29:
+        name: RetailArtMacro Widget
+        type: RetailArtMacro
+        macros: RetailArtMacro
+    Widget30:
+        name: CareersSliderInfoMacro Widget
+        type: CareersSliderInfoMacro
+        macros: CareersSliderInfoMacro
+    Widget31:
+        name: CareersPersonBlockMacro Widget
+        type: CareersPersonBlockMacro
+        macros: CareersPersonBlockMacro
+    Widget32:
+        name: CareersFAQMacro Widget
+        type: CareersFAQMacro
+        macros: CareersFAQMacro
+    Widget33: 
+        name: BoardPersonBlockMacro Widget
+        type: BoardPersonBlockMacro
+        macros: BoardPersonBlockMacro
+    Widget34: 
+        name: ExecutivePersonBlockMacro Widget
+        type: ExecutivePersonBlockMacro
+        macros: ExecutivePersonBlockMacro
+    Widget35: 
+        name: ConferenceCallsMacro Widget
+        type: ConferenceCallsMacro
+        macros: ConferenceCallsMacro
+    Widget36: 
+        name: IrFAQMacro Widget
+        type: IrFAQMacro
+        macros: IrFAQMacro
+    Widget37:
+        name: GoogleMap Widget
+        type: GoogleMap
+        macros: GoogleMap
+    Widget38:
+        name: PressReleases Widget
+        type: PressReleases
+        macros: PressReleases
+    Widget39:
+        name: QuotesCharts Widget
+        type: QuotesCharts
+        macros: QuotesCharts
+    Widget40:
+        name: LinkIconListMacro Widget
+        type: LinkIconListMacro
+        macros: LinkIconListMacro
+    Widget41:
+        name: ChartMacro Widget
+        type: ChartMacro
+        macros: ChartMacro

@@ -1,0 +1,13 @@
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $large-devices-width) {
+  	.press-release-detail {
+      	.left-block {
+	        h1 {
+	          font-size: 37px;
+	        }
+	        p {
+	          font-size: 18px;
+	        }
+    	}
+  	}
+}

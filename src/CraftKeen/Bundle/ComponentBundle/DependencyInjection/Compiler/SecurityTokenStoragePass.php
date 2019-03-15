@@ -1,0 +1,36 @@
+<?php
+
+namespace CraftKeen\Bundle\ComponentBundle\DependencyInjection\Compiler;
+
+use CraftKeen\Bundle\ComponentBundle\Model\SecurityContextAwareInterface;
+use CraftKeen\Bundle\ComponentBundle\Traits\AwareCompilerPassTrait;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+
+class SecurityTokenStoragePass implements CompilerPassInterface
+{
+    use AwareCompilerPassTrait;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getServiceName()
+    {
+        return 'security.token_storage';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getInterfaceName()
+    {
+        return SecurityContextAwareInterface::class;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getSetterName()
+    {
+        return 'setTokenStorage';
+    }
+}

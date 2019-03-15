@@ -1,0 +1,315 @@
+.bb- {
+    &uppercase-text{
+        text-transform: uppercase;
+    }
+    &container {
+        sup, sub {
+            line-height: 1;
+            font-size: 10px;
+        }
+        position: relative;
+        img {
+            max-width: 100%;
+        }
+        .bb-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: $radius;
+            background: $editor-bg;
+            box-shadow: $shadow;
+            padding: 3px 5px;
+        }
+        .bb-addr-list {
+            display: block;
+            padding: 30px;
+            margin: 0;
+            // height: 430px;
+            // width: 450px;
+            .item {
+                // display: table-row;
+                display: block;
+                //padding-bottom: 10px;
+                &:first-child {
+                    min-height: 75px;
+                }
+                &.delimiter {
+                    height: 20px;
+                    margin-top: 8px;
+                }
+                &:last-child {
+                    min-height: 75px;
+                }
+                .bb-cell-wrapper {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                hr {
+                    width: 40px;
+                    height: 2px;
+                    margin-left: 0;
+                    background: white;
+                    border-radius: 0;
+                    border: 0;
+                }
+            }
+            strong {
+                font-size: 32px;
+                font-weight: 100;
+                display: block;
+                &.bb-first-subheader {
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+            }
+            em {
+                font-size: 18px;
+                font-weight: 700;
+                font-style: normal;
+            }
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+    &text {
+        font-size: 20px;
+        font-family: $font-thin;
+        font-weight: normal;
+        &.left {
+            text-align:left;
+        }
+        &.center {
+            text-align:center;
+        }
+        &.bb-text-header  {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 100;
+            &.small {
+                font-size: 16px;
+            }
+        }
+    }
+    &caption {
+        margin-bottom: -260px;
+        position: relative;
+        z-index: 1;
+        .bb-cmp-logo {
+            padding-left: 70px;
+            padding-right: 40px;
+            padding-top: 80px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+        .bb-cmp-caption {
+            background: $blue-type2;
+            flex-grow: 1;
+            color: $white;
+            padding: 5px 20px;
+            margin-top: 80px;
+        }
+    }
+    &grid {
+        &-row {
+            display: flex;
+        }
+    }
+    &cell__wrapper {
+        .bb-image__list {
+            display: flex;
+            justify-content: center;
+            margin: -20px 0 0 0;
+            padding: 0;
+            .item {
+                padding: 20px;
+                margin-top: 15px;
+                //width:155px;
+                // display: block;
+                display: table-cell;
+                //height: 100px;
+                vertical-align: middle;
+                img {
+                    display: inline-block;
+                    max-height: 60px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    &box__list {
+        display: table;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        .item {
+            display: table-cell;
+            width:25%;
+            padding: 60px 40px 80px 40px;
+            height: 660px;
+            font-size: 28px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            .bb-grid-row {
+                text-align: center;
+                display:block;
+                color:$white;
+                img {
+                    margin-bottom: 20px;
+                }
+                .bb-text {
+                    font-size: 28px;
+                    &.bb-text-header {
+                        font-size: 24px;
+                        &.small {
+                            margin-bottom: 5px;
+                        }
+                    }
+                    &.small {
+                        font-size: 20px;
+                    }
+                    &.bb-description {
+                        padding-top: 20px;
+                        font-size: 16px;
+                    }
+                }
+            }
+            &:first-child {
+                background: $blue-c1;
+            }
+            &:nth-child(2) {
+                background: $blue-c2;
+            }
+            &:nth-child(3) {
+                background: $blue-c3;
+            }
+            &:last-child {
+                background: $blue-c4;
+                padding: 60px 20px 80px 20px;
+            }
+            &.bb-mono {
+                height: 210px;
+                vertical-align: middle;
+            }
+        }
+        &.content {
+            min-height: 460px;
+        }
+    }
+    &cmp-image-bg {
+        img {
+            width: 100%;
+        }
+    }
+    &img-center {
+        display: table-cell;
+        width: 1276px;
+        height: 1650px;
+        vertical-align: middle;
+        text-align: center;
+    }
+    &cmp-wrapper-80 {
+        width: 80%;
+        margin: 0 auto;
+    }
+    &cmp-wrapper-70 {
+        width: 70%;
+        margin: 0 auto;
+    }
+    &cmp-blue-list {
+        background: $blue-type1;
+        color: white;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        height: 479px; // 450px
+        width: 447px;
+        &.bb-mono {
+            height: 936px;
+            display: table-cell;
+            vertical-align: middle;
+            .bb-cell-wrapper {
+                padding: 40px 0;
+            }
+            hr {
+                margin-bottom: 40px;
+            }
+            .bb-addr-list{
+                display: table;
+                padding: 30px;
+                margin: 0;
+                height: 430px;
+                // width: 450px;
+                .item {
+                    display: table-row;
+                    padding-bottom: 0;
+                    &:first-child {
+                        min-height: 75px;
+                    }
+                    &:last-child {
+                        height: 75px;
+                    }
+                    .bb-cell-wrapper {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    &image-crop-first {
+        width: 100%;
+        height: 1270px;
+        overflow: hidden;
+    }
+    &image-crop-tree-wrapper {
+        height: 1210px;
+        position: relative;
+        .bb-box__list {
+            height: 1210px;
+        }
+        .bb-cmp-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &last-page {
+        .bb-grid-cell {
+            margin-bottom: 35px;
+            &:first-child {
+                .bb-cmp-image {
+                    margin-bottom: 35px;
+                    width: 447px; // 458px;
+                    height: 423px; // 515px;
+                    overflow: hidden;
+                }
+            }
+            &:nth-child(2) {
+                padding-left: 35px;
+            }
+        }
+    }
+    &bottom-map {
+        position: relative;
+        height: 676px; // 630px;
+        width: 1276px;
+        overflow: hidden;
+    }
+    &map-pin {
+        position: absolute;
+        left: 617px;
+        top: 292px;
+        width: 32px;
+    }
+    &map-north {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        height: 70px;
+        width: 70px;
+    }
+    &cmp-description {
+        height: 132px;
+        overflow-y: hidden;
+    }
+}

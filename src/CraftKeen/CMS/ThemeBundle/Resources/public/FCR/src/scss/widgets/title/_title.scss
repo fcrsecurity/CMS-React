@@ -1,0 +1,36 @@
+.home-title {
+  font-size: 70px;
+}
+.blue-center {
+  color: #0861AA;
+  text-align: center;
+}
+.community{
+	.blue-center{
+		font-family: $font-family-default-light;
+	}
+}
+
+/*title*/
+h1, .h1 {
+    font-size: 160%;
+}
+
+.community{
+	h2 {
+		font-size: 260%;
+	}
+}
+.ir{
+	h3 {
+		font-size: 335%;
+	}
+}
+.like-h4{
+	h2{
+		font-size: 200%;
+	}
+}
+
+
+@import "title_queries";

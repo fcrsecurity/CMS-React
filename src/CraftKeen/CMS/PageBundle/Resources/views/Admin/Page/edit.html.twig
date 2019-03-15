@@ -1,0 +1,233 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSPageBundle:Admin:Page/macro.html.twig' as MACRO %}
+
+{% block admin_block_title %}<b>{{ page.name }}</b>{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('craftkeen_cms_page_admin_page_index') }}">{{ 'Pages'|trans }}</a></li>
+    <li class="active">Edit "{{ page.name }}"</li>
+    {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    'bower_components/jquery-ui/themes/base/jquery-ui.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    {% javascripts
+        'bower_components/jquery-ui/jquery-ui.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block admin_block_body %}
+
+	<div class="row">
+		<div class="col-lg-12">
+			{% if pageCopy and pageCopy.status == 'draft'%}
+			<p class="alert alert-info">This page has unapproved draft. Page modifications currently blocked. '<a href="{{ path('craftkeen_cms_page_admin_page_edit', {'id':pageCopy.id}) }}">Edit Draft</a>' ?</p>
+			{% endif %}
+			{% if pageCopy and pageCopy.status == 'pending_approval' %}
+			<p class="alert alert-warning">Editing is blocked. Page changes awaiting approval. '<a href="{{ path('craftkeen_cms_page_admin_page_edit', {'id':pageCopy.id}) }}">See edits</a>' ?</p>
+			{% endif %}
+		</div>
+	</div>
+
+
+    {{ form_start(edit_form) }}
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ 'Widgets'|trans }}</div>
+                    <div class="panel-body">
+                        <ul id="widgets" class="widgets ui-helper-reset ui-helper-clearfix">
+                            {% for widget in widgets %}
+                                <li class="ui-widget-content ui-corner-tr">{{ widget.name}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ 'General'|trans }}</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {{ form_row(edit_form.site, {'attr' : {'class':'', 'style':'' } }) }}
+                            {{ form_row(edit_form.name, {'attr' : {'class':'', 'style':'' } }) }}
+                        </div>
+                        <div class="col-lg-6">
+                            {{ form_row(edit_form.parent, {'label': 'Select page parent or leave empty'|trans, 'attr' : {'class':'', 'style':'' }}) }}
+                            <p>
+                                {{ 'Locale'|trans }}: <b>{{ page.lang.locale }}</b><br />
+                                <b>{{ 'Permalinks'|trans }}:</b> - <a href="{{ path('craftkeen_cms_page_admin_route_new') }}" ><span class="glyphicon glyphicon-plus"></span> Add new</a><br />
+
+                                {% for route in routes %}
+                                    <code>
+                                        <a href="{% if route.slug != '/' %}/{{ route.slug }}{% endif %}" target="_blank">
+                                            {{ page.site.protocol }}{{ page.site.domain }}{% if route.slug != '/' %}/{{ route.slug }}{% endif %}
+                                        </a>
+                                    </code>
+                                    {% if route.slug != '/' %}
+                                        <a href="{{ path('craftkeen_cms_page_admin_route_edit', { 'id': route.id }) }}">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </a>
+                                    {% endif %}
+                                    <br />
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    <p>{{ form_row(edit_form.template, {'attr' : {'class':'', 'style':'' }}) }}</p>
+                    <p>{{ form_row(edit_form.heroTitle, {'attr' : {'class':'', 'style':'' }}) }}</p>
+                    <p>{{ form_row(edit_form.hero, {'attr' : {'class':'form-control', 'style':'' }}) }}</p>
+                    <p>{{ form_row(edit_form.heroVideo, {'attr' : {'class':'form-control', 'style':'' }}) }}</p>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ 'Content Widgets'|trans }}</div>
+                        <div class="panel-body">
+                            <div id="widgets_content_area" class="">
+                                {{ page.layout|renderPageLayout|raw }}
+                                <hr>
+                                {{ form_row(edit_form.layout) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ 'SEO'|trans }}</div>
+                <div class="panel-body">
+                    {{ form_row(edit_form.isIndexed, {'label':'Hide from Seach Engines'|trans,'attr' : {'class':'', 'style':'' }}) }}
+                    {{ form_row(edit_form.metaTitle, {'attr' : {'class':'', 'style':'' }}) }}
+                    {{ form_row(edit_form.metaDescription, {'attr' : {'class':'', 'style':'' }}) }}
+                    {{ form_row(edit_form.metaKeywords, {'attr' : {'class':'', 'style':'' }}) }}
+                </div>
+            </div>
+
+            {#<div class="panel panel-default">
+                <div class="panel-heading">{{ 'Add to Menu'|trans }}</div>
+                <div class="panel-body">
+                    <p><a href="{{ path('craftkeen_cms_page_admin_menu_index') }}" target="_blank">Edit menu</a></p>
+                    {% if menuTypes|length > 0 %}
+                        {% for menuType in menuTypes %}
+                            {% set checked = '' %}
+                            {% for menuItem in menuItems %}
+                                {% if menuItem.type == menuType %}
+                                    {% set checked = 'checked="checked"' %}
+                                {% endif %}
+                            {% endfor %}
+                            <input name="menuType[{{ menuType.id }}]" value="1" type="checkbox" {{ checked }}> {{ menuType|capitalize }}<br />
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>#}
+
+        </div>
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ 'Revisions & Status'|trans }}</div>
+                <div class="panel-body">
+                    <p>
+                        {% if page.status == 'live' %}
+                            <span class="label label-success">{{ 'Approved'|trans }}</span>
+                        {% else %}
+                            <span class="label label-warning">{{ 'Unapproved'|trans }}</span>
+                        {% endif %}
+                        {{ 'Current Revision'|trans }}: <b>{{ page.version }}</b>
+                    </p>
+                    <p>
+                        {{ 'Created by'|trans }}: <b>{{ page.createdBy }}</b> {{ 'at'|trans }}: <b>{{ page.created|date(default_formats.datetime) }}</b>
+                    </p>
+                    <p>
+                        {{ 'Last Updated by'|trans }}: <b>{{ page.updatedBy }}</b> {{ 'at'|trans }}:
+                        <b>
+                            {% if page.updated is null %}
+                                {{ page.created|date(default_formats.datetime) }}
+                            {% else %}
+                                {{ page.updated|date(default_formats.datetime) }}
+                            {% endif %}
+                        </b>
+                    </p>
+                    <p>Status: <b>{{ page.status|capitalize }}</b></p>
+                    {{ 'Revision Comments'|trans }}:
+                    {% if page.status == 'live' %}
+                        <p><i>{{ page.versionComment }}</i></p>
+                        {{ form_row(edit_form.versionComment, {'label':false,'attr' : {'class':'', 'style':'display:none' }}) }}
+                    {% else %}
+                        {{ form_row(edit_form.versionComment) }}
+                    {% endif %}
+
+                </div>
+            </div>
+            {% if page.access %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ 'Page Permissions'|trans }}</div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ACCESS</th>
+                                        <th>ROLES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for type, roles in page.access|unserialize %}
+                                        <tr>
+                                            <td>{{ type }}</td>
+                                            {% if roles is null %}
+                                                <td class="danger"></td>
+                                            {% else %}
+                                                <td class="success">{{ roles|join(',') }}</td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {{ form_row(edit_form.access) }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {{ form_widget(edit_form) }}
+
+    {% if page.status !='pending_approval' and (is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_EDITOR') or is_granted('ROLE_CONTRIBUTOR')) %}
+        <input type="submit" class="btn btn-primary" value="{{ 'Save'|trans }}" />
+    {% endif %}
+
+    {% if workflow_can(page, 'to_review') and (is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_EDITOR') or is_granted('ROLE_CONTRIBUTOR') ) %}
+        <button name="transition" value="to_review" type="submit" class="btn btn-warning">{{'Send for Apporval'|trans}}</button>
+    {% endif %}
+
+    {{ form_end(edit_form) }}
+
+    <hr />
+
+    <ul class="list-inline list-unstyled ">
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_page_index') }}" class="btn btn-default">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> {{ 'Back to the list'|trans }}
+            </a>
+        </li>
+
+        {% if is_granted('candelete', page) %}
+            <li>
+                {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+
+                <input type="submit" class="btn btn-danger" value="{{ 'Delete'|trans }}">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}

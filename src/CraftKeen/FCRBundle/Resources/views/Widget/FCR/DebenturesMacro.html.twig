@@ -1,0 +1,213 @@
+{# TODO: Change structure #}
+<div class="buffer-5-padding-top buffer-5-padding-bottom">
+    <div class="tables debentures-page">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active">
+                <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">{{ 'Senior Unsecured Debentures'|trans([], 'messages', app.request.locale) }}</a>
+            </li>
+            <li>
+                <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">{{ 'Convertible Debentures'|trans([], 'messages', app.request.locale) }}</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab1">
+                <div class="container-fluid">
+                    <div class="table-responsive inline-mode">
+                        <a href="{{ path('admin_investors_debenture_index') }}" class="button-edit-element" title="Edit element" ></a>
+                        <div class="table_container">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>{{ 'Series'|trans([], 'messages', app.request.locale) }}</th>
+                                        <th>{{ 'Maturity Date'|trans([], 'messages', app.request.locale) }}</th>
+                                        <th>{{ 'Principal Outstanding (thousands)'|trans([], 'messages', app.request.locale) }}</th>
+                                        <th>{{ 'Coupon'|trans([], 'messages', app.request.locale) }}</th>
+                                        <th>{{ 'Interest Payment Date'|trans([], 'messages', app.request.locale) }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% set items = investors_debenture() %}
+                                    {% for item in items %}
+                                        <tr>
+                                            <td>{{ item.series }}</td>
+                                            <td>{{ item.maturityDate|date('M d, Y') }}</td>
+                                            <td>{{ item.principalOutstanding }}</td>
+                                            <td>{{ item.cupon }}</td>
+                                            <td>{{ item.interestPaymentDate }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                            <small>{{ 'Interest paid semi-annually'|trans([], 'messages', app.request.locale) }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab2">
+                <div class="container-fluid">
+                    <div class="row text-left">
+                        <div class="col-lg-8">
+                            <h2 class="h4">{{ 'Convertible Unsecured Subordinated Debentures Outstanding'|trans([], 'messages', app.request.locale) }}</h2>
+                            <div class="table-responsive">
+                                <div class="table_container">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>{{ 'Ticker'|trans([], 'messages', app.request.locale) }}</th>
+                                                <th>{{ 'Issue Date'|trans([], 'messages', app.request.locale) }}</th>
+                                                <th>{{ 'Maturity'|trans([], 'messages', app.request.locale) }} <br>{{ 'Date'|trans([], 'messages', app.request.locale) }}</th>
+                                                <th>{{ 'Original Principal'|trans([], 'messages', app.request.locale) }}<br>{{ 'Outstanding'|trans([], 'messages', app.request.locale) }}<br>{{ '(thousands)'|trans([], 'messages', app.request.locale) }}														</th>
+                                                <th>{{ 'Coupon'|trans([], 'messages', app.request.locale) }}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {#<tr>#}
+                                                {#<td>FCR.DB.I</td>#}
+                                                {#<td>May 22, 2012</td>#}
+                                                {#<td>July 31, 2019</td>#}
+                                                {#<td>$52,500</td>#}
+                                                {#<td>4.75%</td>#}
+                                            {#</tr>#}
+                                            <tr>
+                                                <td>FCR.DB.J</td>
+                                                <td>Feb 19, 2013</td>
+                                                <td>Feb 28, 2020</td>
+                                                <td>$57,500</td>
+                                                <td>4.45%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>{{ 'All series of convertible unsecured subordinated debentures rank pari passu with each other.'|trans([], 'messages', app.request.locale) }}</li>
+                                <li>{{ 'Interest is paid semi-annually on March 31 and September 30.'|trans([], 'messages', app.request.locale) }}</li>
+                                <li>{{ "First Capital Realty has the option of repaying the debentures on maturity (or on redemption - see below) through the issuance of common shares at 97% of the weighted average trading price of the Company's common shares. The Company also has the option of paying the semi-annual interest through the issuance of common shares using the same methodology."|trans([], 'messages', app.request.locale) }}</li>
+                                <li>{{ 'All Debentures are issued in denominations of $1,000.'|trans([], 'messages', app.request.locale) }}</li>
+                            </ul>
+                            <section id="solidAccordionElement">
+
+                                <div class="panel-group wrap" id="accordion1" role="tablist" aria-multiselectable="true">
+                                    <!-- First panel -->
+                                    <div class="panel">
+                                        <div class="panel-heading active" role="tab" id="headingOne">
+                                            <h2 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse1" aria-expanded="true" aria-controls="collapse1">{{ 'Redemption Conversion Options'|trans([], 'messages', app.request.locale) }}</a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+                                            <div class="table-responsive">
+                                                <div class="table_container">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>{{ 'Ticker'|trans([], 'messages', app.request.locale) }}</th>
+                                                                <th>{{ 'Holder Option to Convert at the Conversion Price'|trans([], 'messages', app.request.locale) }}</th>
+                                                                <th>{{ 'Price'|trans([], 'messages', app.request.locale) }}</th>
+                                                                <th>{{ 'Company Option to Redeem at Principal Amount (conditional'|trans([], 'messages', app.request.locale) }} <sup>1</sup>)</th>
+                                                                <th>{{ 'Company Option to Redeem at Principal Amount'|trans([], 'messages', app.request.locale) }}<sup>2</sup></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {#<tr>#}
+                                                                {#<td>FCR.DB.I</td>#}
+                                                                {#<td>2012-2019</td>#}
+                                                                {#<td>$26.75<br>$27.75</td>#}
+                                                                {#<td>Jul 31, 2015 - Jul 30, 2017</td>#}
+                                                                {#<td>Jul 31, 2017 - Jul 31, 2019</td>#}
+                                                            {#</tr>#}
+                                                            <tr>
+                                                                <td>FCR.DB.J</td>
+                                                                <td>2013-2020</td>
+                                                                <td>$26.75<br>$27.75</td>
+                                                                <td>Feb 28, 2016 - Feb 27, 2018</td>
+                                                                <td>Feb 28, 2018 - Feb 28, 2020</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <ol><li>{{ 'Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest, provided that the volume weighted average trading price for the 20 consecutive trading days ending five days prior to the notice of redemption is not less than 125% of the Conversion Price, by giving between 30 and 60 days written notice.'|trans([], 'messages', app.request.locale) }} </li>
+                                                        <li>{{ 'Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest by giving between 30 and 60 days written notice.'|trans([], 'messages', app.request.locale) }}</li></ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of panel -->
+                                </div>
+                                <!-- end of #accordion1 -->
+                            </section>
+                        </div>
+                        <div class="col-lg-4">
+                            <h2 class="h4">{{ 'Interest Payment Dates(Last 5 Years)'|trans([], 'messages', app.request.locale) }}</h2>
+                            <div class="table-responsive">
+                                <div class="table_container">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>{{ 'Actual Interest'|trans([], 'messages', app.request.locale) }}<br>{{ 'Payment Dates'|trans([], 'messages', app.request.locale) }}</th>
+                                                <th>{{ 'Interest Payment'|trans([], 'messages', app.request.locale) }}<br>- {{ 'Share Issuance Price'|trans([], 'messages', app.request.locale) }}*</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2-Apr-12</td>
+                                                <td>$17.23</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1-Oct-12</td>
+                                                <td>$18.47</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1-Apr-13</td>
+                                                <td>$18.48</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30-Sep-13</td>
+                                                <td>$16.38</td>
+                                            </tr>
+                                            <tr>
+                                                <td>31-Mar-14</td>
+                                                <td>$17.15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30-Sep-14</td>
+                                                <td>$18.07</td>
+                                            </tr>
+                                            <tr>
+                                                <td>31-Mar-15</td>
+                                                <td>$19.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30-Sep-15</td>
+                                                <td>$17.68</td>
+                                            </tr>
+                                            <tr>
+                                                <td>31-Mar-16</td>
+                                                <td>$19.56</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30-Sep-16</td>
+                                                <td>$21.53</td>
+                                            </tr>
+                                            <tr>
+                                                <td>31-Mar-17</td>
+                                                <td>$19.64</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30-Sept-17</td>
+                                                <td>N/A**</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>* {{ "97% of the volume weighted average trading price of the Company's common shares on the TSX for the 20 consecutive trading days ending five days prior to the interest payment date."|trans([], 'messages', app.request.locale) }}</p>
+                                    <p>** Paid in Cash</p>
+                                    <div class="hr"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="solidPanel buffer-6-top">
+    <div class="accordionElement inline-mode">
+        <a href="{{ path('admin_investors_analyst-coverage_index') }}" class="button-edit-element" title="Edit element"></a>
+        <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+            {% for key, type in ac.types %}
+            <div class="panel panel-default">
+                <div class="panel-heading" id="panel-id-{{ key }}_headingOne" data-toggle="collapse" data-parent="#accordion" href="#panel-id-{{ key }}" aria-expanded="true" aria-controls="panel-id-{{ key }}" class="accordion-toggle">
+                    <h2 class="panel-title">
+                        <a role="button" class="collapsed accordion-toggle">
+                            {{ type }}
+                        </a>
+                    </h2>
+                </div>
+                <div id="panel-id-{{ key }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="panel-id-{{ key }}_headingOne">
+                    <div class="panel-body">
+                        <div class="container-fluid">
+                            <div class="row buffer-7-top">
+                                {% for analyst in ac.items %}
+                                    {% if type == analyst.type %}
+                                    <div class="col-lg-3">
+                                        <p>
+                                            <strong>{{ analyst.title }}</strong><br>
+                                            <small>{{ analyst.person }}<br>
+                                                <a href="tel:{{ analyst.phone }}">{{ analyst.phone }}</a>
+                                            </small>
+                                        </p>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

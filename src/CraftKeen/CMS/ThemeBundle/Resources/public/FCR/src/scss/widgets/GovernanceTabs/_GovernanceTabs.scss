@@ -1,0 +1,59 @@
+.tabs{
+		margin-top: 60px;
+		margin-bottom: 60px;
+
+		// Change cursor upon hover
+		a {
+			outline: none;
+			font-family: $font-family-default;
+			color: $color-grey-text;
+		}
+		a:hover {
+			outline: none;
+			/*circle {
+				fill: $color-blue;
+				transition: 2.4s;
+			}
+			polygon {
+				fill: #ffffff;
+				transition: 1.4s;
+			}*/
+		}
+		text {
+			font-family: $font-family-default;
+		}
+		.nav, .nav-tabs {
+			max-width: 680px;
+			margin-right: auto;
+			margin-left: auto;
+			li {
+				padding-left: 0%;
+				padding-right: 0%;
+			}
+		}
+		.tab-content {
+			text-align: center;
+			.thumbnails {
+				svg {
+					width: 124px;
+				}
+			}
+			img.pdf-icon {
+				max-width: 90px;
+				margin-top: 25px;
+				margin-bottom: 10px;
+			}
+			.pdf-decs {
+				text-align: center;
+
+				a {
+					line-height: 1;
+				}
+			}
+		}
+	}
+.tabs .nav-tabs > li.active:before .nav-tabs > li.active:after {
+	left: 55%;
+}
+
+@import "GovernanceTabs_queries";

@@ -1,0 +1,17 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}
+
+{% endblock %}
+
+{% block admin_block_body %}
+    {{ form_start(form) }}
+
+    {{ form_rest(form) }}
+    <input class="btn btn-action" type="submit" value="{{ 'Submit'|trans }}">
+    <a class="btn btn-warning"
+       href="{{ path('craftkeen_translation_admin_language_index') }}"
+       target="_self">{{ 'Cancel'|trans }}</a>
+    {{ form_end(form) }}
+{% endblock %}
+

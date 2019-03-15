@@ -1,0 +1,261 @@
+id,code,title,category,geo_city,geo_province,marketing_pdf
+1,CLR591,Lakeshore and Kerr,"134, 146-150 Lakeshore Road West",Oakville,ON,134-146-150LakeshoreRdW.pdf
+2,CBA749,Bayview Tower,1670 Bayview Avenue,Toronto,ON,1670BayviewAvenue.pdf
+3,CQS163,Queen and Woodbine,1842-1852 Queen Street East,Toronto,ON,1842-1845QueenStreetEast.pdf
+4,CYS601,3080 Yonge Street,3080 Yonge Street,Toronto,ON,
+5,CYS114,5051-5061 Yonge Street,5051-5061 Yonge Street,Toronto,ON,5051-5061YongeStreet.pdf
+6,CKS847,Medical Arts Building,71 King Street West,Mississauga,ON,71KingStreetWest.pdf
+7,CLA700,895 Lawrence Avenue East,895 Lawrence Avenue East,Toronto,ON,895LawrenceAveE.pdf
+8,CAS104,Adelaide Shoppers,Adelaide Shoppers,London,ON,AdelaideShoppers.pdf
+9,CAP300,Ambassador Plaza,Ambassador Plaza,Windsor,ON,AmbassadorPlaza.pdf
+10,CUP915,University Plaza,University Plaza,Windsor,ON,UniversityPlaza.pdf
+11,CAV277,Appleby Village,Appleby Village,Burlington,ON,ApplebyVillage.pdf
+12,CAS973,Appleby South,Appleby South,Burlington,ON,ApplebySouth.pdf
+13,CAS722,Appleby Square,Appleby Square,Burlington,ON,ApplebySquare.pdf
+14,CBL555,Bayview Lane Plaza,Bayview Lane Plaza,Markham,ON,BayviewLanePlaza.pdf
+15,CBC564,Brampton Corners,Brampton Corners,Brampton,ON,BramptonCorners.pdf
+16,CBP360,Bridgeport Plaza,Bridgeport Plaza,Waterloo,ON,BridgeportPlaza.pdf
+17,CWS928,Bridgeport Plaza,Waterloo Shoppers Drug Mart,Waterloo,ON,WaterlooShoppersDrugMart.pdf
+18,CBT039,Brooklin Towne Centre,Brooklin Towne Centre,Whitby,ON,BrooklinTowneCentre.pdf
+19,CBS421,Burlingwood Shopping Centre,Burlingwood Shopping Centre,Burlington,ON,BurlingwoodShoppingCentre.pdf
+20,CBH815,Beacon Hill Plaza,Beacon Hill Plaza,Burlington,ON,BeaconHillPlaza.pdf
+21,CBV942,Byron Village,Byron Village,London,ON,ByronVillage.pdf
+22,CCM299,Cedarbrae Mall,Cedarbrae Mall,Toronto,ON,CedarbraeMall.pdf
+23,CLA200,3434 Lawrence Avenue East,3434 Lawrence Avenue East,Toronto,ON,3434LawrenceAveE.pdf
+24,CMR858,629 Markham Road,629 Markham Road,Toronto,ON,629MarkhamRoad.pdf
+25,CCS200,Chartwell Shopping Centre,Chartwell Shopping Centre,Toronto,ON,ChartwellShopping Centre.pdf
+26,CCC493,Clairfield Commons,Clairfield Commons,Guelph,ON,ClairfieldCommons.pdf
+27,CPC117,Pergola Commons,Pergola Commons,Guelph,ON,PergolaCommons.pdf
+28,CCM730,Cliffcrest Plaza,Cliffcrest Plaza,Toronto,ON,CliffcrestPlaza.pdf
+29,CCS751,College Square,College Square,Ottawa,ON,CollegeSquare.pdf
+30,CCV772,Credit Valley Town Plaza,Credit Valley Town Plaza,Mississauga,ON,CreditValleyTownPlaza.pdf
+31,CDS310,Danforth Sobeys,Danforth Sobeys,Toronto,ON,DanforthSobeys.pdf
+32,CDC523,Delta Centre,Delta Centre,Cambridge,ON,DeltaCentre.pdf
+33,CDH188,Derry Heights Plaza,Derry Heights Plaza,Milton,ON,DerryHeightsPlaza.pdf
+34,CDC246,Dufferin Corners,Dufferin Corners,Toronto,ON,DufferinCorners.pdf
+35,CFM447,Fairview Mall,Fairview Mall,St. Catharines,ON,FairviewMall.pdf
+36,CFP040,Fairway Plaza,Fairway Plaza,Kitchener,ON,FairwayPlaza.pdf
+37,CFP041,Fairway Plaza,Fairway East,Kitchener,ON,
+38,CFP042,560 Fairway Road S.,560 Fairway Road S.,Kitchener,ON,560FairwayRoadS.pdf
+39,CFP043,Fairway Plaza,Fairway Plaza,Kitchener,ON,
+40,CGC902,Gloucester City Centre,Gloucester City Centre,Ottawa,ON,GloucesterCityCentre.pdf
+41,CGS363,Grimsby Square Shopping Centre,Grimsby Square Shopping Centre,Grimsby,ON,GrimsbySquareShoppingCentre.pdf
+42,CGS364,Grimsby Square Shopping Centre,Grimsby-68-70-72 Livingston,Grimsby,ON,
+43,CHH622,Halton Hills Village,Halton Hills Village,Georgetown,ON,HaltonHillsVillage.pdf
+44,CHP182,Harwood Plaza,Harwood Plaza,Ajax,ON,HarwoodPlaza.pdf
+45,CHS232,Humbertown Shopping Centre,Humbertown Shopping Centre,Toronto,ON,HumbertownShoppingCentre.pdf
+46,CHP508,Hyde Park Plaza,Hyde Park Plaza,London,ON,HydeParkPlaza.pdf
+47,CLS534,Laurelwood Shopping Centre,Laurelwood Shopping Centre,Waterloo,ON,LaurelwoodShoppingCentre.pdf
+48,CLV451,Leaside Village,Leaside Village,Toronto,ON,LeasideVillage.pdf
+49,CLD662,180 Laird Drive,180 Laird,Toronto,ON,180Laird.pdf
+50,CMG789,Maple Grove Village,Maple Grove Village,Oakville,ON,MapleGroveVillage.pdf
+51,CMC156,McLaughlin Corners - West,McLaughlin Corners - West,Brampton,ON,McLaughlinCornersWest.pdf
+52,CMC157,McLaughlin Corners - East,,Brampton,ON,
+53,CMT085,Meadowvale Town Centre,Meadowvale Town Centre,Mississauga,ON,MEADOWVALE_TOWN_CENTRE.pdf
+54,CAP160,Aquitaine Plaza,Aquitaine Plaza,Mississauga,ON,AquitainePlaza.pdf
+55,CMB434,Merchandise Building,Merchandise Building,Toronto,ON,MerchandiseBuilding.pdf
+56,CML262,Midland Lawrence Plaza,Midland Lawrence Plaza,Toronto,ON,MidlandLawrencePlaza.pdf
+57,CMC208,Morningside Crossing,Morningside Crossing,Toronto,ON,MorningsideCrossing.pdf
+58,CKS109,Kingston Square,Kingston Square,Toronto,ON,KingstonSquare.pdf
+59,CWH647,Kingston Square West,Kingston Square West,Toronto,ON,KINGSTON_SQUARE_WEST_DIGITAL.pdf
+60,COA272,Olde Oakville Market Place,Olde Oakville Market Place,Oakville,ON,OldeOakvileMarketPlace.pdf
+61,CSA372,Shops of Oakville South,Shops of Oakville South,Oakville,ON,ShopsOfOakvilleSouth.pdf
+62,CPM025,Parkway Mall,Parkway Mall,Toronto,ON,ParkwayMall.pdf
+63,CVT233,Victoria Terrace,Victoria Terrace,Toronto,ON,VictoriaTerrace.pdf
+64,CQP019,Queenston Place,Queenston Place,Hamilton,ON,QueenstonPlace.pdf
+65,CRS976,110 West Toronto St,110 West Toronto St,Toronto,ON,
+66,CRO865,Royal Orchard,Royal Orchard,Thornhill,ON,RoyalOrchard.pdf
+67,CRM322,Rutherford Marketplace,Rutherford Marketplace,Vaughan,ON,RutherfordMarketplace.pdf
+68,CSP695,Sheridan Plaza,Sheridan Plaza,Toronto,ON,SheridanPlaza.pdf
+69,CSD321,Shoppes on Dundas,Shoppes on Dundas,Oakville,ON,ShoppesOnDundas.pdf
+70,CSK968,Shops at King Liberty,Shops at King Liberty,Toronto,ON,ShopsAtKingLiberty.pdf
+71,CLI001,Shops at King Liberty,Barrymore Building,Toronto,ON,BarrymoreBuilding.pdf
+72,CLI002,Shops At King Liberty,85 Hanna Avenue,Toronto,ON,85HannaAvenue.pdf
+73,CLI003,Shops at King Liberty,1005 King St W,Toronto,ON,1005KingStW.pdf
+74,CLI004,Shops at King Liberty,1029 King St W,Toronto,ON,1029KingStW.pdf
+77,CLI007,Shops at King Liberty,1030 King St W,Toronto,ON,1030KingStW.pdf
+79,CLI009,Shops at King Liberty,Shops at King Liberty,Toronto,ON,ShopsAtKingLiberty.pdf
+80,CLI010,Fuzion Retail,Fuzion Retail,Toronto,ON,FuzionRetail.pdf
+82,CKH357,Shops at King Liberty,King High Line Retail,Toronto,ON,KingHighLineRetail.pdf
+83,CSP070,Stanley Park Mall,Stanley Park Mall,Kitchener,ON,STANLEY_MALL.pdf
+84,CSH400,Steeple Hill Shopping Centre,Steeple Hill Shopping Centre,Pickering,ON,SteepleHillShoppingCentre.pdf
+85,CSH401,Steeple Hill Shopping Centre,Steeple Hill West,Pickering,ON,
+86,CSH402,Steeple Hill Shopping Centre,Steeple Hill East,Pickering,ON,
+87,CSP871,Stoneybrook Plaza,Stoneybrook Plaza,London,ON,StoneybrookPlaza.pdf
+88,CSV601,Sunningdale Village,Sunningdale Village,London,ON,SunningdaleVillage.pdf
+89,CTQ336,The Queensway,1631 & 1633 The Queensway,Etobicoke,ON,1631-1633TheQueensway.pdf
+92,CTP685,Thickson Place,Thickson Place,Whitby,ON,ThicksonPlace.pdf
+93,CWM800,Whitby Mall,Whitby Mall,Whitby,ON,WhitbyMall.pdf
+94,CTP518,Tomken Plaza,Tomken Plaza,Mississauga,ON,TomkenPlaza.pdf
+95,CWC521,Wellington Corners,Wellington Corners,London,ON,WellingtonCorners.pdf
+96,CBL728,Baseline Medical Centre,Baseline Medical Centre,London,ON,
+97,CWC,Westminster Plaza,Westminster Plaza,London,ON,WestminsterPlaza.pdf
+98,CWH737,Westney Heights Plaza,Westney Heights Plaza,Ajax,ON,WestneyHeightsPlaza.pdf
+99,CYD201,Yonge-Davis Centre,Yonge-Davis Centre,Newmarket,ON,YongeDavisCentre.pdf
+100,CYM801,York Mills Gardens,York Mills Gardens,Toronto,ON,YorkMillsGardens.pdf
+101,CYM003,801 York Mills,801 York Mills,Toronto,ON,
+102,CYM303,861 York Mills,861 York Mills,Toronto,ON,861YorkMills.pdf
+103,CYV483,Yorkville Village,Yorkville Village,Toronto,ON,YorkvilleVillage.pdf
+104,CYV484,Yorkville Village,80-100 Yorkville Avenue,Toronto,ON,80-100YorkvilleAvenue.pdf
+105,CYV485,Yorkville Village,106-108 Yorkville Avenue,Toronto,ON,
+106,CYV486,Yorkville Village,102/104 Yorkville,Toronto,ON,
+108,ELP846,Loblaws Plaza,Loblaws Plaza,Ottawa,ON,Loblaws_Plaza_EN_DIGITAL.pdf
+109,ESC360,Strandherd Crossing,Strandherd Crossing,Ottawa,ON,StrandherdCrossing_EN.pdf
+110,EHC420,Hunt Club Marketplace,Hunt Club Marketplace,Ottawa,ON,
+111,EEP020,Eagleson Place,Eagleson Place,Ottawa,ON,EaglesonPlace-EN.pdf
+114,CAL001,Pusateri's,1539 & 1541 Avenue Road,Toronto,ON,
+116,CYV488,Yorkville Village,101 Yorkville Ave,Toronto,ON,
+117,EPR905,Place Roland Therrien,Place Roland Therrien,Longueuil,QC,PlaceRolandTherrien.pdf
+118,EAP462,Place Adoncour,Place Adoncour,Longueuil,QC,PlaceAdoncour.pdf
+119,EPG399,La Porte de Gatineau,La Porte de Gatineau,Gatineau,QC,LaPortedeGatineau-EN.pdf
+120,ECP756,Carrefour du Plateau,Carrefour du Plateau,Gatineau,QC,CarrefourDuPlateau.pdf
+121,EGP921,Les Galeries de Repentigny,Galeries de Repentigny,Repentigny,QC,GaleriesdeRepentigny-EN.pdf
+122,EGB163,Galeries Brien,Galeries Brien Ouest,Repentigny,QC,GaleriesBrienOuest.pdf
+123,EGB493,Galeries Brien,Galeries Brien Est,Repentigny,QC,GaleriesBrienEst.pdf
+124,ECC651,Centre Commercial Beaconsfield,Centre Commercial Beaconsfield,Beaconsfield,QC,
+125,EPB864,Centre Commercial Beaconsfield,Plaza Beaconsfield,Beaconsfield,QC,PlazaBeaconsfield.pdf
+126,EPK792,Place Kirkland,Place Kirkland,Kirkland,QC,PlaceKirkland.pdf
+127,ECK927,Centre Kirkland,Centre Kirkland,Kirkland,QC,CentreKirkland.pdf
+128,ECS623,Centre St-Charles,Centre St-Charles,Kirkland,QC,CentreStCharles.pdf
+131,EPA842,Place Anjou,Place Anjou,Anjou,QC,PlaceAnjou.pdf
+132,EPB999,Plaza Baie - D'Urf?,Plaza Baie - D'Urf?,Baie D'Urf?,QC,BaieDurfePlaza-EN.pdf
+133,ECL844,Carre Lucerne,Carre Lucerne,Ville Mont-Royal,QC,CarreLucerne.pdf
+135,EGP527,Griffintown,Griffintown - 225 Peel,Montr?al,QC,Griffintown-225Peel-EN.pdf
+136,EGW287,Griffintown,Griffintown - 1000 Wellington Street,Montr?al,QC,Griffintown1000WellingtonStreet.pdf
+137,EGP205,Griffintown,Griffintown - 100 Peel,Montr?al,QC,Griffintown-100Peel-EN.pdf
+138,EMV546,March? du Vieux Longueuil,March? du Vieux Longueuil,Longueuil,QC,
+139,EGL695,Galeries de Lanaudiere,Galeries de Lanaudiere,Lachenaie,QC,GaleriesdeLanaudiere-EN.pdf
+140,EPC582,Carrefour Charlemagne,Papin Charlemagne,Charlemagne,QC,
+141,ECR027,Carrefour Charlemagne,Charlemagne - Rona,Charlemagne,QC,CharlemagneRona.pdf
+142,ECC540,Carrefour Charlemagne,Carrefour Charlemagne-Metro,Charlemagne,QC,CarrefourCharlemagneMetro.pdf
+143,EGC361,Galeries des Chesnayes,Galeries des Chesnayes,Lachenaie,QC,GaleriesDesChesnayes-EN.pdf
+144,ECS327,Carrefour St. Hubert,Carrefour St. Hubert,St-Hubert,QC,CarrefourStHubert-EN.pdf
+145,EPD410,Promenades du Parc,Promenades du Parc,St-Hubert,QC,PromenadesDuParc_EN_DIGITAL.pdf
+146,EPA196,Plaza Actuel,Plaza Actuel,St-Hubert,QC,PLAZA_ACTUEL_EN.pdf
+147,ECC648,Centre Commercial Maisonneuve,Centre Commercial Maisonneuve,Montr?al,QC,CentreCommercialMaisonneuve .pdf
+148,EED663,Edifice Hooper,Edifice Hooper,Sherbrooke,QC,EdificeHooper.pdf
+149,ECB477,Carrefour Belvedere,Carrefour Belvedere,Sherbrooke,QC,ENGLISH-CARREFOUR_BELEVDERE.pdf
+150,EAS855,Atrium du Sanctuaire,Atrium du Sanctuaire,Montr?al,QC,AtriumDuSanctuaire.pdf
+151,ECC283,Centre Commercial Cote St-Luc,Centre Commercial Cote St-Luc,C?te St-Luc,QC,CentreCommercialCoteSt-Luc_EN.pdf
+152,EPF383,Place Fleury,Place Fleury,Montr?al,QC,PlaceFleury.pdf
+153,EFD337,Place Fleury,Fleury Dollarama,Montr?al,QC,FleuryDollarama.pdf
+154,EFR392,Place Fleury,Fleury Renaud-Bray,Montr?al,QC,FleuryRenaud-Bray.pdf
+155,ECC724,Centre Commercial Domaine,Centre Commercial Domaine,Montr?al,QC,Centre_Commercial_Domaine_EN_DIGITAL.pdf
+156,ECC040,Centre Commercial Wilderton,Centre Commercial Wilderton,Montr?al,QC,CentreCommercialWilderton_EN.pdf
+157,EGN224,Galeries Normandie,Galeries Normandie,Montr?al,QC,GaleriesNormandie_EN_DIGITAL.pdf
+158,EFD318,Faubourg des Prairies,Faubourg des Prairies,Montr?al,QC,
+159,EJM603,Jardins Millen,Jardins Millen,Montr?al,QC,JardinsMillen.pdf
+160,EPP224,Place Pointe-aux-Trembles,Place Pointe-aux-Trembles,Montr?al,QC,PlacePointe-aux-Trembles-EN.pdf
+161,EPC123,Place Cite des Jeunes,Place Cite des Jeunes,Gatineau,QC,PlaceCitedesJeunes.pdf
+162,272EPN,Place Nelligan,Place Nelligan,Gatineau,QC,PlaceNelligan.pdf
+164,ECD473,Carrefour du Versant,Carrefour du Versant Est,Gatineau,QC,CarrefourDuVersant-EST_EN.pdf
+165,ECD390,Carrefour du Versant,Carrefour du Versant Ouest,Gatineau,QC,Carrefour_Du_Versant_Ouest_EN_DIGITAL.pdf
+166,ECM592,Centre Maxi Trois Rivieres,Centre Maxi Trois Rivieres,Trois-Rivi?res,QC,CentreMaxiTroisRivieres.pdf
+167,EPL095,Promenade L?vis,Promenade L?vis,L?vis,QC,Promenade_Levis_EN_DIGITAL.pdf
+168,EPQ154,Place Quatre-Bourgeois,Place Quatre-Bourgeois,Qu?bec,QC,Place-Quatre-Bourgeois_EN.pdf
+169,EPN376,Place Naviles,Place Naviles,Qu?bec,QC,PlaceNaviles.pdf
+170,ECC405,Centre Commercial Van Horne,Centre Commercial Van Horne,Montr?al,QC,Van_Horne_Centre_Commercial_EN_DIGITAL.pdf
+171,ECD986,Cote-des-Neiges,Cote-des-Neiges,Montr?al,QC,
+172,ECQ550,Carre Queen-Mary,Carre Queen-Mary,Montr?al,QC,CarreQueen-Mary.pdf
+173,EQM001,Carre Queen-Mary,5095-5107 Queen Mary,Montr?al,QC,5095-5107QueenMary.pdf
+174,EPV779,Place Vilamont,Place Vilamont,Laval,QC,PlaceVilamont.pdf
+175,EPL790,Place Laval ?ys?e,Place Laval ?ys?e,Laval,QC,PlaceLavalElysee.pdf
+176,EDJ207,2600 Daniel-Johnson,2600 Daniel-Johnson,Laval,QC,2600Daniel-Johnson-EN.pdf
+177,ELC572,Le Campanile,Le Campanile,Montr?al,QC,LeCampanile.pdf
+178,EPD982,Place du Commerce,Place du Commerce,Montr?al,QC,PlaceDuCommerce-EN.pdf
+179,EPL927,Place Lorraine,Place Lorraine,Lorraine,QC,Place_Lorraine_EN_DIGITAL.pdf
+180,EPV223,Place Viau,Place Viau,St Leonard,QC,PlaceViau.pdf
+181,EPM336,Place Michelet,Place Michelet,Montr?al,QC,PlaceMichelet.pdf
+182,EPP835,Place Portobello,Place Portobello,Brossard,QC,PlacePortobello_EN.pdf
+183,EPP858,Place Panama,Place Panama,Brossard,QC,PlacePanama.pdf
+184,ECS035,Carrefour Soumande,Carrefour Soumande - Vanier,Vanier,QC,CarrefourSoumande-EN.pdf
+185,EPS445,Place Seigneuriale,Place Seigneuriale,Qu?bec,QC,PlaceSeigneuriale.pdf
+186,ECS011,Carrefour St-David,Carrefour St-David Est,Beauport,QC,
+187,ECS008,Carrefour St-David,Carrefour St-David Ouest,Beauport,QC,
+188,ECS011,Carrefour St-David,Carrefour St-David,Beauport,QC,
+189,EPP333,Place Provencher,Place Provencher,Montr?al,QC,PlaceProvencher.pdf
+191,EGC100,Galeries Charlesbourg,Galeries Charlesbourg,Qu?bec,QC,GaleriesCharlesbourg-EN.pdf
+192,WMT538,Macleod Trail Centre,Macleod Trail Centre,Calgary,AB,MacleodTrailCentre.pdf
+193,WNV260,Newport Village Shopping Centre,Newport Village Shopping Centre,Calgary,AB,NewportVillageShoppingCentre.pdf
+194,WMP845,Macleod Plaza,Macleod Plaza,Calgary,AB,MacleodPlaza.pdf
+196,WDV680,Deer Valley Market Place,Deer Valley Market Place,Calgary,AB,DeerValleyMarketPlace.pdf
+197,WFP001,Fairmount Place Shopping Centre,Fairmount Place Shopping Centre,Calgary,AB,FairmountPlaceShoppingCentre.pdf
+198,WGP027,Glenbrook Plaza,Glenbrook Plaza,Calgary,AB,GlenbrookPlaza.pdf
+199,WLP917,Lakeview Plaza,Lakeview Plaza,Calgary,AB,LakeviewPlaza.pdf
+200,WRS854,Richmond Square,Richmond Square,Calgary,AB,RichmondSquare.pdf
+201,WLP837,London Place West,London Place West,Calgary,AB,LondonPlaceWest.pdf
+202,WRD257,Red Deer Village,Red Deer Village,Red Deer,AB,RedDeerVillage.pdf
+203,WRO745,Royal Oak Centre,Royal Oak Centre,Calgary,AB,RoyalOakCentre.pdf
+204,WTM237,Tuscany Market,Tuscany Market,Calgary,AB,TuscanyMarket.pdf
+205,WSA546,Mount Royal Village,"930, 932-17th Avenue",Calgary,AB,930_932-17thAve.pdf
+206,WHR,Mount Royal Village,"940, 17th Avenue SW",Calgary,AB,940_17thAveSW.pdf
+207,WCM846,Cranston Market,Cranston Market,Calgary,AB,CranstonMarket.pdf
+208,WGM357,GM Glenbow,GM Glenbow,Calgary,AB,
+209,WKS357,Kingsland Shopping Centre,Kingsland Shopping Centre,Calgary,AB,KingslandShoppingCentre.pdf
+210,WMT885,McKenzie Towne,McKenzie Towne Centre,Calgary,AB,McKenzieTowneCentre.pdf
+211,WMT274,McKenzie Towne,McKenzie Towne Park,Calgary,AB,McKenzieTownePark.pdf
+212,WMT927,McKenzie Towne,McKenzie Towne Plaza,Calgary,AB,McKenzieTownePlaza.pdf
+213,WMR215,Mount Royal Village,Mount Royal Village,Calgary,AB,Mount_Royal_Village_DIGITAL.pdf
+214,WSA855,Mount Royal Village,Mount Royal Centre,Calgary,AB,
+215,WMR627,Mount Royal Village,Mount Royal Block,Calgary,AB,MountRoyalBlock.pdf
+216,WMR937,Mount Royal Village,Mount Royal West,Calgary,AB,
+217,WMR615,Mount Royal Village,Mount Royal East,Calgary,AB,MountRoyalEast.pdf
+218,WSG752,Seton Gateway,Seton Gateway,Calgary,AB,SetonGateway.pdf
+219,WSD664,Mount Royal Village,The Devenish,Calgary,AB,TheDevenish.pdf
+220,WTC984,Towerlane Mall,Towerlane Centre,Airdrie,AB,TowerlaneCentre.pdf
+221,WAV356,Towerlane Mall,Airdrie Village Square,Airdrie,AB,TowerlaneCentre.pdf
+222,WTC946,TransCanada Centre,TransCanada Centre,Calgary,AB,TranscanadaCentre.pdf
+223,WWS336,West Springs,West Springs,Calgary,AB,
+224,WGV846,Gateway Village,Gateway Village,St. Albert,AB,GatewayVillage.pdf
+225,WKM276,Kingsway Mews,Kingsway Mews,Edmonton,AB,KingswayMews.pdf
+226,WLS754,Longstreet Shopping Centre,Longstreet Shopping Centre,Edmonton,AB,LongstreetShoppingCentre.pdf
+227,WMH627,Meadowlark Health & Shopping Centre,Meadowlark Health & Shopping Centre,Edmonton,AB,
+228,WNC330,Northgate,Northgate Centre,Edmonton,AB,NorthgateCentre.pdf
+229,WBD627,Brewery District,Brewery District,Edmonton,AB,BreweryDistrict.pdf
+230,WMW330,Staples Gateway,Marks Work Wearhouse,Edmonton,AB,MarksWorkWearhouse.pdf
+231,WMC110,Meadowbrook Centre,Meadowbrook Centre,Edmonton,AB,MeadowbrookCentre.pdf
+232,WOS642,Old Strathcona Centre,Old Strathcona Shopping Centre,Edmonton,AB,OldStrathconaShoppingCentre.pdf
+233,WVM698,Village Market,Village Market,Sherwood Park,AB,VillageMarket.pdf
+234,WSC652,Sherwood Centre,Sherwood Centre,Sherwood Park,AB,SherwoodCentre.pdf
+235,WSC078,Sherwood Centre,Sherwood Centre 1000 Alder Ave,Sherwood Park,AB,SherwoodCentre1000AlderAve.pdf
+236,WST087,Sherwood Towne Square,Sherwood Towne Square,Sherwood Park,AB,SherwoodTowneSquare.pdf
+237,WSP332,South Park Centre,South Park Centre,Edmonton,AB,SouthParkCentre.pdf
+238,WSG818,Staples Gateway,Staples Gateway,Edmonton,AB,StaplesGateway.pdf
+240,WSC277,Westmount Shopping Centre,Westmount Shopping Centre,Edmonton,AB,WestmountShoppingCentre.pdf
+241,WWV530,Westmount Shopping Centre,Westmount Village,Edmonton,AB,WestmountVillage.pdf
+242,WBR618, Broadmoor Shopping Centre - Circa Residences ,Circa Residences,Richmond,BC,CircaResidences.pdf
+243,WBS066,Broadmoor Shopping Centre,Broadmoor Shopping Centre,Richmond,BC,BroadmoorShoppingCentre.pdf
+244,WGS254,Gorge Shopping Centre,Gorge Shopping Centre,Victoria,BC,GorgeShoppingCentre.pdf
+245,WLC898,Langford Centre,Langford Centre,Victoria,BC,LangfordCentre.pdf
+246,WGA550,Langford Centre,716 Goldstream Avenue,Victoria,BC,716GoldstreamAvenue.pdf
+247,WLP880,Langford Centre,Langford Plaza,Victoria,BC,LangfordPlaza.pdf
+248,WBM080,Langford Centre,2800 Bryn Maur Road,Langford,BC,2800BrynMaurRoad.pdf
+249,WMC316,Langford Centre,Millstream Centre,Victoria,BC,MillstreamCentre.pdf
+250,WGS009,Langford Centre,Goldstream Station Mall,Victoria,BC,
+251,WLC282,Langley Crossing Shopping Centre,Langley Crossing Shopping Centre,Langley,BC,LangleyCrossingShoppingCentre.pdf
+252,WLM342,Langley Mall,Langley Mall,Langley,BC,Langley_Mall_DIGITAL.pdf
+253,WNC108,Port Place Shopping Centre,Nanaimo Conference Centre,Nanaimo,BC,NanaimoConferenceCentre.pdf
+254,WPP138,Port Place Shopping Centre,Port Place Shopping Centre,Nanaimo,BC,PortPlaceShoppingCentre_DIGITAL.pdf
+255,WSS890,Scott 72 Shopping Centre,Scott 72 Shopping Centre,Delta,BC,Scott72ShoppingCentre.pdf
+256,WSS487,Semiahmoo Shopping Centre,Semiahmoo Shopping Centre,Surrey,BC,SemiahmooShoppingCentre_DIGITAL.pdf
+257,WSL525,Staples Lougheed,Staples Lougheed,Burnaby,BC,StaplesLougheed.pdf
+258,WTN442,Terra Nova Village,Terra Nova Village,Richmond,BC,TerraNovaVillage.pdf
+259,WTO025,The Olive,The Olive,Vancouver,BC,TheOlive.pdf
+260,WPV323,Peninsula Village Shopping Centre,Peninsula Village Shopping Centre,Surrey,BC,PeninsulaVillageShoppingCentre .pdf
+262,WCS864,Victoria Medical & Professional Building,Cook Street Plaza,Victoria,BC,
+263,WET388,Time Marketplace,Empire Theatres Building,North Vancouver,BC,EmpireTheatresBuilding.pdf
+264,WFC186,False Creek Village,False Creek Village I,Vancouver,BC,
+265,WFC185,False Creek Village,False Creek Village,Vancouver,BC,FalseCreekVillage.pdf
+266,WHF250,Harbour Front Centre,Harbour Front Centre,North Vancouver,BC,HarbourFrontCentre.pdf
+267,WHP008,Harbour Plaza,Harbour Plaza,North Vancouver,BC,HarbourPlaza.pdf
+268,WMP634,McKenzie Professional Centre,McKenzie Professional Centre,Victoria,BC,
+269,WPP932,Pemberton Plaza,Pemberton Plaza,North Vancouver,BC,PembertonPlaza.pdf
+270,WPP854,Pemberton Plaza,Pemberton Plaza II,North Vancouver,BC,
+271,WSN578,Shops at New West,Shops at New West,New Westminster,BC,Shops_at_new_west_digital_07062017_DIRECT UPLOAD.pdf
+272,WTM451,Time Marketplace,Time Marketplace,North Vancouver,BC,TimeMarketplace.pdf
+273,WTV783,Tuscany Village,Tuscany Village Shopping Centre,Victoria,BC,TuscanyVillageShoppingCentre.pdf
+274,WVP222,Victoria Medical & Professional Building,Victoria Medical & Professional Building,Victoria,BC,
+275,C1B123,One Bloor Street East,One Bloor Street East,Toronto,ON,
+276,ESP469,Pharmaprix St-Denis,Pharmaprix St-Denis,Montr?al,QC,
+277,EEG841,Edifice Gordon,Edifice Gordon,Verdun,QC,
+278,ECS011,Carrefour St-David,Carrefour St-David,Beauport,QC,CarrefourSt-David-EN.pdf

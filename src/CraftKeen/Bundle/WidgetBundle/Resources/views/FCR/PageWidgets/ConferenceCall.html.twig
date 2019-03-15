@@ -1,0 +1,19 @@
+{% set fields = ['title', 'subtitle', 'icon', 'href'] %}
+
+{% set widget = widget|merge({'data' : checkWidgetFields(widget.data, fields) }) %}
+
+{{
+    react_component(
+        widget.dataType, {
+            'props':{
+                "isLoggedIn": logged,
+                "id": widget.id,
+                "title": widget.data.title,
+                "subtitle": widget.data.subtitle,
+                "icon": widget.data.icon,
+                "href": widget.data.href,
+                "config": widget.config
+            }
+        }
+    )
+}}

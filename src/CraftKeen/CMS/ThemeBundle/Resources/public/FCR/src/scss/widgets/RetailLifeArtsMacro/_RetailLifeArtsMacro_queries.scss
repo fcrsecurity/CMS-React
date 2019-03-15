@@ -1,0 +1,82 @@
+
+ @media screen and (max-width: $small-devices-width) {
+     .isotope-masonry-gallery {
+         .grid-item,
+         .grid-item--1w,
+         .grid-item--2w {
+             width: 100%;
+             .detail-info {
+                 .text {
+                     line-height: 1;
+                     .head-text {
+                         margin-left: 0;
+                         font-size: 18px;
+                     }
+                     p {
+                         font-size: 14px;
+                         margin: 3% 25px;
+                     }
+                 }
+                 .more {
+                     bottom: -30px;
+                     height: 30px;
+                     line-height: 25px;
+                     font-size: 16px;
+                 }
+             }
+             &:hover {
+                 .detail-info {
+                     height: 90%;
+                     bottom: 0;
+                     .text {
+                         height: 90%;
+                         .arr-icon {
+                             display: none;
+                         }
+                     }
+                 }
+                 .more {
+                     bottom: 0;
+                     i {
+                         opacity: 1.0;
+                     }
+                 }
+             }
+         }
+     }
+ }
+ 
+ @media screen and (max-width: 1025px) {
+     .isotope-masonry-gallery {
+         .grid-item--2w {
+             width: 100%;
+         }
+         .grid-item--1w {
+             max-width: 100%;
+         }
+         .grid-item {
+             width: 100%;
+         }
+         .grid-item,
+         .grid-item--1w,
+         .grid-item--2w {
+             .detail-info {
+                 height: 80% !important;
+                 bottom: 0;
+                 .text {
+                     height: 90% !important;
+                     .arr-icon {
+                         opacity: 0 !important;
+                     }
+                 }
+             }
+             .more {
+                 bottom: 0 !important;
+                 i {
+                     opacity: 1.0 !important;
+                 }
+             }
+         }
+     }
+ }
+ 

@@ -1,0 +1,9 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_breadcrumb %}
+	<li class="active">{{'File Manager'|trans}}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+	<iframe style="border:none; width:100%; min-height:700px " src="{{ path('elfinder') }}"></iframe>
+{% endblock %}

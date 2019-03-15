@@ -1,0 +1,5 @@
+CraftKeen\CMS\AdminBundle\Entity\Language:
+    LangRu:
+        code: ru
+    LangPl:
+        code: pl

@@ -1,0 +1,43 @@
+{% if ((route == 'craftkeen_cms_page_index' or route == 'craftkeen_cms_page_inner') and not(page.page is null)) %}
+	<div class="navbar navbar-default navbar-fixed-top admin-menu">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">{{ page.page.name }}</a>
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="{{ path('craftkeen_cms_page_admin_page_edit', { 'id': page.page.id }) }}" class="btn btn-default">{{ 'EDIT'|trans }}</a>
+					</li>
+					<li>
+						<a href="{{ path('craftkeen_cms_page_admin_page_new') }}" class="btn btn-default">{{ 'CREATE'|trans }}</a>
+					</li>
+					<li>
+						<a href="{{ path('craftkeen_cms_page_admin_page_delete', { 'id': page.page.id  }) }}" class="btn btn-default">{{ 'DELETE'|trans }}</a>
+					</li>
+					<li>
+						<a href="#" class="btn btn-default">{{ 'TO APPROVE'|trans }}</a>
+					</li>
+				</ul>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					{% if page.page.status == "published" %}
+						<span class="label label-success">{{ page.page.status }}</span>
+					{% elseif page.page.status ==  "draft" %}
+						 <span class="label label-warning">{{ page.page.status }}</span>
+					{% else %}
+						 <span class="label label-default">{{ page.page.status }}</span>
+					{% endif %}
+
+					{% if page.page.status == 'live'  %}
+						<span class="label label-success">{{ 'Approved'|trans }}</span>
+					{% else %}
+						 <span class="label label-default">{{ 'Not Approved'|trans }}</span>
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="bs-component"><nav class="navbar navbar-default"></nav> </div>
+{% endif %}

@@ -1,0 +1,300 @@
+{% macro renderLayout(page, layout, widgets={}, parent=0, parentID='') %}
+    {% import _self as self %}
+    {% if layout is iterable %}
+        {% set rowcount = parent+1 %}
+        {% for key, row in layout %}
+            {% set rowId = parentID~'R'~rowcount %}
+            {% set colcount = 1 %}
+            <div id="{{ rowId }}" class="row">
+                {% for column in row %}
+                    {% set colId = rowId~'C'~colcount %}
+                    <div id="{{ colId }}" class="cols {{ column.class }}">
+                        {% if column.content is iterable %}
+                            {{ self.renderLayout(page, column.content, widgets, parent, colId) }}
+                        {% else %}
+                            {{ self.renderWidget(page, column.content, widgets) }}
+                        {% endif %}
+                    </div>
+                    {% set colcount = colcount+1 %}
+                {% endfor %}
+            </div>
+            {% set rowcount = rowcount+1 %}
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-danger">Wrong layout!!!</div>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import renderLayout %}
+
+{% macro renderWidget(page, pageWidgetId, widgets) %}
+    {{ render_widgets(page, pageWidgetId) }}
+    {#{% from _self import renderExactWidget %}#}
+    {#{% set break = false %}#}
+    {#{% if widgets is iterable %}#}
+        {#{% for key, widget in widgets if not break %}#}
+            {#{% if widget.tplArea == pageWidgetId %}#}
+                {#{% set break = true %}#}
+                {#macros rendering#}
+                {#{% if widget.dataType == 'text' %}#}
+                    {#{% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}#}
+                    {#{{ W.text(widget) }}#}
+                {#{% endif %}#}
+                {#react rendering#}
+                {#{{ renderExactWidget(widget, page) }}#}
+            {#{% endif %}#}
+        {#{% endfor %}#}
+    {#{% endif %}#}
+{% endmacro %}
+
+{% macro renderExactWidget(widget, page) %}
+    {% if widget.dataType == 'entity' %}
+        {{ render(controller(widget.data)) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Text' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.text(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Result' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.result(widget) }}
+    {% endif %}
+    {# Output Pain Text Widgets #}
+
+    {% if widget.dataType == 'CTABox' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ctabox(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'StockPriceMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.StockPriceMacro(widget) }}
+    {% endif %}
+    {% if widget.dataType == 'FeatureSlider' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.featureslider(page, widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Title' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.title(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Button' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.button(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Tabs' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.tabs(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Accordion' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.accordion(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'IRStockPriceMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.IRStockPriceMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'SliderInfo' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.SliderInfo(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'LinkIconList' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.LinkIconList(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'Video' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.Video(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'FAQ' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.FAQ(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'PersonBaner' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.PersonBaner(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'PersonBlock' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.PersonBlock(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'ConferenceCall' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ConferenceCall(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'HeadQuarters' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.HeadQuarters(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'OtherOffices' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.OtherOffices(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'TeamTabs' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.TeamTabs(widget) }}
+    {% endif %}
+    {% if widget.dataType == 'GovernanceTabs' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.GovernanceTabs(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'PressReleases' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.PressReleases(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'ChartBarInvestors1' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ChartBarInvestors1(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'ChartBarInvestors2' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ChartBarInvestors2(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'LastPressReleases' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.LastPressReleases(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'AnalystCoverage' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.AnalystCoverage(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'DividendsMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.DividendsMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'DebenturesMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.DebenturesMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'FinancialReportsMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.FinancialReportsMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'RichTextMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.RichTextMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'SustainabilityReportsMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.SustainabilityReportsMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'SustainabilitySliderMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.SustainabilitySliderMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'RetailArtMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.RetailArtMacro(widget) }}
+    {% endif %}
+
+    {#FOR CAREERS#}
+
+    {% if widget.dataType == 'CareersSliderInfoMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.CareersSliderInfoMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'CareersPersonBlockMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.CareersPersonBlockMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'CareersFAQMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.CareersFAQMacro(widget) }}
+    {% endif %}
+
+    {#FOR Board of Directors#}
+
+    {% if widget.dataType == 'BoardPersonBlockMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.BoardPersonBlockMacro(widget) }}
+    {% endif %}
+
+    {# FOR Executive Leadership #}
+    {% if widget.dataType == 'ExecutivePersonBlockMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ExecutivePersonBlockMacro(widget) }}
+    {% endif %}
+
+    {# FOR Investors  #}
+    {% if widget.dataType == 'IrFAQMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.IrFAQMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'ConferenceCallsMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ConferenceCallsMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'GoogleMap' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.GoogleMap(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'QuotesCharts' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.QuotesCharts(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'LinkIconListMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.LinkIconListMacro(widget) }}
+    {% endif %}
+
+    {% if widget.dataType == 'RichEditor' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {% set allow_edit = false %}
+        {% if 'Y' == app.request.get('editMode') %}
+            {% set allow_edit = true %}
+        {% endif %}
+        {{ W.RichEditor(widget, allow_edit) }}
+    {% endif %}
+
+    {% if widget.dataType == 'ChartMacro' %}
+        {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+        {{ W.ChartMacro(widget) }}
+    {% endif %}
+{% endmacro %}
+
+
+{% macro renderExactWidgetSwitch(widget, page) %}
+    {% import 'CraftKeenCMSThemeBundle:'~theme~':Widgets/'~widget.macros~'.html.twig' as W %}
+
+    {% if widget.dataType == 'entity' %}
+        {{ render(controller(widget.data)) }}
+    {% elseif widget.dataType == 'FeatureSlider' %}
+        {{ W.featureslider(page, widget) }}
+    {% else %}
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,244 @@
+.historical, .quotes-charts {
+  padding-top: $height-60;
+  position: relative;
+
+  &::before {
+	content: '';
+	height: 1px;
+	width: 80%;
+	background-color: $color-grey-light3;
+	margin: 0 auto;
+	position: relative;
+	top: -100px;
+  }
+  h1 {
+	text-align: center;
+	font-size: 38px;
+	font-family: $font-family-default;
+	margin-bottom: $height-40;
+  }
+  .forms {
+	max-width: 610px;
+	width: 100%;
+	margin: 0 auto;
+
+	.wrap-btn {
+	  text-align: center;
+	  margin: 40px 0 50px 0;
+
+	  a {
+		display: inline-block;
+
+		i {
+		  margin-left: 5px;
+		}
+	  }
+	}
+	.tgl + .tgl-btn {
+	  width: 2.8em;
+	  height: 1.5em;
+	}
+	.tgl-ios + .tgl-btn {
+	  background: $color-shade;
+	}
+	.dropdown_container {
+	  .selectric-wrapper {
+		width: 48%;
+		display: inline-block;
+		margin-bottom: 25px;
+
+		&:first-child {
+		  margin-right: 2%;
+		}
+		.selectric {
+		  border-top: 2px solid $color-shade;
+		  border-bottom: 2px solid $color-shade;
+		  height: 1.9em;
+		  color: $color-grey;
+		  border-radius: 0;
+
+		  .label {
+			height: 1.65em;
+		  }
+		}
+		.selectric-items {
+		  border-bottom: 2px solid $color-shade;
+		}
+	  }
+	}
+  }
+  .table {
+	tbody {
+	  tr {
+		&.even {
+		  background-color: $color-shade;
+		}
+	  }
+	}
+  }
+}
+.quotes-charts {
+  .forms {
+	max-width: 100%;
+
+	.form-container {
+	  margin-bottom: 0;
+	}
+	.dropdown_container {
+	  p {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 50px;
+		margin-right: 20px;
+		padding-top: 5px;
+		color: $color-blue;
+	  }
+	  .selectric-wrapper {
+		width: 27.33%;
+		margin-bottom: 0;
+	  }
+	}
+  }
+  .average-percents {
+	color: $color-blue-highlight;
+	text-align: center;
+	float: right;
+	padding-top: 20px;
+	position: absolute;
+	right: 12px;
+  }
+}
+
+/* Area Chart */
+#area-chart {
+  margin-top: 0px;
+
+  .area {
+	fill: #83A3C4;
+  }
+  .domain, line {
+	stroke: #83A3C4;
+  }
+  .axis, .axis-area-chart {
+	& text {
+	  fill: $color-blue-highlight;
+	  font-size: 1.25em;
+	}
+  }
+  .dot {
+	opacity: 0;
+
+	&:hover {
+	  fill: $color-blue-edge;
+	  opacity: 1;
+	  cursor: pointer;
+	}
+  }
+}
+#volume-bar-chart {
+  .bar {
+	fill: #83A3C4;
+
+	&:hover {
+	  fill: $color-blue-highlight
+	}
+  }
+  .domain, line {
+	stroke: #E6E6E6;
+  }
+  .axis, .axis-bar-chart {
+	& text {
+	  fill: $color-blue-highlight;
+	  font-size: 1.25em;
+	}
+  }
+}
+#dataTable-qc thead>tr>th {
+  text-align: center;
+}
+// Hide dataTables "Show X" on the top of table.
+div#dataTable-qc_length {
+  display:none;
+}
+
+.historical-prices-wrapper {
+  margin-bottom: $height-60;
+  .time-link {
+	overflow: hidden;
+	border: 1px solid $color-blue-highlight;
+	border-radius: 6px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	.time-frame {
+	  display: inline-block;
+	  color: $color-blue-highlight;
+	  display: block;
+	  text-align: center;
+	  margin-bottom: 15px;
+	}
+	ul {
+	  display: block;
+	  text-align: center;
+	  overflow: hidden;
+	  padding: 0;
+	  vertical-align: middle;
+	  li {
+		list-style: none;
+		display: inline-block;
+		border-left: 1px solid $color-blue;
+		&:first-child {
+		  border: none;
+		}
+		a {
+		  color:$color-grey;
+		  font-weight: 600;
+		  text-decoration: none;
+		  padding: 0 5px;
+		  &:hover {
+			color: $color-blue-highlight;
+		  }
+		  &.active {
+			color: $color-blue-highlight;
+		  }
+		}
+	  }
+	}
+  }
+  .wrap-inputs {
+
+	span {
+	  color:$color-grey;
+	  font-family: $font-family-default-black;
+	  font-size: 18px;
+	  font-weight: bold;
+	  display: inline-block;
+	  vertical-align: middle;
+	}
+	input[type="text"]{
+	  border-radius: 20px;
+	  border: 1px solid $color-grey;
+	  padding: 10px 12px;
+	  outline: none;
+	  font-size: 17px;
+	  display: block;
+
+	  width: 100%;
+	}
+	.button {
+	  max-width: 150px;
+	  min-width: 182px;
+	  display: block;
+	  margin: 0 auto;
+	  margin-top: $height-40;
+	}
+  }
+}
+.getPrice {
+  text-align:center;
+  i{
+	display:none;
+  }
+}
+
+@import "quotesCharts-filter_queries";

@@ -1,0 +1,45 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}Route View{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('craftkeen_cms_page_admin_route_index') }}">Routes</a></li>
+    <li class="active">Route View</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ route.id }}</td>
+                </tr>
+                <tr>
+                    <th>Slug</th>
+                    <td>{{ route.slug }}</td>
+                </tr>
+                <tr>
+                    <th>Page</th>
+                    <td>{{ route.page }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr />
+
+    <ul class="list-inline list-unstyled">
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_route_index') }}" class="btn btn-default">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_route_edit', { 'id': route.id }) }}" class="btn btn-success">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+                <input type="submit" class="btn btn-danger" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,59 @@
+.grey-wrapper {
+    background: $color-grey-light7;
+}
+
+.finance-block {
+    border-bottom: 1px solid $color-grey-light8;
+    text-align: left;
+    height: 260px;
+    display: flex;
+    .ind {
+        font-size: 48px;
+        color: $color-blue;
+        line-height: 1;
+        display: block;
+        margin: auto;
+        .first_row_ind {
+            display: inline-block;
+            width: 100%;
+            font-family: $font-family-info;
+            div {
+                &.ind_value,
+                &.positive-results {
+                    width: 52%;
+                    display: inline;
+                }
+            }
+            em {
+                font-family: $font-family-info;
+                font-style: normal;
+            }
+            .positive-results {
+                vertical-align: top;
+                padding-left: 0px;
+                color: $color-teal;
+                .usd {
+                    display: inline-block;
+                    width: auto;
+                    padding-left: 0px;
+                    font-size: 0.25em;
+                }
+                strong {
+                    font-size: 0.85em;
+                    margin-top: 13px;
+                    vertical-align: top;
+                }
+                .pink-arrow {
+                    color: $color-red-2;
+                }
+            }
+        }
+        .date {
+            display: block;
+            font-size: 0.18em;
+            color: $color-blue;
+        }
+    }
+}
+
+@import "FinanceBlock_queries";

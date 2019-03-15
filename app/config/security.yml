@@ -1,0 +1,37 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_BROCHURE_EDITOR:           ROLE_USER
+        ROLE_BROCHURE_APPROVER:         ROLE_USER
+        ROLE_BROCHURE_ADMINISTRATOR:    [ROLE_BROCHURE_EDITOR, ROLE_BROCHURE_APPROVER]
+        ROLE_ADMINISTRATOR:             ROLE_BROCHURE_ADMINISTRATOR
+        ROLE_SUPERADMINISTRATOR:        ROLE_ADMINISTRATOR
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+            logout:       true
+            anonymous:    true
+            remember_me:
+                secret: "%secret%"
+                lifetime: 1800000
+                path:     /
+                domain:   ~
+                user_provider: fos_userbundle
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, roles: [ROLE_LEASING_REGIONAL_COORDINATORS, ROLE_LEASING, ROLE_INVESTORS, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_APPROVER, ROLE_ADMINISTRATOR, ROLE_SUPERADMINISTRATOR, ROLE_BROCHURE_EDITOR, ROLE_BROCHURE_APPROVER] }
+        - { path: ^/efconnect, roles: [ROLE_LEASING_REGIONAL_COORDINATORS, ROLE_LEASING, ROLE_INVESTORS, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_APPROVER, ROLE_ADMINISTRATOR, ROLE_SUPERADMINISTRATOR] }
+        - { path: ^/elfinder, roles: [ROLE_LEASING_REGIONAL_COORDINATORS, ROLE_LEASING, ROLE_INVESTORS, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_APPROVER, ROLE_ADMINISTRATOR, ROLE_SUPERADMINISTRATOR] }
+        - { path: ^/brochure, roles: [ROLE_BROCHURE_EDITOR, ROLE_BROCHURE_APPROVER]}

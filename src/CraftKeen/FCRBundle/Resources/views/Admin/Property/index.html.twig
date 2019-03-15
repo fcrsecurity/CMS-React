@@ -1,0 +1,157 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/index.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+{% set moduleTitle = 'Properties'|trans %}
+{% set path_prefix = 'craftkeen_fcr_admin_leasing_property_' %}
+
+{% block admin_block_body %}
+    {% if cacheSupported is not defined %}
+        {% set cacheSupported = false %}
+    {% endif %}
+    {% if pagination is defined %}
+        {% set imagesFieds = [
+        'background',
+        'img',
+        'image'
+        ] %}
+
+        {% set sortableFieds = [
+        'title',
+        'name',
+        'id',
+        'sortOrder',
+        'type',
+        'page',
+        'property',
+        'parent',
+        'firstName',
+        'lastName',
+        'email'
+        ] %}
+        {% set dateTimeFieds = [
+        'updated',
+        'created',
+        'date',
+        'declaredDate',
+        'exDividendDate',
+        'recordDate',
+        'payableDate',
+        ] %}
+
+        <div class="row">
+            <div class="col-lg-10">
+                <ul class="list-inline list-unstyled">
+                    {% if is_granted('ROLE_CONTRIBUTOR') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR') or
+                    is_granted('ROLE_LEASING_REGIONAL_COORDINATORS')
+                    %}
+                        <li>
+                            <a href="{{ path('craftkeen_fcr_property_add_wizard') }}" class="btn btn-success">{{ 'Add'|trans }}</a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        {% if filterBy is not null %}
+                            {{ CRUD.renderListFilter__Categories('form-inline', filterBy ) }}
+                        {% endif %}
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-lg-2">
+                {{ CRUD.renderListFilter__PerPage('pull-right form-inline') }}
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    {% if pagination[0] is defined %}
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                            <tr>
+                                {% set header = pagination[0] %}
+                                {% for key in header.getDisplayItems('index') %}
+                                    {% set value = attribute(header, key) %}
+                                    {% if key in sortableFieds %}
+                                        <th>
+                                            {{ knp_pagination_sortable(pagination, key|capitalize , 'item.'~key) }}
+                                            {% if pagination.isSorted('item.'~key) %}
+                                                {% if app.request.get('direction') == 'asc' %}
+                                                    {% set class = 'glyphicon-sort-by-alphabet' %}
+                                                {% else %}
+                                                    {% set class = 'glyphicon-sort-by-alphabet-alt' %}
+                                                {% endif %}
+                                                <span class="glyphicon {{ class }}"></span>
+                                            {% endif %}
+                                        </th>
+                                    {% else %}
+                                        <th>{{ key|capitalize }}</th>
+                                    {% endif %}
+                                {% endfor %}
+                                <th>{{ 'Actions'|trans }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in pagination %}
+                                <tr>
+                                    {% for key in entity.getDisplayItems('index') %}
+                                        {% set value = attribute(entity, key) %}
+                                        {% if key in imagesFieds %}
+                                            <td><img src="{{ value }}" alt="{{ value }}" style="height:30px;"></td>
+                                        {% elseif key in dateTimeFieds and value %}
+                                            <td>{{ value|date(default_formats.datetime) }}</td>
+                                        {% else %}
+                                            <td>{{ value }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    <td>
+                                        <ul class="social-links list-inline list-unstyled">
+                                           {# {% if (path_prefix~'show')|routeExists %}
+                                                <li>
+                                                    <a href="{{ path(path_prefix~'show', { 'id': entity.id }) }}">
+                                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}#}
+                                            {% if is_granted('canedit', entity) and ('craftkeen_fcr_property_edit_wizard')|routeExists %}
+                                                <li>
+                                                    <a href="{{ path('craftkeen_fcr_property_edit_wizard', { 'id': entity.id }) }}">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {#{% if is_granted('canedit', entity) and ('craftkeen_fcr_property_translate_wizard')|routeExists %}
+                                                {% if entity.langParent is not defined or entity.langParent is null %}
+                                                    <li>
+                                                        <a href="{{ path('craftkeen_fcr_property_translate_wizard', {
+                                                                'id': entity.id,
+                                                                'language': 2
+                                                            })
+                                                        }}">
+                                                            <span class="glyphicon glyphicon-globe"></span>
+                                                        </a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endif %}#}
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                    <div class="count pull-right">
+                        {{ 'Total:'|trans }} {{ pagination.getTotalItemCount }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# display navigation #}
+        <div class="row">
+            <div class="navigation col-lg-12">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,281 @@
+ //TODO: Chanage style for mobile first
+ .isotope-masonry-gallery {
+     width: 100%;
+     img {
+         width: 100%;
+     }
+     .grid-item {
+         float: right;
+         width: calc(50% - 1px);
+         padding: 5px;
+         position: relative;
+     }
+     .grid-item--2w {
+         width: 62.7654%;
+     }
+     .grid-item--1w {
+         max-width: 37.2346%;
+     }
+     .grid-item,
+     .grid-item--1w,
+     .grid-item--2w {
+         .detail-info {
+             position: absolute;
+             background-color: rgba(0, 0, 0, 0.3);
+             bottom: 0;
+             left: 0;
+             height: 60px;
+             width: calc(100% - 10px);
+             margin: 0 5px 5px 5px;
+             overflow: hidden;
+             transition: all 0.5s ease;
+             .text {
+                 position: absolute;
+                 height: 60px;
+                 margin-left: 25px;
+                 bottom: 0;
+                 left: 0;
+                 color: $color-white;
+                 width: 100%;
+                 line-height: 1.2;
+                 transition: all 0.5s ease;
+                 .arr-icon,
+                 .head-text {
+                     display: inline-block;
+                 }
+                 .head-text {
+                     //margin-left: 20px;
+                     font-family: $font-family-default;
+                     font-size: 24px;
+                     margin-top: 17px;
+                 }
+                 .arr-icon {
+                     vertical-align: middle;
+                     margin-right: 20px;
+                 }
+                 p {
+                     font-family: $font-family-default;
+                     font-size: 20px;
+                     margin: 3% 65px;
+                 }
+             }
+             .more {
+                 bottom: -60px;
+                 position: absolute;
+                 text-decoration: none;
+                 left: 0;
+                 height: 60px;
+                 line-height: 50px;
+                 font-size: 22px;
+                 padding: 0 15px;
+                 width: 100%;
+                 background-color: rgba(8, 97, 170, 0.3);
+                 color: $color-white;
+                 transition: all 0.5s ease;
+                 i,
+                 span {
+                     display: inline-block;
+                 }
+                 i {
+                     vertical-align: middle;
+                     margin-right: 20px;
+                     opacity: 0;
+                 }
+                 span {
+                     margin-left: 20px;
+                 }
+             }
+             transition: all .5s ease;
+         }
+         &:hover {
+             .detail-info {
+                 height: 80%;
+                 bottom: 0;
+                 .text {
+                     height: 90%;
+                     .arr-icon {
+                         opacity: 0;
+                     }
+                 }
+             }
+             .more {
+                 bottom: 0;
+                 i {
+                     opacity: 1.0;
+                 }
+             }
+         }
+     }
+ }
+ /*DETAIL PAGE RETAIL LIFE*/
+ 
+ .retail-life-detail {
+     .left-block {
+         font-family: $font-family-default;
+         h1 {
+             font-size: 45px;
+             line-height: 1.1;
+             color: $color-blue;
+             margin: 0;
+         }
+         h2 {
+             font-size: 24px;
+         }
+         h3 {
+             font-size: 20px;
+         }
+         ul {
+             list-style: none;
+             margin: 0;
+             padding: 0;
+         }
+         .detail-image {
+             margin-top: 25px;
+             max-height: 260px;
+             max-width: 100%;
+         }
+         .date {
+             font-size: 30px;
+             color: $color-grey;
+             margin-bottom: 50px;
+             line-height: 1;
+         }
+         p {
+             font-size: 18px;
+             color: $color-grey-dark1;
+             margin-bottom: 30px;
+             &.contact {
+                 padding-top: 15px;
+             }
+         }
+     }
+     .right-block {
+         .back-to-list {
+             color: $color-teal;
+             /* font-size: 15px; */
+             text-transform: uppercase;
+             font-weight: bold;
+             i {
+                 /* font-size: 14px; */
+                 font-weight: bold;
+             }
+         }
+         .item {
+             padding-bottom: 20px;
+             margin-top: 25px;
+             position: relative;
+             &::after {
+                 content: '';
+                 height: 1px;
+                 background-color: $color-teal;
+                 width: 25%; //50px;
+                 display: block;
+                 position: absolute;
+                 bottom: 0;
+                 left: 0;
+             }
+             .date {
+                 font-size: 18px;
+                 font-family: $font-family-default-black;
+                 color: $color-grey;
+                 a {
+                     font-size: 18px;
+                     font-family: $font-family-default-black;
+                     color: $color-grey;
+                 }
+             }
+             .text {
+                 font-size: 18px;
+                 color: $color-grey-dark1;
+             }
+         }
+     }
+ }
+ 
+ //slider
+ .arts-slider {
+     max-width: 320px !important;
+     .item {
+         height: 450px;
+         max-height: 500px;
+         background-size: cover;
+         position: relative;
+         background-position: center;
+     }
+     .description {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         left: 0;
+         padding: 20px;
+         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40));
+         background-repeat: no-repeat;
+         width: 100%;
+         p {
+             margin: 0;
+             color: white;
+         }
+     }
+     .slick-prev,
+    .slick-next {
+        top: 50%;
+        background-repeat: no-repeat;
+        height: 85px;
+        width: 85px;
+        z-index: 100;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+        background-size: 85px 85px;
+        z-index: 2000;
+        &:after,
+        &:before {
+            content: "";
+        }
+    }
+    .slick-next,
+    .slick-next:hover,
+    .slick-next:focus {
+        right: 2.5%;
+        background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/svg-arrow-right-safari.svg");
+    }
+    .slick-prev,
+    .slick-prev:hover,
+    .slick-prev:focus {
+        left: 2.5%;
+        background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/svg-arrow-left-safari.svg");
+    }
+ }
+
+ /* 768px*/
+ @media screen and (min-width: $small-devices-width) {
+     .arts-slider {
+         max-width: 700px !important;
+     }
+ }
+ /* 1200px */
+ @media screen and (max-width: $large-devices-width) {
+     .retail-life-detail {
+         .left-block {
+             h1 {
+                 font-size: 40px;
+             }
+             .date {
+                 font-size: 25px;
+             }
+             p {
+                 font-size: 16px;
+             }
+         }
+     }
+ }
+ 
+ @media screen and (max-width:480px) {
+     .arts-slider {
+         .item {
+             height: 300px;
+             width: 100%;
+         }
+         .description {}
+     }
+ }
+ 
+ @import "RetailLifeArtsMacro_queries";

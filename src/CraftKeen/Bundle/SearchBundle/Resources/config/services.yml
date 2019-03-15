@@ -1,0 +1,8 @@
+services:
+    craft_keen.search.indexer:
+        class: 'CraftKeen\Bundle\SearchBundle\Indexer\DatabaseSearchIndexer'
+        arguments: ["@doctrine"]
+
+    craft_keen.search.provider:
+        class: 'CraftKeen\Bundle\SearchBundle\Provider\DatabaseSearchProvider'
+        arguments: ["@doctrine", '@service_container', '@request_stack']

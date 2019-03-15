@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'yantramanavblack';
+    src: url('yantramanav-black-webfont.eot');
+    src: url('yantramanav-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('yantramanav-black-webfont.woff2') format('woff2'),
+         url('yantramanav-black-webfont.woff') format('woff'),
+         url('yantramanav-black-webfont.ttf') format('truetype'),
+         url('yantramanav-black-webfont.svg#yantramanavblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'yantramanavbold';
+    src: url('yantramanav-bold-webfont.eot');
+    src: url('yantramanav-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('yantramanav-bold-webfont.woff2') format('woff2'),
+         url('yantramanav-bold-webfont.woff') format('woff'),
+         url('yantramanav-bold-webfont.ttf') format('truetype'),
+         url('yantramanav-bold-webfont.svg#yantramanavbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'yantramanavlight';
+    src: url('yantramanav-light-webfont.eot');
+    src: url('yantramanav-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('yantramanav-light-webfont.woff2') format('woff2'),
+         url('yantramanav-light-webfont.woff') format('woff'),
+         url('yantramanav-light-webfont.ttf') format('truetype'),
+         url('yantramanav-light-webfont.svg#yantramanavlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'yantramanavmedium';
+    src: url('yantramanav-medium-webfont.eot');
+    src: url('yantramanav-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('yantramanav-medium-webfont.woff2') format('woff2'),
+         url('yantramanav-medium-webfont.woff') format('woff'),
+         url('yantramanav-medium-webfont.ttf') format('truetype'),
+         url('yantramanav-medium-webfont.svg#yantramanavmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'yantramanavregular';
+    src: url('yantramanav-regular-webfont.eot');
+    src: url('yantramanav-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('yantramanav-regular-webfont.woff2') format('woff2'),
+         url('yantramanav-regular-webfont.woff') format('woff'),
+         url('yantramanav-regular-webfont.ttf') format('truetype'),
+         url('yantramanav-regular-webfont.svg#yantramanavregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'yantramanavthin';
+    src: url('yantramanav-thin-webfont.eot');
+    src: url('yantramanav-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('yantramanav-thin-webfont.woff2') format('woff2'),
+         url('yantramanav-thin-webfont.woff') format('woff'),
+         url('yantramanav-thin-webfont.ttf') format('truetype'),
+         url('yantramanav-thin-webfont.svg#yantramanavthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

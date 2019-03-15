@@ -1,0 +1,551 @@
+CraftKeen\CMS\MenuBundle\Entity\Menu:
+    Menu0:
+        name: '@Page0->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        #parent:
+        sortOrder: 10
+        page: '@Page0->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu01:
+        name: '@Page19->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        #parent:
+        sortOrder: 20
+        page: '@Page19->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# Investors
+    Menu1:
+        name: '@Page1->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        #parent:
+        sortOrder: 20
+        page: '@Page1->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu2:
+        name: 'INVESTOR PRESENTATION'
+        url: 'https://fcr.ca/uploads/investors/investors-presentations/FCR_INVESTOR_PRESENTATION.pdf'
+        type: '@MenuType0->id'
+        itemType: custom
+        targetBlank: true
+        parent: '@Menu1'
+        sortOrder: 21
+        #page: '@Page1->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu3:
+        name: '@Page2->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 20
+        page: '@Page2->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu4:
+        name: '@Page3->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 30
+        page: '@Page3->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu5:
+        name: '@Page4->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 40
+        page: '@Page4->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu6:
+        name: '@Page5->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 50
+        page: '@Page5->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu7:
+        name: '@Page6->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 60
+        page: '@Page6->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu8:
+        name: '@Page7->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 70
+        page: '@Page7->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu9:
+        name: '@Page8->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 80
+        page: '@Page8->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu10:
+        name: '@Page9->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 90
+        page: '@Page9->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu11:
+        name: '@Page10->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 100
+        page: '@Page10->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# Community
+    Menu12:
+        name: '@Page11->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        #parent:
+        sortOrder: 110
+        page: '@Page11->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu13:
+        name: '@Page12->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu12'
+        sortOrder: 120
+        page: '@Page12->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu12-2:
+        name: '@Page11-blog->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu12'
+        sortOrder: 120
+        page: '@Page11-blog->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# About
+    Menu14:
+        name: '@Page13->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        #parent: '@Menu11'
+        sortOrder: 130
+        page: '@Page13->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu15:
+        name: '@Page14->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu14'
+        sortOrder: 140
+        page: '@Page14->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu16:
+        name: '@Page15->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu14'
+        sortOrder: 150
+        page: '@Page15->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu17:
+        name: '@Page16->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu14'
+        sortOrder: 160
+        page: '@Page16->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# Careers
+    Menu18:
+        name: '@Page17->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        #parent: '@Menu13'
+        sortOrder: 170
+        page: '@Page17->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# Press Releases
+    Menu19:
+        name: '@Page24->name'
+        url:
+        type: '@MenuType0->id'
+        itemType: page
+        targetBlank: false
+        parent: '@Menu1'
+        sortOrder: 180
+        page: '@Page24->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+
+# Menu in footer
+# Portfolio&Leasing
+    Menu20:
+        name: 'Alberta'
+        url: '/portfolio-leasing/#show-AB'
+        type: '@MenuType1->id'
+        itemType: custom
+        targetBlank: false
+        sortOrder: 100
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu21:
+        name: 'British Columbia'
+        url: '/portfolio-leasing/#show-BC'
+        type: '@MenuType1->id'
+        itemType: custom
+        targetBlank: false
+        sortOrder: 200
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu22:
+        name: 'Ontario'
+        url: '/portfolio-leasing/#show-ON'
+        type: '@MenuType1->id'
+        itemType: custom
+        targetBlank: false
+        sortOrder: 300
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu23:
+        name: 'Québec'
+        url: '/portfolio-leasing/#show-QC'
+        type: '@MenuType1->id'
+        itemType: custom
+        targetBlank: false
+        sortOrder: 400
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+#Investors
+    Menu24:
+        name: '@Page6->name'
+        url:
+        type: '@MenuType2->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 100
+        page: '@Page6->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu25:
+        name: 'Investor Presentation'
+        url: 'https://fcr.ca/uploads/investors/investors-presentations/FCR_INVESTOR_PRESENTATION.pdf'
+        type: '@MenuType2->id'
+        itemType: custom
+        targetBlank: false
+        sortOrder: 200
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu26:
+        name: '@Page24->name'
+        url:
+        type: '@MenuType2->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 300
+        page: '@Page24->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu27:
+        name: '@Page2->name'
+        url:
+        type: '@MenuType2->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 400
+        page: '@Page2->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# BottomHeaded
+    Menu28:
+        name: '@Page17->name'
+        url:
+        type: '@MenuType3->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 100
+        page: '@Page17->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu999:
+        name: '@Page16->name'
+        url:
+        type: '@MenuType3->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 90
+        page: '@Page16->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# Community
+    Menu29:
+        name: '@Page12->name'
+        url:
+        type: '@MenuType4->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 100
+        page: '@Page12->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu30:
+        name: '@Page11->name'
+        url:
+        type: '@MenuType4->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 300
+        page: '@Page11->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# About
+    Menu31:
+        name: '@Page14->name'
+        url:
+        type: '@MenuType5->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 100
+        page: '@Page14->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu32:
+        name: '@Page15->name'
+        url:
+        type: '@MenuType5->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 200
+        page: '@Page15->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+# Bottom
+    Menu33:
+        name: '@Page20->name'
+        url:
+        type: '@MenuType6->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 100
+        page: '@Page20->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu34:
+        name: '@Page21->name'
+        url:
+        type: '@MenuType6->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 200
+        page: '@Page21->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu35:
+        name: '@Page22->name'
+        url:
+        type: '@MenuType6->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 300
+        page: '@Page22->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'
+    Menu36:
+        name: '@Page23->name'
+        url:
+        type: '@MenuType6->id'
+        itemType: page
+        targetBlank: false
+        sortOrder: 400
+        page: '@Page23->id'
+        lang: '@Lang0->id'
+        created_by: '@User0->id'
+        status: 'live'
+        version: 1
+        versionComment: 'Initial'

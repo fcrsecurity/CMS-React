@@ -1,0 +1,18 @@
+{% set fields = ['wrapClasses', 'widgetClasses', 'text', 'href'] %}
+
+{% set widget = widget|merge({'data' : checkWidgetFields(widget.data, fields) }) %}
+
+{{
+    react_component(
+        widget.dataType, {
+            'props':{
+                "isLoggedIn": logged,
+                "id": widget.id,
+                "wrapClasses": widget.data.wrapClasses,
+                "widgetClasses": widget.data.widgetClasses,
+                "text": widget.data.text,
+                "href": widget.data.href,
+            }
+        }
+    )
+}}

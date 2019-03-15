@@ -1,0 +1,25 @@
+"id","title","person","phone","type","lang","lang_parent"
+"1","BMO Capital Markets","Heather Kirk","416-359-4030","Equity Analyst Coverage","en",NULL
+"2","Canaccord Capital","Mark Rothschild","416-869-7280","Equity Analyst Coverage","en",NULL
+"3","CIBC World Markets","Dean Wilkinson","416-594-7194","Equity Analyst Coverage","en",NULL
+"4","National Bank Financial","Matt Kornack","416-507-8104","Equity Analyst Coverage","en",NULL
+"5","Raymond James","Ken Avalos","727-567-1756","Equity Analyst Coverage","en",NULL
+"6","RBC Capital Markets","Michael Smith","416-842-7805","Equity Analyst Coverage","en",NULL
+"7","Scotia Capital","Pammi Bir","416-863-7218","Equity Analyst Coverage","en",NULL
+"8","TD Securities","Sam Damiani","416-983-9640","Equity Analyst Coverage","en",NULL
+"9","BMO Capital Markets","Joanne Chen","416-359-8108","Debt Analyst Coverage","en",NULL
+"10","RBC Capital Markets","Vivek Selot","416-842-5165","Debt Analyst Coverage","en",NULL
+"11","Dominion Bond Rating Service Ltd.","Mandy Abramsohn","416-597-7361","Rating Agency Coverage","en",NULL
+"12","Moody's Investors Service","Griselda Bisono","212-553-4985","Rating Agency Coverage","en",NULL
+"13","BMO Nesbitt Burns","Heather Kirk","416-359-4030","Couverture d'analystes d'actions","fr","1"
+"14","Canaccord Capital","Mark Rothschild","416-869-7280","Couverture d'analystes d'actions","fr","2"
+"15","CIBC World Markets","Alex Avery","416-594-8179","Couverture d'analystes d'actions","fr","3"
+"16","National Bank Financial","Matt Kornack","416-507-8104","Couverture d'analystes d'actions","fr","4"
+"17","Raymond James","Ken Avalos","727-567-1756","Couverture d'analystes d'actions","fr","5"
+"18","RBC Capital Markets","Michael Smith","416-842-7805","Couverture d'analystes d'actions","fr","6"
+"19","Scotia Capital","Pammi Bir","416-863-7218","Couverture d'analystes d'actions","fr","7"
+"20","TD Securities","Sam Damiani","416-983-9640","Couverture d'analystes d'actions","fr","8"
+"21","BMO Capital Markets","Joanne Chen","416-359-8108","Couverture des analystes de la dette","fr","9"
+"22","RBC Capital Markets","Vivek Selot","416-842-5165","Couverture des analystes de la dette","fr","10"
+"23","Dominion Bond Rating Service Ltd.","Mark Newman","416-597-7559","Cotation des agences","fr","11"
+"24","Moody's Investors Service","Merrie S. Frankel","212-553-3652","Cotation des agences","fr","12"

@@ -1,0 +1,233 @@
+Search: Search
+More: More
+Leasing: Leasing
+News: News
+Careers: Careers
+Copyrights: Copyrights
+Back: Back
+Close video: Close Video
+Email Address: Email Address
+Unsubscribe from all lists: Unsubscribe from all lists
+subscribe: Subscribe
+Provide your Email address:
+email_address: Email Address
+Mail Lists: Mail Lists
+Or From All: Or From All
+Update: Update
+LEARN MORE: LEARN MORE
+fcr.menu.footer.leasing: Portfolio & Leasing
+fcr.menu.footer.investors: Investors
+fcr.menu.footer.about: About
+fcr.menu.footer.contact: Contact Us
+fcr.menu.footer.careers: Careers
+fcr.menu.footer.community: Community
+fcr.menu.footer.tagline: fot_tagline_en.png
+fcr.menu.footer.title: How Can We Help?
+fcr.menu.footer.looking_lease: I'm looking to lease
+fcr.menu.footer.seeking_career: I'm seeking a career
+fcr.menu.footer.am_investor: I'm an investor
+fcr.menu.footer.subscribe.button: SUBSCRIBE
+
+Dashboard: Dashboard
+Administration: Administration
+Website: Website
+Inbox: Inbox
+Profile: Profile
+Logout: Logout
+Modules: Modules
+Users: Users
+Per Page: Per Page
+Actions: Actions
+Total:: 'Total:'
+Create a new user: Create a new user
+
+First Capital Realty - owner and operator of urban retail properties: First Capital Realty - owner and operator of urban retail properties
+Tel: Tel
+Toll Free: Toll Free
+Provide your Email address: Provide your Email address
+#Home
+OUR STORY: OUR STORY
+
+# Portfolio & Leasing
+Approximate Sq Ft: Approximate Sq Ft
+Leasing Inquiry: Leasing Inquiry
+Demographics: 2016 Demographics
+'Source: Environics Analytics': 'Source: Environics Analytics'
+Population: Population
+Households: Households
+Household Income: Household Income
+Traffic Count (AADT): Traffic Count (AADT)
+Download Site Plan: Download Site Plan
+Leasing Inquiry: Enquête d'emplacement
+Thank you Message: 'Thanks for your interest in a First Capital Realty location, please fill out the form below to be connected with one of our leasing representatives.'
+Full Name*: Full Name*
+Email*: Email*
+Phone Number*: Phone Number*
+Select Category: Select Category
+All: All
+Grocery Anchored: Grocery Anchored
+Retail: Retail
+Office Space: Office Space
+LEED: LEED
+BOMA: BOMA
+Has Availability: Has Availability
+Square Footage: Square Footage
+Comments: Comments
+total_area: Total Area
+population: Population
+households: Households
+all: All
+porfolio_page_title: Portfolio & Leasing
+properties: Properties
+size_of_province: Size of Province
+view_more: VIEW MORE
+modal_more_button: MORE
+million: million
+approximate_sq_ft: Approximate Sq Ft
+portfolio_table_head_name: Name
+portfolio_table_head_address: Address
+portfolio_table_head_city: City
+portfolio_table_head_type: Type
+filter_grocery_anchored: Grocery Anchored
+filter_urban_retail: Retail
+filter_office_space: Office Space
+filter_under_development: Under Development
+map-back-button: Back
+fcr.property_search.keyword.label: Keyword
+fcr.property_search.category.label: Category
+fcr.property_search.category.placeholder: Select Category
+fcr.property_search.city.placeholder: Select City
+fcr.property_search.is_vacant.label: With Availability
+fcr.property_search.sqft_min.label: Min
+fcr.property_search.sqft_max.label: Max
+All Properties: All Properties
+Or: Or
+
+resetting:
+    check_email: |
+        If your email exists in the system we will send an email that contains a link you must click to reset your password.
+        Note: You can only request a new password within %tokenLifetime% hours.
+
+        If you don't get an email check your spam folder or try again.
+# Quotes & Charts
+fcr.quotes-charts.volume: Volume
+fcr.quotes-charts.week-high: 52 Week High
+fcr.quotes-charts.week-low: 52 Week Low
+fcr.quotes-charts.time-frame: Time Frame
+fcr.quotes-charts.as-of: As of
+fcr.quotes-charts.t-f.1d: 1D
+fcr.quotes-charts.t-f.5d: 5D
+fcr.quotes-charts.t-f.1m: 1M
+fcr.quotes-charts.t-f.3m: 3M
+fcr.quotes-charts.t-f.6m: 6M
+fcr.quotes-charts.t-f.1y: 1Y
+fcr.quotes-charts.t-f.2y: 2Y
+fcr.quotes-charts.t-f.5y: 5Y
+fcr.quotes-charts.t-f.10y: 10Y
+fcr.quotes-charts.t-f.max: Max
+fcr.quotes-charts.t-f.ytd: YTD
+fcr.quotes-charts.t-f.from: From
+fcr.quotes-charts.t-f.to: to
+fcr.quotes-charts.t-f.button: GET PRICES
+fcr.quotes-charts.t-f.daily: Daily
+fcr.quotes-charts.t-f.weekly: Weekly
+fcr.quotes-charts.t-f.monthly: Monthly
+fcr.quotes-charts.t-f.dividens-only: Dividends Only
+fcr.quotes-charts.historical-prices: Historical Prices
+fcr.quotes-charts.stoke-price: Stock Price
+fcr.quotes-charts.date: Date
+fcr.quotes-charts.open: Open
+fcr.quotes-charts.high: High
+fcr.quotes-charts.low: Low
+fcr.quotes-charts.close: Close
+# Charts
+chart.label: Label
+chart.value: Value
+chart.val-label: Value label
+chart.color: Color
+chart.avg: Average limit
+
+# Press releases:
+Press Releases: Press Releases
+BACK TO PRESS RELEASES: BACK TO PRESS RELEASES
+
+#Contact
+Contact Us: Contact Us
+Corporate Headquarters: Corporate Headquarters
+
+Unsubscribe: Unsubscribe
+
+Upcoming: Upcoming
+Previous: Previous
+Conference Call Slides: Conference Call Slides
+Press Release: Press Release
+Investor Presentation: Investor Presentation
+Quarterly Report: Quarterly Report
+Corporate Sustainability Report: Corporate Sustainability Report
+Listen: Listen
+Previous Years: Previous Years
+Year: Year
+Annual: Annual
+For prior years visit sedar: FOR PRIOR YEARS VISIT SEDAR
+#Careers
+fcr.careers.jobs.autotext0: We have the following open positions. Please follow the prompts to apply. In the event that no postings match your experience, please subscribe to be informed about new job postings.
+fcr.careers.jobs.autotext1: Sorry, no positions available at present for British Columbia.
+fcr.careers.jobs.autotext2: Subscribe today to be the first to know about new job postings.
+fcr.careers.jobs.details.beforeapply: Accessibility support and accommodations for disabilities, wherever appropriate, will be provided in the recruitment process on request
+fcr.careers.jobs.details.apply: Apply
+View All Jobs: View All Jobs
+First Name: First Name
+Last Name: Last Name
+Email: Email
+Submit: Submit
+Address: Address
+City: City
+Province: Province
+Postal Code: Postal Code
+Phone: Phone
+Please upload a copy of your resume: Please upload a copy of your resume
+find out what we are all about: FIND OUT WHAT WE ARE ALL ABOUT
+
+# Debentures
+Senior Unsecured Debentures: Senior Unsecured Debentures
+Convertible Debentures: Convertible Debentures
+Series: Series
+Maturity Date: Maturity Date
+Principal Outstanding (thousands): Principal Outstanding (thousands)
+Coupon: Coupon
+Interest Payment Date: Interest Payment Date
+Interest paid semi-annually: Interest paid semi-annually
+Convertible Unsecured Subordinated Debentures Outstanding: Convertible Unsecured Subordinated Debentures Outstanding
+Ticker: Ticker
+Issue Date: Issue Date
+Maturity: Maturity
+Date: Date
+Original Principal: Original Principal
+Outstanding: Outstanding
+(thousands): (thousands)
+Coupon: Coupon
+All series of convertible unsecured subordinated debentures rank pari passu with each other.: All series of convertible unsecured subordinated debentures rank pari passu with each other.
+Interest is paid semi-annually on March 31 and September 30.: Interest is paid semi-annually on March 31 and September 30.
+"First Capital Realty has the option of repaying the debentures on maturity (or on redemption - see below) through the issuance of common shares at 97% of the weighted average trading price of the Company's common shares. The Company also has the option of paying the semi-annual interest through the issuance of common shares using the same methodology.": "First Capital Realty has the option of repaying the debentures on maturity (or on redemption - see below) through the issuance of common shares at 97% of the weighted average trading price of the Company's common shares. The Company also has the option of paying the semi-annual interest through the issuance of common shares using the same methodology."
+All Debentures are issued in denominations of $1,000.: All Debentures are issued in denominations of $1,000.
+Redemption Conversion Options: Redemption Conversion Options
+Ticker: Ticker
+Holder Option to Convert at the Conversion Price: Holder Option to Convert at the Conversion Price
+Price: Price
+Company Option to Redeem at Principal Amount (conditional: Company Option to Redeem at Principal Amount (conditional
+Company Option to Redeem at Principal Amount: Company Option to Redeem at Principal Amount
+Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest, provided that the volume weighted average trading price for the 20 consecutive trading days ending five days prior to the notice of redemption is not less than 125% of the Conversion Price, by giving between 30 and 60 days written notice.: Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest, provided that the volume weighted average trading price for the 20 consecutive trading days ending five days prior to the notice of redemption is not less than 125% of the Conversion Price, by giving between 30 and 60 days written notice.
+Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest by giving between 30 and 60 days written notice.: Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest by giving between 30 and 60 days written notice.
+Interest Payment Dates(Last 5 Years): Interest Payment Dates(Last 5 Years)
+Actual Interest: Actual Interest
+Payment Dates: Payment Dates
+Interest Payment: Interest Payment
+Share Issuance Price: Share Issuance Price
+97% of the volume weighted average trading price of the Company's common shares on the TSX for the 20 consecutive trading days ending five days prior to the interest payment date.: 97% of the volume weighted average trading price of the Company's common shares on the TSX for the 20 consecutive trading days ending five days prior to the interest payment date.
+Download Brochure: Download Brochure
+footer.Leasing: Leasing
+footer.News: News
+footer.Careers: Careers
+your@email.com: your@email.com
+map-next-button: Next Map
+Click to Drag: Click to Drag

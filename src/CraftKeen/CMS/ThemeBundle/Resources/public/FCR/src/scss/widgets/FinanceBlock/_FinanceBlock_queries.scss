@@ -1,0 +1,16 @@
+/*992px*/
+@media screen and (min-width:$medium-devices-width-bootstrap) {
+    .finance-block {
+        border-right: 1px solid $color-grey-light8;
+        border-bottom: none;
+        margin: 20px -15px;
+    }
+}
+/*1200px*/
+@media screen and (min-width:$large-devices-width) {
+    .finance-block {
+        .ind {
+            font-size: 65px;
+        }
+    }
+}

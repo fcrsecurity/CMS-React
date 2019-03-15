@@ -1,0 +1,30 @@
+CraftKeen\CMS\PageBundle\Entity\Route:
+    Route0:
+        slug: /
+        page: '@Page0->id'
+    Route1:
+        slug: test
+        page: '@Page1->id'
+    Route2:
+        slug: react
+        page: '@Page2->id'
+    Route3:
+        slug: react-builder
+        page: '@Page3->id'
+    Route4:
+        slug: investors
+        page: '@Page4->id'
+    Route5:
+        slug: financial-reports
+        page: '@Page5->id'
+    Route6:
+        slug: conference-calls
+        page: '@Page6->id'
+    Route7:
+        slug: shareholder-meeting
+        page: '@Page7->id'
+    Route8:
+        slug: governance
+        page: '@Page8->id'
+
+        

@@ -1,0 +1,11 @@
+services:
+    ckcms.twig_extension:
+        class: CraftKeen\CMS\ThemeBundle\Twig\AppExtension
+        public: false
+        calls:
+            - ['setContainer', ['@service_container']]
+        tags:
+            - { name: twig.extension }
+
+    theme_bundle.provider.theme:
+        class: 'CraftKeen\CMS\ThemeBundle\Provider\ThemeProvider'

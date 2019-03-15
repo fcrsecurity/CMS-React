@@ -1,0 +1,659 @@
+// TODO: It is necessary to optimize this code
+.forms {
+
+    .group {
+        position:relative;
+        clear: both;
+        /* LABEL ======================================= */
+
+        label {
+            padding: 10px 15px;
+            color:$color-grey-text;
+            font-weight:normal;
+            position:absolute;
+            pointer-events:none;
+            left:5px;
+            top:3px;
+            transition:0.2s ease all;
+            -moz-transition:0.2s ease all;
+            -webkit-transition:0.2s ease all;
+            &.error {
+                position: static;
+                color: red !important;
+                padding: 0;
+                font-size: 14px !important;
+            }
+        }
+
+        .inputMaterial {
+            font-size:18px;
+            padding:10px 10px 10px 5px;
+            display:block;
+            // width:300px;
+            border:none;
+            // border-bottom:1px solid #757575;
+            outline: none;
+            &:focus {
+                outline:none;
+            }
+
+        }
+
+    }
+    /* active state */
+    .inputMaterial {
+        &:focus ~ label,&:valid ~ label {
+            position:absolute;
+            color: $color-blue;
+        }
+    }
+
+    .cta-form {
+        .wrapper-form-step {
+            padding-left: 95px;
+            padding-right: 95px;
+            position: relative;
+            width: 70%;
+            margin: 0 auto;
+            .count-step-block {
+                position: absolute;
+                right: 0;
+                color: $color-grey-text;
+                bottom: 35px;
+                width: 95px;
+                text-align: center;
+                font-size: 24px;
+            }
+            .inputs_container {
+                /*overflow: hidden;
+                height: 130px; */
+                padding-top: 30px;
+                position: relative;
+                .next-step {
+                    position: absolute;
+                    top: 47px;
+                    right: 22px;
+                    color: #00A79D;
+                    font-size: 43px;
+                    line-height: 1;
+                    z-index: 100;
+                    i {
+                        font-weight: bold !important;
+                    }
+                }
+                .group {
+                    background-color: $color-grey-light1;
+                    height: 80px;
+                    &.hide {
+                        display: none;
+                    }
+                    input[type="text"],input[type="email"] {
+                        height: 80px;
+                        text-indent: 15px;
+                        background-color: $color-grey-light1;
+                        border-bottom: 1px solid transparent;
+                        &.error {
+                            border-bottom-color: red;
+                        }
+                    }
+                    label {
+                        font-size: 20px;
+                        top: 18px;
+                    }
+                    .inputMaterial {
+                        &:focus ~ label,&:valid ~ label {
+                            top:-20px;
+                        }
+                    }
+                    button {
+                        display: block;
+                        margin: 0 auto;
+                        position: relative;
+                        top: 16px;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .progress-bar-form {
+                height: 5px;
+                width: 100%;
+                background-color: $color-grey-dark2;
+                .inner-bar{
+                    background-color: $color-teal;
+                    height: 5px;
+                }
+            }
+        }
+    }
+
+    .form-container {
+        font-size: $font-size-default;
+        color: $color-grey;
+        margin-bottom: $spacing-buffer-7;
+        display: inline-block;
+        width: 100%;
+
+        form,
+        .inputs_container{
+            display: inline-block;
+            width: 100%;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: none;
+            float: left;
+        }
+
+        input {
+            .error{
+                color: $form-error-color;
+            }
+        }
+
+        button {
+            font-size: 17px;
+            font-family: $font-family-headers;
+            padding: 10px $form-inputs-spacing;
+            border: none;
+            min-width: 25%;
+            min-height: 48px;
+            width: auto;
+            border-radius: 30px;
+            color:$color-white;
+            background-color: $color-teal;
+
+            transition: background-color 1s ease-in-out;
+            -moz-transition: background-color 1s ease-in-out;
+            -webkit-transition: background-color 1s ease-in-out;
+
+            &:hover,
+                &:active,
+                &:focus {
+                background-color: $color-block-hover;
+                color: $color-black;
+                transition: background-color .45s ease-in-out;
+                -moz-transition: background-color .45s ease-in-out;
+                -webkit-transition: background-color .45s ease-in-out;
+            }
+        }
+
+
+        .form-grey {
+            background-color: $form-bg-color-grey;
+            padding: 20px 20px 0px 20px;
+            input, select, textarea {
+
+                padding: 10px $form-inputs-spacing;
+                margin-bottom: $form-inputs-spacing;
+                border-bottom: solid 2px #ffffff;
+                background-color: $form-bg-color-grey;
+                &.error {
+                    margin-bottom: 5px;
+                }
+                &:active,
+                    &:focus {
+                    border-bottom: solid 2px $color-blue;
+                }
+            }
+            .selectric-wrapper{
+                .selectric{
+                    border-bottom: solid 2px #ffffff;
+                }
+            }
+        }
+
+        .form-white {
+            background-color: $form-bg-color-white;
+            padding: $form-container-padding;
+            input, select, textarea {
+                background: $color-shade;
+                padding: 10px $form-inputs-spacing;
+                margin-bottom: $form-inputs-spacing;
+                &.error {
+                    margin-bottom: 7px;
+                }
+            }
+
+            textarea{ min-height: 150px; }
+
+            button {
+                display: inline-block;
+                color:$color-white;
+                background-color: $color-teal;
+                float: right;
+                clear: both;
+                &.success {
+                    background-color: $form-success-color;
+                    // background-image: url( '../images/WhiteCheck_mini.png' );
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &::after {
+                        font-family: 'FontAwesome';
+                        font-size: 20px;
+                        content: "\f00c";
+                    }
+                }
+                &.error {
+                    background-color: $form-error-color;
+                    // background-image: url( '../images/WhiteX.png' );
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &::after {
+                        font-family: 'FontAwesome';
+                        font-size: 20px;
+                        content: "\f00d";
+                    }
+                }
+                span{
+                    em{display:none;}
+                }
+                &:hover,
+                    &:active,
+                    &:focus {
+                    background-color: $color-block-hover;
+                    color: $color-black;
+                }
+            }
+        }
+
+        /* styles for drowdown */
+        .selectric-wrapper{
+            margin-bottom: $form-inputs-spacing;
+            .selectric{
+                background: $color-shade;
+                border: none;
+                .label{
+                    font-size: $font-size-default;
+                    color: $color-grey;
+                    background: $color-shade;
+                    font-weight: normal;
+                    text-align: left;
+                    height: auto;
+                }
+                .button{
+                    border:none;
+                    width: 37px;
+                    height: 37px;
+                    background: transparent url( '../images/Teal_Chevron.png' ) no-repeat 0 0;
+                    background-size: 65%;
+                    top:25%;
+                    &::after {
+                        border:none;
+                    }
+                }
+            }
+
+            .selectric-items{
+                border: none;
+                box-shadow: none;
+                font-size: $font-size-default;
+                color: $color-grey;
+                padding: 0 $form-inputs-spacing;
+                background: $color-shade;
+                li{
+                    font-size: $font-size-default;
+                    color: $color-grey;
+                    background: $color-shade;
+                    border-bottom: solid 1px #ffffff;
+                    &:last{
+                        border: none;
+                    }
+                    &.selected,&:hover {
+                        color:$color-teal;
+                    }
+                }
+            }
+        }
+        .input_container{
+            margin: $form-inputs-spacing 0;
+        }
+        /* PasswordMeter Styles */
+        .password-meter{
+            height: 2px;
+            padding: 0;
+            color: $color-grey;
+            float: right;
+            margin-bottom: 15px;
+        }
+        .password-meter-very-weak{background-color:#ed1c24;}
+        .password-meter-weak{background-color:#F5711E;}
+        .password-meter-ok{background-color: #FFD107;}
+        .password-meter-strong{background-color:#83C030;}
+        .password-meter-very-strong{background-color:#00a14b;}
+
+
+        .main-search {
+            padding: 20px 20px 0;
+            .third_column_wide {
+                .search-button {
+                    margin-top: 0;
+                    position: relative;
+                    top: -20px;
+                }
+            }
+        }
+        /* Portfolio */
+        .portfolio {
+            .min-max {
+                //float: right;
+            }
+            .third_column_wide {
+                color: $color-blue;
+                vertical-align:middle;
+
+                input, span, button {
+                    display: inline-block;
+                    width: auto;
+                    float:none;
+                }
+                input {
+                    width: 60%;
+                    outline: none;
+                }
+                span {
+                    margin-top: 20px;
+                    margin-right: 10px;
+                    position: relative;
+                    left: -5px;
+                }
+                .search-button {
+                    padding: 14px 17px;
+                    height: 58px;
+                    font-size: 26px;
+                    float: right;
+                    outline: none;
+                    margin-top: 10px;
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            label{
+                font-weight: normal;
+                span{
+                    margin-right: 3%;
+                    color: $color-blue;
+                }
+            }
+            .tgl-ios + .tgl-btn:after {
+                background: $color-black-shadow;
+            }
+
+            .tgl:checked + .tgl-btn:after {
+                background: $color-blue;
+            }
+
+            .tgl-ios:checked + .tgl-btn{
+                background: $color-white;
+            }
+            .dropdown_container,
+            .tg-list{
+                .tg-list-item{
+                    margin-bottom:$form-portfolio-inputs-spacing;
+                    span{
+                        line-height: 1.5em;
+                    }
+                }
+            }
+
+
+            input, select, textarea, .selectric {
+                padding:0;
+                border: none;
+                background: $form-bg-color-white;
+                border-radius: 15px;
+            }
+            .selectric-open {
+                .selectric {
+                    border-radius: 15px 15px 0 0;
+                }
+            }
+
+            button {
+                border-radius: 50%;
+                color:$color-white;
+                min-height: auto;
+                min-width: auto;
+
+                &:hover,
+                    &:active,
+                    &:focus {
+                    color: $color-black;
+                }
+
+            }
+
+            input{
+                padding: 0 $form-portfolio-inputs-spacing;
+                color:$color-grey;
+                &:active,
+                    &:focus {
+                    border-bottom: none;
+                }
+            }
+
+            .selectric-wrapper{
+                margin-bottom: $form-portfolio-inputs-spacing;
+
+                .selectric {
+                    border: none;
+                    height:1.5em;
+                    .button{
+                        width: 22px;
+                        height: 22px;
+                    }
+                    .label{
+                        padding: 0;
+                        background: $form-bg-color-white;
+                        height:1.5em;
+                        line-height:1.5em;
+                        color:$color-grey;
+                    }
+                }
+
+                .selectric-items{
+                    /* border: none;
+                     box-shadow: none;
+                     font-size: $font-size-default;
+                     color: $color-grey;
+                     padding: 0 $form-inputs-spacing;*/
+
+                    background: $form-bg-color-white;
+
+                    li{
+                        /*font-size: $font-size-default;
+                        color: $color-grey;*/
+                        background:$form-bg-color-white;
+                        border-bottom:none;
+
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    /* Toggle Elements */
+    ul.tg-list
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        text-align: left;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        .tg-list-item {
+            margin: 0;
+            span{
+                line-height: 2em;
+                color:$color-blue;
+                margin-left:10px;
+            }
+        }
+    }
+    .tgl {
+        display: none;
+    }
+
+    .tgl, .tgl:after,
+        .tgl:before,
+        .tgl *,
+        .tgl *:after,
+        .tgl *:before,
+        .tgl + .tgl-btn {
+        box-sizing: border-box;
+    }
+
+    .tgl::-moz-selection,
+    .tgl:after::-moz-selection,
+        .tgl:before::-moz-selection,
+        .tgl *::-moz-selection,
+        .tgl *:after::-moz-selection,
+        .tgl *:before::-moz-selection,
+        .tgl + .tgl-btn::-moz-selection {
+        background: none;
+    }
+
+    .tgl::selection,
+    .tgl:after::selection,
+        .tgl:before::selection,
+        .tgl *::selection,
+        .tgl *:after::selection,
+        .tgl *:before::selection,
+        .tgl + .tgl-btn::selection {
+        background: none;
+    }
+
+    .tgl + .tgl-btn {
+        outline: 0;
+        display: block;
+        width: 4em;
+        height: 2em;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .tgl + .tgl-btn.small{
+        min-width: 40px;
+        width: 3em;
+        height: 1.5em;
+
+    }
+
+    .tgl + .tgl-btn:after,
+        .tgl + .tgl-btn:before {
+        position: relative;
+        display: block;
+        content: "";
+        width: 50%;
+        height: 100%;
+    }
+
+    .tgl + .tgl-btn:after {
+        left: 0;
+    }
+
+    .tgl + .tgl-btn:before {
+        display: none;
+    }
+
+    .tgl:checked + .tgl-btn:after {
+        left: 50%;
+        background: $color-blue;
+    }
+
+    .tgl-ios + .tgl-btn {
+        background: $color-white;
+        border-radius: 2em;
+        padding: 2px;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .form-white .tgl-ios + .tgl-btn {
+        background: $color-shade;
+    }
+
+    .tgl-ios + .tgl-btn:after {
+        border-radius: 2em;
+        background: $color-blue-edge;
+        -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+        transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    }
+    .tgl-ios + .tgl-btn:hover:after,
+        .tgl-btn:after  {
+        will-change: padding;
+    }
+
+    .tgl-ios + .tgl-btn:active {
+        box-shadow: inset 0 0 0 2em #e8eae9;
+    }
+
+    .tgl-ios + .tgl-btn:active:after {
+        padding-right: .8em;
+    }
+
+    .tgl-ios:checked + .tgl-btn {
+        background: $color-blue-edge;
+    }
+
+    .tgl-ios:checked + .tgl-btn:active {
+        box-shadow: none;
+    }
+
+    .tgl-ios:checked + .tgl-btn:active:after {
+        margin-left: -.8em;
+    }
+
+
+    /* Checkboxes */
+    ul.icheck{
+        list-style: outside none none;
+        margin: 0;
+        padding: 0;
+        width: 280px;
+        margin-top: 10px;
+        font-size: 0.8em;
+        li{
+            margin-bottom:$form-inputs-spacing;
+            float: left;
+            margin-right: 10px;
+            label{
+                font-weight:normal;
+                color:$color-blue;
+                margin-left:5px;
+            }
+        }
+    }
+
+    .icheckbox_polaris,
+    .iradio_polaris{
+        background-image: url( '../images/dark-checkboxes.png');
+        background-repeat: no-repeat;
+    }
+
+}
+.dropdown_container{
+    display:inline-block;
+    vertical-align:top;
+    width: 100%;
+}
+
+
+@import "forms_queries";

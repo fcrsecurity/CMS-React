@@ -1,0 +1,62 @@
+<header id="main-header">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12 col-lg-12 wrap-mobile-not-search">
+				<a class="logo" href="{{ path('craftkeen_cms_page_index') }}"><img src="{{ asset('bundles/craftkeencmstheme/FCR/assets/images/logo.png') }}" alt="Logo"></a>
+
+				{% block topmenu %}
+					{{ renderMenu('Top')|raw }}
+				{% endblock %}
+
+				<div class="search-wrapper">
+					<div class="search-icon">
+						<a href="#" class="show-search-box"><em class="fa fa-search" aria-hidden="true"></em></a>
+						<div class="input-group custom-search-form">
+							<form id="nav-search" method="post" action="{{ path('search_index') }}">
+								<label for="input-search" class="sr-only">Search</label>
+								<input id="input-search" type="text" name="craftkeen_fcrbundle_search[search_input]" class="search-text" placeholder="&#xF002; &nbsp;{{'Search'|trans}}"  >
+								<input type="hidden" name="craftkeen_fcrbundle_search[_token]" value="{{ csrf_token('craftkeen_fcrbundle_search') }}">
+								<div class="search-button"></div>
+							</form>
+						</div>
+					</div>
+					<div class="flags">
+                        {% set languages = available_languages() %}
+                        {% for language in languages %}
+							{% if language_current() != language.name %}
+								{% set currentPath = path(
+								app.request.attributes.get('_route'),
+								app.request.attributes.get('_route_params')|merge({'_locale' : language.locale})
+								) %}
+								<a href="{{ currentPath }}">
+									<span class="lang-name text-shadow">{{ language.name }}</span>
+								</a>
+							{% endif %}
+                        {% endfor %}
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="row mobile-menu">
+					<button class="dl-trigger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<div id="dl-menu" class="dl-menuwrapper">
+						
+					</div><!-- /dl-menuwrapper -->
+				</div>
+			</div>
+		</div>
+		<div class="wrapper-search-mobile">
+			<div class="search-mobile-version">
+				<form id="nav-search-mobile" method="post" action="{{ path('search_index') }}">
+					<label for="input-search-mobile" class="sr-only">Search</label>
+					<input id="input-search-mobile" type="text" name="craftkeen_fcrbundle_search[search_input]" class="search-text" placeholder="">
+					<input type="hidden" name="craftkeen_fcrbundle_search[_token]" value="{{ csrf_token('craftkeen_fcrbundle_search') }}">
+				</form>
+				<a href="#" class="close-search-box"><em class="fa fa-thin-remove" aria-hidden="true"></em></a>
+			</div>
+		</div>
+	</div>
+</header>

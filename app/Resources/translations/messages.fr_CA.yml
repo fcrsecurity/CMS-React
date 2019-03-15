@@ -1,0 +1,232 @@
+Search: Recherche
+More: Plus
+Leasing: Location
+News: Nouvelles
+Careers: Carrières
+Copyrights: Copyrights
+Back: Arrière
+Close video: Fermez la vidéo
+Email Address: Email
+Unsubscribe from all lists: Se désinscrire
+subscribe: Souscrire
+Provide your Email address: Indique votre email
+email_address: Email
+Mail Lists: Liste de courriel
+Or From All: Ou de tous
+Update: Mettre à jour
+LEARN MORE: INVESTISSEZ AVEC NOUS
+
+fcr.menu.footer.leasing: Propriétés
+fcr.menu.footer.investors: Investisseurs
+fcr.menu.footer.about: À propos de nous
+fcr.menu.footer.contact: Contactez
+fcr.menu.footer.careers: Carrières
+fcr.menu.footer.community: Communauté
+fcr.menu.footer.tagline: fot_tagline_fr.png
+fcr.menu.footer.title: Comment pouvons nous aider?
+fcr.menu.footer.looking_lease: Je cherche à louer
+fcr.menu.footer.seeking_career: Je cherche une carrière
+fcr.menu.footer.am_investor: Je suis un investisseur
+fcr.menu.footer.subscribe.button: SOUSCRIRE
+
+Dashboard: Tableau de bord
+Administration: Administration
+Website: Site Internet
+Inbox: Boîte de réception
+Profile: Profil
+Logout: Connectez - Out
+Modules: Modules
+Users: Utilisateurs
+Per Page: Par page
+Actions: Actes
+Total:: 'Total:'
+Create a new user: Créer un nouvel utilisateur
+
+First Capital Realty - owner and operator of urban retail properties: First Capital Realty - propriétaire et exploitant de propriétés urbaines en vente au détail
+Tel: Tél
+Toll Free: Numéro Gratuit
+Provide your Email address: Indique votre email
+
+#Home
+OUR STORY: NOTRE HISTOIRE
+
+# Portfilio and leasding.
+Approximate Sq Ft: "Superficie approximative (pi²)"
+Leasing Inquiry: Enquête d'emplacement
+Demographics: Démographiques de 2016
+'Source: Environics Analytics': 'La source: Environics Analytics'
+Population: Population
+Households: Ménages
+Household Income: Revenu du Ménage
+Traffic Count (AADT): Recensement de la circulation
+Download Site Plan: Télécharger le plan du site
+Leasing Inquiry: Enquête d'emplacement
+Thank you Message: 'Merci de votre intérêt pour un emplacement chez First Capital Realty. Nous vous invitons à remplir le formulaire ci-dessous afin qu’un de nos représentants de location communique avec vous.'
+Full Name*: Nom Complet*
+Email*: Email*
+Phone Number*: Numéro de Téléphone*
+Select Category: Choisissez une catégorie
+All: Tout
+Grocery Anchored: Épicerie Ancré
+Retail: Vente au détail
+Office Space: Espace de bureaux
+LEED: LEED
+BOMA: BOMA
+Has Availability: Avez la disponibilité
+Square Footage: Pieds carrés
+Comments: Commentaires
+total_area: Superficie totale
+population: Population
+households: Ménages
+all: Tout
+porfolio_page_title: Propriétés
+properties: Propriétés
+size_of_province: Taille de la province
+view_more: PLUS
+modal_more_button: PLUS
+million: millions
+approximate_sq_ft: Pied carré approximatif
+portfolio_table_head_name: Nom
+portfolio_table_head_address: Adresse
+portfolio_table_head_city: Ville
+portfolio_table_head_type: Type
+filter_grocery_anchored: Épicerie Ancré
+filter_urban_retail: Vente au détail
+filter_office_space: Espace bureau
+filter_under_development: En développement
+map-back-button: Arrière
+fcr.property_search.keyword.label: Mot-clé
+fcr.property_search.category.label: Category
+fcr.property_search.category.placeholder: Choisir une catégorie
+fcr.property_search.city.placeholder: Choisir une ville
+fcr.property_search.is_vacant.label: Avec disponibilité
+fcr.property_search.sqft_min.label: Min
+fcr.property_search.sqft_max.label: Max
+All Properties: Toutes les propriétés
+Or: Ou
+# Quotes & Charts
+fcr.quotes-charts.volume: Le volume
+fcr.quotes-charts.week-high: 52 Semaine hauteur
+fcr.quotes-charts.week-low: 52 Semaine basse
+fcr.quotes-charts.time-frame: Délai
+fcr.quotes-charts.as-of: À partir de
+fcr.quotes-charts.t-f.1d: 1J
+fcr.quotes-charts.t-f.5d: 5J
+fcr.quotes-charts.t-f.1m: 1M
+fcr.quotes-charts.t-f.3m: 3M
+fcr.quotes-charts.t-f.6m: 6M
+fcr.quotes-charts.t-f.1y: 1A
+fcr.quotes-charts.t-f.2y: 2A
+fcr.quotes-charts.t-f.5y: 5A
+fcr.quotes-charts.t-f.10y: 10A
+fcr.quotes-charts.t-f.max: Max
+fcr.quotes-charts.t-f.ytd: YTD
+fcr.quotes-charts.t-f.from: De
+fcr.quotes-charts.t-f.to: À
+fcr.quotes-charts.t-f.button: OBTENIR DES PRIX
+fcr.quotes-charts.t-f.daily: Tous les jours
+fcr.quotes-charts.t-f.weekly: Hebdomadaire
+fcr.quotes-charts.t-f.monthly: Mensuel
+fcr.quotes-charts.t-f.dividens-only: Dividendes seulement
+fcr.quotes-charts.historical-prices: Prix historiques
+fcr.quotes-charts.stoke-price: Prix de l action
+fcr.quotes-charts.date: Date
+fcr.quotes-charts.open: Ouvrir
+fcr.quotes-charts.high: Haute
+fcr.quotes-charts.low: Faible
+fcr.quotes-charts.close: Fermer
+    
+# Charts
+chart.label: Label
+chart.value: Value
+chart.val-label: Value label
+chart.color: Color
+chart.avg: Average limit
+
+# Press releases:
+Press Releases: Communiqués de presse
+BACK TO PRESS RELEASES: RETOUR AUX COMMUNIQUÉS DE PRESSE
+
+#Contact
+Contact Us: Contactez-nous
+Corporate Headquarters: Siège social
+
+Unsubscribe: Se désinscrire
+
+Upcoming: Prochaines conférences téléphoniques
+Previous: Passé, les conférences téléphonique
+Conference Call Slides: Diaporamas d'appel conférence
+Press Release: Communiqué de presse
+Investor Presentation: Présentation des investisseurs
+Quarterly Report: Rapport trimestriel                                               
+Corporate Sustainability Report: Rapport de développement durable de                      
+Listen: Écouter
+Previous Years: Les années précédentes
+Year: Année
+Annual: Annuel
+For prior years visit sedar: POUR LES ANNÉES PRÉCÉDENTES, VISITEZ SÉDAR
+#Careers
+fcr.careers.jobs.autotext0: Nous avons les positions ouvertes suivantes. Veuillez suivre les instructions pour vous inscrire. Dans le cas où aucune annonce ne correspond à votre expérience, s'il vous plaît souscrire à être informé des nouvelles offres d'emploi.
+fcr.careers.jobs.autotext1: Désolé, aucun poste n'est actuellement disponible Colombie britannique.
+fcr.careers.jobs.autotext2: Abonnez-vous aujourd'hui pour être le premier à connaître les nouvelles offres d'emploi.
+fcr.careers.jobs.details.beforeapply: Le soutien à l'accessibilité et l'adaptation aux handicaps, le cas échéant, seront fournis dans le cadre du processus de recrutement sur demande.
+fcr.careers.jobs.details.apply: Postuler à un travail
+View All Jobs: Voir Tous Les Emplois
+First Name: Prénom
+Last Name: Nom de famille
+Email: Email
+Submit: Soumettre
+Address: Adresse
+City: Ville
+Province: Province
+Postal Code: Code Postal
+Phone: Numéro de téléphone
+Please upload a copy of your resume: Veuillez télécharger une copie de votre CV
+Full Time: À plein temps
+Administrative: Administrative
+Experienced: Expérimenté
+find out what we are all about: TROUVEZ CE QUE NOUS SOMMES TOUS
+
+# Debentures
+Senior Unsecured Debentures: Débentures non garanties de premier rang
+Convertible Debentures: Débentures convertibles
+Series: Séries
+Maturity Date: Date d'échéance
+Principal Outstanding (thousands): Capital initial impayé
+Coupon: Coupon
+Interest Payment Date: Dates de versement d’intérêt réelles
+Interest paid semi-annually: Intérêts versés semestriellement
+Convertible Unsecured Subordinated Debentures Outstanding: Débentures subordonnées non garanties convertibles
+Ticker: Symbole
+Issue Date: Date d'émission
+Maturity: Date 
+Date: d'échéance
+Original Principal: Capital 
+Outstanding: initial
+(thousands): impayé
+Coupon: Coupon
+All series of convertible unsecured subordinated debentures rank pari passu with each other.: First Capital Realty a réalisé un fractionnement de ses actions ordinaires à raison de 3,2 pour 2 en mai 2010.
+Interest is paid semi-annually on March 31 and September 30.: Toutes les séries de débentures subordonnées non garanties convertibles sont de même rang.
+First Capital Realty has the option of repaying the debentures on maturity (or on redemption - see below) through the issuance of common shares at 97% of the weighted average trading price of the Company's common shares. The Company also has the option of paying the semi-annual interest through the issuance of common shares using the same methodology.: First Capital Realty a le choix de rembourser les débentures à l’échéance au moyen de l’émission d'actions ordinaires à 97 % du cours moyen pondéré des actions ordinaires de la société. La société a également le choix de rembourser l’intérêt semestriel au moyen de l’émission d’actions ordinaires en suivant la même méthodologie.
+All Debentures are issued in denominations of $1,000.: Toutes les débentures sont émises en coupures de 1 000 $.
+Redemption Conversion Options: Conversion / Rachat
+Ticker: Symbole
+Holder Option to Convert at the Conversion Price: Option de conversion du porteur au prix de conversione
+Price: Prix
+Company Option to Redeem at Principal Amount (conditional: Option de rachat de la société à la valeur nominale (conditionnelle
+Company Option to Redeem at Principal Amount: Option de rachat de la société à la valeur nominale
+Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest, provided that the volume weighted average trading price for the 20 consecutive trading days ending five days prior to the notice of redemption is not less than 125% of the Conversion Price, by giving between 30 and 60 days written notice.: Période au cours de laquelle la société peut, moyennant un préavis écrit de 30 jours au minimum et de 60 jours au maximum, racheter les débentures à leur valeur nominale majorée des intérêts courus et impayés, à condition que leur cours moyen pondéré en fonction du volume pour la période de 20 jours de bourse consécutifs se terminant cinq jours avant le préavis de rachat ne soit pas inférieur à 125 % du prix de conversion.
+Period of time during which the Company may redeem the debentures at their principal amount plus accrued and unpaid interest by giving between 30 and 60 days written notice.: Période au cours de laquelle la société peut, moyennant un préavis écrit de 30 jours au minimum et de 60 jours au maximum, racheter les débentures à leur valeur nominale majorée des intérêts courus et impayés.
+Interest Payment Dates(Last 5 Years): Date de versement d’intérêt
+Actual Interest: Dates de versement
+Payment Dates: d’intérêt réelles
+Interest Payment: Paiement d'intérêts
+Share Issuance Price: Prix d'émission
+97% of the volume weighted average trading price of the Company's common shares on the TSX for the 20 consecutive trading days ending five days prior to the interest payment date.: 97% du cours moyen pondéré du volume Des actions ordinaires de la Société à la TSX pour 20 jours de bourse consécutifs se terminant cinq jours avant La date de paiement des intérêts.
+Download Brochure: Téléchargez la brochure
+footer.Leasing: Location
+footer.News: Nouvelles
+footer.Careers: Carrières
+your@email.com: votre@email.com
+map-next-button: Carte suivante
+Click to Drag: Cliquez pour glisser

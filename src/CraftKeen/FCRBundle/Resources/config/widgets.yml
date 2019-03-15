@@ -1,0 +1,168 @@
+services:
+    craft_keen_widget.widget.analystcoverage:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\AnalystCoverageWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/AnalystCoverage.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: AnalystCoverage }
+
+    craft_keen_widget.widget.boardpersonblockmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\BoardPersonBlockMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/BoardPersonBlockMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: BoardPersonBlockMacro }
+            
+    craft_keen_widget.widget.careersfaqmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\CareersFAQMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/CareersFAQMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: CareersFAQMacro }
+
+    craft_keen_widget.widget.careerspersonblockmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\CareersPersonBlockMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/CareersPersonBlockMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: CareersPersonBlockMacro }
+
+    craft_keen_widget.widget.careerssliderinfomacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\CareersSliderInfoMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/CareersSliderInfoMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: CareersSliderInfoMacro }
+
+    craft_keen_widget.widget.debenturesmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\DebenturesMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/DebenturesMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: DebenturesMacro }
+
+    craft_keen_widget.widget.dividendsmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\DividendsMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/DividendsMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: DividendsMacro }
+
+    craft_keen_widget.widget.executivepersonblockmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\ExecutivePersonBlockMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/ExecutivePersonBlockMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: ExecutivePersonBlockMacro }
+
+    craft_keen_widget.widget.featureslider:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\FeatureSliderWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/FeatureSlider.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: FeatureSlider } #Troubles
+
+    craft_keen_widget.widget.headquarters:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\HeadQuartersWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/HeadQuarters.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: HeadQuarters }
+
+    craft_keen_widget.widget.irfaqmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\IrFAQMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/IrFAQMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: IrFAQMacro }
+
+    craft_keen_widget.widget.irstockpricemacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\IRStockPriceMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/IRStockPriceMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: IRStockPriceMacro }
+
+    craft_keen_widget.widget.lastpressreleases:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\LastPressReleasesWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/LastPressReleases.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: LastPressReleases }
+
+    craft_keen_widget.widget.linkiconlistmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\LinkIconListMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/LinkIconListMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: LinkIconListMacro }
+
+    craft_keen_widget.widget.otheroffices:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\OtherOfficesWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/OtherOffices.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: OtherOffices }
+
+    craft_keen_widget.widget.pressreleases:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\PressReleasesWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/PressReleases.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: PressReleases }
+
+    craft_keen_widget.widget.retailartmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\RetailArtMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/RetailArtMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: RetailArtMacro }
+
+    craft_keen_widget.widget.sustainabilityreportsmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\SustainabilityReportsMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/SustainabilityReportsMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: SustainabilityReportsMacro }
+
+    craft_keen_widget.widget.sustainabilityslidermacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\SustainabilitySliderMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/SustainabilitySliderMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: SustainabilitySliderMacro }
+
+    craft_keen_widget.widget.teamtabs:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\TeamTabsWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/TeamTabs.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: TeamTabs }
+
+    craft_keen_widget.widget.financialreportsmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\FCRBundle\Widget\FinancialReportsMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenFCRBundle:Widget:%s/FinancialReportsMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: FinancialReportsMacro }

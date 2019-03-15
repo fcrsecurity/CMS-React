@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% if includeAssets %}
+        {{ include("FMElfinderBundle:Elfinder:helper/assets_css.html.twig") }}
+    {% endif %}
+</head>
+<body>
+{% if includeAssets %}
+    <script src="{{ asset("#{prefix}/jquery/jquery.js") }}"></script>
+    <script src="{{ asset("#{prefix}/jquery-ui/jquery-ui.min.js") }}"></script>
+    {% if 'en' != locale %}
+        <script src="{{ asset("#{prefix}/elfinder/dist/js/i18n/elfinder.#{locale}.js") }}"></script>
+    {% endif %}
+{% endif %}
+{% block stylesheets %}
+    {% stylesheets
+    '@BrochureBuilderBundle/Resources/public/FileManager/dist/css/styles.css'
+    filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+{% block scripts %}
+    {% javascripts
+    '@BrochureBuilderBundle/Resources/public/FileManager/dist/js/elfinder.min.js'
+    '@BrochureBuilderBundle/Resources/public/FileManager/dist/js/filemanager.edit_meta.js'
+    '@BrochureBuilderBundle/Resources/public/FileManager/dist/js/filemanager.search_custom.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        var $elfinder = $('#elfinder');
+        $elfinder.elfinder({
+            url : '{{ path('filemanager_back', {'property': homeFolder}) }}',
+            lang : '{{ locale }}',
+            getFileCallback : function(file) {
+                {% if app.request.query.all.callback is defined %}
+                    var callback = '{{ app.request.query.all.callback }}';
+                    if (window.opener && callback && typeof window.opener[callback] === 'function' ) {
+                        window.opener[callback](file);
+                    }
+                {% endif %}
+            }
+        });
+        {% if fullscreen %}
+            var $window = $(window);
+            var fixResize = function() {
+                var h = $window.height();
+                if ($elfinder.height() !== h - 20){
+                    $elfinder.height(h - 20).resize();
+                }
+            };
+            fixResize();
+            $window.resize(fixResize);
+        {% endif %}
+    });
+</script>
+<div id="elfinder" class="elfinder"></div>
+</body>
+</html>

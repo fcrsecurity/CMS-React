@@ -1,0 +1,213 @@
+@media screen and (min-width:380px) {
+    .no-images-slider {
+        .slider-info {
+            .item {
+                .text-container {
+                    padding: 0 15%;
+                }
+                .left {
+                    p {
+                        //font-size: 215px;
+                        line-height: 180px;
+                        text-align: center;
+                    }
+                }
+                .right {
+                    .title {
+                        p {
+                            font-size: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*480px*/
+
+@media screen and (min-width: $mobile-devices-width) {
+    .slider-info {
+        .slick-prev {
+            left: 2.5%;
+        }
+        .slick-next {
+            right: 2.5%;
+        }
+    }
+}
+
+
+/*768px*/
+
+@media screen and (min-width: $small-devices-width) {
+    .slider-info {
+        .item {
+            .overlay {
+                bottom: 0;
+                min-height: 32%;
+            }
+            .text-container {
+                max-width: 1280px;
+                padding-top: $height-40;
+                padding-bottom: $height-40;
+            }
+            .title {
+                p {
+                    font-size: 320%;
+                    line-height: 3rem;
+                }
+            }
+            .description {
+                color: $color-white;
+                font-size: 100%;
+                max-width: 80%;
+                line-height: 1.4;
+            }
+            .left {
+                p {
+                    font-size: 225px;
+                }
+            }
+        }
+    }
+    .no-images-slider {
+        .slider-info {
+            .item {
+                .text-container {
+                    width: 75%;
+                    margin: auto;
+                    flex: 0 0 auto;
+                    display: flex;
+                    align-items: center;
+                    padding: 0;
+                }
+                .left {
+                    text-align: left;
+                    padding-top: 5px;
+                    p {
+                        //font-size: 300px;
+                        line-height: 215px;
+                    }
+                }
+                .right {
+                    float: left;
+                    margin-left: 10px;
+                    .title {
+                        p {
+                            font-size: 35px;
+                            line-height: 1;
+                        }
+                    }
+                }
+                .description {
+                    max-width: 100%;
+                }
+            }
+            .slick-arrow {
+                width: 43px;
+                height: 102px;
+                top: 50%;
+                background-size: contain;
+            }
+            .slick-prev {
+                background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/Slideshow_arrows_left_grey.png");
+                left: 5%;
+            }
+            .slick-next {
+                background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/Slideshow_arrow_right_grey.png");
+                right: 5%;
+            }
+        }
+    }
+}
+
+
+/* Medium devices (desktops 960px and up) */
+
+@media screen and (min-width:$medium-devices-width) {
+    .no-images-slider {
+        .slider-info {
+            .item {
+                .left {
+                    p {
+                        //font-size: 400px;
+                        line-height: 288px;
+                    }
+                }
+                .right {
+                    .title {
+                        p {
+                            font-size: 50px;
+                            line-height: 1;
+                        }
+                    }
+                    .description {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media screen and (min-width:$large-devices-width) {}
+
+
+/* Large devices (very large desktops, 1600px and up) */
+
+@media screen and (min-width:$verylarge-devices-width) {
+    .no-images-slider {
+        .slider-info {
+            .item {
+                .left {
+                    p {
+                        //font-size: 460px;
+                        line-height: 365px;
+                    }
+                }
+                .right {
+                    .title {
+                        p {
+                            font-size: 70px;
+                            line-height: 1;
+                        }
+                    }
+                    .description {
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Large devices (very large desktops, 1920px and up) */
+
+@media screen and (min-width:1920px) {
+    .no-images-slider {
+        .slider-info {
+            .item {
+                .left {
+                    p {
+                        //font-size: 570px;
+                        line-height: 450px;
+                    }
+                }
+                .right {
+                    .title {
+                        p {
+                            font-size: 93px;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

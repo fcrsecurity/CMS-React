@@ -1,0 +1,62 @@
+.stock-price {
+    max-width: 610px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top:$height-60;
+    padding-bottom:$height-60;
+    position: relative;
+    .info-head {
+        overflow: hidden;
+        border-bottom: 1px solid $color-blue;
+        .ind {
+            font-family: $font-family-info;
+            font-size: 80px;
+            color: $color-blue;
+            line-height: 1;
+            font-weight: bold;
+            margin-bottom: $height-12;
+        }
+        .arrow {
+            color: $color-teal;
+            font-size: 55px;
+            i {
+                font-weight: bold;
+            }
+        }
+        .usd {
+            font-size: 100%;
+            color: $color-teal;
+            font-family: $font-family-info;
+        }
+        .pink-arrow {
+            color: $color-red-2;
+        }
+    }
+    .info-bottom {
+        min-height: 45px;
+        background-color: $color-blue;
+        color: $color-white;
+        overflow: hidden;
+        line-height: 45px;
+        padding: 0 17px;
+    }
+    table {
+        width: 100%;
+        line-height: 45px;
+        tr {
+            td {
+                text-align: left;
+                min-height: 45px;
+                padding: 0 20px;
+            }
+            td+td {
+                text-align: right;
+            }
+            &:nth-child(2n) {
+                background-color: $color-blue-light4;
+            }
+        }
+    }
+}
+
+@import "stockprice_queries";

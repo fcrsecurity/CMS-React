@@ -1,0 +1,57 @@
+parameters:
+    #TODO: Class should be moved to this bundle
+    craft_keen.translation.entity.language.class: 'CraftKeen\CMS\AdminBundle\Entity\Language'
+
+services:
+    craft_keen.translation.translator:
+        class: 'CraftKeen\Bundle\TranslationBundle\Translator\KeenTranslator'
+        decorates: 'translator'
+        arguments:
+            - '@craft_keen.translation.translator.inner'
+            - '@craft_keen.translation.provider.language'
+
+    craft_keen.translation.cache.language_invalidator:
+        class: 'CraftKeen\Bundle\TranslationBundle\EventListener\ORM\LanguageCacheInvalidator'
+        public: false
+        arguments:
+            - '@craft_keen.translation.cache.language_chain'
+        tags:
+            - { name: doctrine.orm.entity_listener, entity: '%craft_keen.translation.entity.language.class%', event: postPersist,  method: clearCache }
+            - { name: doctrine.orm.entity_listener, entity: '%craft_keen.translation.entity.language.class%', event: postUpdate,  method: clearCache }
+
+    craft_keen.translation.subscriber.locale:
+        class: 'CraftKeen\Bundle\TranslationBundle\EventListener\Kernel\LocaleSubscriber'
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    craft_keen.translation.cache.language_chain:
+        parent: craft_keen.cache.chain.abstract
+        calls:
+            - ['addCacheProvider', ['@craft_keen.translation.provider.language_cache']]
+
+    craft_keen.translation.provider.language_cache:
+        parent: craft_keen.cache.provider.abstract
+        public: false
+        calls:
+            - ['setNamespace', ['craft_keen.language']]
+
+    craft_keen.translation.provider.language:
+        class: 'CraftKeen\Bundle\TranslationBundle\Provider\LanguageProvider'
+        arguments:
+            - '@request_stack'
+            - '@doctrine'
+            - '@craft_keen.translation.provider.language_cache'
+            - '%kernel.default_locale%'
+
+    craft_keen.translation.registry:
+        class: 'CraftKeen\Bundle\TranslationBundle\Registry\TranslationRegistry'
+
+    craft_keen.translation.twig_extension:
+        class: 'CraftKeen\Bundle\TranslationBundle\Twig\TranslationTwigExtension'
+        public: false
+        tags:
+            - { name: twig.extension }
+        arguments:
+            - '@craft_keen.translation.provider.language'

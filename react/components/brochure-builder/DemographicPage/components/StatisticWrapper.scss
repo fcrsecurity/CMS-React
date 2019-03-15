@@ -1,0 +1,82 @@
+
+@import "../../variables";
+
+.content {
+	position: relative;
+	display: block;
+	color: #fff;
+	background: grey;
+	width: 100%;
+	height: 100%;
+
+	&__clr_1 {
+		background: $blue-c1;
+	}
+	
+	&__clr_2 {
+		background: $blue-c2;
+	}
+	
+	&__clr_3 {
+		background: $blue-c3;
+	}
+	
+	&__clr_4 {
+		background: $blue-c4;
+	}
+}
+
+.section {
+	height: 235px;
+	width: 100%;
+	position: absolute;
+	display: block;
+	bottom: 0;
+}
+
+.icon {
+	text-align: center;
+	vertical-align: middle;
+	height: 90px;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	&__fix {
+		padding-top: 3px;
+	}
+}
+
+.info {
+	padding-left: 25px;
+
+	&__center {
+		text-align: center;
+		padding-left: 0;
+	}
+
+	header, small {
+		font-weight: 200;
+		font-family: $light-font;
+		font-size: 12px;
+		display: block;
+		&.center {
+			text-align: center;
+		}
+		&.smallcenter {
+			text-align: center;
+			font-size: 8px;
+			padding-top: 10px;
+			margin-left: -25px;
+		}
+	}
+
+	> * {
+		padding-bottom: 5px;
+		font-size: 15px;
+	}
+}

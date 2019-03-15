@@ -1,0 +1,15 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        main:
+#            pattern: ^/
+#            provider: fos_userbundle
+            http-basic: ~
+#            logout: false
+#            anonymous: true

@@ -1,0 +1,12 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/index.html.twig' %}
+{% set moduleTitle = 'Property Submissions'|trans %}
+{% set path_prefix = 'craftkeen_fcr_admin_leasing_property_submission_' %}
+
+{% block admin_block_body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary" value="{{ 'Download CSV'|trans }}"/>
+    {{ form_end(form) }}
+    <hr/>
+    {{ parent() }}
+{% endblock %}

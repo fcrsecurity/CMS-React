@@ -1,0 +1,74 @@
+//=========
+//|COLORS |
+//=========
+$black:#363636;
+$white: #ffffff;
+$footer-background: #f5f5f5;
+
+//=========
+//|FONTS  |
+//=========
+$main-font: 'Helvetica, Arial, Sans-Serif';
+
+//==============
+//|FONT SIZES  |
+//==============
+$initial-size:14px;
+
+//mobile//
+$mobile-heading-infographic:40px;
+
+$mobile-heading-large: 30px;
+$mobile-heading-medium:20px;
+$mobile-heading-small:15px;
+$mobile-extra-small:12px;
+
+//dekstop//
+$footer-font-size: 13px;
+
+$desktop-heading-infographic:80px;
+
+$desktop-heading-large: 50px;
+$desktop-heading-medium:30px;
+$desktop-heading-small:15px;
+$desktop-extra-small:13px;
+
+$desktop-p:14px;
+
+$fine-print: 11px;
+
+//icons
+
+$mobile-icons: 16px;
+$desktop-icons: 30px;
+
+//=========
+//|MIXINS  |
+//=========
+
+//These were meant to match styleguide of designer, please include mixins when possible to keep styles very clean.
+@mixin fontSizeAndWeight($fontSize, $fontWeight) {
+    font-size:$fontSize;
+    font-weight:$fontWeight;
+}
+
+//==============
+//|RESPONSIVE  |
+//==============
+$mobile-devices-width:480px;
+$small-devices-width: 767px;
+$medium-devices-width: 960px;
+$medium-devices-width-bootstrap: 992px;
+$large-devices-width: 1200px;
+$verylarge-devices-width: 1600px;
+
+//================
+//|MISCELLANEOUS |
+//================
+
+$border-radius: 4px;
+
+
+//======================
+//|Variable Overrides  |
+//======================

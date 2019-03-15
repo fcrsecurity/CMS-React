@@ -1,0 +1,12 @@
+
+@import "../../variables";
+
+.content {
+	position: absolute;
+	bottom: 280px;
+	z-index: 1;
+	width: 100%;
+	max-height: 600px;
+	overflow: hidden;
+	object-fit: cover;
+}

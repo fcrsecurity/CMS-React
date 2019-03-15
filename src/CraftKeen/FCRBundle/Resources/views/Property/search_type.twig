@@ -1,0 +1,46 @@
+{% set form = property_search_form(app.request) %}
+<div class="forms row">
+    <div class="form-container">
+        <div class="form-grey portfolio">
+            {{ form_start(form,{action:path('craftkeen_fcr_property_search')}) }}
+                <div class="row">
+                    <div class="col-md-2">
+                        <ul class="tg-list">
+                            <li class="tg-list-item">
+                                {{ form_widget(form.isAvailable, {'label':'fcr.property_search.is_vacant.label'|trans([], 'messages', app.request.locale), 'attr': {'class': 'tgl tgl-ios'} }) }}
+
+                                {#<input type="checkbox" id="property_search_isAvailable" name="property_search[isAvailable]" class="tgl tgl-ios" value="1">
+                                <label for="property_search_isAvailable" class="tgl-btn small"></label>
+                                <span>With Availability</span>#}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dropdown_container">
+                            {{ form_widget(form.category, { 'attr': {'class': '' } })  }}
+                            {{ form_widget(form.city, {'attr': {'class': ''} }) }}
+                        </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <label><span>{{ 'Sq Ft'|trans([], 'messages', app.request.locale) }}</span></label>
+                        <span class="inputs_container min-max">
+                            <label for="s-min" class="sr-only">Search from Min</label>
+                            {{ form_widget(form.sqft_min, {'attr': {'class': '', 'placeholder': 'fcr.property_search.sqft_min.label'|trans([], 'messages', app.request.locale)} }) }}
+                            <label for="s-max" class="sr-only">Search to Max</label>
+                            {{ form_widget(form.sqft_max, {'attr': {'class': 'no-marging-bottom', 'placeholder': 'fcr.property_search.sqft_max.label'|trans([], 'messages', app.request.locale)} }) }}
+                            <div class="clearfix"></div>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="third_column_wide">
+                            <span>{{ 'Or'|trans([], 'messages', app.request.locale) }}</span>
+                            <label for="property_search_keyword" class="sr-only">Search by Keyboard</label>
+                            {{ form_widget(form.keyword, { 'attr': {'class': '', 'placeholder' : 'fcr.property_search.keyword.label'|trans([], 'messages', app.request.locale)} }) }}
+                            <button class="search-button" type="submit"><span>search</span><em class="glyphicon glyphicon-search" aria-hidden="true"></em></button>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

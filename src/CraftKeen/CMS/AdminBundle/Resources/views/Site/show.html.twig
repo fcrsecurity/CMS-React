@@ -1,0 +1,52 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}{{ 'View Site'|trans }}{% endblock %}
+
+{% set path_prefix = 'craftkeen_cms_admin_site_' %}
+
+{% block admin_block_breadcrumb %}
+	<li><a href="{{ path(path_prefix~'index') }}">{{ 'Sites'|trans }}</a></li>
+	<li class="active">{{ 'View Site'|trans }}</li>
+	{% endblock %}
+
+{% block admin_block_body %}
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-bordered table-hover">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ site.id }}</td>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<td>{{ site.name }}</td>
+				</tr>
+				<tr>
+					<th>Domain</th>
+					<td>{{ site.domain }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ site.description }}</td>
+				</tr>
+				<tr>
+					<th>Theme</th>
+					<td>{{ site.theme }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+    <ul class="list-inline list-unstyled ">
+        <li>
+            <a href="{{ path(path_prefix~'index') }}" class="btn btn-info"> {{ 'Back to the list'|trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path(path_prefix~'edit', { 'id': site.id }) }}" class="btn btn-default">{{ 'Edit'|trans }}</a>
+        </li>
+        <li>
+            {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+			<input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

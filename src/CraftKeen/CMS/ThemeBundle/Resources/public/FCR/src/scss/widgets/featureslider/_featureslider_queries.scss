@@ -1,0 +1,10 @@
+/* Medium devices (desktops 960px and up) */
+@media screen and (min-width: $medium-devices-width) {
+    .feature-slider{
+        .image-container {
+            height: 90vh;
+            min-height: inherit;
+            max-height: inherit;
+        }
+    }
+}

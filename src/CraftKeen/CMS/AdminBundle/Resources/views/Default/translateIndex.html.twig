@@ -1,0 +1,20 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+
+{% if path_prefix is not defined %}
+    {% set path_prefix='craftkeen_cms_admin_' %}
+{% endif %}
+{% if moduleTitle is not defined %}
+    {% set moduleTitle='Administration' %}
+{% endif %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path(path_prefix~'show', {'id': langParent.id }) }}">{{ 'View:'|trans }} {{ langParent }}</a></li>
+    <li class="active">{{ 'Tranalations List'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    {% if pagination is defined %}
+        {{ CRUD.renderTranslateListingContent( langParent, pagination, path_prefix, languages ) }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}PageWidget Item Edit{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('craftkeen_cms_page_admin_pagewidget_index') }}">PageWidget</a></li>
+    <li class="active">PageWidget Item Edit</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    <div class="row">
+		<div class="col-lg-12">
+			{% if pageWidgetCopy and pageWidgetCopy.status == 'draft'%}
+			<p class="alert alert-info">This PageWidget has unapproved draft. PageWidget modifications currently blocked. '<a href="{{ path('craftkeen_cms_page_admin_pagewidget_edit', {'id':pageWidgetCopy.id}) }}">Edit Draft</a>' ?</p>
+			{% endif %}
+			{% if pageWidgetCopy and pageWidgetCopy.status == 'pending_approval' %}
+			<p class="alert alert-warning">Editing is blocked. PageWidget changes awaiting approval. '<a href="{{ path('craftkeen_cms_page_admin_pagewidget_edit', {'id':pageWidgetCopy.id}) }}">See edits</a>' ?</p>
+			{% endif %}
+		</div>
+	</div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p><b>{{ 'Status'|trans }}:</b> {{ pageWidget.status}}</p>
+        </div>
+    </div>
+
+    {% if pageWidget.copyOf %}
+        <div class="row">
+            <div class="col-lg-12">
+                <b>{{ 'Copy of'|trans }}:</b> <a href="{{ path('craftkeen_cms_page_admin_pagewidget_show', {'id': pageWidget.copyOf.id}) }}">{{ pageWidget.copyOf }}</a>
+                <br />
+                <br />
+            </div>
+        </div>
+    {% endif %}
+
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+
+        {% if is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_EDITOR') or is_granted('ROLE_CONTRIBUTOR')%}
+            <input type="submit" class="btn btn-primary" value="{{ 'Save'|trans }}" />
+        {% endif %}
+
+        {% if workflow_can(pageWidget, 'to_review') and (is_granted('ROLE_ADMINISTRATOR') or is_granted('ROLE_SUPERADMINISTRATOR') or is_granted('ROLE_EDITOR') or is_granted('ROLE_CONTRIBUTOR') ) %}
+            {#<button name="transition" value="to_preview" type="submit" class="btn btn-primary">Publish</button>#}
+            <button name="transition" value="to_review" type="submit" class="btn btn-warning">{{ 'Send for Apporval'|trans }}</button>
+        {% endif %}
+    {{ form_end(edit_form) }}
+
+    <hr />
+
+    <ul class="list-inline list-unstyled">
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_pagewidget_index') }}" class="btn btn-default">
+                {{ 'Back to the list'|trans }}
+            </a>
+        </li>
+        <li>
+            {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+                <input type="submit" class="btn btn-danger" value="{{ 'Delete'|trans }}">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

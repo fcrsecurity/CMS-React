@@ -1,0 +1,173 @@
+/*TODO: Optimize the code, remove excess*/
+.FinancialReports {
+    .head-part {
+        h2 {
+            color: $color-blue;
+            margin-top: 0;
+            margin-bottom: 60px;
+            font-weight: lighter;
+            font-family: $font-family-default-light;
+        }
+    }
+    .left-part {
+        .slide {
+            padding-right: 80px;
+            max-width: 540px;
+            margin: 0 auto;
+            float: none;
+            margin-top: 20px;
+        }
+        .thumbnails {
+           /* float: right;
+            margin-right: 40px;
+            margin-bottom: 15px;*/
+            margin: 0 auto;
+            width: 140px;
+        }
+        .slide-FinancialReports {
+            .slick-arrow {
+                background: none;
+                background-repeat: no-repeat;
+                top: 50%;
+                width: 11px;
+                height: 22px;
+                z-index: 200;
+                &::before {
+                    display: none;
+                }
+            }
+            .slick-prev {
+                background-image: url('/images/left_arrow_slick_docs.png');
+                left: 25px;
+            }
+            .slick-next {
+                background-image: url('/images/right_arrow_slick_docs.png');
+                right: 25px;
+            }
+        }
+    }
+    .right-part {
+        border-top: 1px solid $color-grey-dark4;
+        .wrap-table {
+            margin: 0 auto;
+            float: none;
+        }
+        .table {
+            /* font-size: 20px; */
+            text-align: left;
+            th {
+                border: 0;
+                color: $color-blue;
+                font-family: $font-family-default-light;
+                padding: 10px 0px 10px 0px;
+            }
+            td {
+                border: 0;
+                border-bottom: 1px solid $color-grey-light2;
+                padding: 10px 0px 10px 0px;
+            }
+            .under-line {
+                border-bottom: 1px solid $color-blue;
+                td {
+                    border-bottom: 1px solid $color-blue;
+                }
+            }
+            img {
+                max-height: 30px;
+                max-width: 100%;
+            }
+        }
+        a {
+            color: $color-grey-text;
+            &:hover {
+                color: $color-blue;
+            }
+        }
+        .more-archives {
+            text-transform: uppercase;
+            color: $color-teal;
+            text-decoration: none;
+        }
+    }
+    .svg-icon {
+        width: 140px;
+        .internal-text {
+            font-family: $font-family-default-light;
+            font-variant: normal;
+            font-weight: 300;
+            font-stretch: normal;
+            font-size: 429.95401001px;
+            writing-mode: lr-tb;
+            fill: #0861aa;
+            fill-opacity: 1;
+            fill-rule: nonzero;
+            stroke: none;
+        }
+        .annual-report {
+            font-size: 138.53761292px;
+        }
+        &:hover {
+            .internal-text {
+                fill: #ffffff !important;
+            }
+            .path {
+                color: #ffffff !important;
+                fill: #0861aa !important;
+                stroke: #ffffff !important;
+            }
+        }
+    }
+    .inactive {
+        &:hover {
+            cursor: default;
+            .internal-text {
+                fill: #ffffff !important;
+            }
+            .path {
+                color: #ffffff !important;
+                fill: #7E7E7E !important;
+                stroke: #ffffff !important;
+            }
+        }
+        .internal-text {
+            fill: #7E7E7E;
+        }
+    }
+    .mobile-buffer {
+        margin: 20px 0;
+    }
+}
+
+
+/* Medium devices (desktops 992px and up) */
+
+@media screen and (min-width:$medium-devices-width-bootstrap) {
+	.FinancialReports {
+    	.right-part {
+	        border-left: 1px solid $color-grey-dark4;
+	        border-top: none;
+	    }
+	    .mobile-buffer {
+	        margin: 0;
+	    }
+    }
+}
+
+
+/* Medium devices (desktops 960px and up) */
+/*
+@media screen and (max-width:$medium-devices-width) {
+    .left-part {
+        .thumbnails {
+            margin-right: 0px;
+        }
+    }
+    .right-part {
+        padding-left: 0px;
+        .more-archives {
+            float: none;
+        }
+    }
+}*/
+
+@import "FinancialReportsMacro_queries";

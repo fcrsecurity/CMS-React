@@ -1,0 +1,278 @@
+.leasing-map{
+  position: relative;
+  .maphead {
+	position: relative;
+	height: 80px;
+	background-color: $color-maphead;
+  }
+}
+#mapCanada {
+  display: flex;
+  //position: absolute;
+  background: #fff;
+  width: 100%;
+  //max-height: 700px;
+  margin: 0;
+  .backMap,
+  .nextMap,
+  .backToMap{
+	position: absolute;
+	width: 10%;
+	opacity: .3;
+	cursor: pointer;
+  }
+  .backToMap {
+	width: 10%;
+	right: 45%;
+	top: 15%;
+	text-align: center;
+	border: 3px solid $color-white;
+	border-radius: 15px;
+	color: $color-white;
+	text-decoration: none;
+	z-index: 3501;
+	&:hover {
+	  opacity: 1;
+	}
+  }
+  .backMap {
+	top: 40%;
+  }
+  .nextMap {
+	top: 40%;
+	right: 0;
+  }
+  #googleMap {
+	width: 100%;
+	height: calc(100% - 80px);
+	position: absolute;
+	z-index: 1999;
+	left: 0;
+	.closeMap {
+	  position: relative;
+	  float: right;
+	  width: 45px;
+	  margin: 10px;
+	  opacity: .7;
+	  cursor: pointer;
+	  z-index: 2000;
+	}
+	#infb-content {
+	  padding: 10px 0px 10px 10px;
+	  img {
+		width: 200px;
+		height: 100px;
+	  }
+	  .infb-tittle, .infb-desc {
+		display: inherit;
+		max-width: 200px;
+		padding: 10px 10px 10px 15px;
+		font-size: 1.5em;
+	  }
+	  .infb-tittle {
+		font-family: $font-family-default-black;
+		&:after {
+		  display:block;
+		  clear:both;
+		  content : "";
+		  position: relative;
+		  left    : 0;
+		  bottom  : 0;
+		  max-width:80px;
+		  height  : 1px;
+		  width   : 20%;
+		  border-bottom:1px solid $color-teal;
+		}
+	  }
+	  a {
+		float: right;
+		font-size: 1.3em;
+		font-weight: 400;
+		color: $color-teal;
+		&:hover {
+		  text-decoration: none;
+		}
+		&:after {
+		  padding-left: 5px;
+		  font-family: "Glyphicons Halflings";
+		  content: "\e080";
+		  vertical-align: top;
+		}
+	  }
+	}
+  }
+  .province {
+	fill: #033955;
+	stroke: $color-maphead;
+	stroke-width:3;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+  }
+  .province-active {
+	fill: #05496F;
+	stroke: $color-maphead;
+	stroke-width:3;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+  }
+  .active {
+	fill: #0079BC;
+  }
+  .province-active:hover {
+	fill: #0079BC;
+	transition: 1.5s fill;
+	cursor: pointer;
+  }
+  .provinceCluster,
+  .citiesCluster,
+  .regionCluster {
+	cursor: pointer;
+	fill: #36A4BA;
+	opacity: 0.75;
+	animation: 0.75s fadeIn;
+	animation-fill-mode: forwards;
+
+	visibility: hidden;
+	@keyframes fadeIn {
+	  99% {
+		visibility: hidden;
+	  }
+	  100% {
+		visibility: visible;
+	  }
+	}
+
+	&:hover {
+	  stroke: white;
+	  stroke-width: 2px;
+	}
+  }
+  .province-label,
+  .province-label-circ,
+  .province-label-text{
+	stroke-width: 2;
+	stroke: $color-white;
+	fill: $color-maphead;
+	animation: 0.75s fadeIn;
+	animation-fill-mode: forwards;
+
+	visibility: hidden;
+	@keyframes fadeIn {
+	  99% {
+		visibility: hidden;
+	  }
+	  100% {
+		visibility: visible;
+	  }
+	}
+  }
+  .province-label {
+	stroke-dasharray: 5 5;
+  }
+  .province-label-text {
+	font-size: .7em;
+	stroke-width: 0;
+	fill: $color-white;
+  }
+  .small-labl-text{
+	fill: $color-white;
+	font-size: .75em;
+  }
+  .graph-svg-component {
+	background-color: $color-maphead;
+  }
+  .map-tittle {
+	width: inherit;
+	position: absolute;
+	top: 10%;
+	text-align: center;
+	color: $color-white;
+	font-family: $font-family-headers;
+  }
+}
+
+/*Responsive*/
+
+/* Small devices (tablets phone and down) */
+@media screen and (max-width: $small-devices-width ) {
+  #mapCanada {
+	.province-active {
+	  stroke-width:1.5;
+	}
+	.backToMap {
+	  width: 50%;
+	  right: 25%;
+	  top: 5%;
+	  z-index: 3501;
+	}
+	#googleMap {
+	  #infb-content {
+		padding: 5px;
+		img {
+		  width: 150px;
+		  height: 75px;
+		}
+		.infb-tittle, .infb-desc {
+		  padding: 5px 10px 0 10px;
+		  font-size: 1em;
+		  overflow-y: scroll;
+		}
+		a {
+		  font-size: 1em;
+		}
+	  }
+	}
+	.map-tittle {
+	  top: 5%;
+	  font-size: 2em;
+	}
+	.province-label-text {
+	  font-size: .5em;
+	}
+	.small-labl-text{
+	  font-size: .5em;
+	}
+	.drag-click {
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  width: 25px;
+	  margin: 5px;
+	  opacity: .7;
+	  cursor: pointer;
+	}
+  }
+}
+
+/* Small devices (tablets and up) */
+@media screen and (min-width: $small-devices-width ) {
+
+}
+
+/* Medium devices (desktops and up) */
+@media screen and (min-width: $medium-devices-width ) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $large-devices-width) {
+
+}
+
+/* Large devices (very large desktops, 1600px and up) */
+@media screen and (min-width: $verylarge-devices-width) {
+  #mapCanada {
+	.map-tittle {
+	  top: 10%;
+	  font-size: 5em;
+	}
+	.province-label-text {
+	  font-size: 1em;
+	}
+	.small-labl-text{
+	  font-size: 1em;
+	}
+  }
+}
+
+@import "grid";

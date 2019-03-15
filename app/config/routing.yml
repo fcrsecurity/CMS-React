@@ -1,0 +1,166 @@
+brochure_builder:
+    resource: "@BrochureBuilderBundle/Resources/config/routing.yml"
+    prefix:   /
+
+elfinder:
+    resource: "@FMElfinderBundle/Resources/config/routing.yml"
+
+craft_keen_translation:
+    resource: "@CraftKeenTranslationBundle/Resources/config/routing.yml"
+
+craft_keen_search:
+    resource: "@CraftKeenSearchBundle/Resources/config/routing.yml"
+
+craft_keen_menu:
+    resource: "@CraftKeenCMSMenuBundle/Resources/config/routing.yml"
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+craft_keen_cms_admin:
+    resource: "@CraftKeenCMSAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+craft_keen_cms_admin_page:
+    resource: "@CraftKeenCMSPageBundle/Controller/Admin/"
+    type:     annotation
+    prefix:   /admin
+
+craft_keen_cms_admin_user:
+    resource: "@CraftKeenCMSUserBundle/Controller/AdminController.php"
+    type:     annotation
+
+craft_keen_fcr_admin_aoda_long_description:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/AodaLongDescriptionController.php"
+    type:     annotation
+
+craft_keen_fcr_aoda_long_description:
+    resource: "@CraftKeenFCRBundle/Controller/AodaLongDescriptionController.php"
+    type:     annotation
+
+craft_keen_fcr_api:
+    resource: "@CraftKeenFCRBundle/Controller/ApiController.php"
+    type:     annotation
+
+craft_keen_fcr_admin_property:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/PropertyController.php"
+    type:     annotation
+
+craft_keen_fcr_admin_property_submission:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/PropertySubmissionController.php"
+    type:     annotation
+
+craft_keen_fcr_admin_property_feature_slider:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/PropertyFeatureSliderController.php"
+    type:     annotation
+
+craft_keen_fcr_active_province:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/ActiveProvinceController.php"
+    type:     annotation
+
+craft_keen_fcr_tenant:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/TenantController.php"
+    type:     annotation
+
+craft_keen_fcr_retail_art_category:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/RetailArtCategoryController.php"
+    type:     annotation
+
+craft_keen_fcr_retail_art_gallery:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/RetailArtGalleryController.php"
+    type:     annotation
+
+craft_keen_fcr_retail_art:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/RetailArtController.php"
+    type:     annotation
+    
+craft_keen_fcr_people:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/PeopleController.php"
+    type:     annotation
+
+craft_keen_fcr_office:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/OfficeController.php"
+    type:     annotation
+    
+craft_keen_fcr_sustainability:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/SustainabilityController.php"
+    type:     annotation
+
+craft_keen_fcr_sustainability_slider:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/SustainabilitySliderController.php"
+    type:     annotation
+
+craft_keen_fcr_career_position_submission:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/CareerPositionSubmissionController.php"
+    type:     annotation
+
+craft_keen_fcr_manager:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/ManagerController.php"
+    type:     annotation
+
+craft_keen_fcr_financial_report:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/FinancialReportController.php"
+    type:     annotation
+
+craft_keen_fcr_conference_call:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/ConferenceCallController.php"
+    type:     annotation
+
+craft_keen_fcr_faq:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/FAQController.php"
+    type:     annotation
+
+craft_keen_fcr_dividend:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/DividendController.php"
+    type:     annotation
+
+craft_keen_fcr_debenture:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/DebentureController.php"
+    type:     annotation
+
+craft_keen_fcr_careers_slider:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/CareersSliderController.php"
+    type:     annotation
+
+craft_keen_fcr_careers_employee:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/CareersEmployeeController.php"
+    type:     annotation
+
+craft_keen_fcr_analyst_coverage:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/AnalystCoverageController.php"
+    type:     annotation
+
+craft_keen_fcr_press_release:
+    resource: "@CraftKeenFCRBundle/Controller/Admin/PressReleaseController.php"
+    type:     annotation
+
+craft_keen_cms_theme:
+    resource: "@CraftKeenCMSThemeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+craftkeen_cms_page_inline_editor_handler:
+    path:     /ajax/page/editor
+    defaults: { _controller: CraftKeenCMSPageBundle:Default:inlineEditorHandler }
+
+craft_keen_fcr:
+    resource: "@CraftKeenFCRBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+craft_keen_cms_page:
+    resource: "@CraftKeenCMSPageBundle/Controller/DefaultController.php"
+    type:     annotation

@@ -1,0 +1,257 @@
+{#
+    Macros for rendering admin panel
+
+    Possible modes: view, edit, add
+#}
+{% macro AdminPanel(object, data) %}
+    {% if app.user is not null and app.user.roles|length > 1 %} {# there was not enough checking. #}
+        <div id="mode-status" data-mode="{%  if data.mode is defined %}{{ data.mode }}{% endif %}"></div>
+        <section class="container-fluid admin-navbars">
+            <div class="row">
+                <div class="navbars-wrapper">
+                    <nav>
+                        <div class="left-nav">
+                            {% set objectType = class(object) %}
+
+                            {% if data.mode is not defined or data.mode is empty %}
+                                {% set data = data|merge({'mode' : 'show'})  %}
+                            {% endif %}
+
+                            {# Edit Mode Button #}
+                            {% if data.editUrl is defined and
+                                data.mode == 'view' and
+                                (
+                                    is_granted('canedit', object) or
+                                    (
+                                        data.copy is defined and
+                                        is_granted('canapprove', data.copy)
+                                    )
+                                )
+                            %}
+                                <a id="edit-icon" href="{{ data.editUrl }}" title="Edit Mode">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+
+                            {# Exit Edit Mode Button #}
+                            {% if data.mode == 'edit' and
+                                (object.status != 'live' or objectType == 'Property') and
+                                data.exitUrl is defined
+                            %}
+                                <a id="edit-icon" href="{{ data.exitUrl }}" title="Exit {{ data.mode }} Mode">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+
+                            {# View Mode Button #}
+                            {% if data.viewUrl is defined and object.status == 'live' and not object.isHidden %}
+                                <a id="edit-icon" href="{{ data.viewUrl }}" title="View">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+
+                            {# Delete Draft Button #}
+                            {% if data.delPath is defined and
+                                data.copy is defined and
+                                data.copy.id is defined and
+                                is_granted('candelete', data.copy)
+                            %}
+                                <a id="delete-icon" href="{{ path(data.delPath, {id: data.copy.id}) }}" title="Delete Draft">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+
+                            {# New Item Button #}
+                            {% if data.addUrl is defined and
+                                data.mode != 'add' and
+                                (
+                                    is_granted('ROLE_SUPERADMINISTRATOR') or
+                                    is_granted('ROLE_ADMINISTRATOR') or
+                                    is_granted('ROLE_EDITOR')
+                                )
+                            %}
+                                <a href="{{ data.addUrl }}">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+
+                            {# Save Changes Button #}
+                            {% if is_granted('canedit', object) and
+                                data.mode == 'edit' and
+                                objectType == 'Page'
+                            %}
+                                <a id="save-changes-icon" href="#adminSidebarLeft" class="show-panel" title="Save changes">
+                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+
+                            {% if data.applyTransitionPath is defined and data.applyTransitionPath %}
+                                {# Send to Approval Button #}
+                                {% if workflow_can(object, 'to_review') and
+                                    (
+                                        is_granted('ROLE_ADMINISTRATOR') or
+                                        is_granted('ROLE_SUPERADMINISTRATOR') or
+                                        is_granted('ROLE_EDITOR') or
+                                        is_granted('ROLE_CONTRIBUTOR')
+                                    )
+                                %}
+                                    <a id="send-to-approval"
+                                       style="display:none"
+                                       href="{{ path(data.applyTransitionPath, {'transition':'to_review', 'id':object.id}) }}"
+                                       title="Send for Apporoval">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </a>
+                                {% endif %}
+
+                                {# For approve #}
+                                {% if workflow_can(object, 'reject') and is_granted('canapprove', object) %}
+                                    <a href="#adminSidebarLeftReject" class="show-panel"
+                                       title="Reject">
+                                        <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+                                    </a>
+                                {% endif %}
+
+                                {% if workflow_can(object, 'publish') and is_granted('canapprove', object) %}
+                                    <a href="{{ path(data.applyTransitionPath, {'transition':'publish', 'id':object.id}) }}"
+                                       title="Publish">
+                                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                    </a>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if object.status == 'pending_approval' and not is_granted('ROLE_APPROVER') %}
+                                <p class="bg-danger message">
+                                    {{ "This page was sent for approval and can't be edited"|trans }}
+                                </p>
+                            {% endif %}
+
+                            {% if object.status == 'draft' and not is_granted('candelete', object) %}
+                                <p class="bg-warning message">
+                                    {{ 'To Delete the Draft, please contact creator: '|trans([], 'messages', app.request.locale) }} <b>{{ object.createdBy }}</b>
+                                </p>
+                            {% endif %}
+
+                            {% if data.editUrl is defined and
+                                data.copy is defined and
+                                data.copy and
+                                data.mode == 'view' and
+                                is_granted('canedit', object)
+                            %}
+                                <p class="bg-danger message">
+                                    {{ 'This page has unaproved draft'|trans}}.
+                                    <a class="edit-draft" href="{{ data.editUrl }}">{{'Edit Draft'|trans}}</a>?
+                                </p>
+                            {% endif %}
+                            {% if data.brochureUrl is defined and
+                                data.mode != 'add' and
+                                is_granted('ROLE_BROCHURE_EDITOR')
+                            %}
+                                <a href="{{ data.brochureUrl }}">
+                                    <i class="fa fa-file" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+
+                        <div class="right-nav">
+                            <span class="label label-info">{{ objectType }}Id: {{ object.id }}</span>
+                            {% if object.status == "published" %}
+                                <span class="label page-status label-success">{{ object.status }}</span>
+                            {% elseif object.status ==  "draft" %}
+                                <span class="label page-status label-warning">{{ object.status }}</span>
+                            {% else %}
+                                <span class="label page-status label-default">{{ object.status }}</span>
+                            {% endif %}
+
+                            {% if object.status == 'live' %}
+                                <span class="label label-success">{{ 'Approved'|trans }}</span>
+                            {% else %}
+                                <span class="label label-default">{{ 'Not Approved'|trans }}</span>
+                            {% endif %}
+
+                            <a href="#adminSidebarRight" class="show-panel">
+                                <i class="fa fa-sliders" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </nav>
+
+                    <div class="admin-sidebar-left" id="adminSidebarLeft">
+                        Are you sure you want to save this changes?
+                        <ul class="list-unstyled list-inline" >
+                            <li><button class="btn btn-success" id="save-page-changes">Yes</button></li>
+                            <li><button class="btn btn-danger" id="cancel-changes-saving">No</button></li>
+                        </ul>
+                        <p>Add comment about changes:</p>
+                        <textarea id="system_page-version-comment"
+                                  name="system[page][versionComment]"
+                                  placeholder="{{ 'Provide Revision Description'|trans }}"
+                                  style="
+                                        width: 100%;
+                                        min-height: 200px;
+                                        color: black;
+                        "></textarea>
+                    </div>
+
+                    {% if data.applyTransitionPath is defined and data.applyTransitionPath %}
+                        {% if workflow_can(object, 'reject') and is_granted('canapprove', object) %}
+                            <div class="admin-sidebar-left" id="adminSidebarLeftReject">
+                                Are you sure you want to reject this changes?
+                                <ul class="list-unstyled list-inline" >
+                                    <li>
+                                        <button class="btn btn-success"
+                                                data-url="{{ path(data.applyTransitionPath, {'transition':'reject', 'id':data.copy.id}) }}"
+                                                id="reject-page-changes">
+                                            Yes
+                                        </button>
+                                    </li>
+                                    <li><button class="btn btn-danger" id="cancel-changes-rejecting">No</button></li>
+                                </ul>
+                                <p>Add comment Before reject changes:</p>
+                                <textarea id="system_page-reject-version-comment"
+                                          name="system[page][rejectVersionComment]"
+                                          placeholder="{{ 'Provide Rejection Description'|trans }}"
+                                          style="
+                                                width: 100%;
+                                                min-height: 200px;
+                                                color: black;
+                                "></textarea>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
+                    <div class="right-style">
+                        <div class="admin-sidebar-right" id="adminSidebarRight">
+                            <br />
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="{{ path('craftkeen_cms_admin_inbox_index') }}">
+                                        <span class="glyphicon glyphicon-inbox"></span>
+                                        {# TODO: remove render() method #}
+                                        {{ render(controller('CraftKeenCMSAdminBundle:Inbox:getNewMessagesNumber')) }} {{ 'Inbox'|trans }}
+                                    </a><br /><br />
+                                </li>
+                                <li>
+                                    {% if is_granted("ROLE_USER") %}
+                                        Hi, {{ app.user.username }}
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    <a href="{{ path('craftkeen_cms_admin_index') }}">
+                                        <i class="fa fa-cog" aria-hidden="true"></i> {{ 'Dashboard'|trans }}
+                                    </a>
+                                </li>
+                                <li>&nbsp;</li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i> {{'Logout'|trans }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,49 @@
+CraftKeen\FCRBundle\Entity\Sustainability:
+    SustainabilityReport1:
+        year: 2010
+        link: https://fcr.ca/uploads/community/sustainability/FCR_CSR_2010.pdf
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        createdBy: '@User1->id'
+    SustainabilityReport2:
+        year: 2011
+        link: https://fcr.ca/uploads/community/sustainability/FCR_CSR_2011.pdf
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        createdBy: '@User1->id'
+    SustainabilityReport3:
+        year: 2012
+        link: https://fcr.ca/uploads/community/sustainability/FCR_CSR_2012.pdf
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        createdBy: '@User1->id'
+    SustainabilityReport4:
+        year: 2013
+        link: https://fcr.ca/uploads/community/sustainability/FCR_CSR_2013.pdf
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        createdBy: '@User1->id'
+    SustainabilityReport5:
+        year: 2014
+        link: https://fcr.ca/uploads/community/sustainability/FCR_CSR_2014.pdf
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        createdBy: '@User1->id'
+    SustainabilityReport6:
+        year: 2015
+        link: https://fcr.ca/uploads/community/sustainability/FCR_CSR_2015.pdf
+        lang: '@Lang0->id'
+        langParent: null
+        status: 'live'
+        site: '@Site0->id'
+        createdBy: '@User1->id'

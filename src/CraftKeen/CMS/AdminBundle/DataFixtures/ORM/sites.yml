@@ -1,0 +1,19 @@
+parameters:
+    app.alice.parameters.main_website: "%website_name%"
+    app.alice.parameters.main_theme: "%theme_name%"
+
+CraftKeen\CMS\AdminBundle\Entity\Site:
+    Site0:
+        name: Main Site
+        domain: <{app.alice.parameters.main_website}>
+        protocol: 'http://'
+        description: 'Default Mandatory Website'
+        theme: 'FCR'
+        isMain: true
+    Site1:
+        name: Test Site
+        domain: test.ck.cms.lo
+        protocol: 'http://'
+        description: 'Test Website'
+        theme: Default
+        isMain: false

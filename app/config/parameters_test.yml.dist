@@ -1,0 +1,40 @@
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: ck_cms_test
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_port: 25
+    mailer_user: null
+    mailer_password: null
+#    mailer_encryption: tls
+#    mailer_auth_mode: login
+    secret: ThisTokenIsNotSoSecretChangeIt
+    web_path: %kernel.root_dir%/../web
+    theme_name: FCR
+    website_name: Craft+Keen
+    admin_theme_name: Admin
+    admin_email: admin@fcr.ca
+    admin_name: 'FCR Administrator'
+    default_formats_datetime: 'd/m/Y g:i A'
+    base_host: localhost
+    mailchimp_api_key: d00d8b086237a4e181a5f9ee282911a9-us14
+    mailchimp_list_general: 121d8833e3
+    mailchimp_list_news: 8f84620db2
+    mailchimp_list_leasing: 8641bac7b0
+    mailchimp_list_careers: 4540b1acec
+    recaptcha_public_key: 6LcTzAsUAAAAANX4zEBqDAkaVinitZULANFk_5kr
+    recaptcha_private_key: 6LcTzAsUAAAAAKCG5BWxhfgH4kLD5C5ax7dVgskn
+    google_api_key: AIzaSyAtMVywo4aNmpPC1FTZI8AKP4QoFzbfec4
+    ckcms_library_url: 'https://fcr.ca/uploads'
+    ckcms_library_path: '%web_path%/uploads'
+    ckcms_form_from_email: submissions@fcr.ca
+    ckcms_form_to_email: mikalai@craftandkeen.com
+    hero_overlay: 'linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12))'
+    fcr_property_cta_email_from: '%ckcms_form_from_email%'
+    fcr_property_cta_email_label: 'First Capital Realty'
+    fcr_property_cta_email_bcc: developer@craftandkeen.ca
+    fcr_catsone_api_key: 4e35523291669f0f9ab9eed1051cb778
+    fcr_careers_resume_path: '%ckcms_library_path%/resume'

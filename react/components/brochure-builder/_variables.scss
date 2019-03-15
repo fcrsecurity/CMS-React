@@ -1,0 +1,39 @@
+
+$pdf-color: black;
+$pdf-bg: white;
+$pdf-font: yantramanavlight, sans-serif;
+$medium-font: yantramanavmedium, sans-serif;
+$light-font: yantramanavlight, sans-serif;
+$bold-font: yantramanavbold, sans-serif;
+
+
+$pdf-page-width: 760px; // 760 -> 1300
+$pdf-page-height: $pdf-page-width * 1.27; // 965 -> 1650
+
+/* colors */
+
+$white: #fff;
+$black: #000;
+$blue-type1: #0861aa;
+// $blue-type2: rgba(8, 97, 170, 0.5);
+$blue-type2: rgba(8,97,170,.8);
+$blue-c1:#175488;
+$blue-c2:#0861aa;
+$blue-c3:#0079bc;
+$blue-c4:#0f8abf;
+$blue-c5:#0d60a6;
+
+$gray: #333;
+
+$accept: rgb(12, 85, 12);
+$reject: rgb(114, 11, 11);
+
+/* border */
+$radius: 5px;
+
+/* custom */
+$shadow: 0 0 3px #666;
+
+/* actions component */
+$editor-bg: #ccc;
+$editor-btn-edit-bg: #290ad8;

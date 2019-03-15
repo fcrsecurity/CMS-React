@@ -1,0 +1,719 @@
+.home-sustainability-icon {
+    width: 50%;/*70*/
+    max-width: 180px;
+}
+.home-sustainability-icon-75 {
+    width: 50%;/*73*/
+    max-width: 180px;
+}
+.home-info-icon {
+    width: 90%;/*50*/
+    /* max-width: 120px; */
+}
+.home-info-icon-45 {
+    width: 30%;/*42*/
+    max-width: 120px;
+}
+.home-doc-icon {
+    max-width: 160px;
+}
+.hero-image .play {
+    // font-size: 100px;
+    color: #FFFFFF;
+}
+.hero-image .play:hover {
+    color: $color-block-hover;
+}
+.playVideo svg {
+    margin-top:35px;
+    width:115px;
+}
+.playVideo svg:hover .st0{
+    fill:$color-block-hover;
+}
+/*Style for icons*/
+.pdf-icon-square {
+    .cls-1 {
+        font-size: 70px;
+        fill: #0861aa;
+        font-family: $font-family-default;
+        letter-spacing: 0.02em;
+    }
+    .cls-2, .cls-3 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-miterlimit: 10;
+    }
+    .cls-2 {
+        stroke-width: 2px;
+    }
+    &:hover {
+        cursor: pointer;
+
+        .cls-1 {
+            fill: #ffffff;
+        }
+        .cls-2, .cls-3 {
+            fill: #0861aa;
+            stroke: #ffffff;
+        }
+    }
+}
+.about-phone-icon {
+    &:hover {
+        cursor: pointer;
+
+        .cls-1 {
+            fill: #00a399;
+        }
+        .cls-2 {
+            stroke: #ffffff;
+        }
+    }
+    .cls-1, .cls-2 {
+        fill: none;
+        stroke: #00a399;
+        stroke-miterlimit: 10;
+    }
+    .cls-2 {
+        stroke-width: 3px;
+    }
+}
+
+.report-icon-svg {
+    &:hover {
+        cursor: pointer;
+
+        circle {
+            fill: #0E62AB;
+        }
+
+        line,
+        path,
+        polygon,
+        polyline {
+            stroke: #fff;
+        }
+    }
+}
+.pdf-icon-svg {
+    .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #0861a6;
+        stroke-miterlimit: 10;
+    }
+    .cls-1 {
+        stroke-width: 2px;
+    }
+    .cls-2 {
+        stroke-width: 5px;
+    }
+    .cls-4 {
+        font-size: 23px;
+        fill: #0861a6;
+        font-family: $font-family-default;
+        letter-spacing: 0.02em;
+    }
+    &:hover {
+        cursor: pointer;
+
+        .cls-1, .cls-2, .cls-3 {
+            fill: #0861a6;
+            stroke: #ffffff;
+        }
+        .cls-4 {
+            fill: #ffffff;
+        }
+    }
+}
+.ruler-icon {
+    .cls-1 {
+        fill: none;
+        stroke: #0861a6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.house-icon {
+    .cls-1 {
+        fill: none;
+        stroke: #0861a6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.money-arrow-up-icon {
+    .cls-1 {
+        fill: #fff;
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.careers-agile-team-icon {
+    width: 106px;
+
+    .cls-1 {
+        fill: #0861aa;
+    }
+}
+.careers-graduates-icon {
+    width: 120px;
+
+    .cls-1 {
+        fill: #0861aa;
+    }
+}
+.careers-skill-exanche-icon {
+    width: 79px;
+
+    .cls-1 {
+        fill: #0861aa;
+    }
+}
+.boma-icon {
+    width: 102px;
+
+    .cls-1 {
+        fill: #0861aa;
+    }
+    .cls-2 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-miterlimit: 10;
+    }
+}
+.fr-ar-icon {
+    .cls-1 {
+        font-size: 35.36px;
+        fill: #0861aa;
+        font-family: $font-family-default;
+        letter-spacing: 0.02em;
+    }
+    .cls-2, .cls-3 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-miterlimit: 10;
+    }
+    .cls-2 {
+        stroke-width: 2px;
+    }
+}
+.fr-q1-icon, .fr-q2-icon, .fr-q3-icon {
+    .cls-1 {
+        font-size: 109.75px;
+        fill: #0861aa;
+        font-family: $font-family-default-light;
+        letter-spacing: 0.02em;
+    }
+    .cls-2, .cls-3 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-miterlimit: 10;
+    }
+    .cls-2 {
+        stroke-width: 2px;
+    }
+}
+.icon-home-career {
+    .a {
+        fill: #c9dcec;
+    }
+    .b {
+        fill: none;
+        stroke: #c9dcec;
+        stroke-miterlimit: 10;
+        stroke-width: 0.75px;
+    }
+}
+.icon-home-leasing {
+    .a {
+        fill: none;
+        stroke: #c9dcec;
+        stroke-miterlimit: 10;
+    }
+    .b {
+        fill: #c9dcec;
+    }
+}
+.icon-home-leasing2 {
+    .st0{
+        fill:none;
+        stroke:#C9DCEC;
+        stroke-width:0.75;
+        stroke-miterlimit:10;
+    }
+    .st1{
+        fill:#C9DCEC;
+    }
+}
+.icon-home-investor {
+    .a {
+        fill: none;
+        stroke: #c9dcec;
+        stroke-miterlimit: 10;
+        stroke-width: 0.75px;
+    }
+    .b {
+        fill: none;
+        stroke: #c9dcec;
+        stroke-miterlimit: 10;
+        stroke-width: 0.75px;
+    }
+}
+.icon-home-investor2 {
+    .st0{
+        fill:none;
+        stroke:#C9DCEC;
+        stroke-miterlimit:10;
+    }
+    .st1{
+        fill:#C9DCEC;
+    }
+}
+.pl-property-details-car-icon {
+    .cls-1 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.pl-property-details-people-icon {
+    .cls-1 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.pl-property-details-dollar-icon {
+    .cls-1 {
+        fill: #0861aa;
+    }
+    .cls-2 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.pl-ruler-icon {
+    .cls-1 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.5px;
+    }
+}
+.pl-people-icon {
+    .cls-1 {
+        fill: none;
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.5px;
+    }
+}
+.pl-houses-icon {
+    .cls-1 {
+        fill: #fff;
+    }
+    .cls-1, .cls-2 {
+        stroke: #0861aa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.5px;
+    }
+    .cls-2 {
+        fill: none;
+    }
+}
+.footer-leed-icon {
+    .cls-1{
+        fill:#2a75a1;
+    }
+    .cls-2,.cls-5{
+        fill:#99c2d6;
+    }
+    .cls-3,.cls-6{
+        fill:none;
+    }
+    .cls-3{
+        stroke:#6298b9;
+        stroke-miterlimit:10;
+    }
+    .cls-4{
+        fill:#6298b9;
+    }
+    .cls-5{
+        fill-rule:evenodd;
+    }
+}
+
+/*-------------------Style for icons-------------------*/
+
+
+/*style for admin navbar------------------*/
+.admin-panel {
+    &.fixed-nav {
+        .admin-navbars {
+            min-height: 76px;
+            .navbars-wrapper {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left:0;
+                z-index: 4000;
+            }
+        }
+        #main-header {
+            &.fixed-block {
+                top: 154px;
+            }
+        }
+        .fixed-bars {
+            .navbars-wrapper {
+                .admin-sidebar-left,.admin-sidebar-right {
+                    /*top: 0;*/
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .navbars-wrapper {
+        nav {
+            background-color: $color-white;
+            position: relative;
+            z-index: 1000;
+            border-bottom: 1px solid $color-blue-shade;
+            .left-nav {
+                display: flex;
+                justify-content: center;
+                border-bottom: 1px solid $color-blue-shade;
+                a {
+                    border-top: none;
+                }
+                .message{
+                    max-height: 40px;
+                    margin: 15px 15px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    width: auto;
+                }
+                p{
+                    a.edit-draft{
+                        background-color: transparent;
+                        display: inline;
+                        position: relative;
+                        width: auto;
+                        height: 20px;
+                        vertical-align: middle;
+                        font-size: 16px;
+                        line-height: 21px;
+                        text-align: center;
+                        color: #075B93;
+                        border-right: none;
+                    }
+                }
+            }
+            .right-nav {
+                display: flex;
+                justify-content: center;
+                margin-top: -1px;
+                border-top: 1px solid $color-blue-shade;
+                .label{
+                    max-height: 20px;
+                    margin-top: 30px;
+                    margin-right: 5px;
+                }
+            }
+            .active {
+                background-color: $color-blue-shade;
+            }
+            a {
+                background-color: $color-white;
+                display: inline-block;
+                position: relative;
+                width: 88px;
+                transition: all 0.5s ease;
+                height: 76px;
+                vertical-align: middle;
+                font-size: 25px;
+                line-height: 76px;
+                text-align: center;
+                color:$color-blue-shade;
+                border-right: 1px solid $color-blue-shade;
+                border-bottom: none;
+                &:first-child {
+                    border-left: 1px solid $color-blue-shade;
+                }
+                &:hover,&.active {
+                    background-color: $color-blue-shade;
+                    color: $color-white;
+                }
+                .count-msg {
+                    position: absolute;
+                    border-radius: 50%;
+                    top: 20px;
+                    right: 28px;
+                    width: 15px;
+                    height: 15px;
+                    line-height: 15px;
+                    color: $color-white;
+                    font-size: 11px;
+                    background-color: #de6666;
+                }
+            }
+        }
+        .admin-sidebar-left,.admin-sidebar-right {
+            max-width: 320px;
+            width: 100%;
+            position: fixed;
+            z-index: 3600;
+            top: 154px;
+            height: 77%;
+            padding: 40px;
+            padding-bottom: 190px;
+            color: $color-white;
+            transition: all 0.5s ease;
+            background-color: rgba(7,91,147,0.9);
+            overflow: auto;
+        }
+        .admin-sidebar-left {
+            left: -320px;
+            &.open {
+                left: 0;
+            }
+        }
+        .admin-sidebar-right {
+            right: -320px;
+            width: 0;
+            &.open {
+                right: 0;
+                width: 100%;
+            }
+            a {
+                color: $color-white;
+            }
+        }
+        .right-style {
+            overflow: hidden;
+            position: fixed;
+        }
+        &.right-open {
+            .right-style{
+                position: static;
+            }
+        }
+    }
+    #main-header {
+        &:not(.fixed-block) {
+            .mobile-menu {
+                button {
+                    &.dl-trigger {
+                        &.dl-active {
+                            position: fixed;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .notifyjs-corner {
+        z-index: 4000;
+    }
+}
+
+/*Wrap class for highlighting inline editing elements*/
+.inline-highlight {
+    border: 1px solid #1bff4c !important;
+}
+
+/*end*/
+
+@media only screen and (min-width : $small-devices-width) {
+    .admin-panel {
+        &.fixed-nav {
+            #main-header {
+                &.fixed-block {
+                    top: 77px;
+                }
+            }
+        }
+        .navbars-wrapper {
+            nav {
+                text-align: inherit;
+                .left-nav {
+                    justify-content: inherit;
+                    float: left;
+                    border:none;
+                    a {
+                        border-right: 1px solid $color-blue-shade;
+                        &:first-child {
+                            border-left: none;
+                        }
+                    }
+                }
+                .right-nav {
+                    justify-content: inherit;
+                    float: right;
+                    border:none;
+                    margin: 0;
+                    a {
+                        border-left: 1px solid $color-blue-shade;
+                    }
+                }
+                a {
+                    border: none;
+                }
+            }
+            .admin-sidebar-left,.admin-sidebar-right {
+                top: 77px;
+                height: 93%;
+                padding-bottom: 120px;
+            }
+        }
+    }
+}
+/*992*/
+@media only screen and (min-width : $medium-devices-width-bootstrap) {
+    .admin-panel {
+        &.fixed-nav {
+            #main-header {
+                &.fixed-block {
+                    top: 0px;
+                }
+            }
+        }
+        #main-header {
+            position: relative;
+        }
+        .hero-image{
+            margin-top: -90px;
+        }
+        .page-portfolio-leasing {
+            position: relative;
+            top: -90px;
+        }
+    }
+}
+
+
+
+/*----------------for Careers page--------------*/
+.personblock-faq-wrapper {
+    position: relative;
+    &::after,&::before {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 300px;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    &::before {
+        left: 0;
+        background-image: url('https://fcr.ca/_pages/careers/images/hr_carrer_motionimg_l.png');
+    }
+    &::after {
+        right: 0;
+        background-image: url('https://fcr.ca/_pages/careers/images/hr_carrer_motionimg_r.png');
+    }
+}
+.wrapper-team-tabs {
+    background-color: $color-grey-light1;
+}
+/*480*/
+@media only screen and (min-width : $mobile-devices-width) {
+    .personblock-faq-wrapper {
+        &::after,&::before {
+            display: block;
+        }
+    }
+}
+
+/*----------------for Investors page--------------*/
+.pressRelease-wrapper-ir,.grey-bg-block {
+    background-color: $color-grey-light1;
+}
+.inline-highlight {
+    position: relative;
+}
+/*Edit mode*/
+body {
+    div {
+        .inline-highlight {
+            .button-edit-element {
+                display: block;
+            }
+        }
+        .button-edit-element {
+            display: none;
+            position: absolute;
+            padding: 5px 10px;
+            border-radius: 5px 5px 0 0;
+            color: $color-white;
+            background-color: $color-fcr-blue;
+            text-decoration: none;
+            top: -35px;
+            right: 0;
+            &:hover {
+                background-color: $color-blue-shade;
+                color: $color-white;
+                text-decoration: none;
+            }
+        }
+        .button-edit-element::before{
+            content: 'Edit element';
+        }
+    }
+}
+svg.bar-chart-avg + .chart-label {
+    color: #6D6D6D;
+    font-weight: 300;
+}
+
+.big-hero .wrap-hero {
+    height: 85.5%;
+}
+/*for loader and form*/
+.subscribe-form {
+    position: relative;
+    .loader-gif {
+        display: block; 
+        margin: 0 auto;
+    }
+}
+.finance-block,.cta-box-finance{
+    .loader-gif {
+        position: absolute;
+        top: 35%;
+        left: 35%;
+    }
+}
+.stock-price {
+    .loader-gif {
+        position: absolute; 
+        top: 35%; 
+        left: 45%;
+    }
+}
+
+label.error {
+    color: red;
+}
+input.error {
+    background: #fbc5c5;
+    color: #EEEEEE;
+}

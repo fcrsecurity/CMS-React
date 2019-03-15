@@ -1,0 +1,12 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}<b>{{ 'Profile'|trans }}</b>{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li ><a href="{{ path('fos_user_profile_show') }}">{{ 'My Profile' }}</a></li>
+	<li class="active">{{ 'Edit Profile' }} </li>
+{% endblock %}
+
+{% block admin_block_body %}
+{% include "@FOSUser/Profile/edit_content.html.twig" %}
+{% endblock %}

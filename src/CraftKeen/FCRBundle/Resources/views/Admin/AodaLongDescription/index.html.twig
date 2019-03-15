@@ -1,0 +1,103 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/index.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+{% set moduleTitle = 'Aoda Long Description'|trans %}
+{% set path_prefix = 'admin_fcr_aoda_long_description_' %}
+
+{% block admin_block_body %}
+    {% if cacheSupported is not defined %}
+        {% set cacheSupported = false %}
+    {% endif %}
+
+    {% set sortableFieds = [
+    'id',
+    'objectClass'
+    ] %}
+
+    <div class="row">
+        <div class="col-lg-10">
+            <ul class="list-inline list-unstyled">
+                {% if is_granted('ROLE_CONTRIBUTOR') or
+                is_granted('ROLE_ADMINISTRATOR') or
+                is_granted('ROLE_SUPERADMINISTRATOR')
+                %}
+                <li>
+                    <a href="{{ path(path_prefix~'new') }}" class="btn btn-success">{{ 'Add'|trans }}</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="col-lg-2">
+            {{ CRUD.renderListFilter__PerPage('pull-right form-inline') }}
+        </div>
+    </div>
+    <br/>
+
+    {% if pagination is defined %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    {% if pagination[0] is defined %}
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                            <tr>
+                                {% set header = pagination[0] %}
+                                {% for key in header.getDisplayItems('index') %}
+                                    {% set value = attribute(header, key) %}
+                                    {% if key in sortableFieds %}
+                                        <th>
+                                            {{ knp_pagination_sortable(pagination, key|capitalize , 'item.'~key) }}
+                                            {% if pagination.isSorted('item.'~key) %}
+                                                {% if app.request.get('direction') == 'asc' %}
+                                                    {% set class = 'glyphicon-sort-by-alphabet' %}
+                                                {% else %}
+                                                    {% set class = 'glyphicon-sort-by-alphabet-alt' %}
+                                                {% endif %}
+                                                <span class="glyphicon {{ class }}"></span>
+                                            {% endif %}
+                                        </th>
+                                    {% else %}
+                                        <th>{{ key|capitalize }}</th>
+                                    {% endif %}
+                                {% endfor %}
+                                <th>{{ 'Actions'|trans }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in pagination %}
+                                <tr>
+                                    {% for key in entity.getDisplayItems('index') %}
+                                        {% set value = attribute(entity, key) %}
+                                        <td>{{ value }}</td>
+                                    {% endfor %}
+
+                                    <td>
+                                        <ul class="social-links list-inline list-unstyled">
+                                            {% if (path_prefix~'show')|routeExists %}
+                                                <li>
+                                                    <a href="{{ path(path_prefix~'show', { 'id': entity.id }) }}">
+                                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if (path_prefix~'edit')|routeExists %}
+                                                <li>
+                                                    <a href="{{ path(path_prefix~'edit', { 'id': entity.id }) }}">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                    <div class="count pull-right">
+                        {{ 'Total:'|trans }} {{ pagination.getTotalItemCount }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

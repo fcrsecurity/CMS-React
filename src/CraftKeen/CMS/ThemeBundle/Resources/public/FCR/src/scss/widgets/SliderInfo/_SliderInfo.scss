@@ -1,0 +1,170 @@
+.slider-info {
+    padding: 0;
+    &.slick-slider {
+        .slick-slide {
+            outline: none;
+            /*height: inherit;*/
+        }
+        &.slick-dotted {
+            margin-bottom: 0px;
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        cursor: pointer;
+        top: 50%;
+        background-repeat: no-repeat;
+        height: 85px;
+        width: 85px;
+        z-index: 100;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+        background-size: 85px 85px;
+        z-index: 2000;
+        &:after,
+        &:before {
+            content: "";
+        }
+    }
+    .slick-next {
+        right: 0;
+    }
+    .slick-next,
+    .slick-next:hover,
+    .slick-next:focus {
+        background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/svg-arrow-right-safari.svg");
+    }
+    .slick-prev {
+        left: 0;
+    }
+    .slick-prev,
+    .slick-prev:hover,
+    .slick-prev:focus {
+        background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/svg-arrow-left-safari.svg");
+    }
+    .slick-dots {
+        bottom: 10px;
+        li {
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            button {
+                width: 5px;
+                max-width: 5px;
+                height: 5px;
+                max-height: 5px;
+                border: 1px solid $color-white;
+                border-radius: 5px;
+                padding: 2px;
+                &:before {
+                    color: transparent;
+                }
+            }
+            &.slick-active {
+                background-color: $color-white;
+                button {
+                    &:before {
+                        color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    .item {
+        width: 100%;
+        height: 85vh;
+        min-height: 400px;
+        max-height: 550px;
+        position: relative;
+        display: block;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .overlay {
+            position: absolute;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.32);
+            bottom: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text-container {
+            width: 75%;
+            margin: auto;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .title {
+            p {
+                color: $color-white;
+                font-size: 115%;
+                font-weight: 900;
+                line-height: 24px;
+            }
+        }
+        .description {
+            color: $color-white;
+            font-size: 90%;
+            max-width: 100%;
+        }
+        .left {
+            p {
+                color: $color-white;
+                font-size: 150px;
+                font-weight: 900;
+                margin-right: $height-12;
+            }
+        }
+    }
+}
+
+.no-images-slider {
+    .slider-info {
+        .item {
+            min-height: 500px;
+            .overlay {
+                background-color: $color-white;
+            }
+            .text-container {
+                width: 100%;
+                margin: auto;
+                display: block;
+                padding: 0 20%;
+            }
+            .left {
+                p {
+                    text-align: left;
+                    line-height: 145px;
+                    font-size: 15vw;
+                    color: $color-blue-light3;
+                    font-family: $font-family-default;
+                    font-weight: normal;
+                }
+            }
+            .right {
+                .title {
+                    p {
+                        color: $color-blue-light3;
+                        font-family: $font-family-default-light;
+                        font-size: 35px;
+                        line-height: 1;
+                        margin-bottom: 20px;
+                        font-weight: normal;
+                    }
+                }
+                .description {
+                    font-weight: normal;
+                    font-size: 20px;
+                    font-family: $font-family-default;
+                    color: $color-grey-dark1;
+                }
+            }
+        }
+    }
+}
+
+@import "SliderInfo_queries";

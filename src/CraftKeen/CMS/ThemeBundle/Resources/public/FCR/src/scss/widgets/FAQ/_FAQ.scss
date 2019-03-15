@@ -1,0 +1,76 @@
+.close-all, .expand-all {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.faq {
+  .clearPanel {
+    .accordionElement {
+      .panel-heading {
+        background-color: transparent;
+        padding: 30px 10px 35px 10px;
+        border: none;        
+      }
+      .panel-group {
+        margin: 0;
+      }
+      .panel-title {
+        text-align: left;
+         &::after {
+            display: none;
+          }
+        a {
+          font-family: $font-family-default;
+          color: $color-grey-text;
+          font-size: 21px;
+          line-height: 1.1;
+          position: relative;
+          display: block;
+          padding-right: 5%;
+        }
+        .accordion-toggle:after {
+          /* symbol for "opening" panels */
+          font-family: 'FontAwesome';
+          /* essential for enabling glyphicon */
+          position: absolute;
+          right:0;
+          margin-top: -6px;
+          content: "\f106";
+          /* adjust as needed, taken from bootstrap.css */
+          float: right;
+          /* adjust as needed */
+          color: $color-blue-shade; 
+          /* adjust as needed */
+          font-size: 30px;
+        }
+        .accordion-toggle.collapsed:after {
+          /* symbol for "collapsed" panels */
+          color: $color-teal;
+          content: "\f107";
+          
+          color: $color-blue-shade; 
+          /* adjust as needed, taken from bootstrap.css */
+        }
+      }
+      .panel-body {
+        padding: 0 10px 30px 10px;
+        border: none;
+        .more {
+          text-align: right;
+          padding-top: 15px;
+          a {
+           color: $color-teal;
+          }
+        }
+      }
+      .panel {
+        background-color: transparent;
+      }
+      .panel-default {
+        border-bottom: 1px solid $color-blue-shade;
+      }
+    }
+  }
+}
+@import "FAQ_queries";

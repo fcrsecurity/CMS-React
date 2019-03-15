@@ -1,0 +1,25 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}<b>{{ user.username|capitalize }} {{ 'Profile'|trans }}</b>{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li class="active">{{ 'My Profile' }} </li>
+{% endblock %}
+
+{% block admin_block_body %}   
+<div class="row">
+	<div class="col-lg-12">
+        <p><b>{{ 'Username'|trans }}:</b> {{ user.username }}</p>
+        <p><b>{{ 'Email'|trans }}:</b> {{ user.email }}</p>
+		<p>
+			<b>{{ 'In Roles'|trans }}:</b> 
+			<ul class="list-group">
+			{% for role in user.roles %}
+				<li class="list-group-item" >{{ role }}</li>
+			{% endfor %}
+			</ul>
+		</p>
+		<a href="{{ path('fos_user_profile_edit') }}" class="btn btn-primary" >{{ 'Update'|trans }}</a>
+    </div>
+</div>
+{% endblock %}

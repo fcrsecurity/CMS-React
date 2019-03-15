@@ -1,0 +1,21 @@
+
+.nocount {
+	// display: flex;
+	// justify-content: space-between;
+	// padding: 0;
+	// margin: 0;
+	// height: 100%;
+	text-align: center;
+	margin-left: -25px;
+	margin-top: 50%;
+    transform: translatey(-20px);
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+.subline {
+	font-size: 10px;
+	line-height: 20px;
+	padding-bottom: 5px;
+}

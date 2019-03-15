@@ -1,0 +1,61 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% if path_prefix is not defined %}
+    {% set path_prefix='craftkeen_cms_admin_' %}
+{% endif %}
+{% if moduleTitle is not defined %}
+    {% set moduleTitle='Brochure Builder' %}
+{% endif %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('brochure_dashboard_list') }}">{{ 'Brochure' }}</a></li>
+    <li class="active">{{ 'Builder' }}</li>
+{% endblock %}
+
+{% block stylesheets %}
+    {{parent()}}
+    {% stylesheets
+	'bundles/craftkeencmstheme/FCR/assets/fonts/yantramanav/webfontkit/stylesheet.css'
+	filter='cssrewrite' %}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/build/bb-bundle.css') }}" />
+{% endblock %}
+
+{% block footer_js %}
+    {{parent()}}
+    {% javascripts
+            '@BrochureBuilderBundle/Resources/public/FileManager/dist/js/filemanager.form_module.js'
+        %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script src="https://maps.googleapis.com/maps/api/js?language=en&key=AIzaSyAtMVywo4aNmpPC1FTZI8AKP4QoFzbfec4" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/build/bb-bundle.js') }}"></script>
+    <script>
+        renderBrochureBundle(
+            {
+                google: window.google,
+                FileManager: window.FileManager,
+                fileManagerPath: '{{ path('filemanager_front') }}'
+            },
+            document.getElementById('bb'),
+            {{ data | raw }},
+            {{ offices | raw }},
+            {
+                cancelPath: '{{ path('brochure_dashboard_list') }}',
+                resultPath: '{{ path('brochure_dashboard_list') }}',
+                savePath: '{{ path('brochure_edit_save', { 'id': id }) }}',
+                requestPath: '{{ path('brochure_edit_save_approve', { 'id': id }) }}',
+            }
+        );
+    </script>
+{% endblock %}
+
+{% block admin_block_body %}
+    <div id="bb">
+        <div class="BrochureBuilderLoader">
+            Loading...
+        </div>
+    </div>
+{% endblock %}

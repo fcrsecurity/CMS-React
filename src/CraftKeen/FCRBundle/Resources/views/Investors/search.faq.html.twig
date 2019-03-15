@@ -1,0 +1,6 @@
+<div class="search-result-item page-result">
+    <h4><a href="/{{ findPagePermalinkByName('faq') }}#{{ item.HiddenMeta }}">{{ item.title }}</a></h4>
+    <div>{{ item.shortBody|slice(0, 300)|raw }}...</div>
+    <a href="/{{ findPagePermalinkByName('faq') }}#{{ item.HiddenMeta }}">{{ 'More'|trans }}</a>
+    <hr><br>
+</div>

@@ -1,0 +1,17 @@
+
+@import "../../variables";
+
+.content {
+	margin-top: 10px;
+}
+
+.draggingOver {
+	background: #eee;
+}
+
+.ul {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}

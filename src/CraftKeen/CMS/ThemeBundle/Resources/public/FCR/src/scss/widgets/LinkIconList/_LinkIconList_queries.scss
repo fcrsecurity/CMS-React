@@ -1,0 +1,14 @@
+@media screen and (min-width:$medium-devices-width-bootstrap) {
+    .ir-link {
+        .link-icon-list {
+            display: flex;
+            padding-top: 0;
+            margin: 20px 0;
+            .position-ir {
+                margin: auto;
+                max-width: 700px;
+                width: 100%;
+            }
+        }
+    }
+}

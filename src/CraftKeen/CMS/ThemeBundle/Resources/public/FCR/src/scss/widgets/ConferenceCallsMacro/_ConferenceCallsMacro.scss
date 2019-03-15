@@ -1,0 +1,88 @@
+.page-conference-calls {
+    .head-part {
+        h2 {
+            color: $color-blue;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: lighter;
+            font-family: $font-family-default-light;
+        }
+        .subtitle {
+            color: $color-grey;
+            text-transform: uppercase;
+            margin-top: 0px;
+            margin-bottom: $height-60;
+            display: block;
+            font-weight: lighter;
+            font-family: $font-family-default-light;
+        }
+        .sub-text {
+            font-weight: bold;
+            color: $color-grey;
+        }
+    }
+    .left-part {
+        padding-top: $height-22;
+        padding-bottom: $height-60;
+        img,
+        svg {
+            max-height: 124px;
+            max-width: 100%;
+        }
+        .icon-title {
+            margin-top: 10px;
+            color: $color-grey;
+            font-weight: lighter;
+            font-size: 150%;
+            width: auto;
+        }
+    }
+    .hr-line {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        height: 1px;
+        background-color: $color-grey-dark4;
+        ;
+    }
+    .right-part,
+    .left-part {
+        padding-top: $height-60;
+        padding-bottom: $height-60;
+        img,
+        svg {
+            max-height: 124px;
+            max-width: 100%;
+            // margin-top: 20px;
+        }
+        .icon-title {
+            margin-top: 10px;
+            color: $color-grey-text;
+            font-size: 150%;
+        }
+        ul {
+            margin-top: 27px;
+            list-style-type: none;
+            max-width: 220px;
+            padding-top: 30px;
+            margin: 0 auto;
+            text-align: left;
+            li {
+                /* font-size: 24px; */
+                color: $color-grey-text;
+                margin-left: -20px;
+                a {
+                    color: $color-grey-text;
+                    i {
+                        color: $color-blue-light1;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        color: $color-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+@import "ConferenceCallsMacro_queries";

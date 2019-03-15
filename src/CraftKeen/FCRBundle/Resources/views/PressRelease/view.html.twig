@@ -1,0 +1,73 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+
+{% block meta_title %}{% if article.title %}{{ article.title }}{% endif %}{% endblock %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+        editUrl : path('admin_leasing_press-release_edit', {id: article.id}),
+        addUrl  : path('admin_leasing_press-release_new'),
+        delPath : 'admin_leasing_press-release_delete',
+        copy    : copy,
+        mode    : mode,
+    } %}
+    {{ AP.AdminPanel(article, data) }}
+{% endblock %}
+
+{% block hero %}
+<section class="hero-image container-fluid" style="background-image: url(/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-pressreleases.jpg)">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+				<div class="container-content">
+					<h1 class="text-shadow">{{ 'Press Releases'|trans([], 'messages', app.request.locale) }}</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block body %}
+	<section class="container-fluid press-release-detail">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+				<div class="row">
+					<div class="col-lg-8 col-md-8 col-sm-8 left-block">
+						<h1>{{ article.title }}</h1>
+						<div class="date">{{ article.date|date("M j, Y") }}</div>
+
+                        {{ article.content|raw }}
+					</div>
+					<div class="col-lg-3 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 right-block">
+						{% if article.pdfFile %}
+                        <div class="large-pdf-icon">
+                            <a href="{{ article.pdfFile}}" target="_blank">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211" class="pdf-icon-svg"><title>Asset 5pdf-icon</title>
+								<g id="Layer_2" data-name="Layer 2">
+								<g id="nav">
+								<!--<circle class="cls-1" cx="105.5" cy="105.5" r="104.5"/>-->
+								<path class="cls-2" d="M62 41.6v114.62h87.7V71.17L120.1 41.6h-58.1z"/>
+								<path class="cls-3" d="M149.7 71.17L120.1 41.6v29.57h29.57z"/>
+								<text class="cls-4" transform="translate(85.9 112.31)">PDF</text>
+								</g>
+								</g>
+								</svg>
+                            </a>
+                        </div>
+                        {% endif %}
+
+						<a href="/{{ landingPageSlug }}" class="back-to-list"><em class="fa fa-chevron-left" aria-hidden="true"></em> {{ 'BACK TO PRESS RELEASES'|trans([], 'messages', app.request.locale) }}</a>
+						{% for pressrelease in related %}
+                        <a href="{{ path('craftkeen_fcr_press_release_view', {'slug': pressrelease.slug })}}">
+                            <div class="item">
+                                <div class="date">{{ pressrelease.date|date("M j, Y") }}</div>
+                                <div class="text">{{ pressrelease.title }}</div>
+                            </div>
+                        </a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

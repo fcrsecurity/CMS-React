@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="{% block meta_description %}{% endblock %}">
+		<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+		<meta name="author" content="First Capital Realty">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block meta_title %}Welcome{% endblock %}</title>
+		{% block stylesheets %}
+			{% stylesheets
+			'bower_components/bootstrap/dist/css/bootstrap.min.css'
+			'bower_components/fontawesome/css/font-awesome.min.css'
+			'bower_components/fancybox/source/jquery.fancybox.css'
+			filter='cssrewrite' %}
+			<link rel="stylesheet" href="{{ asset_url }}" />
+			{% endstylesheets %}
+		{% endblock %}
+		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	</head>
+		<div class="container-wrapper">
+			{# TOP MENU BEGINS #}
+			{% block topmenu %}				
+			{% endblock %}
+			{# TOP MENU ENDS #}
+
+			{# HEADER BEGINS #}
+			{% block header %}{% endblock %}
+			{# HEADER ENDS #}
+
+			{# HERO BEGINS #}
+			{% block hero %}{% endblock %}
+			{# HERO ENDS #}
+
+			{# BODY BEGINS #}
+			{% block body %}MAIN BODY{% endblock %}
+			{# BODY ENDS #}
+
+			{# FOOTER BEGINS #}
+			{% block footer %}
+				<footer>
+					<div class="row footer-top">
+						<div class="wrapper">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								{# SOCIAL MEDIA #}
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+									<ul class="social-links list-inline list-unstyled">
+										<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+									</ul>
+								</div>
+								{# ./SOCIAL MEDIA #}
+							</div>
+						</div>
+					</div>
+					{# COPYRIGHT BAR #}
+					<div class="row footer-bottom">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+							<span>&copy;{{ "now"|date("Y") }} </span>
+						</div>
+					</div>
+					{# ./COPYRIGHT BAR #}
+				</footer>
+			{% endblock %}
+			{# FOOTER ENDS #}
+
+			{# SYSTEM VALUES BEGINS #}
+			{% block system_values %}
+				<input type="hidden" name="system[user][id]" id="system_user-id" value="{% if is_granted("ROLE_USER") %}{{ app.user.id }}{% endif %}">
+			{% endblock %}
+			{# SYSTEM VALUES ENDS #}
+
+			{% block footer_js %}
+				{% javascripts
+					'bower_components/jquery/dist/jquery.min.js'
+					'bower_components/jquery-validation/dist/jquery.validate.min.js'
+					'bower_components/jquery-validation/dist/additional-methods.min.js'
+					'bower_components/jquery.cookie/jquery.cookie.js'
+					'bower_components/bootstrap/dist/js/bootstrap.min.js'
+				%}
+				<script src="{{ asset_url }}"></script>
+				{% endjavascripts %}
+											
+			{% endblock %}
+		</div>
+    </body>
+</html>

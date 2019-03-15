@@ -1,0 +1,39 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':page.html.twig' %}
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+
+{% block hero %}
+	{% if 'en_CA' == app.request.locale %}
+		{% set slogalImg = 'https://fcr.ca/uploads/icons/hom_topslogan_en.png' %}
+	{% endif %}
+	{% if 'fr_CA' == app.request.locale %}
+		{% set slogalImg = 'https://fcr.ca/uploads/icons/hom_topslogan_fr.png' %}
+	{% endif %}
+
+	{% set heroData = {
+	'title' : '<img src="'~slogalImg~'" alt="home topslogan" >',
+	'svg_button' : '<div class="hero-cta-btn center-block">
+            	<a class="playVideo" href="#">'~'OUR STORY'|trans~' <em class="fa fa-play-circle" aria-hidden="true"></em></a>
+        	</div>',
+	'link_video' : page.heroVideo,
+	'url_images' : page.hero,
+	'position_title': 'top',
+	'classBigHero': 'big-hero',
+	'textBtnVideo': 'Close video'|trans
+	} %}
+	{{ M.heroImage(heroData) }}
+{% endblock %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+        exitUrl : path('craftkeen_cms_page_index', {slug: app.request.attributes.get('slug')}),
+        editUrl : path('craftkeen_cms_page_index_edit', {slug: app.request.attributes.get('slug')}),
+        addUrl  : path('craftkeen_cms_page_admin_page_new'),
+        delPath : 'craftkeen_cms_page_delete_draft',
+        applyTransitionPath : 'craftkeen_cms_page_apply_transition',
+        copy    : copy,
+        mode    : mode,
+    } %}
+    {{ AP.AdminPanel(page, data) }}
+{% endblock %}

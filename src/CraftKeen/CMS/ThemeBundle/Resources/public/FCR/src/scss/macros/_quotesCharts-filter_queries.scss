@@ -1,0 +1,152 @@
+/*Responsive Styles */
+@media screen and (max-width:480px) {
+  .index-data-block {
+	.info-bottom {
+	  > div {
+		float: none;
+		width: 100%;
+	  }
+	}
+	.info-head {
+	  > div {
+		float: none;
+		width: 100%;
+		margin-bottom: 0;
+	  }
+	}
+  }
+  .historical {
+	.forms {
+	  .dropdown_container {
+		.selectric-wrapper {
+		  width: 100%;
+		  float: none;
+		  margin: 0 0 20px 0;
+		}
+	  }
+	  .tgl + .tgl-btn {
+		float: left;
+	  }
+	}
+  }
+}
+/* Small devices (tablets 768px  and up) */
+@media screen and (min-width:$small-devices-width) {
+  .historical-prices-wrapper {
+	.time-link {
+	  display: flex;
+	  padding-left: 12px;
+	  .time-frame {
+		min-width: 100px;
+		margin: auto;
+		text-align: left;
+	  }
+	  ul {
+		display: inline-block;
+		text-align: left;
+		margin: auto;
+		width: 100%;
+	  }
+	}
+	.wrap-inputs {
+	  display: flex;
+	  span {
+		margin: auto 10px;
+	  }
+	  input[type="text"]{
+		margin: auto;
+		display: inline-block;
+	  }
+	  .button {
+		width: 100%;
+		margin: auto;
+		margin-left: 10px;
+	  }
+	}
+  }
+}
+
+/* Medium devices (desktops 960px and down) */
+@media screen and (max-width:$medium-devices-width) {
+
+  .historical {
+	.forms {
+	  ul.tg-list {
+		display: block;
+	  }
+	}
+  }
+}
+
+/* Medium devices (desktops 960px and up) */
+@media screen and (min-width:$medium-devices-width) {
+  .index-data-block {
+
+	.info-head {
+	  >div {
+		float: left;
+		position: relative;
+		bottom: -10px;
+		text-align: center;
+	  }
+	  .arrow {
+		margin-left: 15px;
+	  }
+	  .usd {
+		margin-top: 30px;
+		margin-left: 20px;
+	  }
+	}
+  }
+
+  .historical {
+	.forms {
+	  ul.tg-list {
+		display: block;
+	  }
+	}
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width:$large-devices-width) {
+  .historical-prices-wrapper {
+	.time-link {
+	  margin-bottom: 0;
+	  ul {
+		li {
+		  a {
+			padding: 0 4px;
+			font-size: 15px;
+		  }
+		}
+	  }
+	}
+	// .wrap-inputs {
+	// 	margin-top: 10px;
+	// }
+  }
+  .getPrice {
+	text-align:center;
+	i{
+	  display:inline-block;
+	}
+  }
+}
+
+/* Large devices (very large desktops, 1600px and up) */
+@media screen and (min-width:$verylarge-devices-width) {
+  .historical-prices-wrapper {
+	.time-link {
+	  margin-bottom: 0;
+	  ul {
+		li {
+		  a {
+			padding: 0 5px;
+			font-size: 18px;
+		  }
+		}
+	  }
+	}
+  }
+}

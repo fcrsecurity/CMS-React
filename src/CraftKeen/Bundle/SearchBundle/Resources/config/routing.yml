@@ -1,0 +1,3 @@
+craft_keen_page_bundle:
+    resource: "@CraftKeenSearchBundle/Controller/Frontend"
+    type: annotation

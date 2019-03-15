@@ -1,0 +1,31 @@
+services:
+    craft_keen_cms.admin.workflow_subscriber:
+        class: CraftKeen\CMS\AdminBundle\EventSubscriber\PageWorkflowSubscriber
+        arguments: ["@doctrine.orm.entity_manager", "@security.token_storage", "@request_stack", "@router", "@service_container"]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    craft_keen_cms.admin.temporary_publishing:
+        class: CraftKeen\CMS\AdminBundle\EventSubscriber\TemporaryWorkflowSubscriber
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@security.token_storage'
+            - '@request_stack'
+            - '@router'
+            - '@craft_keen_notification.manager.email'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    craft_keen_cms.admin.property_publishing:
+        class: CraftKeen\CMS\AdminBundle\EventSubscriber\PropertyWorkflowSubscriber
+        arguments: ["@service_container"]
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    admin.twig_extension:
+        class: CraftKeen\CMS\AdminBundle\Twig\PageExtension
+        public: false
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: twig.extension }

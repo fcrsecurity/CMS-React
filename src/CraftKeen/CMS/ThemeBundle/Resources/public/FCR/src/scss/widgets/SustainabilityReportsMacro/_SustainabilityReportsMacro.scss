@@ -1,0 +1,16 @@
+.sustainability-reports {
+	.listing-of-reports {
+    	padding-top: $height-40;
+    	.item {
+    		text-align: center;
+    		width: 75%;
+		    margin-left: auto;
+		    margin-right: auto;
+		    p {
+		    	font-size: 150%;
+		    }
+    	}
+    }
+}
+
+@import "SustainabilityReportsMacro_queries";

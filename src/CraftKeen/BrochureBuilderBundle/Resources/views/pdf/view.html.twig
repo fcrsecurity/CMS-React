@@ -1,0 +1,251 @@
+{% set GOOGLE_MAP_API_KEY = 'AIzaSyBQ7mlj4mcFNO4_6BJ8DGgsssINh5lrvok' %}
+{% set GOOGLE_MAP_URL = 'https://google.com/maps/api/staticmap?center=' ~
+	brochure.locationLatitude ~ ',' ~ brochure.locationLongitude ~ 
+	'&key=' ~ GOOGLE_MAP_API_KEY ~
+	'&scale=2&size=638x360&language=en&zoom=' ~ brochure.locationZoom ~
+	'&style=feature:all%7CelementType:all%7Chue:0xe7ecf0&style=feature:poi%7CelementType:all%7Cvisibility:off&style=feature:road%7CelementType:all%7Csaturation:-70&style=feature:transit%7CelementType:all%7Cvisibility:off&style=feature:transit.line%7CelementType:all%7Cvisibility:on&style=feature:transit.station%7CelementType:all%7Cvisibility:on&style=feature:transit.station.rail%7CelementType:all%7Cvisibility:on%7Chue:0x009cff&style=feature:transit.station.rail%7CelementType:geometry.fill%7Cvisibility:on%7Chue:0x00fff5&style=feature:transit.station.rail%7CelementType:geometry.stroke%7Cvisibility:simplified%7Chue:0x00ffcd&style=feature:transit.station.rail%7CelementType:labels.text.fill%7Cvisibility:on%7Chue:0xffffff&style=feature:transit.station.rail%7CelementType:labels.text.stroke%7Cvisibility:on%7Ccolor:0x626264&style=feature:transit.station.rail%7CelementType:labels.icon%7Cvisibility:on&style=feature:water%7CelementType:all%7Cvisibility:simplified%7Csaturation:-60' %}
+<html>
+	<head>
+		<style>{{ source('@BrochureBuilderBundle/Resources/public/PDFBuilder/dist/css/pdf-styles.css') }}</style>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div class="bb-page-wrapper">
+			<div class="bb-pdf-wrapper">
+				<section class="bb-page-section">
+					<div class="bb-row">
+						<div class="bb-container bb-caption bb-grid-row">
+							<div class="bb-grid-cell bb-cmp-logo">
+								<img alt="First Capital logo" src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/logo.png') }}">
+							</div>
+							<div class="bb-grid-cell bb-cmp-caption">
+								<h2 class="bb-h2">{{ brochure.name }}</h2>
+								<span class="bb-underheader">{{ brochure.city }}, {{ brochure.province }}</span>
+							</div>
+						</div>
+						<div class="bb-container bb-cmp-image-bg bb-grid-row bb-image-crop-first">
+							{% if brochure.heroImage and brochure.heroImage.imageCrop %}
+								<img src="{{ brochure.heroImage.imageCrop }}" style="width: 1276px;" />
+							{% else  %}
+								{# TODO image placehoder #}
+							{% endif %}
+						</div>
+					</div>
+					<div class="bb-row">
+						<div class="bb-container bb-cmp-wrapper-70">
+							<h3 class="bb-h3">
+								{% if brochure.hideTagLine %}
+									&nbsp;
+								{% else  %}
+									{{ translateBB('tagline', brochure.lang.code) }}
+								{% endif %}
+							</h2>
+							<p class="bb-text bb-cmp-description">
+								{{ brochure.description | trim | nl2br }}
+							</p>
+						</div>
+					</div>
+					<div class="bb-row">
+						<div class="bb-cell__wrapper">
+							<ul class="bb-image__list" style="padding-top: 20px;">
+								{% if brochure.tenants is defined and brochure.tenants|length > 2 %}
+									{% for tenant in brochure.tenants|slice(0, 6) %}
+										<li class="item"><img src="{{ tenant }}" alt=""> </li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</section>
+				{% for plan in brochure.plans %}
+					<section class="bb-page-section">
+						<div class="bb-row bb-cmp-image bb-container bb-img-center" style="object-fit: contain;">
+										<img src="{{ plan.image }}" style="width: 100%;" />
+						</div>
+					</section>
+				{% endfor %}
+				<section class="bb-page-section">
+					<div class="bb-image-crop-tree-wrapper">
+						<div class="bb-row bb-cell__wrapper">
+							<ul class="bb-box__list">
+								<li class="item bb-container bb-null">
+								&nbsp;
+								</li>
+								<li class="item bb-container bb-null">
+								&nbsp;
+								</li>
+								<li class="item bb-container bb-null">
+								&nbsp;
+								</li>
+								<li class="item bb-container bb-null">
+								&nbsp;
+								</li>
+							</ul>
+						</div>
+						<div class="bb-row bb-row bb-cmp-image bb-container" style="max-height: 800px; overflow: hidden;">
+							{% if brochure.demographic.image and brochure.demographic.image.imageCrop %}
+								<img src="{{ brochure.demographic.image.imageCrop }}" style="width: 1276px;" />
+							{% else  %}
+								{# TODO image placehoder #}
+							{% endif %}
+						</div>
+					</div>
+					<div class="bb-row bb-cell__wrapper">
+						<ul class="bb-box__list content">
+							<li class="item bb-container">
+								<div class="bb-grid-row"><img src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/ico1.png') }}" alt="Population icon"></div>
+								<div class="bb-grid-row">
+									<div class="bb-text bb-text-header left">
+										{{ translateBB('population', brochure.lang.code) }}<sup>*</sup>
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-1KM</strong> {{ toLocaleString(brochure.demographic.population1km) }}
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-3KM</strong> {{ toLocaleString(brochure.demographic.population3km) }}
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-5KM</strong> {{ toLocaleString(brochure.demographic.population5km) }}
+									</div>
+									<div class="bb-text center bb-description">
+										<sub>* {{ translateBB('demographics_2017', brochure.lang.code) }}</sub>
+									</div>
+								</div>
+								 </li>
+							<li class="item bb-container">
+								<div class="bb-grid-row"><img src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/ico2.png') }}" alt="Avg. Household Income icon"></div>
+								<div class="bb-grid-row">
+									<div class="bb-text bb-text-header left">
+										{{ translateBB('avg_household_income', brochure.lang.code) }}<sup>*</sup>
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-1KM</strong> {{ toLocaleString(brochure.demographic.household1km, '$') }}
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-3KM</strong> {{ toLocaleString(brochure.demographic.household1km, '$') }}
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-5KM</strong> {{ toLocaleString(brochure.demographic.household1km, '$') }}
+									</div>
+								</div>
+							</li>
+							<li class="item bb-container">
+								<div class="bb-grid-row"><img src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/ico3.png') }}" alt="Total Households icon"></div>
+								<div class="bb-grid-row">
+									<div class="bb-text bb-text-header left">
+										{{ translateBB('total_households', brochure.lang.code) }}<sup>*</sup>
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-1KM</strong> {{ toLocaleString(brochure.demographic.householdIncome1km) }}
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-3KM</strong> {{ toLocaleString(brochure.demographic.householdIncome3km) }}
+									</div>
+									<div class="bb-text left">
+										<strong style="padding-right: 10px;">0-5KM</strong> {{ toLocaleString(brochure.demographic.householdIncome5km) }}
+									</div>
+								</div>
+							</li>
+							{% if brochure.demographic.annualAverageDailyTraffic != 0 %}
+							<li class="item bb-container" style="padding-top: 60px; padding-bottom: 60px;">
+								<div class="bb-grid-row"><img src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/ico4.png') }}" alt="Car icon"></div>
+								<div class="bb-grid-row">
+									<div class="bb-text bb-text-header center">
+										{{ translateBB('traffic_count', brochure.lang.code) }}<sup>&nbsp;</sup>
+									</div>
+									<div class="bb-text bb-text-header small center">
+										{{ brochure.intersection }}
+									</div>
+									<div class="bb-text center">
+										{{ toLocaleString(brochure.demographic.annualAverageDailyTraffic) }}
+									</div>
+									<div class="bb-text center small">
+										{{ translateBB('aadt', brochure.lang.code) }}
+									</div>
+								</div>
+							</li>
+							{% else %}
+							<li class="item bb-container bb-mono">
+								<div class="bb-grid-row">
+									<img alt="First Capital logo" src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/logo.png') }}">
+								</div>
+							</li>
+							{% endif %}
+						</ul>
+					</div>
+				</section>
+				<section class="bb-page-section">
+					<div class="bb-row">
+						<div class="bb-container bb-grid-row bb-last-page">
+							<div class="bb-grid-cell">
+								{% if brochure.contacts|length <= 1 %}
+								<div class="bb-row bb-cmp-image bb-container">
+										{% if brochure.contactImage and brochure.contactImage.imageCrop  %}
+											<img src="{{ brochure.contactImage.imageCrop }}" style="width: 447px;" />
+										{% else  %}
+											{# TODO image placehoder #}
+										{% endif %}
+								</div>
+								{% endif %}
+								<div class="bb-row bb-cmp-blue-list {% if brochure.contacts|length > 1 %}bb-mono{% endif %}">
+									<ul class="bb-addr-list">
+										<li class="item bb-container bb-uppercase-text">
+											<strong class="bb-first-subheader">{{ brochure.name }}</strong>
+											<p style="margin-top: 0px;  font-weight:100; font-size: 22px;">
+												{{ brochure.address1 }}
+												{% if brochure.address2 %}
+													<br/>
+													{{ brochure.address2 }}
+												{% endif %}
+												<br/>
+												{{ brochure.city }}, {{ brochure.province }} {{ brochure.postal }}
+											</p>
+										</li>
+										<li class="item bb-container">
+											<div class="bb-cell-wrapper">
+												{% for contact in brochure.contacts|slice(0, 2) %}
+													<strong>{{ contact.firstName }} {{ contact.lastName }}</strong>
+													<em style="font-weight: 400; font-size: 22px;">{{ contact.title }}</em>
+													<p style="margin-top: 0px;  font-weight:100; font-size: 22px;">
+														D: {{ contact.phone }}
+														<br/>
+														{{ contact.email }}
+													</p>
+												{% endfor %}
+											</div>
+										</li>
+										<li class="item bb-container delimiter" style="padding-top: 10px; padding-bottom: 10px;">
+											<hr/>
+										</li>
+										<li class="item bb-container">
+											 <strong>First Capital Realty Inc.</strong>
+											<p style="margin-top: 0px; font-weight:100; font-size: 22px;">
+												{{ brochure.officeLine1 | raw }}
+												<br/>
+												{{ brochure.officeLine2 }}
+											</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="bb-grid-cell">
+								<div class="bb-container bb-row bb-cmp-image">
+									{% if brochure.contactLifestyleImage and brochure.contactLifestyleImage.imageCrop %}
+										<img src="{{ brochure.contactLifestyleImage.imageCrop }}" style="width: 794px;" />
+									{% else  %}
+										{# TODO image placehoder #}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bb-row bb-row bb-cmp-image bb-container bb-bottom-map">
+						<div class="bb-map-pin"><img alt="Map Pin" src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/pin.png') }}"></div>
+						<img src="{{ GOOGLE_MAP_URL }}" style="width: 1278px;" />
+						<img class="bb-map-north" alt="North Symbol" src="{{ base64img('bundles/brochurebuilder/PDFBuilder/assets/images/NorthSymbol.png') }}" />
+					</div>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>

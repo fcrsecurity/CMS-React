@@ -1,0 +1,54 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    cms.admin.inbox_voter:
+        class: 'CraftKeen\CMS\AdminBundle\Security\InboxVoter'
+        arguments: ['@security.access.decision_manager']
+        public: false
+        tags:
+            - { name: security.voter }
+
+    craft_keen_cms.page.page_voter:
+        class:  CraftKeen\CMS\PageBundle\Security\PageVoter
+        arguments: ['@security.access.decision_manager']
+        public: false
+        tags:
+            - { name: security.voter }
+
+    craft_keen_cms.page.pagewidget_voter:
+        class:  CraftKeen\CMS\PageBundle\Security\PageWidgetVoter
+        arguments: ['@security.access.decision_manager']
+        public: false
+        tags:
+            - { name: security.voter }
+
+    craft_keen_cms.site_manager:
+        class: CraftKeen\CMS\AdminBundle\Site\SiteManager
+
+    craft_keen_cms.current_site_listener:
+        class: CraftKeen\CMS\AdminBundle\EventListener\CurrentSiteListener
+        arguments:
+            - "@craft_keen_cms.site_manager"
+            - "@doctrine.orm.entity_manager"
+            - "%base_host%"
+        tags:
+            -
+                name: kernel.event_listener
+                method: onKernelRequest
+                event: kernel.request
+
+    gedmo.listener.softdeleteable:
+        class:        Gedmo\SoftDeleteable\SoftDeleteableListener
+
+    gedmo.listener.sluggable:
+            class: CraftKeen\FCRBundle\EventListener\FCRSluggableListener
+            tags:
+                - { name: doctrine.event_subscriber }
+            calls:
+                - [ setAnnotationReader, [ "@annotation_reader" ] ]
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="{% block meta_description %}{% endblock %}">
+		<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+		<meta name="author" content="First Capital Realty">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block meta_title %}Welcome{% endblock %}</title>
+		{% block stylesheets %}
+			{% stylesheets
+			'bower_components/bootstrap/dist/css/bootstrap.min.css'
+			'bower_components/fontawesome/css/font-awesome.min.css'
+			'bower_components/fancybox/source/jquery.fancybox.css'
+			'bundles/craftkeencmstheme/FCR/assets/fonts/copse/webfontkit/stylesheet.css'
+			'bundles/craftkeencmstheme/FCR/assets/fonts/yantramanav/webfontkit/stylesheet.css'
+			'bundles/craftkeencmstheme/FCR/assets/fonts/scheherazade/webfontkit/stylesheet.css'
+			filter='cssrewrite' %}
+			<link rel="stylesheet" href="{{ asset_url }}" />
+			{% endstylesheets %}
+		{% endblock %}
+	</head>    
+        <body>
+
+		<div class="container-wrapper">
+			{% block hero %}{% endblock %}
+
+			{% block body %}{% endblock %}
+			
+			{% block footer_js %}
+				{% javascripts
+					'bower_components/jquery/dist/jquery.min.js'
+					'bower_components/bootstrap/dist/js/bootstrap.min.js'
+				%}
+				<script src="{{ asset_url }}"></script>
+				{% endjavascripts %}
+			{% endblock %}
+		</div>		
+    </body>
+</html>

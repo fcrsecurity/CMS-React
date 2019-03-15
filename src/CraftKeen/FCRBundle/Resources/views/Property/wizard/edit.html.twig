@@ -1,0 +1,504 @@
+{% extends 'CraftKeenFCRBundle:Property:propertyLayout.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+
+{% block meta_title %}{{ 'Property Edit Wizard'|trans }}{% endblock %}
+
+{% block hero %}
+    {% set heroImage = ckcms_library_url~'/properties/hero/default_header.png' %}
+    {% if null != property.details and property.details.heroImage %}
+        {% set heroImage = property.details.heroImage %}
+    {% endif %}
+    <section class="hero-image container-fluid" style="
+            background: {{ hero_overlay }} ,url( '{{ heroImage }}' ) no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            ">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+                <div class="container-content">
+                    <h1 class="text-shadow"></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+    'bower_components/selectize/dist/css/selectize.bootstrap3.css'
+    filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    <style>
+        label {
+            font-size: 0.8em;
+        }
+    </style>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}" type="text/javascript"></script>
+    {% javascripts
+    '@CraftKeenCMSThemeBundle/Resources/public/FCR/dist/js/googleMap.js'
+    'bower_components/symfony-collection/jquery.collection.js'
+    'bower_components/selectize/dist/js/standalone/selectize.min.js'
+    'bundles/craftkeenfcr/Property/dist/js/property-wizard.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+
+    <script>
+        $(function() {
+            $('#craftkeen_fcrbundle_property_edit_tenants').selectize({
+                plugins: ['remove_button'],
+                create: false,
+                allowEmptyOption:false
+            });
+            $('#craftkeen_fcrbundle_property_edit_managers').selectize({
+                plugins: ['remove_button'],
+                maxItems: 3,
+                allowEmptyOption:false,
+                create: false
+            });
+
+            // Enable JQ validation
+            $("form[name=craftkeen_fcrbundle_property_edit]").validate({
+                rules: {
+                    "craftkeen_fcrbundle_property_edit[parentName]": {
+                        required: true,
+                    },
+                    "craftkeen_fcrbundle_property_edit[childName]": {
+                        required: true,
+                    },
+                    "craftkeen_fcrbundle_property_edit[details][geoAddress1]": {
+                        required: true,
+                    },
+                    "craftkeen_fcrbundle_property_edit[details][geoCity]": {
+                        required: true,
+                    },
+                    "craftkeen_fcrbundle_property_edit[details][geoPostal]": {
+                        required: true,
+                    },
+                    "craftkeen_fcrbundle_property_edit[details][sqft]": {
+                        required: true,
+                        number:true
+                    },
+//                    "craftkeen_fcrbundle_property_edit[demographic][annualAverageDailyTraffic]": {
+//                        required: true,
+//                        number:true
+//                    },
+
+                }
+            });
+        });
+    </script>
+    {% endjavascripts %}
+    <script type="text/javascript">
+        // render Google Map by values from database
+        {% if null != property.details and property.details.geoLat and property.details.geoLng %}
+        renderPreviewMap({{ property.details.geoLat }}, {{ property.details.geoLng }}, 10);
+        {% endif %}
+    </script>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <section class="container-fluid">
+        <div class="row grid">
+            <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+                <div class="">
+                    <section class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 buffer-7-top buffer-7-bottom">
+                                <div class="row">
+                                    <div class="col-lg-10 col-lg-offset-1">
+                                        {% if draft is not null %}
+                                            <div class="alert alert-warning">
+                                                {{ 'Attention: This property has a draf and locked for edit.'|trans }}
+                                                <a href="{{ path('craftkeen_fcr_property_edit_wizard', {'id':draft.id}) }}">Edit Draft?</a>
+                                            </div>
+                                        {% endif %}
+                                        {% if property.isHidden %}
+                                            <div class="alert alert-info">
+                                                {{ 'Attention: This property is hidden. To change it, please scroll to the bottom of the form.'|trans }}
+                                            </div>
+                                        {% endif %}
+                                        {#{% if property.status == 'draft' %}#}
+                                            {#<div class="alert alert-warning">#}
+                                                {#{{ "ATTENTION: This property is a draft and won't be published. Please send for Approval first."|trans }}#}
+                                            {#</div>#}
+                                        {#{% endif %}#}
+                                        {% if property.status == 'pending_approval' %}
+                                            <div class="alert alert-danger">
+                                                {{ 'Attention: This property is locked. Property awaiting apporval'|trans }}
+                                            </div>
+                                        {% endif %}
+
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                {{ 'Language:'|trans }} <b>{{ property.lang|upper }}</b>
+                                            {% if property.langParent %}
+                                                <a href="{{ path('craftkeen_fcr_property_edit_wizard', {'id':property.langParent.id}) }}">{{ 'Edit English'|trans }}</a>
+                                            {% else %}
+                                                (Main Language)
+                                            {% endif %}
+
+                                                {% if property.status == 'live' %}
+                                                    {% set languages = available_languages() %}
+                                                    {#{{ 'Available translations:'|trans }}<br/>#}
+                                                    {% for language in languages %}
+                                                        {% if language_current() != language.name %}
+                                                            <a class="btn btn-xs btn-primary pull-right" href="{{ path('craftkeen_fcr_property_translate_wizard', {
+                                                                'id':property.id,
+                                                                'language':language.id
+                                                            }) }}">
+                                                                {{ 'Translate to' }} {{ language.name|upper }}
+                                                            </a>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </div>
+                                        </div>
+
+
+                                        {% form_theme form
+                                        'form_themes/jquery.collection.html.twig'
+                                        'form_themes/propertyGalleryType.html.twig' %}
+                                        {{ form_start(form) }}
+                                        {{ form_widget(form.lang, {'attr':{'class':'sr-only'} }) }}
+                                        {{ form_widget(form.langParent, {'attr':{'class':'sr-only'} }) }}
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-6 main-column">
+                                                <fieldset>
+                                                    <legend>{{ 'Main'|trans }}</legend>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.parentName) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.childName) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.heroImage) }}
+                                                            {% if form.details.heroImage.vars.value|length > 0 %}<img
+                                                                src="{{ form.details.heroImage.vars.value }}"
+                                                                class="heroImage-preview img-responsive img-thumbnail">{% endif %}
+                                                            {{ form_row(form.details.heroImageAlt) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.thumbnail) }}
+                                                            {% if form.thumbnail.vars.value|length > 0 %}<img
+                                                                src="{{ form.thumbnail.vars.value }}"
+                                                                class="thumbnail-preview img-responsive img-thumbnail">{% endif %}
+                                                            {{ form_row(form.thumbnailAlt) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.code) }}
+                                                            {{ form_row(form.sortOrder) }}
+                                                            {{ form_row(form.isHidden) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-6 geo-column">
+                                                <fieldset>
+                                                    <legend>{{ 'Address & Map'|trans }}:</legend>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoAddress1) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoAddress2) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoCountry) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoCity) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoProvince) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoProvinceRegion) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoPostal) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoIntersetion) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoLat) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoLng) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="btn btn-xs btn-primary"
+                                                                 onclick="getLatLngByAddress()">
+                                                                {{ 'Get Lat Lng from Address'|trans }}
+                                                            </div>
+                                                            <div id="google_map" style="width:100%;"></div>
+                                                        </div>
+                                                    </div>
+
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <fieldset>
+                                                    <legend>{{ 'Details'|trans }}:</legend>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    {{ form_row(form.isGreen) }}
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    {{ form_row(form.isBoma) }}
+                                                                </div>
+                                                            </div>
+                                                            {{ form_row(form.details.sqft) }}
+                                                            <fieldset>
+                                                                <legend>{{ 'Vacancies (enter numbers only)'|trans }}:</legend>
+                                                                {{ form_row(form.vacancyList) }}
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.marketingPdf) }}
+                                                            {{ form_row(form.details.sitePlanPdf) }}
+                                                            <p>{{ 'Social Media'|trans }}</p>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    {{ form_row(form.details.socialUrl) }}
+                                                                    {{ form_row(form.details.socialFacebook) }}
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    {{ form_row(form.details.socialTwitter) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            {{ form_row(form.details.description) }}
+                                                            {{ form_row(form.details.leedDescription) }}
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <fieldset>
+                                                    <legend>{{ 'Demographic (enter number only)'|trans }}:</legend>
+                                                    {{ form_row(form.demographic.annualAverageDailyTraffic) }}
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <p>{{ 'Population'|trans }}</p>
+                                                            {{ form_row(form.demographic.population1km) }}
+                                                            {{ form_row(form.demographic.population3km) }}
+                                                            {{ form_row(form.demographic.population5km) }}
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <p>{{ 'Household'|trans }}</p>
+                                                            {{ form_row(form.demographic.household1km) }}
+                                                            {{ form_row(form.demographic.household3km) }}
+                                                            {{ form_row(form.demographic.household5km) }}
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <p>{{ 'Income'|trans }}</p>
+                                                            {{ form_row(form.demographic.householdIncome1km) }}
+                                                            {{ form_row(form.demographic.householdIncome3km) }}
+                                                            {{ form_row(form.demographic.householdIncome5km) }}
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <fieldset>
+                                                    <legend>{{ 'Media Gallery (Supports video. Image size: 2446x1100 pixels. )'|trans }}:</legend>
+                                                    {{ form_row(form.details.videoUrl) }}
+                                                    {{ form_widget(form.gallery) }}
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <fieldset>
+                                                    <legend>{{ 'Tenants Logos (minimum 3 must be selected)'|trans }}:</legend>
+                                                    {{ form_row(form.tenants) }}
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <fieldset>
+                                                    <legend>{{ 'Leasing & PM Contacts (maximum 3 can be selected)'|trans }}:
+                                                    </legend>
+                                                    {{ form_row(form.managers) }}
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <br />
+                                                <fieldset>
+                                                    <legend>{{ 'Website Search Filters & SEO'|trans }}:</legend>
+                                                    {{ form_row(form.filters) }}
+                                                    {{ form_row(form.details.seoTitle) }}
+                                                    {{ form_row(form.details.seoDescription) }}
+                                                    {{ form_row(form.details.seoKeywords) }}
+                                                    {{ form_row(form.details.seoIsIndex) }}
+                                                </fieldset>
+                                                <br />
+                                            </div>
+                                        </div>
+                                        {{ form_widget(form) }}
+
+                                        <hr/>
+
+                                        {% if is_granted('canedit', property) and draft is null %}
+                                            <input type="submit" class="btn btn-primary" value="{{ 'Save'|trans }}"/>
+                                        {% endif %}
+                                        {% if workflow_can(property, 'to_review') %}
+                                            <button name="transition" value="to_review" type="submit"
+                                                    class="btn btn-danger">{{ 'Send for Approval'|trans }}</button>
+                                        {% endif %}
+
+                                        {% if workflow_can(property, 'reject') and is_granted('canapprove', property) %}
+                                            <button name="transition" value="reject" type="submit"
+                                                    class="btn btn-danger btn-reject">
+                                                {{ 'Reject'|trans }}
+                                            </button>
+                                            <textarea name="rejectionComment" id="rejectionComment" cols="30" rows="10"
+                                                  class="form-control rejectionComment"
+                                                  placeholder="Rejection Comment" required></textarea>
+                                        {% endif %}
+
+                                        {% if workflow_can(property, 'publish') and is_granted('canapprove', property) %}
+                                            <button name="transition" value="publish" type="submit"
+                                                    class="btn btn-success">
+                                                {{ 'Publish'|trans }}
+                                            </button>
+                                        {% endif %}
+                                        {{ form_end(form) }}
+
+                                        {% if is_granted('canapprove', property) %}
+                                            <a class="btn btn-danger pull-right" href="{{ path('craftkeen_fcr_property_delete', {'id':property.id}) }}">{{ 'Delete'|trans }}</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        {% if propertyLogs is not empty %}
+                                            <h4>{{ 'Gereneral Log'|trans }}</h4>
+                                            <ul class="list-group">
+                                                {% for log in propertyLogs %}
+                                                    <li class="list-group-item">
+                                                        Change By:<b>{{ log.username }}</b> - At:
+                                                        <b>{{ log.loggedAt|date(default_formats.datetime) }}</b> - On Action:<b>{{ log.action }}</b>
+                                                        <button type="button" class="btn btn-info btn-xs" data-toggle="collapse"
+                                                                data-target="#version-{{ log.version }}-gen-changes">{{ 'View Changes'|trans }}</button>
+
+                                                        <div id="version-{{ log.version }}-gen-changes" class="collapse">
+                                                            <table class="table table-striped table-condensed table-bordered table-hover">
+                                                                <tbody>
+                                                                {% for key, value in log.data %}
+                                                                    {{ CRUD.renderViewTableRow(key, value, [], ['created', 'updated']) }}
+                                                                {% endfor %}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+
+                                        {% if propertyDetailsLogs is not empty %}
+                                            <h4>{{ 'Details Log'|trans }}</h4>
+                                            <ul class="list-group">
+                                                {% for log in propertyDetailsLogs %}
+                                                    <li class="list-group-item">
+                                                        Change By:<b>{{ log.username }}</b> - At:
+                                                        <b>{{ log.loggedAt|date(default_formats.datetime) }}</b> - On Action:<b>{{ log.action }}</b>
+                                                        <button type="button" class="btn btn-info btn-xs" data-toggle="collapse"
+                                                                data-target="#version-{{ log.version }}-det-changes">{{ 'View Changes'|trans }}</button>
+
+                                                        <div id="version-{{ log.version }}-det-changes" class="collapse">
+                                                            <table class="table table-striped table-condensed table-bordered table-hover">
+                                                                <tbody>
+                                                                {% for key, value in log.data %}
+                                                                    {{ CRUD.renderViewTableRow(key, value, [], ['created', 'updated']) }}
+                                                                {% endfor %}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+
+                                        {% if propertyDemographicsLogs is not empty %}
+                                            <h4>{{ 'Demographics Log'|trans }}</h4>
+                                            <ul class="list-group">
+                                                {% for log in propertyDemographicsLogs %}
+                                                    <li class="list-group-item">
+                                                        Change By:<b>{{ log.username }}</b> - At:
+                                                        <b>{{ log.loggedAt|date(default_formats.datetime) }}</b> - On Action:<b>{{ log.action }}</b>
+                                                        <button type="button" class="btn btn-info btn-xs" data-toggle="collapse"
+                                                                data-target="#version-{{ log.version }}-dem-changes">{{ 'View Changes'|trans }}</button>
+
+                                                        <div id="version-{{ log.version }}-dem-changes" class="collapse">
+                                                            <table class="table table-striped table-condensed table-bordered table-hover">
+                                                                <tbody>
+                                                                {% for key, value in log.data %}
+                                                                    {{ CRUD.renderViewTableRow(key, value, [], ['created', 'updated']) }}
+                                                                {% endfor %}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,107 @@
+.link-icon-list {
+  .thumbnails {
+	a {
+	  color: $color-grey;
+	  &:hover {
+		svg {
+		  g {
+			circle {
+			  fill: #0E62AB !important;
+			}
+			polygon, polyline, line, path {
+			  stroke: #fff !important;
+			}
+		  }
+		}
+	  }
+	}
+	img {
+	  width: 150px;
+	}
+	p, div[contenteditable="false"] {
+	  color: $color-blue;
+	  margin-top: 10px;
+	}
+	div[contenteditable="false"] {
+	  &:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	  }
+	}
+  }
+  .slick-arrow {
+	background: none;
+	background-repeat: no-repeat;
+	/*top: 27%;*/
+	top: 50%;
+	width: 11px;
+	height: 22px;
+
+	&::before {
+	  display: none;
+	}
+  }
+  .slick-next,
+  .slick-next:hover,
+  .slick-next:focus {
+	right: 2.5%;
+	background-image: url('/bundles/craftkeencmstheme/FCR/assets/images/right_arrow_slick_docs.png');
+  }
+  .slick-prev,
+  .slick-prev:hover,
+  .slick-prev:focus {
+	left: 2.5%;
+	background-image: url('/bundles/craftkeencmstheme/FCR/assets/images/left_arrow_slick_docs.png');
+  }
+}
+
+.link-icon-list-blue-link {
+
+}
+.svg-124 {
+  svg {
+	max-width: 124px;
+	margin-bottom: 20px;
+  }
+}
+
+.ir-link {
+	.link-icon-list {
+		height: 260px;
+		overflow: hidden;
+		padding-top: 70px;
+		.position-ir {
+		  	svg {
+		  		width: 89px;
+		  		height: 89px;
+		  	}
+		}
+		a {
+			.about-phone-icon {
+			    .cls-1, .cls-2 {
+			        fill: none;
+			        stroke: #00a399 !important;
+			        stroke-miterlimit: 10;
+			    }
+			    .cls-2 {
+			        stroke-width: 3px;
+			    }
+			}
+			&:hover {
+				.about-phone-icon {
+	 				cursor: pointer;
+			        .cls-1 {
+			            fill: #00a399 !important;
+			        }
+			        .cls-2 {
+			            stroke: #ffffff !important;
+			        }
+				}
+		    }
+		}
+		.position-ir {
+			width: 100%;
+		}
+	}	
+}
+@import "LinkIconList_queries";

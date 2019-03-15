@@ -1,0 +1,12 @@
+{% macro w(widget) %}
+	{{ react_component(
+	widget.dataType, { 'props':
+		{
+			"isLoggedIn": true,
+			"data": {"title": widget.data.title,
+					"subtitle": widget.data.text
+					}
+		}
+	}
+	)}}
+{% endmacro %}

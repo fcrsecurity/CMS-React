@@ -1,0 +1,28 @@
+/**Theme**/
+@import 'theme/theme';
+
+/**Basic styles**/
+@import 'base';
+
+/**Layout**/
+@import 'layout/layout';
+
+/**States and Animations**/
+@import 'state&animation';
+
+/**Widgets**/
+@import 'widgets/widgets';
+
+/**macros**/
+@import 'macros/stockprice';
+@import 'macros/quotesCharts-filter';
+@import 'macros/barChart';
+
+/**additional temp file for other style------------**/
+@import 'shame';
+
+/**Custom Page**/
+@import 'pages/pages';
+
+
+

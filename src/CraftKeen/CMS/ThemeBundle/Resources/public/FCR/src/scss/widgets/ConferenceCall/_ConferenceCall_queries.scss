@@ -1,0 +1,16 @@
+/*480px*/
+
+@media only screen and (min-width: $mobile-devices-width) {
+    .conference-call {
+        .call-btn {
+            a {
+                width: 233px;
+                height: 233px;
+                svg {
+                    width: 180px;
+                    height: 180px;
+                }
+            }
+        }
+    }
+}

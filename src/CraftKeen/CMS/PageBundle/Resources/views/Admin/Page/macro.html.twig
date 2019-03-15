@@ -1,0 +1,23 @@
+{% macro renderTranslationsLinks(languages, language_parent, translations) %}
+    <ul class="list-group">
+        {% for language in languages %}
+            <li class="list-group-item">
+                {{ language.name }}:<br />
+                {% set isTranslated = false %}
+
+                {% for translation in translations %}
+                    {% if translation.lang.id == language.id %}
+                        {% set isTranslated = true %}
+                        <a href="{{ path('craftkeen_cms_page_admin_page_edit', { 'id':translation.id}) }}" >
+                            {{ translation.name }} ({{ 'Edit'|trans([], 'messages', app.request.locale) }})
+                        </a>
+                    {% endif %}
+                {% endfor %}
+
+                {#{% if not isTranslated %}
+                    <a href="{{ path('admin_page_new_with_lang_parent', { 'language':language.id, 'language_parent':language_parent.id}) }}" >{{ 'Translate to'|trans }} {{ language.name }}</a>
+                {% endif %}#}
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

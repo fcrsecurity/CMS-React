@@ -1,0 +1,87 @@
+CraftKeen\CMS\PageBundle\Entity\Route:
+# Main Page
+    Route0:
+        slug: /
+        page: '@Page0->id'
+# Investors
+    Route1:
+        slug: ir
+        page: '@Page1->id'
+    Route2:
+        slug: financial-reports
+        page: '@Page2->id'
+    Route3:
+        slug: conference-calls
+        page: '@Page3->id'
+    Route4:
+        slug: shareholder-meeting
+        page: '@Page4->id'
+    Route5:
+        slug: governance
+        page: '@Page5->id'
+    Route6:
+        slug: quotes-charts
+        page: '@Page6->id'
+    Route7:
+        slug: dividends
+        page: '@Page7->id'
+    Route8:
+        slug: debentures
+        page: '@Page8->id'
+    Route9:
+        slug: analyst-coverage
+        page: '@Page9->id'
+    Route10:
+        slug: faq
+        page: '@Page10->id'
+# Community
+    Route11:
+        slug: community
+        page: '@Page11->id'
+    Route12:
+        slug: sustainability
+        page: '@Page12->id'
+    Route12-2:
+        slug: retail-life-and-art
+        page: '@Page11-blog->id'
+# About
+    Route13:
+        slug: about
+        page: '@Page13->id'
+    Route14:
+        slug: executive-leadership
+        page: '@Page14->id'
+    Route15:
+        slug: board-of-directors
+        page: '@Page15->id'
+    Route16:
+        slug: contact
+        page: '@Page16->id'
+# Careers
+    Route17:
+        slug: careers
+        page: '@Page17->id'
+# Careers
+    Route18:
+        slug: portfolio-leasing
+        page: '@Page19->id'
+# Terms
+    Route19:
+        slug: terms
+        page: '@Page20->id'
+# Suppliers
+    Route20:
+        slug: suppliers
+        page: '@Page21->id'
+# Privacy
+    Route21:
+        slug: privacy
+        page: '@Page22->id'
+# Accessible
+    Route22:
+        slug: accessibility
+        page: '@Page23->id'
+# Press Releases
+    Route23:
+        slug: investors/press-release
+        page: '@Page24->id'

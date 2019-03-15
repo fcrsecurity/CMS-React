@@ -1,0 +1,260 @@
+.grid {
+  .properties {
+	.property-item {
+	  background-color: $color-grey-light3;
+	  color: $color-grey-text;
+	  width: 100%;
+	  img {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	  }
+	  &:hover {
+		color: $color-white;
+	  }
+	}
+	.property-item:hover {
+	  background-color: $color-blue;
+	  color: $color-white;
+	  cursor: pointer;
+	  a {
+		.description-wrapper {
+		  color: $color-white;
+		}
+		&:hover {
+		  color: $color-white;
+		  text-decoration: none;
+		}
+	  }
+	}
+	.property-item:hover .zoom:after {
+	  // content:"\f00e";
+	  // font-family: 'FontAwesome';
+	  // display:block;
+	  // width:33px;
+	  // height:33px;
+	  // position:absolute;
+	  // top:23%;
+	  // left:40%;
+	  // font-size: 2em;
+	  // color: $color-grey-light3;
+	}
+
+	a {
+	  .description-wrapper {
+
+		padding: 15px;
+		/*min-height: 60px;*/
+		height: 140px;
+		margin-bottom: 20px;
+
+		color: $color-grey-text;
+		&:hover {
+		  color: $color-white;
+		  text-decoration: none;
+		}
+
+		span {
+		  font-size: 16px;
+		  line-height: 0.8em;
+		  &.more {
+			display: none;
+		  }
+		}
+	  }
+	}
+  }
+
+  .allow-filtering {
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+	padding-bottom: 10px !important;
+	padding-top: 10px !important;
+  }
+  .view-switcher-wrapper {
+	margin-right: 1%;
+	display: none;
+  }
+  .view-switcher-wrapper li:hover {
+	cursor: pointer;
+  }
+  .filters{
+	.active-item {
+	  display: none;
+	}
+	.icon-filter {
+	  display: none;
+	}
+  }
+}
+.ipad {
+  .grid {
+	.properties {
+	  a {
+		.description-wrapper {
+		  line-height: 1.1;
+		  overflow: hidden;
+		}
+	  }
+	}
+  }
+}
+/*Responsive Styles */
+/* Small devices (tablets 768px  and up) */
+@media screen and (min-width: $small-devices-width ) {
+  .grid {
+	.view-switcher-wrapper {
+	  display: block;
+	}
+  }
+}
+/* Medium devices (desktops 960px and up) */
+@media screen and (min-width: $medium-devices-width ) {}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $large-devices-width) {}
+/* Large devices (very large desktops, 1600px and up) */
+@media screen and (min-width: $verylarge-devices-width) {}
+@media screen and (max-width: 767px ) {
+  .grid {
+	.properties {
+	  max-width: 290px;
+	  margin: 0 auto;
+	}
+  }
+}
+@media screen and (max-width: 480px ) {
+  .grid {
+	.properies-gridview {
+	  &.fixed-block{
+		.filters {
+		  position: fixed;
+		  top: 60px;
+		  left: 0;
+		  width: 100%;
+		  z-index: 1000;
+		}
+	  }
+	}
+	.filters {
+	  -webkit-transition: all 0.5s ease;
+	  transition: all 0.5s ease;
+	  .wrapper-mobile-filter {
+		position: relative;
+		width: auto;
+		min-width: 150px;
+		margin: 23px 0 0 26px;
+		float: left;
+		.active-item {
+		  display: block;
+		  min-width: 100px;
+		  height: 24px;
+		  background-color: $color-blue;
+		  color: #ffffff;
+		  position: relative;
+		  padding: 0 5px;
+		  line-height: 27px;
+		  padding-right: 35px;
+		  &::after {
+			content: "\f107";
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			position: absolute;
+			top: 2px;
+			font-size: 21px;
+			right: 9px;
+		  }
+		}
+		ul {
+		  z-index: 200;
+		  width: 100%;
+		  position: absolute;
+		  top:24px;
+		  left: 0;
+		  display: none;
+		  background-color: $color-grey-light5;
+		  li {
+			display: block;
+			text-align: left;
+			a {
+			  display: block;
+			}
+		  }
+		}
+		&.open-state {
+		  .active-item {
+			&::after {
+			  content: "\f106";
+			}
+		  }
+		  ul {
+			display: block;
+		  }
+		}
+	  }
+	  height: 70px;
+	  background-color: $color-grey-light6;
+	  .icon-filter {
+		display: block;
+		float: left;
+		color: $color-teal;
+		margin-top: 17px;
+		font-size: 25px;
+		margin-left: 15px;
+	  }
+	}
+  }
+}
+@media screen and (max-width: 400px ) {
+  .grid {
+	padding: 0;
+	.properties {
+	  max-width: 100% !important;
+	}
+	.row {
+	  margin: 0;
+	  .allow-filtering {
+		width: 100%;
+		padding-bottom: 0 !important;
+		.property-item {
+		  .zoom {
+			display: block;
+			position: relative;
+			&::after {
+			  display: none;
+			}
+		  }
+		  .description-wrapper {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: rgba(8, 97, 170, 0.3);
+			width: 100%;
+			color: #ffffff;
+			padding: 15px;
+			margin-bottom: 0;
+			.more {
+			  display: block;
+			}
+			a {
+			  display: block;
+			  left: 0;
+			  top: 0;
+			  position: absolute;
+			  z-index: 100;
+			  width: 100%;
+			  height: 100%;
+			}
+		  }
+		}
+	  }
+	}
+	.leasing-wrapper {
+	  width: 100%;
+	  margin: 0;
+	}
+  }
+}

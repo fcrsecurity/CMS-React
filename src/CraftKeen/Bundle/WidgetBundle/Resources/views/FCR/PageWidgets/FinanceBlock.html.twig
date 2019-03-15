@@ -1,0 +1,19 @@
+{% set fields = ['time', 'index', 'val_usd', 'val_percent',] %}
+
+{% set widget = widget|merge({'data' : checkWidgetFields(widget.data, fields) }) %}
+
+{{
+    react_component(
+        widget.dataType, {
+            'props':{
+                "isLoggedIn": logged,
+                "id": widget.id,
+                "time": widget.data.time,
+                "index": widget.data.index,
+                "val_usd": widget.data.val_usd,
+                "val_percent": widget.data.val_percent,
+                "config": widget.config
+            }
+        }
+    )
+}}

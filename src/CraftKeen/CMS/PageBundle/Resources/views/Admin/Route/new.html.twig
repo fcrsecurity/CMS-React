@@ -1,0 +1,24 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}Add Route{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('craftkeen_cms_page_admin_route_index') }}">Routes</a></li>
+    <li class="active">Add Route</li>
+{% endblock %}
+
+{% block admin_block_body %}
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success" value="Create" />
+    {{ form_end(form) }}
+
+    <hr />
+
+    <ul class="list-inline list-unstyled">
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_route_index') }}" class="btn btn-default">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

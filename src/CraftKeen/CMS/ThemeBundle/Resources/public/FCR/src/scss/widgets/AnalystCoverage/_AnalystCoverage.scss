@@ -1,0 +1,70 @@
+.accordionElement {
+    border-radius: 0;
+
+    .panel-heading {
+    	cursor: pointer;
+    	padding: 20px;
+    	border-radius: 0;
+    	/*custom*/
+    	background-color: $color-blue-edge;
+    	color: $color-blue;
+    	/*custom end*/
+    	.panel-title {
+	        font-family: $font-family-default;
+			font-size: 23px;
+            text-align: left;
+			&::after {
+                font-family: 'FontAwesome';
+                content: "\f107";
+                float: right;
+                color: $color-blue;
+                font-size: 20px;
+            }
+	    }
+        &.active {
+        	/*custom*/
+        	background-color: $color-blue-edge;
+        	color: $color-blue;
+        	/*custom end*/
+            .panel-title {
+                &::after {
+                	color: $color-blue;
+                    content: "\f106";
+                }
+            }
+            &.collapsed {
+            	.panel-title {
+	                &::after {
+	                	color:$color-blue;
+	                    content: "\f107";
+	                }
+	            }
+            }
+        }
+    }
+    .panel-group {
+    	.panel {
+	        margin-bottom: 0;
+	        border: 0;
+	        border-radius: 0;
+	        box-shadow: 0 0 0 rgba(255,255,255,0);
+	    }
+	    .panel+.panel {
+	        margin-top: 2px;
+	    }
+	    .panel-body {
+	        padding: 20px;
+	        border-bottom: 1px solid $color-blue;
+	        border-top-color: transparent;
+	        p {
+				font-size: 1em;
+				font-weight: 600;
+				small {
+					font-size: 1em;
+					font-weight: 100;
+				}
+			}
+	    }
+    }  
+}
+@import "AnalystCoverage_queries";

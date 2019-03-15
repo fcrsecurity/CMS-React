@@ -1,0 +1,111 @@
+.feature-slider {
+    position: relative;
+    overflow: hidden;
+    .slick-slider {
+        .slick-slide {
+            outline: none;
+            height: inherit;
+        }
+        &.slick-dotted {
+            margin-bottom: 0px;
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        top: 50%;
+        background-repeat: no-repeat;
+        height: 85px;
+        width: 85px;
+        z-index: 100;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+        background-size: 85px 85px;
+        z-index: 2000;
+        &:after,
+        &:before {
+            content: "";
+        }
+    }
+    .slick-next,
+    .slick-next:hover,
+    .slick-next:focus {
+        right: 2.5%;
+        background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/svg-arrow-right-safari.svg");
+    }
+    .slick-prev,
+    .slick-prev:hover,
+    .slick-prev:focus {
+        left: 2.5%;
+        background-image: url("/bundles/craftkeencmstheme/FCR/assets/images/svg-arrow-left-safari.svg");
+    }
+    .slick-dots {
+        bottom: 31px;
+        li {
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            button {
+                width: 5px;
+                max-width: 5px;
+                height: 5px;
+                max-height: 5px;
+                border: 1px solid $color-white;
+                border-radius: 5px;
+                padding: 2px;
+                &:before {
+                    color: transparent;
+                }
+            }
+            &.slick-active {
+                background-color: $color-white;
+                button {
+                    &:before {
+                        color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    .image-container {
+        background-position: center;
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        height: 70vh;
+        min-height: 300px;
+        max-height: 300px;
+    }
+    .item {
+        position: relative;
+        .title-carousel {
+            position: absolute;
+            min-width: 360px;
+            font-size: 40px;
+            color: $color-white;
+            padding: 0px 35px 15px 35px;
+            text-align: center;
+            top: 47%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+        }
+        .descr {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+            color: white;
+            padding: 10px 15px;
+            padding-right: 30px;
+            position: absolute;
+            bottom: 12%;
+            right: 0;
+            p {
+                margin-bottom: 0px;
+            }
+            .name {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@import "featureslider_queries";

@@ -1,0 +1,142 @@
+CraftKeen\FCRBundle\Entity\FAQ:
+    CareersFAQ1:
+        category: 1
+        question: How do I apply for a job with First Capital?
+        answer: You can find our open roles under Join Our Team. To apply for any role you will be asked to upload your resume and complete some basic personal information before submitting your candidacy for the role.
+        sortOrder: 0
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersFAQ2:
+        category: 1
+        question: How do I know my application has been submitted?
+        answer: Upon submitting your application you will receive a notification email acknowledging your application has been received for the position.
+        sortOrder: 1
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersFAQ3:
+        category: 1
+        question: Can I sign up for alerts regarding new job openings?
+        answer: Yes, you can add your email and select subscribe which will notify you of new job openings with First Capital Realty.
+        sortOrder: 2
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersFAQ4:
+        category: 1
+        question: Does a separate application need to be submitted for other positions?
+        answer: In order for us to match your experience with the right role it is encouraged that applicants apply separately to every role they believe they are a fit for.
+        sortOrder: 3
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersFAQ5:
+        category: 1
+        question: I am having difficulties attaching my resume. Help.
+        answer: 'If you are having issues attaching your resume or other files to your application, it may be due to the following: <ul><li>Document Format: Save files as a .doc/.docx, PDF or RTF format to ensure they attach correctly.</li><li>Special Characters: Remove images and special characters (&, $, @) from you file.</li><li>Document Name: We recommend saving your files as one word titles with no special characters.</li></ul> '
+        sortOrder: 4
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersFAQ6:
+        category: 1
+        question: Will I be contacted if I am not selected to participate in the interview process for the position I have applied to?
+        answer: You will receive acknowledgement of your online application status by email. Please ensure to check your email settings, filters and junk folder to ensure you receive the acknowledgement.
+        sortOrder: 5
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    InvestorFAQ7:
+        category: 2
+        question: Does FCR pay dividends?
+        answer: FCR has a history of paying&nbsp;cash dividends.To view FCR&rsquo;s dividend history, please <a href="/ir/dividends" target="_blank">click here</a>.
+        sortOrder: 1
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ8:
+        category: 2
+        question: FCR paie-t-il des dividendes?
+        answer: FCR a des antécédents de paiement de dividendes en espèces. Pour consulter l'historique des dividendes de FCR, <a href="/ir/dividends" target="_blank">cliquez ici.</a>.
+        sortOrder: 1
+        lang: '@Lang1->id'
+        langParent: '@InvestorFAQ7'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ9:
+        category: 2
+        question: Are dividends received considered ‘Eligible Dividends’
+        answer: For purposes of the enhanced dividend tax credit rules contained in the Income Tax Act (Canada) and any corresponding provincial and territorial tax legislation, all dividends (and deemed dividends) paid by First Capital Realty to Canadian residents on our common shares after December 31, 2005, are designated as &ldquo;eligible dividends&rdquo;. Unless stated otherwise, all dividends (and deemed dividends) are designated as &ldquo;eligible dividends&rdquo; for the purposes of these rules.</p><p>For greater certainty, the dividend-in-kind paid by First Capital Realty in the form of common shares of Gazit America Inc. on August 14, 2009 is an &ldquo;eligible dividend&rdquo; for the purposes of the enhanced dividend tax credit rules contained in the Income Tax Act (Canada) and any corresponding provincial and territorial tax legislation.
+        sortOrder: 2
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ10:
+        category: 2
+        question: Les dividendes reçus sont-ils considérés comme des «dividendes admissibles»?
+        answer: Les dividendes (et les dividendes réputés) versés par First Capital Realty à des résidents canadiens sur nos actions ordinaires après le 31 décembre 2007 sont assujettis à l'ensemble des dividendes (et dividendes réputés) payés par First Capital Realty aux termes des règles relatives au crédit d'impôt pour dividendes énoncées dans la Loi de l'impôt sur le revenu 2005, sont désignés sous le terme de «dividendes admissibles & rdquo ;. Sauf indication contraire, tous les dividendes (et les dividendes réputés) sont désignés sous le terme de «dividendes déterminés», pour les fins du présent règlement. <br> Pour plus de certitude, le dividende en nature payé par First Capital Realty sous forme d'actions ordinaires de Gazit America Inc. le 14 août 2009 est un «dividende déterminé», aux fins des règles relatives au crédit d'impôt pour dividendes amélioré contenues dans la Loi de l'impôt sur le revenu (Canada) et de toute loi fiscale provinciale et territoriale correspondante.
+        sortOrder: 2
+        lang: '@Lang1->id'
+        langParent: '@InvestorFAQ9'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ11:
+        category: 2
+        question: What is the share issuance price for common shares issued in respect of interest payable on Convertible Debenture?
+        answer: To view the share issuance price history, please&nbsp;<a href="/ir/debentures#Convertible-Debentures">click here</a>.
+        sortOrder: 3
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ12:
+        category: 2
+        question: Quel est le prix d'émission d'actions ordinaires émises relativement aux intérêts payables sur les débentures convertibles?
+        answer: Pour afficher l'historique des prix d'émission d'actions, <a href="/ir/debentures#Convertible-Debentures">cliquez ici.</a>.
+        sortOrder: 3
+        lang: '@Lang1->id'
+        langParent: '@InvestorFAQ11'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ13:
+        category: 2
+        question: How can I receive email alerts from FCR?
+        answer: To sign up for email alerts on our News, Leasing and/or Careers, please <a href="#newsletter-form">click here</a>.
+        sortOrder: 4
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    InvestorFAQ14:
+        category: 2
+        question: Comment puis-je recevoir des alertes par courriel de FCR?
+        answer: Pour vous inscrire à des alertes par courriel sur nos actualités, nos services de location et / ou nos carrières, <a href="#newsletter-form">cliquez ici.</a>.
+        sortOrder: 4
+        lang: '@Lang1->id'
+        langParent: '@InvestorFAQ13'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'

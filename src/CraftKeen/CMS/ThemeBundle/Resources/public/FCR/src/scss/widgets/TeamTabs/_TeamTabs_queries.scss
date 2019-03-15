@@ -1,0 +1,39 @@
+/*480px;*/
+@media screen and (min-width: $small-devices-width ) {
+    .wrapper-element {
+        .element {
+            width: 49%;
+        }
+    }
+}
+/* Small devices (tablets 768px  and up) */
+@media screen and (min-width: $small-devices-width ) {
+	.wrapper-element {
+        .element {
+            .wrap-span {
+                height: 315px;
+            }
+        }
+	}
+}
+
+@media screen and (min-width: $medium-devices-width-bootstrap ) {
+	.team-tabs {
+		.tabs {
+			.nav-tabs {
+				>li {
+					&.active{
+						a,a:focus,a:hover {
+							background: transparent;
+	                        color: $color-teal;
+						}
+						&::after {
+						    bottom: -13px;
+						    border-color: $color-grey-light1 transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+}

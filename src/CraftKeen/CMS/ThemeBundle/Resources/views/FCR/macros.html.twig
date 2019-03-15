@@ -1,0 +1,243 @@
+{% macro renderMenuTree(menu, currUrl, menuType, children = false) %}
+	{% if children and menu|length > 6 %}
+	<div class="row">
+	{% endif %}
+	{% set icount = 1 %}
+	{% set icountT = icount %}
+    {% for ikey,item in menu %}
+		{% set icountT = icountT + 1 %}
+		{% if children and menu|length > 6 and icount == 1 %}
+			{% if 'fr' == app.request.locale|split('_')|first %}
+			<div class="col-lg-8">
+			{% else %}
+			<div class="col-lg-6">
+			{% endif %}
+		{% endif %}
+
+		{% set uri = item.link %}
+		{% if 'custom' != item.linkType %}
+			{% set uri = '/' %}
+			{% if '/' != item.link %}
+				{% set uri = '/'~item.link %}
+			{% endif %}
+		{% endif %}
+
+		{% set active = '' %}
+		{% set dropdown = '' %}
+		{% set targetblank = '' %}
+
+		{% if uri == currUrl %}
+			{% set active = 'active' %}
+		{% endif %}
+
+		{% if item.children is defined %}
+			{% set dropdown = 'dropdown' %}
+		{% endif %}
+
+		{% if item.targetBlank is defined and item.targetBlank == 1 %}
+			{% set targetblank = ' target="_blank"' %}
+		{% endif %}
+						
+		<li class="{{ dropdown }} {{ active }}">
+			{% if dropdown == 'dropdown' %}
+			  <a href="{{ uri }}" class="dropdown-toggle" aria-expanded="false">{{ item.name|raw }}</a>
+			{% elseif item.linkType == 'custom' %}
+                {% if menuType == 'BottomHeaded' %}
+                    <strong><a href="{{ uri }}" {{ targetblank }}>{{ item.name|raw }}</a></strong>
+                {% else %}
+                    <a href="{{ uri }}" {{ targetblank }}>{{ item.name|raw }}</a>
+                {% endif %}
+			{% else %}
+                {% if menuType == 'BottomHeaded' %}
+                    <strong><a href="{{ uri }}" {{ targetblank }}>{{ item.name|raw }}</a></strong>
+                {% else %}
+                    <a href="{{ uri }}" {{ targetblank }}>{{ item.name|raw }}</a>
+                {% endif %}
+			{% endif %}
+
+			{% if item.children is defined %}
+				
+				<ul class="dropdown-menu" role="menu">
+					{% import _self as M %}
+					{{ M.renderMenuTree(item.children, currUrl, menuType, true) }}
+				</ul>
+			{% endif %}
+		</li>
+		{% if children and menu|length > 6 and icount is divisible by(6) %}	
+			</div>
+			{% if icount < menu|length %}
+				{% if 'fr' == app.request.locale|split('_')|first %}
+                <div class="col-lg-4">
+                {% else %}
+                <div class="col-lg-6">
+                {% endif %}
+			{% endif %}
+		{% endif %}
+		{% set icount = icount + 1 %}
+	{% endfor %}
+	{% if children and menu|length > 6 %}
+	</div>
+	{% endif %}
+{% endmacro %}
+
+
+{# Hero image macros #}
+{% macro heroImage(heroData) %}
+	<section class="hero-image container-fluid {{heroData.classBigHero}}" {% if heroData.url_images is defined and heroData.url_images %}style="
+		background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.12)),to(rgba(0,0,0,.12))),url({{ heroData.url_images }}) center center no-repeat;
+	    background: -webkit-linear-gradient(top,rgba(0,0,0,.12),rgba(0,0,0,.12)),url({{ heroData.url_images }}) center center no-repeat;
+	    background: -moz-linear-gradient(top,rgba(0,0,0,.12),rgba(0,0,0,.12)),url({{ heroData.url_images }}) center center no-repeat;
+	    background: -o-linear-gradient(top,rgba(0,0,0,.12),rgba(0,0,0,.12)),url({{ heroData.url_images }}) center center no-repeat;
+	    background: linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.12)),url({{ heroData.url_images }}) center center no-repeat;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+		" {% endif %}>
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+				<div class="container-content">
+				{% if heroData.position_title == 'top' %}
+					<h1 class="text-shadow">{{ heroData.title | raw}}</h1>
+					{# for home page arrow-down#}
+					<svg class="arrows">
+				        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+				        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+				        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+				    </svg>
+				{% endif %}
+
+				{% if heroData.link_video is defined and heroData.link_video %}
+					{{ heroData.svg_button | raw }}
+				{% endif %}
+
+				{% if heroData.position_title == 'bottom' %}
+					<h1 class="text-shadow">{{ heroData.title }}</h1>
+				{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% if heroData.link_video is defined and heroData.link_video %}
+	<div class="video" style="display: none;">
+		<iframe id="hero-video" style="width:100%;" src="{{ heroData.link_video }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<a href="#" class="closeVideo">{{heroData.textBtnVideo}}</a>
+	</div>
+	{% endif %}
+{% endmacro %}
+
+
+
+{# Conference CALL macros #}
+
+{% macro ConferenceCallElemenent(category) %}
+{% set calls = investors_conference_calls(category) %}
+
+	{% for key, call in calls %}
+
+		{% if call is not null %}
+			{% set grid = 'col-lg-6 col-md-6 col-sm-6 col-xs-12' %}
+			{% set grid_list = 'col-lg-6 col-md-6 col-sm-6 col-xs-12' %}
+
+			{% if call.slidesLink is null and call.pressRelease is null and call.quarterlyReport is null %}
+				{% set grid = 'col-lg-12 col-md-12 col-sm-12 col-xs-12' %}
+			{% endif %}
+			{% if call.listenLink is null %}
+				{% set grid_list = 'col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12' %}
+			{% endif %}
+
+			<div class="col-lg-6 {% if key == 0 %}left-part{% endif %} {% if key == 1 %}right-part{% endif %}">
+				<div class="row">
+					<div class="col-lg-12 text-center head-part">
+						<h2>
+							{% if category =='general' and calls|length > 1 %}
+								{% if key == 0 %}{{ 'Upcoming'|trans }}{% endif %} {% if key == 1 %}{{ 'Previous'|trans }}{% endif %}
+							{% endif %}
+							{% if category =='agm'%}
+								AGM
+							{% endif %}
+						</h2>
+						<div class="sub-text">{{ call.title }}</div>
+						<span class="subtitle">{{ call.date|date("F j, Y | g:ia ") }} {{'EST'}}</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 text-center">
+						<div class="row">
+							{% if call.listenLink is defined %}
+								<div class="{{ grid }}">
+									<a href="{{ call.listenLink }}" target="_blank">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.08 233.08" class="about-phone-icon" style="width: 89px; height: 89px;">
+										<title>Asset 11about-phone-icon</title>
+										<g>
+										<g>
+										<circle class="cls-1" cx="116.54" cy="116.54" r="116.04"></circle>
+										<path class="cls-2" d="M137.84 140a6.54 6.54 0 0 0-4.66-1.83 7.13 7.13 0 0 0-5 2l-8.24 8.22-2.22-1.24A77.3 77.3 0 0 1 99 133.7 77.25 77.25 0 0 1 85.48 115l-1.2-2.16 8.23-8.23a6.9 6.9 0 0 0 .2-9.7L77.5 79.7a6.5 6.5 0 0 0-4.66-1.84 7.16 7.16 0 0 0-5 2.06l-3.74 3.75-.35.58a23.67 23.67 0 0 0-3.38 6 24.64 24.64 0 0 0-1.5 6.05c-2 16.3 5.54 31.27 26 51.67C109 172.1 129.16 174 134.78 174c1 0 1.53-.06 1.7-.07a25 25 0 0 0 6.05-1.53 23.9 23.9 0 0 0 6-3.37l.85-.67 3.5-3.44a6.86 6.86 0 0 0 .2-9.68zm0 0M107.84 59.1a66.72 66.72 0 0 1 66.72 66.7M107.84 77.46a48.35 48.35 0 0 1 48.35 48.35M107.84 95.83a30 30 0 0 1 30 30"></path>
+										</g>
+										</g>
+										</svg>
+										<p>{{'Listen'|trans}}</p>
+									</a>
+								</div>
+							{% endif %}
+
+							{% if call.slidesLink is defined and call.pressRelease is defined and call.quarterlyReport is defined %}
+
+								<div class="{{ grid_list }}">
+									<ul>
+
+										{% if call.slidesLink is defined and call.slidesLink %}
+											<li>
+												<a id="upcoming_slides_link-targetUrl" href="{{ call.slidesLink }}" target="_blank">
+													<em class="fa fa-file-o" aria-hidden="true"></em>
+													<span id="upcoming_slides_link-targetTitle">{{'Conference Call Slides'|trans}}</span>
+												</a>
+											</li>
+										{% endif %}
+
+										{% if call.pressRelease is defined and call.pressRelease %}
+											<li>
+												<a id="upcoming_pressrelease_link-targetUrl"
+													href="{{ path('craftkeen_fcr_press_release_view', {
+														'slug': call.pressRelease.slug
+														}) }}" target="_blank">
+													<em class="fa fa-file-o" aria-hidden="true"></em>
+													<span id="upcoming_pressrelease_link-targetTitle">{{'Press Release'|trans}}</span>
+												</a>
+											</li>
+										{% endif %}
+
+										{% if call.quarterlyReport is defined and call.quarterlyReport %}
+											{% set tempQuarterly = '' %}
+											{% if 'q1' == call.quarterlyReportFileName %}
+												{% set tempQuarterly = call.quarterlyReport.q1 %}
+											{% elseif 'q2' == call.quarterlyReportFileName %}
+												{% set tempQuarterly = call.quarterlyReport.q2 %}
+											{% elseif 'q3' == call.quarterlyReportFileName %}
+												{% set tempQuarterly = call.quarterlyReport.q3 %}
+											{% elseif 'q4' == call.quarterlyReportFileName %}
+												{% set tempQuarterly = call.quarterlyReport.q4 %}
+											{% elseif 'annual' == call.quarterlyReportFileName %}
+												{% set tempQuarterly = call.quarterlyReport.annual %}
+											{% endif %}
+
+											<li>
+												<a id="upcoming_quarterlyreport_link-targetUrl" href="{{ tempQuarterly }}" target="_blank">
+													<em class="fa fa-file-o" aria-hidden="true"></em>
+													<span id="upcoming_quarterlyreport_link-targetTitle">{{'Quarterly Report'|trans}}</span>
+												</a>
+											</li>
+										{% endif %}
+									</ul>
+								</div>
+							{% endif %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+			{% if key == 0 %}<div class="hr-line"></div>{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endmacro %}

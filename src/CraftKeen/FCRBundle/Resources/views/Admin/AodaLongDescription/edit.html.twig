@@ -1,0 +1,23 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/edit.html.twig' %}
+{% set moduleTitle = 'Aoda Long Description'|trans %}
+{% set path_prefix = 'admin_fcr_aoda_long_description_' %}
+
+{% block admin_block_body %}
+    {% if edit_form is defined and delete_form is defined and path_prefix is defined and object is defined %}
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" class="btn btn-primary" value="{{ 'Save'|trans }}"/>
+        {{ form_end(edit_form) }}
+    {% endif %}
+    <hr/>
+    <ul class="list-unstyled list-inline">
+        <li>
+            <a class="btn btn-info" href="{{ path(path_prefix~'index') }}">{{ "Back to the list"|trans }}</a>
+        </li>
+        <li>
+            {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+                <input class="btn btn-danger" type="submit" value="{{ 'Delete'|trans }}">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

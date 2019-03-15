@@ -1,0 +1,2 @@
+
+export { InlineImageEditor } from './InlineImageEditor';

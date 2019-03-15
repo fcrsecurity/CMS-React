@@ -1,0 +1,25 @@
+{% if page is not empty %}
+    <div class="row inline-mode">
+        <a href="{{ path('admin_leasing_property_feature-slider_index') }}" class="button-edit-element" title="Edit element" ></a>
+        <div class="feature-slider">
+            <div class="feature-slider-js">
+                {% for item in FeatureSlider %}
+                    <div class="item">
+                        <div class="image-container" style="background-image:url('{{ item.image }}');">
+                            <h2 class="title-carousel">{{ item.title }}</h2>
+                            <div class="overlay"></div>
+                        </div>
+                        <a href="{{ path('craftkeen_fcr_property_view', {'code':item.property.code}) }}"
+                           target="_blank">
+                            <div class="descr">
+                                <p class="name">{{ item.property }}</p>
+                                <p class="city">{{ item.property.details.geoCity }}
+                                    , {{ item.property.details.geoProvince }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

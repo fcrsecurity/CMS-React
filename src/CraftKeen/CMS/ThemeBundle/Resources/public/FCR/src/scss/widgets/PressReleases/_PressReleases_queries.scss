@@ -1,0 +1,16 @@
+/* Medium devices (desktops 960px and up) */
+@media screen and (min-width:$medium-devices-width) {
+	.PreasReleases {
+		.download-btn{
+			float:right;
+			margin-top:0;
+		}
+	}
+}
+
+@media screen and (max-width:480px) {
+	 .fullwidth480 {
+        margin: 0;
+        width: 100%;
+    }
+}

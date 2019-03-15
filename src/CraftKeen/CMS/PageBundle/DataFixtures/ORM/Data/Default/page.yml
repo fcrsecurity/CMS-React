@@ -1,0 +1,49 @@
+CraftKeen\CMS\PageBundle\Entity\Page:
+    Page0:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Main page
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"hello-widget","class":"col-lg-12 col-sm-12","content":"[widget-result-callback]"},"R1C2":{"class":"col-lg-6 col-sm-12","content":{"R1C2R1":{"R1C2R1C1":{"id":"hello-widget-1","class":"col-lg-6 col-sm-12","content":{"R2":{"R2C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"},"R2C2":{"class":"col-lg-6 col-sm-12","content":{"R2C2R1":{"R2C2R1C1":{"id":"hello-widget-1","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"},"R2C2R1C2":{"id":"hello-widget-2","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}},"R2C2R2":{"R2C2R2C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}}}}}}},"R1C2R1C2":{"id":"hello-widget-2","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}},"R1C2R2":{"R1C2R2C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}}}}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+    Page1:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Test
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1        
+        template: 'page'
+        layout: null
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+    Page2:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: ReactTest
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1        
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-hello-callback2]"},"R1C2":{"class":"col-lg-6 col-sm-12","content":{"R1C2R1":{"R1C2R1C1":{"id":"hello-widget-1","class":"col-lg-6 col-sm-12","content":{"R2":{"R2C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"},"R2C2":{"class":"col-lg-6 col-sm-12","content":{"R2C2R1":{"R2C2R1C1":{"id":"hello-widget-1","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"},"R2C2R1C2":{"id":"hello-widget-2","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}},"R2C2R2":{"R2C2R2C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}}}}}}},"R1C2R1C2":{"id":"hello-widget-2","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}},"R1C2R2":{"R1C2R2C1":{"id":"hello-widget","class":"col-lg-6 col-sm-12","content":"[widget-123-callback]"}}}}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+    Page3:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: React Builer
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1        
+        template: 'builder'
+        layout: null
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'

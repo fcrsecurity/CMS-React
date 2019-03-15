@@ -1,0 +1,67 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+
+{% block meta_title %}{% if post.title %}{{ post.title }}{% else %}{{ parent() }}{% endif %}{% endblock %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+        editUrl : path('admin_community_retail-art_edit', {id: post.id}),
+        addUrl  : path('admin_community_retail-art_new'),
+        delPath : 'admin_community_retail-art_delete',
+        copy    : copy,
+        mode    : mode,
+    } %}
+    {{ AP.AdminPanel(post, data) }}
+{% endblock %}
+
+{% block hero %}
+    {% set heroImage = ckcms_library_url~'/community/retail-life/retaillifeandarts-hero.jpg' %}
+    {% if post.image %}
+        {% set heroImage = post.image %}
+    {% endif %}
+    <section class="hero-image container-fluid" style="background-image: url('{{ heroImage }}')">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+                <div class="container-content">
+                    <h1 class="text-shadow"></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block body %}
+    <section class="container-fluid retail-life-detail buffer-5-padding-top buffer-5-padding-bottom inline-mode">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 left-block">
+                        <h1>{{ post.title }}</h1>
+                        {{ post.text|raw }}
+                        <div class="row">
+                            <div class="arts-slider carousel col-lg-12">
+                                {% for item in post.gallery %}
+                                    <div class="item" style="background-image:url({{ item.image }})">&nbsp;</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 right-block">
+                        <a href="/community/retail-life" class="back-to-list">
+                            <em class="fa fa-angle-left" aria-hidden="true"></em>&nbsp;&nbsp;{{ 'BACK TO RETAIL LIFE & ARTS'|trans }}
+                        </a>
+                        {% for item in related %}
+                            <div class="item">
+                                <div class="text">
+                                    <a href="{{ path('craftkeen_fcr_retail-art_view', {'slug': item.slug}) }}">{{ item.head }}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

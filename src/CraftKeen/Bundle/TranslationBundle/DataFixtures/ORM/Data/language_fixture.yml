@@ -1,0 +1,7 @@
+CraftKeen\CMS\AdminBundle\Entity\Language:
+    Lang0:
+        code: en_CA
+        locale: en-ca
+    Lang1:
+        code: fr_CA
+        locale: fr-ca

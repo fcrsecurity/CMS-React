@@ -1,0 +1,36 @@
+
+@import "../../variables";
+
+.button {
+
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: $radius;
+	color: $white;
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	background: $blue-c1; 
+	box-shadow: 2px 2px 3px #ccc;
+	border: 1px solid #eee;
+	margin: 0 5px; 
+	transition: background-color 0.5s;
+	
+	&:hover {
+		background: $blue-c4;
+	}
+
+	&__reject {
+		background: $reject;
+	}
+
+	&__accept {
+		background: $accept;
+	}
+
+	&__edit {
+		background: $editor-btn-edit-bg;
+	}
+}

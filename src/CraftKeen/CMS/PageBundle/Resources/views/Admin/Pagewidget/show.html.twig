@@ -1,0 +1,88 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+
+{% block admin_block_title %}{{ 'PageWidget view'|trans }}{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li><a href="{{ path('craftkeen_cms_page_admin_pagewidget_index') }}">PageWidget</a></li>
+    <li class="active">{{ 'PageWidget view'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ pageWidget.id }}</td>
+                </tr>
+                <tr>
+                    <th>Page</th>
+                    <td>{{ pageWidget.page }}</td>
+                </tr>
+                <tr>
+                    <th>Widget</th>
+                    <td>{{ pageWidget.widget }}</td>
+                </tr>
+                <tr>
+                    <th>Config</th>
+                    <td>{{ pageWidget.config }}</td>
+                </tr>
+                <tr>
+                    <th>Data</th>
+                    <td>{{ pageWidget.data }}</td>
+                </tr>
+                <tr>
+                    <th>Datatype</th>
+                    <td>{{ pageWidget.dataType }}</td>
+                </tr>
+                <tr>
+                    <th>Tplarea</th>
+                    <td>{{ pageWidget.tplArea }}</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>{{ pageWidget.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    {#<a class="btn btn-primary" href="{{ path('craftkeen_cms_page_admin_pagewidget_preview', {'id':pageWidget.id}) }}">
+        {{ 'Preview'|trans }}
+    </a>#}
+
+    {% if workflow_can(pageWidget, 'reject') and is_granted('canapprove', pageWidget) %}
+        <a class="btn btn-danger" href="{{ path('craftkeen_cms_page_admin_pagewidget_apply_transition', {'transition':'reject', 'id':pageWidget.id}) }}">{{ 'Reject'|trans }}</a>
+    {% endif %}
+
+    {% if workflow_can(pageWidget, 'publish') and is_granted('canapprove', pageWidget) %}
+        <a class="btn btn-success" href="{{ path('craftkeen_cms_page_admin_pagewidget_apply_transition', {'transition':'publish', 'id':pageWidget.id}) }}">{{ 'Publish to live'|trans }}</a>
+    {% endif %}
+
+    <hr />
+
+    <ul class="list-inline list-unstyled">
+        <li>
+            <a href="{{ path('craftkeen_cms_page_admin_pagewidget_index') }}" class="btn btn-success">
+                {{ 'Back to the list'|trans }}
+            </a>
+        </li>
+
+        {% if is_granted('canedit', pageWidget) %}
+            <li>
+                <a href="{{ path('craftkeen_cms_page_admin_pagewidget_edit', { 'id': pageWidget.id }) }}" class="btn btn-success">
+                    {{ 'Edit'|trans }}
+                </a>
+            </li>
+        {% endif %}
+
+        {% if is_granted('candelete', pageWidget) %}
+            <li>
+                {{ form_start(delete_form, { 'attr': {'class': 'form-delete'} } ) }}
+                    <input type="submit" class="btn btn-danger" value="{{ 'Delete'|trans }}">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}

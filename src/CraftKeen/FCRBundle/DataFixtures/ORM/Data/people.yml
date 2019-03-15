@@ -1,0 +1,235 @@
+CraftKeen\FCRBundle\Entity\People:
+    People1:
+        category: 1
+        name: Dori J. Segal
+        position: Vice-Chairman and CEO of Gazit-Globe - Toronto, Ontario
+        description: Vice-Chairman and CEO of Gazit-Globe, Chair of the Board of First Capital Realty Inc.; Vice-Chairman and CEO of Gazit-Globe; Vice-Chairman and CEO of Norstar Holdings Inc., the controlling shareholder of Gazit-Globe. Previously, President and CEO of the Company from 2000 to February 2015.<br/>Board member since 2000.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/dori-segal.jpg
+        imageAlt: null
+        sort_order: 0
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People2:
+        category: 1
+        name: Jon N. Hagan, C.P.A., C.A.
+        position: Consultant - JN Hagan Consulting, Dover, Christ Church, Barbados
+        description: Consultant - JN Hagan Consulting, Corporate Director; principal, JN Hagan Consulting; director of Walton Ontario Land 1 Corporation; director of Walton Big Lake Development Corporation; director of Walton Edgemont Development Corporation; director of Walton Westphalia Development Corporation. Previously, Chair of the Board of Regal Lifestyle Communities Inc.; director of Bentall Kennedy Group; trustee of Sunrise Senior Living Real Estate Investment Trust; director of Mills Corporation; and Chair of Teranet Income Fund.<br/>Board member since 2003
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/jon-s.jpg
+        imageAlt: null
+        sort_order: 1
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People3:
+        category: 1
+        name: Allan S. Kimberley
+        position: Corporate Director - Toronto, Ontario
+        description: Trustee of Partners Real Estate Investment Trust; director of Orlando Corporation; member of the board of the Ontario Science Centre; Previously, Vice-Chair and Managing Director at CIBC World Markets Inc. from 1996 to 2014. During his tenure with CIBC he worked predominantly with the real estate investment banking team and accumulated extensive experience in transactional activities which included debt and equity capital markets origination and execution, and mergers and acquisitions advisory services. Mr. Kimberley previously served for 10 years on the board of the Toronto Symphony Orchestra, including a term as Board Chair.<br/>Board member since May 2014.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/allen-kimberly.jpg
+        imageAlt: null
+        sort_order: 2
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People4:
+        category: 1
+        name: Annalisa King
+        position: Corporate Director - Vancouver, British Columbia
+        description: Director of Saputo Inc., director of The North West Company Inc., director of Vancouver Airport Authority, and director of McArthurGlen Designer Outlet Centre (a joint venture between McArthurGlen Group and the Vancouver Airport Authority). Previously, Chief Financial Officer, Chief Information Officer and Senior Vice-President of Best Buy Canada Ltd.<br/>Board member since 2016.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/annalisa.jpg
+        imageAlt: null
+        sort_order: 3
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People5:
+        category: 1
+        name: Bernard McDonell
+        position: Corporate Director - Apple Hill, Ontario
+        description: Chairman of Performance Sports Group Ltd.; director of Glengarry Mutual Insurance Company. Previously, Vice-Chairman, CEO and director of Investus Real Estate Inc.; Vice-Chairman and President, Provigo Inc. <br/>Board member since 2007.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/bernard_mcdonell.png
+        imageAlt: null
+        sort_order: 4
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People6:
+        category: 1
+        name: Adam E. Paul, C.P.A., C.A.
+        position: President and Chief Executive Officer, First Capital Realty Inc. - Toronto, Ontario
+        description: Joined the Company in 2015. As President and CEO, Mr. Paul has overall responsibility for First Capital’s strategy, operations and performance. Prior to joining First Capital, Mr. Paul was a senior executive at Canadian Real Estate Investment Trust (“CREIT”), where he had direct responsibility for various aspects of CREIT’s business across Canada. Mr. Paul is a Chartered Professional Accountant, Chartered Accountant.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/adam_paul.jpg
+        imageAlt: null
+        sort_order: 5
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People7:
+        category: 1
+        name: Mia Stark
+        position: Chief Executive Officer of Gazit Brasil - São Paulo, Brazil
+        description: <p>Chief Executive Officer at Gazit Brasil since 2013. Under the management of Ms. Stark, Gazit Brasil has built a prime portfolio of urban assets located mainly in S&atilde;o Paulo, one of the most populous cities in the world. Prior to her current position, Ms. Stark was the Chief of Staff at the Chairman&rsquo;s Office of Gazit Group USA.</p><p>Prior to the Gazit Group, she held leadership positions in investor relations and marketing with different companies in New York and Israel. Ms. Stark was named one of the most influential women in retail by Forbes Brazil in 2016.</p>
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/MIA_STARK.jpg
+        imageAlt: null
+        sort_order: 6
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People8:
+        category: 1
+        name: Andrea Stephen, C.P.A., C.A.
+        position: Corporate Director - Toronto, Ontario
+        description: Trustee of Boardwalk REIT and director of Macerich Company. Past experience includes, Executive Vice President, Investments for The Cadillac Fairview Corporation; director of Multiplan Empreendimentos Imobiliaros; director, Pension Real Estate Association (PREA); director, Real Estate with the Ontario Teachers’ Pension Plan Board. Previous member of the Investor Advisory Committee of the National Association of Real Estate Investment Trusts (NAREIT). <br/>Board member since 2012.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/bernard_mcdonell.png
+        imageAlt: null
+        sort_order: 7
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People9:
+        category: 2
+        name: Adam E. Paul
+        position: President &amp; Chief Executive Officer
+        description: President and Chief Executive Officer, First Capital Realty Inc. - Toronto, Ontario President & CEO of the Company. Previously, a senior executive at Canadian Real Estate Investment Trust (“CREIT”), where he had direct responsibility for various aspects of CREIT’s business across Canada. Mr. Paul is a Chartered Professional Accountant, Chartered Accountant. <br/>Joined the Company and the Board in 2015.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/adam_paul.jpg
+        imageAlt: null
+        sort_order: 0
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People10:
+        category: 2
+        name: Kay Brekken
+        position: Executive Vice President & Chief Financial Officer
+        description: Joined the Company in 2014. Previously Executive Vice President and Chief Financial Officer of Indigo Books & Music, Inc. Ms. Brekken has over 20 years of North American financial leadership experience including public company reporting, strategic and operational planning, and debt and equity financing. Ms. Brekken holds a BBA from the University of Minnesota and an MBA from the University of Washington. Additionally, Ms. Brekken is a Certified Public Accountant.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/kay-b.jpg
+        imageAlt: null
+        sort_order: 1
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People11:
+        category: 2
+        name: JORDAN ROBINS
+        position: Executive Vice President & Chief Operating Officer
+        description: Joined the Company in 2016. Previously, Senior Vice President, Planning and Development of RioCan REIT. Mr. Robins brings to the Company over 20 years of extensive experience and a proven track record in many facets of retail real estate including development, leasing and acquisitions. Mr. Robins holds a Master of Science degree in Facilities Management from the Pratt Institute.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/jordan-robins.jpg
+        imageAlt: null
+        sort_order: 2
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People12:
+        category: 2
+        name: GARETH BURTON
+        position: Senior Vice President, Construction
+        description: Joined the Company in 2016. Previously, Construction Director of Laing O’Rourke; and Project/Bid Director of PCL Constructors. Mr. Burton has over 25 years of experience in the construction industry and a proven track record of successfully delivering complex, high-value, high-risk construction and civil engineering projects. During his career, Mr. Burton has gained valuable experience in various roles related to large complex construction projects in the UK, Europe, North America and the Middle East.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/gaerth-burton.jpg
+        imageAlt: null
+        sort_order: 3
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People13:
+        category: 2
+        name: ROGER J. CHOUINARD
+        position: General Counsel and Corporate Secretary
+        description: Joined the Company in 2010. Previously Partner, McCarthy Tétrault LLP. Mr. Chouinard has over 15 years of experience representing real estate and other companies in connection with some of their most critical transactions, including mergers, acquisitions, dispositions, public and private offerings of equity and debt securities, and numerous other commercial transactions. He also has strong expertise advising public companies and their boards of directors on corporate governance and regulatory compliance matters. Mr. Chouinard holds an LL.B. (Civil Law) from Université Laval, an LL.B. (Common Law) from University of Victoria, and an LL.M. from Osgoode Hall Law School.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/roger-c.jpg
+        imageAlt: null
+        sort_order: 4
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People14:
+        category: 2
+        name: CARMINE FRANCELLA
+        position: Senior Vice President, Leasing
+        description: Joined the Company in 2016. He was previously the global head of retail lease transactions in his role as Vice President, Leasing of Scotiabank. Prior to Scotiabank he was the head of real estate for Walmart Canada in the role of Senior Director, Real Estate & Development. Mr. Francella holds a Professional Leadership Development Certificate from Harvard Business School.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/carmine-f.jpg
+        imageAlt: null
+        sort_order: 5
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People15:
+        category: 2
+        name: SANDRA LEVY
+        position: Vice President, People and Corporate Affairs
+        description: Joined the Company in 2015. She was previously a senior Human Resources executive with Ply Gem Canada and Magna International. Ms. Levy has sat on a number of corporate and volunteer boards and has served as a trustee of Res REIT. Ms. Levy has over 17 years of experience in human resources and legal roles. She has expertise in aligning Human Resources with business strategy, legal compliance, talent management, change management and employee engagement. Ms. Levy holds an LL.B. from Osgoode Hall Law School.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/sandra-l.jpg
+        imageAlt: null
+        sort_order: 6
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People16:
+        category: 2
+        name: MARYANNE MCDOUGALD
+        position: Senior Vice President, Operations
+        description: Joined the Company in 2003. Previously, Senior Vice President, Retail Management and National Client Services at O&Y Enterprise. Ms. McDougald has over 20 years of experience in shopping centre operations and asset management encompassing a diverse range of national real estate portfolios. She is a LEED Accredited Professional. Ms. McDougald is Chair of BOMA Toronto and a member of the University of Guelph Real Estate Program Advisory Board.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/maryanne-m.jpg
+        imageAlt: null
+        sort_order: 7
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People17:
+        category: 2
+        name: GREGORY J. MENZIES
+        position: Project Lead, Yorkville Village
+        description: Joined the Company in 2010. Previously, Executive Vice-President, Eastern Canada for the Company; President of Mingus Capital Inc.; and Co-founder and President of Crofton Moore. Mr. Menzies has over 25 years of real estate experience encompassing development, acquisition and management of office, mixed-use and retail properties.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/greg-m.jpg
+        imageAlt: null
+        sort_order: 8
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    People18:
+        category: 2
+        name: JODI M. SHPIGEL
+        position: Senior Vice President, Development
+        description: Joined the Company in 2008. Previously, Senior Vice-President, Central Canada for the Company; and Real Estate Manager at Sobeys. Ms. Shpigel has over 15 years of real estate experience, including retail and mixed use development, acquisitions and leasing. Ms. Shpigel holds a Master of Science degree in Planning from the University of Toronto and is a member of the Canadian Institute of Planners.
+        image: https://fcr.ca/uploads/careers/executive-leadership-board-of-directors/jodie-s.jpg
+        imageAlt: null
+        sort_order: 8
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'

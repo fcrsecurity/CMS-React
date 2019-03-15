@@ -1,0 +1,17 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+        exitUrl     : path('craftkeen_fcr_admin_leasing_property_index'),
+        viewUrl     : path('craftkeen_fcr_property_view', {code: property.code}),
+        editUrl     : path('craftkeen_fcr_property_edit_wizard', {id: property.id}),
+        addUrl      : path('craftkeen_fcr_property_add_wizard'),
+        brochureUrl : path('brochure_create_from_property', {id: property.id}),
+        delPath     : 'craftkeen_fcr_property_delete',
+        copy        : copy,
+        mode        : mode,
+    } %}
+    {{ AP.AdminPanel(property, data) }}
+{% endblock %}

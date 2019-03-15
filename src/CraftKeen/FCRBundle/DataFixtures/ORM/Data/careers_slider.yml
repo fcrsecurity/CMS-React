@@ -1,0 +1,144 @@
+CraftKeen\FCRBundle\Entity\CareersSlider:
+    CareersSlider1:
+        background: 'https://fcr.ca/uploads/careers/slider/slide1.jpg'
+        fancy_number: 5
+        header: 'EMPLOYEE BENEFITS'
+        description: '<p>At FCR, we ensure our financial renumeration is always very competitive. We also work hard to build a more complete compensation package. Here are some of our employee &#39;perks&#39;:</p>'
+        sort_order: 1
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider2:
+        background: 'https://fcr.ca/uploads/careers/slider/slide1.jpg'
+        fancy_number: 5
+        header: "AVANTAGES SOCIAUX"
+        description: 'Chez FCR, nous assurons que notre rémunération financière soit toujours très compétitive. Nous travaillons également dur pour construire un paquet de compensation plus complet. Voici des avantages pour nos employés:'
+        sort_order: 1
+        lang: '@Lang1->id'
+        langParent: '@CareersSlider1'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider3:
+        background: 'https://fcr.ca/uploads/careers/slider/slide2.png'
+        fancy_number: null
+        header: 'EMPLOYEE SHARE<br />PURCHASE PLAN (ESPP)'
+        description: 'We believe members of our team should share in the success the company enjoys. To that end, FCR offers all full-time employees the opportunity to own shares of the company through a subsidized ESPP.'
+        sort_order: 2
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider4:
+        background: 'https://fcr.ca/uploads/careers/slider/slide2.png'
+        fancy_number: null
+        header: "PARTAGE DES EMPLOYÉS<br />PLAN D'ACHAT (ESPP)"
+        description: '<p>Nous croyons que les membres de notre &eacute;quipe doivent partager le succ&egrave;s de l&#39;entreprise. &Agrave; cette fin, FCR offre &agrave; tous les employ&eacute;s &agrave; plein temps la possibilit&eacute; de d&eacute;tenir des actions de la soci&eacute;t&eacute; par ESPP.</p>'
+        sort_order: 2
+        lang: '@Lang1->id'
+        langParent: '@CareersSlider3'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider5:
+        background: 'https://fcr.ca/uploads/careers/slider/slide3.jpg'
+        fancy_number: null
+        header: 'COMPANY RRSP'
+        description: 'FCR offers all full-time employees a competitive RRSP match program.'
+        sort_order: 3
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider6:
+        background: 'https://fcr.ca/uploads/careers/slider/slide3.jpg'
+        fancy_number: null
+        header: REER DE L'ENTREPRISE
+        description: FCR offre à tous les employés à temps plein un programme compétitif de matchs REER.
+        sort_order: 3
+        lang: '@Lang1->id'
+        langParent: '@CareersSlider5'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider7:
+        background: 'https://fcr.ca/uploads/careers/slider/slide4.jpg'
+        fancy_number: null
+        header: 'TUITION<br />REIMBURSEMENT'
+        description: 'We embrace the importance of continuous learning and the development of skills and knowledge and provide a generous annual tuition reimbursement program.'
+        sort_order: 4
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider8:
+        background: 'https://fcr.ca/uploads/careers/slider/slide4.jpg'
+        fancy_number: null
+        header: REMBOURSEMENT <br />FRAIS DE SCOLARITÉ
+        description: Nous reconnaissons l'importance de l'apprentissage continu, du développement des compétences et des connaissances et nous offrons un généreux programme annuel de remboursement des frais de scolarité.
+        sort_order: 4
+        lang: '@Lang1->id'
+        langParent: '@CareersSlider7'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider9:
+        background: 'https://fcr.ca/uploads/careers/slider/slide5.jpg'
+        fancy_number: null
+        header: EMPLOYEE <br />REFERRAL PROGRAM
+        description: A key component to success is the ability to attract and retain the best people. That’s why we reward our employees with an ample cash bonus if their referral is hired.
+        sort_order: 5
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider10:
+        background: 'https://fcr.ca/uploads/careers/slider/slide5.jpg'
+        fancy_number: null
+        header: PROGRAMME DE <br />RÉFÉRENCE DES EMPLOYÉ
+        description: Un élément clé du succès est la capacité d'attirer et de retenir les meilleures personnes. C'est pourquoi nous récompensons nos employés avec une amende en espèces si leur renvoi est embauché.
+        sort_order: 5
+        lang: '@Lang1->id'
+        langParent: '@CareersSlider9'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider11:
+        background: 'https://fcr.ca/uploads/careers/slider/slide6.jpg'
+        fancy_number: null
+        header: WELLNESS SUBSIDY
+        description: All employees are encouraged to stay fit and live a healthy lifestyle. As such, we offer a wellness subsidy for health and wellness related expenses.
+        sort_order: 6
+        lang: '@Lang0->id'
+        langParent: null
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+
+    CareersSlider12:
+        background: 'https://fcr.ca/uploads/careers/slider/slide6.jpg'
+        fancy_number: null
+        header: SUBVENTION DE BIEN-ÊTRE
+        description: Tous les employés sont encouragés à rester en forme et à vivre une vie saine. À ce titre, nous offrons une subvention de bien-être pour les dépenses liées à la santé et au bien-être.
+        sort_order: 6
+        lang: '@Lang1->id'
+        langParent: '@CareersSlider11'
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'

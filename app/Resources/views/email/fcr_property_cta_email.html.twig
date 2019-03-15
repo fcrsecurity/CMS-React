@@ -1,0 +1,68 @@
+{% extends '::email/base_email.html.twig' %}
+{% block email_header %}
+	{{property.parentName}}
+{% endblock %}
+{% block email_secondary_header %}
+	{{property.details.geoAddress1}}{{property.details.geoAddress2}},{{property.details.geoCity}},{{property.details.geoProvince}}
+{% endblock %}
+{% block email_body %}
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+		<tbody class="mcnTextBlockOuter">
+			<tr>
+				<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">	
+					<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+						<tbody>
+							<tr>
+								<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #3A3634;text-align: right;">
+									<h2 style="text-align: left;"><br><span style="font-family:'Yantramanav', sans-serif">{{submission.name}}</span></h2>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+		<tbody class="mcnTextBlockOuter">
+			<tr>
+				<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+					<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+						<tbody>
+							<tr>
+								<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+									<span style="font-family:'Yantramanav', sans-serif">Thank you for your interest in this property. You have submitted a request to be contacted by one of our Leasing Representatives. We will reach out to you within the next 1-2 business days.</span><br><br>
+									{% if property.managers|length > 0 %}
+										{% for manager in property.managers %}
+											{% if manager.type=='leasing' %}
+												<strong>LEASING CONTACT</strong><br>
+												{{manager.firstName}}{{manager.lastName}}<br/>
+												{{manager.title}}<br/>{{manager.email}}<br/>
+												{{manager.phone}}
+												{% if manager.phoneExtension %}ext{{manager.phoneExtension}}{%endif%}<br/>
+												{{manager.tollfree}}<br/>
+											{% endif %}
+										{% endfor %}
+									{% endif %}
+									<hr>
+									<br>
+									<span style="font-family:'Yantramanav', sans-serif">For your records, here is the information you have submitted:</span><br><br>
+									<span style="font-family:'Yantramanav', sans-serif">
+										<strong>CONTACT INFO</strong><br>
+										<strong>Email: </strong>{{submission.email}}<br>
+										<strong>Phone: </strong>{{submission.phone}}<br>
+										<strong>Property Category: </strong>{{submission.inquryType}}<br>
+										<strong>Square Footage: </strong>{{submission.squareFootage}}<br>
+										<strong>Comments: </strong>{{submission.comment}}<br>
+										<strong>Property: </strong> <a href="{{url('craftkeen_fcr_property_view',{'code':property.code})}}" target="_blank">{{ property.code }} - {{ property }}</a><br>
+									</span>
+									<br>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+{% endblock %}

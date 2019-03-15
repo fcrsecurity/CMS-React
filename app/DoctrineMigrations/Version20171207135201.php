@@ -1,0 +1,38 @@
+<?php
+
+namespace Application\Migrations;
+
+use Doctrine\DBAL\Migrations\AbstractMigration;
+use Doctrine\DBAL\Schema\Schema;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+class Version20171207135201 extends AbstractMigration
+{
+    /**
+     * @param Schema $schema
+     */
+    public function up(Schema $schema)
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('ALTER TABLE leasing_brochure ADD copy_of_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE leasing_brochure ADD CONSTRAINT FK_7E74C74CEED7735B FOREIGN KEY (copy_of_id) REFERENCES leasing_brochure (id) ON DELETE CASCADE');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_7E74C74CEED7735B ON leasing_brochure (copy_of_id)');
+    }
+
+    /**
+     * @param Schema $schema
+     */
+    public function down(Schema $schema)
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('ALTER TABLE leasing_brochure DROP FOREIGN KEY FK_7E74C74CEED7735B');
+        $this->addSql('DROP INDEX UNIQ_7E74C74CEED7735B ON leasing_brochure');
+        $this->addSql('ALTER TABLE leasing_brochure DROP copy_of_id');
+    }
+}

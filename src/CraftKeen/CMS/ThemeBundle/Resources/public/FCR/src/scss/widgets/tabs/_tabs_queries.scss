@@ -1,0 +1,64 @@
+/* Medium devices (desktops 992px and up) */
+@media screen and (min-width: $medium-devices-width-bootstrap) {
+    .tabs {
+        .nav-tabs {
+        	display: flex;
+            > li {
+               /* padding-left: 5%;
+                padding-right: 5%;*/
+                border-bottom: 1px solid #ddd;
+                a {
+                    font-size: 1.5em;
+                    color: $color-blue;
+                    padding: 10px 30px;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+                &.active {
+                    a {
+                        padding-left: 30px;
+                    }
+                    &::before {
+                        transform: rotate(0);
+                        top: auto;
+                        font-size: inherit;
+                        height: 0;
+                        z-index: 0;
+                        content: "";
+                        position: absolute;
+                        bottom: -14px;
+                        left: 43%;
+                        border-width: 14px 14px 0;
+                        border-style: solid;
+                        border-color: #ddd transparent;
+                        display: block;
+                        width: 0;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -13px;
+                        left: 43%;
+                        border-width: 14px 14px 0;
+                        border-style: solid;
+                        border-color: #fff transparent;
+                        display: block;
+                        width: 0;
+                    }
+                }
+                &::before {
+                    content: '';
+                    display: none;
+                }
+            }
+        }
+    }
+}
+/* 480px */
+@media screen and (max-width: 480px) {
+    .tabs {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}

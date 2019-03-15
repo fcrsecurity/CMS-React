@@ -1,0 +1,10 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/show.html.twig' %}
+{% set moduleTitle = 'People'|trans %}
+{% set path_prefix = 'admin_careers_people_' %}
+{% set item = object %}
+{% if item.category == 1 and item.status == 'live' %}
+	{% set front_page_preview = 'board-of-directors' %}
+{% endif %}
+{% if item.category == 2 and item.status == 'live'%}
+	{% set front_page_preview = 'executive-leadership' %}
+{% endif %}

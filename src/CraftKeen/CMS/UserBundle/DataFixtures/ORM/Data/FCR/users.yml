@@ -1,0 +1,63 @@
+CraftKeen\CMS\UserBundle\Entity\User:
+    User0:
+        username: superadmin
+        email: superadmin@email.lo
+        enabled: 1
+        plainPassword: 123
+        roles: [ROLE_SUPERADMINISTRATOR, ROLE_ADMINISTRATOR, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_USER, ROLE_APPROVER, ROLE_LEASING, ROLE_INVESTORS, ROLE_HR]
+
+    User1:
+        username: admin
+        email: admin@email.lo
+        enabled: 1
+        plainPassword: 123
+        roles: [ROLE_ADMINISTRATOR, ROLE_USER, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_APPROVER, ROLE_LEASING, ROLE_INVESTORS, ROLE_HR]
+
+    User2:
+        username: contributor
+        email: contributor@email.lo
+        enabled: 1
+        plainPassword: 123
+        roles: [ROLE_CONTRIBUTOR, ROLE_USER]
+
+    User3:
+        username: editor
+        email: editor@email.lo
+        enabled: 1
+        plainPassword: 123
+        roles: [ROLE_EDITOR, ROLE_USER, ROLE_INVESTORS]
+
+    User4:
+        username: approver
+        email: approver@email.lo
+        enabled: 1
+        plainPassword: 123
+        roles: [ROLE_APPROVER, ROLE_USER]
+
+    User5:
+        username: Susana
+        email: Susana@email.lo
+        enabled: 1
+        password: $2y$13$fGT4wVndDIOnk8N9pz5CZOoEKgXYCQKmBWY3O/.nvhXHv4eLECUlK
+        roles: [ROLE_APPROVER, ROLE_INVESTORS, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_USER]
+    
+    User6:
+        username: Sandeep
+        email: Sandeep@email.lo
+        enabled: 1
+        password: $2y$13$v48fzaznOdSwoZzbfaZoruq.p4sNAo4HkXG/Wj6a2K.io7AMPJGiW
+        roles: [ROLE_APPROVER, ROLE_LEASING, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_USER]
+        
+    User7:
+        username: dao
+        email: dao.ly@fcr.ca
+        enabled: 1
+        password: $2y$13$DSnU0ulIIPro47rrYa3kw.Z3idORzIxgvgSUKWw9NbO.alyFw5QcW
+        roles: [ROLE_APPROVER, ROLE_LEASING, ROLE_CONTRIBUTOR, ROLE_EDITOR, ROLE_USER]
+
+    User8:
+          username: lrc
+          email: lrc@fcr.ca
+          enabled: 1
+          plainPassword: 123
+          roles: [ROLE_LEASING_REGIONAL_COORDINATORS, ROLE_USER]

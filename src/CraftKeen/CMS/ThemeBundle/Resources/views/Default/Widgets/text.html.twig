@@ -1,0 +1,10 @@
+{% macro text(widget) %}
+    <div class="row" id="widget_TYPE-{{ widget.dataType }}_ID-{{ widget.id }}">
+		<div class="col-lg-12 text-center">
+			{% if widget.data.title and widget.data.title|length > 0 %}
+				<h2 style="font-size: 70px;">{{ widget.data.title }}</h2><br>
+			{% endif %}
+			<p class="intro">{{ widget.data.text|raw }}</p>
+		</div>
+	</div>
+{% endmacro %}

@@ -1,0 +1,229 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+
+{% block body %}
+	<section class="cta container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 cta-wrapper-col">
+				<div class="row buffer-5-botom list-cta">
+					{% for item in WidgetCTABox %}
+						<div class="cta-col col-xs-12 col-sm-6 col-md-6 col-lg-3">
+							{{ react_component(
+								'CTABox', { 'props':
+									{
+										"isLoggedIn": true,
+										"data": {"title": item.title,
+												 "description": item.description,
+												 "image": item.image
+												}
+									}
+								}
+							)}}
+						</div> 
+					{% endfor %}
+					<div class="cta-col col-xs-12 col-sm-6 col-md-6 col-lg-3">
+						{{ react_component(
+								'CTABoxFinance', { 'props':
+									{
+										"isLoggedIn": true,
+										"data": {"time": WidgetCTABoxFinance.time,
+												 "index": WidgetCTABoxFinance.index,
+												 "val_usd": WidgetCTABoxFinance.val_usd,
+												 "val_percent": WidgetCTABoxFinance.val_percent,
+												 "cls": WidgetCTABoxFinance.cls
+												}
+									}
+								}
+							)
+						}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="container-fluid">
+			{{
+				react_component(
+					'Tabs', {
+						'props':{
+							"isLoggedIn": true,
+							"items": WidgetTabs.items
+						}
+					}
+				)
+			}}
+	</section>
+
+
+
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-accordion">
+				{{
+					react_component(
+						'Accordion', {
+							'props':{
+								"isLoggedIn": true,
+								"items": WidgetAccordion.items,
+								'config': WidgetAccordion.config
+							}
+						}
+					)
+				}}
+			</div>
+		</div>
+	</section>
+
+
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-accordion">
+				{{
+					react_component(
+						'PressReleases', {
+							'props':{
+								"isLoggedIn": true,
+								"items": WidgetPressReleases.items,
+								'config': WidgetPressReleases.config
+							}
+						}
+					)
+				}}
+			</div>
+		</div>
+	</section>
+
+	<section class="container-fluid grey-wrapper">
+		<div class="row">
+			<div class="col-md-4">
+				{{ react_component(
+						'FinanceBlock', { 'props':
+							{
+								"isLoggedIn": true,
+								"time": WidgetFinanceBlock.time,
+								"index": WidgetFinanceBlock.index,
+								"val_usd": WidgetFinanceBlock.val_usd,
+								"val_percent": WidgetFinanceBlock.val_percent,
+								"config": WidgetFinanceBlock.config
+							}
+						}
+					)
+				}}
+			</div>
+			<div class="col-md-8 col-lg-6 col-lg-offset-1">
+				other content
+			</div>
+		</div>
+	</section>
+
+
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
+
+
+				<div class="stock-price">
+					<div class="info-head">
+						<div class="ind">$19.60</div>
+						<div class="arrow pink-arrow">
+							<i class="fa fa fa-angle-down" aria-hidden="true"></i>
+						</div>
+						<div class="usd pink-arrow">($0.32) (1.61%)</div>
+					</div>
+					<table>
+						<tbody>
+						<tr>
+							<td>Volume</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>52 Week High</td>
+							<td>23.31</td>
+						</tr>
+						<tr>
+							<td>52 Week Low</td>
+							<td>19.19</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="info-bottom">
+						<div class="name">TSX:FCR</div>
+						<div class="date">As of 05/18/2017 4:57pm EDT</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="container-fluid">
+		<div class="row">
+			{{
+				react_component(
+					'SliderInfo', {
+						'props':{
+							"isLoggedIn": true,
+							"items": WidgetSliderInfo.items,
+							"config": WidgetSliderInfo.config
+						}
+					}
+				)
+			}}
+	    </div>
+	</section>
+
+	<section class="container-fluid">
+		<div class="row">
+			{{
+				react_component(
+					'SliderInfo', {
+						'props':{
+							"isLoggedIn": true,
+							"items": WidgetSliderInfo2.items,
+							"config": WidgetSliderInfo2.config
+						}
+					}
+				)
+			}}
+	    </div>
+	</section>
+
+
+	<section class="container-fluid">
+			
+			{{ react_component(
+					'PersonBaner', { 'props':
+						{
+							"isLoggedIn": true,
+							"config": WidgetPersonBaner.config,
+							"photo": WidgetPersonBaner.photo,
+							"name": WidgetPersonBaner.name,
+							"description": WidgetPersonBaner.description,
+							"blockquote": WidgetPersonBaner.blockquote
+						}
+					}
+				)
+			}}
+
+	</section>
+
+	{{
+		react_component(
+			'PersonBlock', {
+				'props':{
+					"isLoggedIn": true,
+					"items": WidgetPersonBlock.items,
+					"config": WidgetPersonBlock.config
+				}
+			}
+		)
+	}}
+
+
+	
+
+{% endblock %}

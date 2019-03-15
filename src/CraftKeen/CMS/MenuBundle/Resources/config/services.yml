@@ -1,0 +1,28 @@
+imports:
+    - { resource: listeners.yml, ignore_errors: true }
+
+services:
+    craft_keen.menu.cache.menu:
+        class: 'Doctrine\Common\Cache\PhpFileCache'
+        arguments: ['%kernel.cache_dir%/craftkeen_data/menu']
+        public: false
+        calls:
+            - ['setNamespace', ['craft_keen.menu']]
+
+    craft_keen.menu.provider:
+        class: 'CraftKeen\CMS\MenuBundle\Provider\MenuProvider'
+        arguments:
+            - '@doctrine'
+            - '@craft_keen.translation.provider.language'
+            - '@security.token_storage'
+            - '@craft_keen.menu.cache.menu'
+            - '%ckcms.use_menu_cache%'
+
+    craft_keen_cms_menu.menu_twig_extension:
+        class: 'CraftKeen\CMS\MenuBundle\Twig\MenuExtension'
+        public: false
+        arguments:
+            - '@craft_keen.menu.provider'
+            - '@craft_keen_cms.site_manager'
+        tags:
+            - { name: twig.extension }

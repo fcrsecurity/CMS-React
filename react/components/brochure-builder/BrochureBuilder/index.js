@@ -1,0 +1,2 @@
+
+export { BrochureBuilder } from './BrochureBuilder';

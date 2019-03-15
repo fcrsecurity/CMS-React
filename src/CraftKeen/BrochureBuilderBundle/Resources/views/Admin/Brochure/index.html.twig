@@ -1,0 +1,165 @@
+{% extends 'CraftKeenCMSAdminBundle::Default/index.html.twig' %}
+{% import 'CraftKeenCMSAdminBundle::macros/crud.html.twig' as CRUD %}
+{% import 'BrochureBuilderBundle::Admin/macro.html.twig' as macro %}
+{% set moduleTitle = 'Brochures'|trans %}
+{% set path_prefix = 'brochure_admin_brochure_' %}
+
+{% block footer_js %}
+    {{ parent() }}
+    {% javascripts
+        '@BrochureBuilderBundle/Resources/public/Brochure/dist/js/brochure.dialog.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+{% block admin_block_body %}
+    {% if cacheSupported is not defined %}
+        {% set cacheSupported = false %}
+    {% endif %}
+    {% if pagination is defined %}
+        {% set imagesFieds = [
+            'background',
+            'img',
+            'image',
+        ] %}
+
+        {% set sortableFieds = [
+            'id',
+            'name',
+            'status',
+            'version',
+            'updated',
+            'created',
+            'deletedAt',
+        ] %}
+        {% set dateTimeFieds = [
+            'updated',
+            'created',
+            'deletedAt',
+        ] %}
+        {% set textFieds = [
+            'versionComment',
+            'rejectComment',
+        ] %}
+        {% set maxStringLength = constant('CraftKeen\\BrochureBuilderBundle\\Entity\\Brochure::TEXT_FIELD_MAX_PREVIEW_LENGTH') %}
+
+        <div class="row">
+            <div class="col-lg-2">
+                {{ CRUD.renderListFilter__PerPage('pull-right form-inline') }}
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    {% if pagination[0] is defined %}
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                            <tr>
+                                {% set header = pagination[0] %}
+                                {% for key, val in header.getDisplayItems('index') %}
+                                    {% set value = attribute(header, val) %}
+                                    {% if val in sortableFieds %}
+                                        <th>
+                                            {{ knp_pagination_sortable(pagination, key|trans , val) }}
+                                            {% if pagination.isSorted(val) %}
+                                                {% if app.request.get('direction') == 'asc' %}
+                                                    {% set class = 'glyphicon-sort-by-alphabet' %}
+                                                {% else %}
+                                                    {% set class = 'glyphicon-sort-by-alphabet-alt' %}
+                                                {% endif %}
+                                                <span class="glyphicon {{ class }}"></span>
+                                            {% endif %}
+                                        </th>
+                                    {% else %}
+                                        <th>{{ key|trans }}</th>
+                                    {% endif %}
+                                {% endfor %}
+                                <th>{{ 'Actions'|trans }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in pagination %}
+                                <tr>
+                                    {% for key in entity.getDisplayItems('index') %}
+                                        {% set value = attribute(entity, key) %}
+                                        {% if key in imagesFieds %}
+                                            <td><img src="{{ value }}" alt="{{ value }}" style="height:30px;"></td>
+                                        {% elseif key in dateTimeFieds and value %}
+                                            <td>{{ value|date(default_formats.datetime) }}</td>
+                                        {% elseif key in textFieds and value %}
+                                            <td>
+                                                <span >
+                                                    <a href="#showFullTextModal" data-toggle="modal" data-text="{{ value }}">{{ value|length > maxStringLength ? value|slice(0, maxStringLength) ~ '...' : value }}</a>
+                                                </span>
+                                            </td>
+                                        {% else %}
+                                            <td>{{ value }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    <td>
+                                        <ul class="social-links list-inline list-unstyled">
+                                            {% if (path_prefix~'show')|routeExists %}
+                                                 <li>
+                                                     <a href="{{ path(path_prefix~'show', { 'id': entity.id }) }}">
+                                                         <span class="glyphicon glyphicon-eye-open"></span>
+                                                     </a>
+                                                 </li>
+                                            {% endif %}
+                                            {#{% if is_granted('ROLE_BROCHURE_APPROVER', entity) and entity.status == 'pending_approval'  %}#}
+                                                {#<li>#}
+                                                    {#<a class="btn btn-success" href="{{ path('brochure_admin_brochure_approve', {'transition':'publish', 'id': entity.id }) }}">{{ 'Approve'|trans }}</a>#}
+                                                {#</li>#}
+                                            {#{% endif %}#}
+                                            {% if workflow_can(entity, 'publish') and is_granted('ROLE_BROCHURE_APPROVER') and ('brochure_admin_brochure_approve')|routeExists and entity.status == 'pending_approval' %}
+                                                <li>
+                                                    <a href="{{ path('brochure_admin_brochure_approve', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-ok" title="{{ "approve"|trans }}"></span></a>
+                                                </li>
+                                            {% endif %}
+                                            {% if workflow_can(entity, 'reject') and is_granted('ROLE_BROCHURE_APPROVER', entity) and entity.status == 'pending_approval' %}
+                                                <button type="button" title="{{ "reject"|trans }}" data-path="{{ path('brochure_admin_brochure_reject', {'id':entity.id}) }}" data-id="{{entity.id}}" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#reject-dialog" >{{ "reject"|trans }}</button>
+                                            {% endif %}
+                                            {% if (is_granted('ROLE_BROCHURE_EDITOR')) and entity.status == 'draft' %}
+                                                <li>
+                                                    <a href="{{ path('brochure_delete', { 'id': entity.id }) }}" ><span class="glyphicon glyphicon-trash" title="{{ "delete"|trans }}"></span></a>
+                                                </li>
+                                            {% endif %}
+                                            {%  if (entity.status == 'live') %}
+                                                <li>
+                                                    <a href="{{ path('brochure_download_pdf', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-download-alt" title="{{ "get pdf"|trans }}"></span></a>
+                                                </li>
+                                                {% if (is_granted('ROLE_BROCHURE_EDITOR')) %}
+                                                <li>
+                                                    <a href="{{ path('brochure_delete', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-trash" title="{{ "delete"|trans }}"></span></a>
+                                                </li>
+                                                {% endif %}
+                                                {% if entity.langParent and is_granted('ROLE_BROCHURE_ADMINISTRATOR') %}
+                                                <li>
+                                                    <a data-toggle="modal" href="" data-path="{{ path('brochure_admin_brochure_rollback', { 'id': entity.id }) }}" data-id="{{entity.id}}" data-target="#revert-dialog"><span class="glyphicon glyphicon-repeat" title="{{ "revert"|trans }}"></span></a>
+                                                </li>
+                                                {% endif %}
+                                            {% endif %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                    <div class="count pull-right">
+                        {{ 'Total:'|trans }} {{ pagination.getTotalItemCount }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# display navigation #}
+        <div class="row">
+            <div class="navigation col-lg-12">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        </div>
+        {{ macro.renderDialog('reject', 'Reject Reason', 'Please specify the reason for the rejection here') }}
+        {{ macro.renderDialog('revert', 'Revert Reason', 'Please specify the reason for the revert here') }}
+    {% endif %}
+{% endblock %}

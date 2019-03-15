@@ -1,0 +1,252 @@
+{% extends '::base_admin.html.twig' %}
+
+{% block meta_title %}{{ 'Dashboard'|trans|raw }}{% endblock %}
+{% block topmenu %}
+
+{% endblock %}
+
+{% block body %}
+	<div id="wrapper">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">FCR {{ 'Administration'|trans }}</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">{{ 'Website'|trans }}</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="{{ path('craftkeen_cms_admin_inbox_index') }}">
+							<span class="glyphicon glyphicon-inbox"></span>
+							{{ render(controller('CraftKeenCMSAdminBundle:Inbox:getNewMessagesNumber')) }} {{ 'Inbox'|trans }}
+						</a>
+					</li>
+					<li><a href="{{ path('fos_user_profile_show') }}"><span class="glyphicon glyphicon-user"></span> ({{ app.user.username }}) {{ 'Profile'|trans }}</a></li>
+					<li>{% set languages = available_languages() %}
+						{% for language in languages %}
+							{% if language_current() != language.name %}
+								{% set currentPath = path(
+							app.request.attributes.get('_route'),
+							app.request.attributes.get('_route_params')|merge({'_locale' : language.locale})
+							) %}
+								<a href="{{ currentPath }}">{{'Switch to '|trans}}: {{ language.name|upper }}</a>
+							{% endif %}
+						{% endfor %}
+					</li>
+					<li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-in"></span> {{ 'Logout'|trans }}</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                {% if is_granted('ROLE_EDITOR') or
+                    is_granted('ROLE_CONTRIBUTOR') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR') or
+                    is_granted('ROLE_APPROVER') %}
+
+                    <li class="sidebar-brand">
+                        {{ 'Core'|trans }}
+                    </li>
+                {% endif %}
+
+				{% if is_granted('ROLE_SUPERADMINISTRATOR') or
+                    is_granted('ROLE_ADMINISTRATOR') %}					
+					<li><a href="{{ path('craftkeen_cms_admin_site_index') }}">{{ 'Sites'|trans }}</a></li>
+					<li><a href="{{ path('craftkeen_cms_user_admin_user_index') }}">{{ 'Users'|trans }}</a></li>
+					<li><a href="{{ path('craftkeen_cms_page_admin_route_index') }}">{{ 'Permalinks'|trans }}</a></li>
+                    <li><a href="{{ path('craftkeen_cms_page_admin_pagewidget_index') }}">{{ 'Page Widgets'|trans }}</a></li>
+				{% endif %}
+
+				{% if is_granted('ROLE_EDITOR') or
+                    is_granted('ROLE_CONTRIBUTOR') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR') or
+                    is_granted('ROLE_APPROVER') %}
+					<li><a href="{{ path('craftkeen_cms_page_admin_menu_index') }}">{{ 'Menu'|trans }}</a></li>
+					<li><a href="{{ path('craftkeen_cms_page_admin_page_index') }}">{{ 'Pages'|trans }}</a></li>
+				{% endif %}
+
+                {% if is_granted('ROLE_EDITOR') or
+                    is_granted('ROLE_CONTRIBUTOR') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR') or
+					is_granted('ROLE_LEASING_REGIONAL_COORDINATORS') %}
+
+                    <li><a href="{{ path('craftkeen_cms_admin_file-manager_index') }}">{{ 'File Manager'|trans }}</a></li>
+                {% endif %}
+
+				{% if is_granted('ROLE_LEASING') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR') or
+                    is_granted('ROLE_LEASING_REGIONAL_COORDINATORS')
+				%}
+					<li class="sidebar-brand">
+						{{ 'Leasing'|trans }}
+					</li>
+                    <li><a href="{{ path('admin_leasing_manager_index') }}">{{ 'Leasing & PM Contacts'|trans }}</a></li>
+                    <li><a href="{{ path('admin_leasing_tenant_index') }}">{{ 'Top Tenants'|trans }}</a></li>
+                    <li><a href="{{ path('craftkeen_fcr_admin_leasing_property_index') }}">{{ 'Properties'|trans }}</a></li>
+                {% endif %}
+
+                {% if is_granted('ROLE_LEASING') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR')
+                %}
+					<li><a href="{{ path('admin_fcr_leasing_province_index') }}">{{ 'Provinces'|trans }}</a></li>
+					<li><a href="{{ path('craftkeen_fcr_admin_leasing_property_submission_index') }}">{{ 'Submissions'|trans }}</a></li>
+                {% endif %}
+
+                {% if is_granted('ROLE_LEASING') or
+					is_granted('ROLE_ADMINISTRATOR') or
+					is_granted('ROLE_SUPERADMINISTRATOR') or
+					is_granted('ROLE_LEASING_REGIONAL_COORDINATORS')
+                %}
+                    <li><a href="{{ path('admin_leasing_property_feature-slider_index') }}">{{ 'Landing Page Slider'|trans }}</a></li>
+				{% endif %}
+
+				{% if is_granted('ROLE_INVESTORS') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR')%}
+
+					<li class="sidebar-brand">
+						{{ 'Investors'|trans }}
+					</li>
+					<li><a href="{{ path('admin_leasing_press-release_index') }}">{{ 'Press Releases'|trans }}</a></li>
+					<li><a href="{{ path('admin_investors_financial-report_index') }}">{{ 'Financial Reports'|trans }}</a></li>
+					<li><a href="{{ path('admin_investors_dividend_index') }}">{{ 'Dividends'|trans }}</a></li>
+					<li><a href="{{ path('admin_investors_debenture_index') }}">{{ 'Debentures'|trans }}</a></li>
+					<li><a href="{{ path('admin_investors_analyst-coverage_index') }}">{{ 'Analyst Converage'|trans }}</a></li>
+					<li><a href="{{ path('admin_faq_index') }}?filterBy[category]=2">{{ 'FAQ'|trans }}</a></li>
+					<li><a href="{{ path('admin_careers_people_index') }}">{{ 'ELT & Board'|trans }}</a></li>
+					<li><a href="{{ path('admin_investors_conference-call_index') }}">{{ 'Conference Calls'|trans }}</a></li>
+                    <li><a href="{{ path('admin_leasing_property_feature-slider_index') }}">{{ 'Featured Properties Slider'|trans }}</a></li>
+				{% endif %}
+				{% if is_granted('ROLE_HR') or
+                    is_granted('ROLE_ADMINISTRATOR') or
+                    is_granted('ROLE_SUPERADMINISTRATOR')%}
+
+					<li class="sidebar-brand">
+						{{ 'HR & Community'|trans }}
+					</li>
+					<li><a href="{{ path('admin_careers_employee_index') }}">{{ 'Employees'|trans }}</a></li>
+					<li><a href="{{ path('admin_careers_slider_index') }}">{{ 'Benefits Slider'|trans }}</a></li>
+					<li><a href="{{ path('admin_faq_index') }}?filterBy[category]=1">{{ 'FAQ'|trans }}</a></li>
+					<li><a href="{{ path('admin_about_office_index') }}">{{ 'Contact Offices'|trans }}</a></li>
+					<li><a href="{{ path('admin_community_retail-art_index') }}">{{ 'Retail & Art'|trans }}</a></li>
+					<li><a href="{{ path('admin_community_sustainability-reports_index') }}">{{ 'Sustainability Reports'|trans }}</a></li>
+					<li><a href="{{ path('admin_community_sustainability_slider_index') }}">{{ 'Sustainability Slider'|trans }}</a></li>
+					<li><a href="{{ path('craftkeen_fcr_newsletter_download_csv_index') }}">{{ 'Mailing Lists'|trans }}</a></li>
+
+				{% endif %}
+
+                {% if is_granted('ROLE_HR') or
+                is_granted('ROLE_ADMINISTRATOR') or
+                is_granted('ROLE_SUPERADMINISTRATOR')%}
+					<li class="sidebar-brand">
+                        {{ 'AODA'|trans }}
+					</li>
+					<li><a href="{{ path('admin_fcr_aoda_long_description_index') }}">{{ 'Long Description'|trans }}</a></li>
+                {% endif %}
+
+                {% if is_granted('ROLE_BROCHURE_ADMINISTRATOR') or
+                is_granted('ROLE_BROCHURE_EDITOR') or
+                is_granted('ROLE_BROCHURE_APPROVER') %}
+					<li class="sidebar-brand">
+                        {{ 'Brochure'|trans }}
+					</li>
+					{% if is_granted('ROLE_BROCHURE_ADMINISTRATOR') %}
+						<li><a href="{{ path('brochure_admin_user_index') }}">{{ 'Brochure Users'|trans }}</a></li>
+					{% endif %}
+					{% if is_granted('ROLE_BROCHURE_APPROVER') %}
+						<li><a href="{{ path('brochure_admin_brochure_index') }}">{{ 'Brochure Approve List'|trans }}</a></li>
+					{% endif %}
+					<li><a href="{{ path('brochure_dashboard_list') }}">{{ 'Brochure List'|trans }}</a></li>
+					<li><a href="{{ path('brochure_dashboard_manager') }}">{{ 'Brochure File Manager'|trans }}</a></li>
+				{% endif %}
+            </ul>
+        </div> <!-- ./Sidebar -->
+
+        <!-- Sidebar-wrapper -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<a href="#menu-toggle" class="btn btn-default pull-right" id="menu-toggle">
+							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+						</a>
+						<h2 class="text-center">
+							{% block admin_block_title %}
+								{% if moduleTitle is defined %}
+									{{ moduleTitle }}
+							{% else %}
+								{{ 'Admin Dashboard'|trans }}
+							{% endif %}
+							{% endblock %}
+						</h2>
+						<ol class="breadcrumb">
+							<li><a href="{{ path('craftkeen_cms_admin_index') }}">{{ 'Dashboard'|trans }}</a></li>
+							{% block admin_block_breadcrumb %}{% endblock %}
+						</ol>
+						{% for type, flash_messages in app.session.flashBag.all %}
+							{% for flash_message in flash_messages %}
+								<div class="alert alert-{{ type }} alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									{{ flash_message }}
+								</div>
+							{% endfor %}
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body smaller-tables">
+								{% block admin_block_body %}
+									Here is your administration dashboard begins
+								{% endblock %}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<footer class="text-muted pull-right">
+							{#<p>{{ 'Powered by Craft+Keen CMS'|trans }}, <a href="http://craftandkeen.com" target="_blank" >craftandkeen.com</a> </p>#}
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets
+		'bower_components/bootstrap/dist/css/bootstrap.min.css'
+		'bower_components/toastr/toastr.min.css'
+		'@admin_theme_css'
+		filter='cssrewrite' %}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+
+{% block footer_js %}
+    {{parent()}}
+
+{#	For correct work needs plugins from current theme
+	Maybe it must be fixed	#}
+    {% javascripts
+	'bower_components/jquery-ui-draggable/dist/jquery-ui-draggable.min.js'
+	'bower_components/toastr/toastr.min.js'
+	'@admin_theme_js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

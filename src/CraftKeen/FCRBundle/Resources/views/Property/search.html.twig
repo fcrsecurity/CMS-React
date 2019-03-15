@@ -1,0 +1,87 @@
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+
+{% block meta_title %}{{ 'Property Search'|trans([], 'messages', app.request.locale) }}{% endblock %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+    addUrl  : path('craftkeen_fcr_property_add_wizard'),
+    delPath : 'craftkeen_fcr_property_delete',
+    copy    : null,
+    mode    : 'view',
+    } %}
+    {% if pagination[0] is defined %}
+        {{ AP.AdminPanel(pagination[0], data) }}
+    {% endif %}
+{% endblock %}
+
+{% block hero %}	
+	<section class="hero-image container-fluid">
+		<div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+			<div class="container-content">
+				<h1 class="text-shadow">{{ 'Property Search'|trans([], 'messages', app.request.locale) }}</h1>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer_js %}
+	{{ parent() }}
+	{% javascripts	     
+		'@CraftKeenFCRBundle/Resources/public/Property/dist/js/search.js'
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+				
+{% endblock %}
+
+{% block body %}
+    <section class="container-fluid">
+        <div class="row grid">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                <div class="buffer-7-top">
+
+                    {% include '@CraftKeenFCR/Property/search_type.twig' %}
+
+                    {% if pagination %}
+                    <p>{{ pagination.getTotalItemCount }} {{ 'Properties Found'|trans([], 'messages', app.request.locale) }}</p>
+                    <div class="properties">
+                        <div class="row">
+                            {% if pagination|length > 0 %}
+                                {% for property in pagination %}
+                                    <div class="col-lg-2 col-md-3 col-sm-6 allow-filtering ">
+                                        <div class="property-item center-block">
+                                            <a class='zoom'
+                                               href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}"
+                                               target="_blank">
+                                                <img class="img-responsive" src="{{ property.thumbnail }}" alt="{{ property.code }} {{ property.details.geoAddress1 }} {{ property.details.geoCity }}"/>
+                                                <div class="description-wrapper">
+                                                    <span><strong>{{ property.parentName }}</strong></span> <br />
+                                                    <span><small>{{ property.details.geoAddress1 }}</small></span><br />
+                                                    <span><small>{{ property.details.geoCity }}</small></span><br />
+                                                    <span>
+                                                        {#<small>
+                                                            {{ property.details.sqft }}
+                                                            {{ 'Approximate Sq Ft'|trans }}
+                                                        </small>#}
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div class="row">
+                            <div class="navigation col-lg-12">
+                                {{ knp_pagination_render(pagination) }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

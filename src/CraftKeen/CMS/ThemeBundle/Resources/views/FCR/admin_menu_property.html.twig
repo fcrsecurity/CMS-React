@@ -1,0 +1,108 @@
+{% macro AdminMenuPanel(object, type_page) %}
+
+    {% set route = app.request.attributes.get('_route') %}
+
+    {% if type_page == 'property' %}
+        {% set EditUrl = 'craftkeen_fcr_property_edit_wizard' %}
+        {% set AddUrl = 'craftkeen_fcr_property_add_wizard' %}
+    {% endif %}
+
+    {% if type_page == 'article' %}
+        {% set EditUrl = 'admin_leasing_press-release_edit' %}
+        {% set AddUrl = 'admin_leasing_press-release_new' %}
+    {% endif %}
+
+    {% if type_page == 'blog' %}
+        {% set EditUrl = 'admin_community_retail-art_edit' %}
+        {% set AddUrl = 'admin_community_retail-art_new' %}
+    {% endif %}
+    <section class="container-fluid admin-navbars">
+		<div class="row">
+			<div class="navbars-wrapper">
+				<nav>
+					<div class="left-nav">
+                        {% if route == 'craftkeen_fcr_property_edit_wizard' %}
+                            <a id="edit-icon" href="{{ path('craftkeen_fcr_admin_leasing_property_index') }}" title="Exit to Admin">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </a>
+                            {% if not object.isHidden and 'live' == object.status %}
+                                <a id="edit-icon" href="{{ path('craftkeen_fcr_property_view', {'code': object.code }) }}" title="View Property">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                            {% if 'draft' == object.status %}
+                                <a id="edit-icon" href="{{ path('craftkeen_fcr_property_delete', {'id': object.id }) }}" title="Delete Draft">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                        {% else %}
+                            <a id="edit-icon" href="{{ path(EditUrl, {'id': object.id }) }}" title="Edit">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        <a {% if 'property' == type_page %}
+								href="{{ path(AddUrl, { 'step': '1' }) }}"
+							{% else %}
+								href="{{ path(AddUrl) }}"
+							{% endif %} >
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                        {% if 'property' == type_page and route != 'craftkeen_fcr_property_edit_wizard' %}
+                            <a href="{{ path('brochure_create_from_property', {'id': object.id }) }}" title="Create Brochure">
+                                <i class="fa fa-file" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+					</div>
+
+					<div class="right-nav">
+					 	{% if object.status == "published" %}
+                            <span class="label page-status label-success">{{ object.status }}</span>
+                        {% elseif object.status ==  "draft" %}
+                            <span class="label page-status label-warning">{{ object.status }}</span>
+                        {% else %}
+                            <span class="label page-status label-default">{{ object.status }}</span>
+                        {% endif %}
+
+						<a href="#adminSidebarRight" class="show-panel">
+                            <i class="fa fa-sliders" aria-hidden="true"></i>
+                        </a>
+					</div>
+					<div class="clearfix"></div>
+				</nav>
+
+				<div class="admin-sidebar-left" id="adminSidebarLeft">
+					{#TODO: Page Settings Goes Here#}
+				</div>
+
+				<div class="right-style">
+                    <div class="admin-sidebar-right" id="adminSidebarRight">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ path('craftkeen_cms_admin_inbox_index') }}">
+                                    <span class="glyphicon glyphicon-inbox"></span>
+                                    {{ render(controller('CraftKeenCMSAdminBundle:Inbox:getNewMessagesNumber')) }} {{ 'Inbox'|trans }}
+                                </a><br /><br />
+                            </li>
+							<li>
+                                {% if is_granted("ROLE_USER") %}
+                                    Hi, {{ app.user.username }}
+                                {% endif %}
+							</li>
+							<li>
+                                <a href="{{ path('craftkeen_cms_admin_index') }}">
+                                    <i class="fa fa-cog" aria-hidden="true"></i> {{ 'Dashboard'|trans }}
+                                </a>
+                            </li>
+							<li>&nbsp;</li>
+							<li>
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> {{'Logout'|trans }}
+                                </a>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

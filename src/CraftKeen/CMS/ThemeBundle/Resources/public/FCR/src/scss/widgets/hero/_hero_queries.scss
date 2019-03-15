@@ -1,0 +1,53 @@
+/*480px*/
+@media only screen and (min-width: $mobile-devices-width) {
+	.hero-image {
+    	height: 480px;
+    	h1 {
+    		font-size: 250%;
+    	}
+        .arrows { 
+            display: none;     
+        }
+	}
+}
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $small-devices-width ) {
+    .hero-image {
+        .arrows { 
+            display: block;
+        }
+    }
+}
+/*992*/
+@media only screen and (min-width: $medium-devices-width-bootstrap) {
+	.hero-image {
+    	height: 600px;
+    	h1 {
+    		font-size: 400%;
+    	}
+	}
+}
+@media only screen and (min-width : $large-devices-width){
+    .hero-image {
+        &.big-hero {
+           min-height: 900px;
+        }
+      .arrows {
+        margin-top: 170px;
+      }
+    }
+}
+@media screen and (max-width:480px) {
+    .hero-image {
+        .arrows { 
+            display: none; 
+        }
+    }
+}
+@media screen and (min-width:2100px) {
+  .hero-image {
+    .arrows {
+      display: none;
+    }
+  }
+}

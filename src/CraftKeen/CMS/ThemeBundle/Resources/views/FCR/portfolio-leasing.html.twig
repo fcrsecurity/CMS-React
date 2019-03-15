@@ -1,0 +1,394 @@
+{% set filters = [
+    {
+    'name' : 'Grocery Anchored'|trans([], 'messages', app.request.locale),
+    'slug' : 'grocery_anchored',
+    },
+    {
+    'name' : 'Retail'|trans([], 'messages', app.request.locale),
+    'slug' : 'urban_retail',
+    },
+    {
+    'name' : 'Office Space'|trans([], 'messages', app.request.locale),
+    'slug' : 'office_space',
+    },
+    {
+    'name' : 'filter_under_development'|trans([], 'messages', app.request.locale),
+    'slug' : 'under_development',
+    }
+] %}
+{% extends 'CraftKeenCMSThemeBundle:'~theme~':layout.html.twig' %}
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+{% import 'CraftKeenCMSPageBundle:macro:content.html.twig' as P %}
+
+{% block meta_title %}{% if page.metaTitle %}{{ page.metaTitle }}{% else %}{{ parent() }}{% endif %}{% endblock %}
+{% block meta_description %}{% if page.metaDescription %}{{ page.metaDescription }}{% else %}{{ parent() }}{% endif %}{% endblock %}
+{% block meta_keywords %}{% if page.metaKeywords %}{{ page.metaKeywords }}{% else %}{{ parent() }}{% endif %}{% endblock %}
+{% block meta_robots %}{% if page.isIndexed == false %}noindex{% else %}index,follow{% endif %}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block system_values %}
+    {{ parent() }}
+    <input type="hidden" name="system:{page}:{id}" id="system_page-id" value="{{ page.id }}">
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    {#'bower_components/d3/d3.min.js'#}
+    <script src="{{ asset('assets/build/client-bundle.js') }}"></script>
+    <script type="text/javascript">
+        window.portfolioPageTranslations = {
+            'properties': '{{ 'properties' |trans([], 'messages', app.request.locale) }}',
+            'approximate_sq_ft': '{{ 'approximate_sq_ft' |trans([], 'messages', app.request.locale) }}',
+            'more': '{{ 'modal_more_button' |trans([], 'messages', app.request.locale) }}'
+        };
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtMVywo4aNmpPC1FTZI8AKP4QoFzbfec4"></script>
+    <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+    {% javascripts
+    'bower_components/topojson/topojson.min.js'
+    'bower_components/jquery-zoom/jquery.zoom.min.js'
+    '@CraftKeenFCRBundle/Resources/public/Property/dist/js/search.js'
+    'bundles/craftkeencmstheme/FCR/dist/js/portfolio-leasing-map.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block hero %}{% endblock %}
+
+{% block body %}
+    {#Portfolio map#}
+    <section class="container-fluid page-portfolio-leasing">
+        <div class="row leasing-map">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="maphead hidden"></div>
+                    <div id="mapCanada"
+                         data-provinces="/bundles/craftkeencmstheme/FCR/assets/map/prov_4326_simple.topo.json">
+                        <div id="googleMap" class="hidden"></div>
+                        <a href="#" class="backToMap hidden">{{ 'map-back-button'|trans([], 'messages', app.request.locale) }}</a>
+                        <img src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-map/back.svg"
+                             class="backMap hidden" alt="{{ 'map-back-button'|trans([], 'messages', app.request.locale) }}">
+                        <img src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-map/next.svg"
+                             class="nextMap hidden" alt="{{ 'map-next-button'|trans([], 'messages', app.request.locale) }}">
+                        <img src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-map/clickToDrag.svg"
+                             class="drag-click visible-xs" alt="{{ 'Click to Drag'|trans([], 'messages', app.request.locale)}}">
+                        <h1 class="map-tittle text-shadow">{{ 'porfolio_page_title' |trans([], 'messages', app.request.locale) }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {#End portfolio map#}
+    {#Intro plus search form#}
+    <div class="loader"></div>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 leasing-wrapper">
+                <div class="buffer-6-top">
+                    {{ P.renderLayout(page, page.layout|jsonDecode, widgets) }}
+
+                    {% set provinces = leasing_provinces() %}
+                    {% set cities = leasing_cities() %}
+                    {% set properties = leasing_properties('AB') %}
+                </div>
+                <div class="row buffer-6-top buffer-6-bottom">
+                    <div class="col-lg-12">
+                        {#Search form#}
+                        {% include '@CraftKeenFCR/Property/search_type.twig' %}
+                        {#End search form#}
+                        {#Accordion form#}
+                        <div class="solidPanel row">
+                            <div class="accordionElement">
+                                <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+                                    {% for province in provinces %}
+                                        {% set properties = leasing_properties(province.province) %}
+                                        {% set allProperties = leasing_properties(province.province,0,12,null,true) %}
+                                        <!-- Option {{ province.name }} -->
+                                        <div class="panel panel-default" id='show-{{ province.slug }}'>
+                                            <div class="panel-heading accordion-toggle collapsed"
+                                                 onclick="document.location.href = '#collapse-{{ province.slug }}'"
+                                                 role="tab" id="{{ province.slug }}" data-toggle="collapse"
+                                                 data-parent="#accordion" href="#collapse-{{ province.slug }}"
+                                                 aria-expanded="true" aria-controls="collapse-{{ province.slug }}">
+                                                <h4 class="panel-title">
+                                                    <a role="button" class="accordion-toggle">
+                                                        {{ province.name }}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse-{{ province.slug }}" class="panel-collapse collapse"
+                                                 role="tabpanel" aria-labelledby="{{ province.slug }}">
+                                                <div class="panel-body">
+                                                    <!-- TODO: Put {{ province.slug }} Content -->
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="row map-and-text">
+                                                                <div class="col-md-4 left-map">
+                                                                    <img style="width:{{ province.map_width }}px"
+                                                                         src="{{ province.map }}" class="img-responsive"
+                                                                         alt="{{ province.name }} Map">
+                                                                </div>
+                                                                <div class="col-md-8 right-text">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="province-facts row {#slick-3-item-line-arrow#} ">
+                                                                                <div class="col-lg-4 col-md-4">
+                                                                                    <div class="icon-left">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                             viewBox="0 0 64.44 41.35"
+                                                                                             class="pl-ruler-icon">
+                                                                                            <title>{{ 'size_of_province' |trans([], 'messages', app.request.locale) }}</title>
+                                                                                            <g id="Layer_2"
+                                                                                               data-name="Layer 2">
+                                                                                                <g id="Layer3">
+                                                                                                    <path class="cls-1"
+                                                                                                          d="M1.75 1.75h60.94V39.6H1.75zM10.09 1.75v22.46M17.51 1.75V11.9M24.94 1.75V11.9M32.37 1.75v22.46M39.79 1.75V11.9M47.22 1.75V11.9M54.64 1.75v22.46"/>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                    <div class="desc">
+                                                                                        {% set  totalArea = province.totalArea / 1000 %}
+                                                                                        <div class="line1">{{ totalArea | number_format(3, '.', ',') }} {{ 'million' |trans([], 'messages', app.request.locale) }}
+                                                                                            km<sup>2</sup></div>
+                                                                                        <div class="line2">{{ 'total_area' |trans([], 'messages', app.request.locale) }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-4 col-md-4">
+                                                                                    <div class="icon-left">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                             viewBox="0 0 70.76 58.93"
+                                                                                             class="pl-people-icon">
+                                                                                            <title>{{ 'population' |trans([], 'messages', app.request.locale) }}</title>
+                                                                                            <g id="Layer_2"
+                                                                                               data-name="Layer 2">
+                                                                                                <g id="Layer3">
+                                                                                                    <path class="cls-1"
+                                                                                                          d="M35.34 19.28c7.9-.08 6.75-10.58 6.75-10.58-.31-7-6.2-7-6.79-6.95s-6.48-.08-6.81 6.93c0 0-1.15 10.51 6.77 10.58zm0 0M26.64 57.18a13 13 0 0 0-1-3.93 47.56 47.56 0 0 1-3.7-8.35c-.94-3.42-1.62-12.78 0-14.4a13.74 13.74 0 0 1 1.8-1.58 35.24 35.24 0 0 1 6.54-3.6s.39 6 5.11 6 5.11-6 5.11-6a34 34 0 0 1 6.5 3.61 13.7 13.7 0 0 1 1.8 1.58c1.62 1.61.94 11 0 14.4a48.29 48.29 0 0 1-3.7 8.35 13.13 13.13 0 0 0-1 3.93M56.88 22.11c6.65-.07 5.68-8.91 5.68-8.91-.26-5.91-5.22-5.86-5.71-5.84s-5.45-.07-5.73 5.83c0 0-1 8.84 5.7 8.91zm0 0M52.58 27.2s.33 5.08 4.3 5.08 4.3-5.08 4.3-5.08a28.61 28.61 0 0 1 5.5 3 11.53 11.53 0 0 1 1.52 1.33c1.37 1.36.79 9.23 0 12.12a40.64 40.64 0 0 1-3.11 7 11.05 11.05 0 0 0-.88 3.35M13.88 22.11c6.67-.07 5.7-8.91 5.7-8.91-.28-5.89-5.24-5.85-5.73-5.83S8.4 7.3 8.14 13.21c0 0-1 8.84 5.68 8.91zm0 0M6.56 54a11.05 11.05 0 0 0-.87-3.31 40.64 40.64 0 0 1-3.11-7c-.79-2.88-1.37-10.76 0-12.12a11.53 11.53 0 0 1 1.52-1.33 28.61 28.61 0 0 1 5.5-3s.33 5.08 4.3 5.08 4.3-5.08 4.3-5.08"/>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                    <div class="desc">
+                                                                                        <div class="line1">{{ province.population }} {{ 'million' |trans([], 'messages', app.request.locale) }}</div>
+                                                                                        <div class="line2">{{ 'population' |trans([], 'messages', app.request.locale) }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-4 col-md-4">
+                                                                                    <div class="icon-left">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                             viewBox="0 0 88.26 45.67"
+                                                                                             class="pl-houses-icon">
+                                                                                            <title>{{ 'households' |trans([], 'messages', app.request.locale) }}</title>
+                                                                                            <g id="Layer_2"
+                                                                                               data-name="Layer 2">
+                                                                                                <g id="Layer3">
+                                                                                                    <path class="cls-1"
+                                                                                                          d="M80.21 14.41v29.51H37.93V14.41L59.08 1.75l21.13 12.66z"/>
+                                                                                                    <path class="cls-2"
+                                                                                                          d="M86.51 18.18l-6.3-3.77"/>
+                                                                                                    <path class="cls-1"
+                                                                                                          d="M65.27 14.41v29.51H22.98V14.41L44.13 1.75l21.14 12.66z"/>
+                                                                                                    <path class="cls-2"
+                                                                                                          d="M71.56 18.18l-6.29-3.77M8.03 14.42l-6.28 3.76"/>
+                                                                                                    <path class="cls-1"
+                                                                                                          d="M50.32 14.41v29.51H8.04V14.41L29.18 1.75l21.14 12.66z"/>
+                                                                                                    <path class="cls-1"
+                                                                                                          d="M23.14 27.58h12.07v16.34H23.14z"/>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                    <div class="desc">
+                                                                                        <div class="line1">{{ province.households | number_format(0, '.', ',') }}</div>
+                                                                                        <div class="line2">{{ 'households' |trans([], 'messages', app.request.locale) }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-10 province-facts-content">
+                                                                            {{ province.description | replace({'%prop_count%' : allProperties | length}) }}
+                                                                            <span class="more-span"></span>
+                                                                            <br>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 grid">
+                                                            <div class="properies-gridview buffer-5-top {{ province.slug }}"
+                                                                 name="{{ province.slug }}">
+                                                                <div class="filters">
+                                                                    <div class="view-switcher-wrapper pull-right">
+                                                                        <ul class="list-unstyled list-inline">
+                                                                            <li class="active"><img
+                                                                                        src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-page/LE_GridSQRIco.png">
+                                                                            </li>
+                                                                            <li class="switch-to-list"><img
+                                                                                        src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-page/LE_GridLSTIco.png">
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="wrapper-mobile-filter">
+                                                                        <span class="active-item"></span>
+                                                                        <ul class="center-block list-unstyled list-inline text-center ">
+                                                                            <li><a class="filter"
+                                                                                   href="javascript:void(0)"
+                                                                                   filter="">{{ 'all' |trans([], 'messages', app.request.locale) }}</a>
+                                                                            </li>
+                                                                            {% for filter in filters %}
+                                                                                <li><a class="filter"
+                                                                                       href="javascript:void(0)"
+                                                                                       filter="{{ filter.slug }}">{{ filter.name }}</a>
+                                                                                </li>
+                                                                            {% endfor %}
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="icon-filter"><em class="fa fa-filter"
+                                                                                                 aria-hidden="true"></em>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                                <div class="properties center-block">
+                                                                    <div class="row">
+                                                                        {% for key, property in properties if key < 12 %}
+
+                                                                            <div class="col-lg-3 col-md-3 col-sm-6 allow-filtering">
+
+                                                                                <div class="property-item center-block">
+                                                                                    <a class='zoom'
+                                                                                       href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}"
+                                                                                       target="_blank">
+                                                                                        <img class="img-responsive"
+                                                                                             src="{{ property.thumbnail }}"
+                                                                                             alt="Image"/>
+                                                                                        <div class="description-wrapper">
+                                                                                            <span><strong>{{ property.parentName }}</strong></span>
+                                                                                            <br/>
+                                                                                            <span><small>{{ property.details.geoAddress1 }} {{ property.details.geoAddress2 }}</small></span>
+                                                                                            <br>
+                                                                                            <span><small>{{ property.details.geoCity }}</small></span><br>
+                                                                                            <span><small>{{ property.details.sqft | number_format(0,'.',',') ~ ' ' ~ 'approximate_sq_ft' |trans([], 'messages', app.request.locale) }}</small></span>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                        <div class="more-props-wrap text col-lg-12 text-center"
+                                                                             id="more-{{ province.slug }}">
+                                                                            <a class="more-props"
+                                                                               href="javascript:void(0)">{{ 'view_more' |trans([], 'messages', app.request.locale) }}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="properies-listview buffer-5-top">
+                                                                <div class="filters">
+                                                                    <div class="view-switcher-wrapper pull-right">
+                                                                        <ul class="list-unstyled list-inline">
+                                                                            <li class="switch-to-grid"><img
+                                                                                        src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-page/LE_GridSQRIco-inactive.png">
+                                                                            </li>
+                                                                            <li class="active"><img
+                                                                                        src="/bundles/craftkeencmstheme/FCR/assets/images/portfolio-page/LE_GridLSTIco2.png">
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="clearfix"></div>
+                                                                    <div class="wrapper-mobile-filter">
+                                                                        <span class="active-item"></span>
+                                                                        <ul class="center-block list-unstyled list-inline text-center ">
+                                                                            <li><a class="table-filter"
+                                                                                   href="javascript:void(0)"
+                                                                                   filter="">{{ 'all' |trans([], 'messages', app.request.locale) }}</li>
+                                                                            {% for filter in filters %}
+                                                                                <li><a class="table-filter"
+                                                                                       href="javascript:void(0)"
+                                                                                       filter="{{ filter.slug }}">{{ filter.name }}</a>
+                                                                                </li>
+                                                                            {% endfor %}
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="icon-filter"><em class="fa fa-filter"
+                                                                                                 aria-hidden="true"></em>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="clearfix"></div>
+                                                                <div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 table_container">
+                                                                            <table id="dataTable-{{ province.slug }}"
+                                                                                   width="100%"
+                                                                                   class="table table-hover">
+                                                                                <thead>
+                                                                                <tr>
+                                                                                    <th>{{ 'portfolio_table_head_name' |trans([], 'messages', app.request.locale) }}</th>
+                                                                                    <th>{{ 'portfolio_table_head_address' |trans([], 'messages', app.request.locale) }}</th>
+                                                                                    <th>{{ 'portfolio_table_head_city' |trans([], 'messages', app.request.locale) }}</th>
+                                                                                    <th>{{ 'portfolio_table_head_type' |trans([], 'messages', app.request.locale) }}</th>
+                                                                                    <th>{{ 'approximate_sq_ft' |trans([], 'messages', app.request.locale) }}</th>
+                                                                                </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                {% for property in allProperties %}
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}">{{ property.parentName }}</a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}">{{ property.details.geoAddress1 }} {{ property.details.geoAddress2 }}</a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}">{{ property.details.geoCity }}</a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}">
+                                                                                                {% if property.filters.isFilterGroceryAnchored %}
+                                                                                                    {{ 'filter_grocery_anchored' |trans([], 'messages', app.request.locale) }}
+                                                                                                {% elseif property.filters.isFilterUrbanRetail %}
+                                                                                                    {{ 'filter_urban_retail' |trans([], 'messages', app.request.locale) }}
+                                                                                                {% elseif property.filters.isFilterOfficeSpace %}
+                                                                                                    {{ 'filter_office_space' |trans([], 'messages', app.request.locale) }}
+                                                                                                {% elseif property.filters.isFilterUnderDevelopment %}
+                                                                                                    {{ 'filter_under_development' |trans([], 'messages', app.request.locale) }}
+                                                                                                {% endif %}
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="{{ path('craftkeen_fcr_property_view', {'code':property.code}) }}">{{ property.details.sqft }}</a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                {% endfor %}
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {#Accordion form#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {#End section#}
+{% endblock %}

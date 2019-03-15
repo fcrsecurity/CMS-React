@@ -1,0 +1,3 @@
+brochure_builder:
+    resource:     "@BrochureBuilderBundle/Controller"
+    type:         annotation

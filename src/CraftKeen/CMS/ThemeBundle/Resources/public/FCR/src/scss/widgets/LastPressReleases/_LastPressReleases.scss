@@ -1,0 +1,42 @@
+.pressRelease {
+    background-color: $color-grey-light1;
+    .press_release_list {
+        margin: 0 auto;
+        list-style: none;
+        li {
+            margin-bottom: $spacing-buffer-7;
+            margin-top: $spacing-buffer-7;
+            padding-top: $spacing-buffer-7;
+            a {
+            	cursor: pointer;
+            }
+            span {
+                display: inline-block;
+                /*width: 100%;*/
+                &.press_desc {
+                    padding-bottom: $spacing-buffer-7;
+                    display: block;
+                }
+            }
+            
+            .press_date {
+                font-family: $font-family-default-black;
+                font-size: 1.5em;
+            }
+            &:after {
+                display: block;
+                clear: both;
+                content: "";
+                position: relative;
+                left: 0;
+                bottom: 0;
+                max-width: 80px;
+                height: 1px;
+                width: 10%;
+                border-bottom: 1px solid $color-teal;
+            }
+        }
+    }
+}
+
+@import "LastPressReleases_queries";

@@ -1,0 +1,4 @@
+craft_keen_page_bundle:
+    resource: "@CraftKeenTranslationBundle/Controller/Admin"
+    type: annotation
+    prefix: 'admin'

@@ -1,0 +1,73 @@
+.tabs {
+    .nav-tabs {
+        border-bottom: 0;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        > li {
+            width: auto;
+            padding: 0;
+            border-bottom: 1px solid $color-blue;
+            float: none;
+            > a {
+                padding: 10px 30px 10px 50px;
+                transition: all 0.5s ease;
+                background: transparent;
+                font-size: 1.3em;
+                &:hover,
+                &:focus {
+                    color: $color-teal;
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+            &.active {
+                position: relative;
+                a {
+                    padding-left: 65px;
+                }
+                a,
+                a:hover,
+                a:focus {
+                    border-color: transparent;
+                    color: $color-grey;
+                }
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    left: 20px;
+                    top: 17px;
+                    font-size: 40px;
+                    width: 25px;
+                    height: 30px;
+                    transform: rotate(180deg);
+                }
+            }
+            &::before {
+                content: "\f107";
+                position: absolute;
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                border: none;
+                left: 20px;
+                top: 8px;
+                color: $color-blue;
+                font-size: 30px;
+                width: 20px;
+                height: 23px;
+                z-index: 20;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+    .tab-content {
+        margin-top: 50px;
+    }
+}
+
+@import "tabs_queries";

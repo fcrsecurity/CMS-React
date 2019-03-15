@@ -1,0 +1,207 @@
+{% extends 'CraftKeenFCRBundle:Property:propertyLayout.html.twig' %}
+
+{% block meta_title %}{{ 'Property Translation Wizard'|trans }}{% endblock %}
+
+{% block hero %}
+    {% set heroImage = ckcms_library_url~'/properties/hero/default_header.png' %}
+    {% if property.details.heroImage is defined and property.details.heroImage %}
+        {% set heroImage = property.details.heroImage %}
+    {% endif %}
+    <section class="hero-image container-fluid" style="
+            background: {{ hero_overlay }} ,url( '{{ heroImage }}' ) no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            ">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 text-center wrap-hero">
+                <div class="container-content">
+                    <h1 class="text-shadow">{{ 'Property Translation Wizard'|trans }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block admin_panel %}
+    {% import 'CraftKeenCMSAdminBundle:macros:AdminPanel.html.twig' as AP %}
+
+    {% set data = {
+    exitUrl : path('craftkeen_fcr_admin_leasing_property_index'),
+    viewUrl : path('craftkeen_fcr_property_view', {code: property.code}),
+    delPath : 'craftkeen_fcr_property_delete',
+    copy    : copy,
+    mode    : mode,
+    } %}
+    {{ AP.AdminPanel(property, data) }}
+{% endblock %}
+
+{% block footer_js %}
+    {{ parent() }}
+    {% javascripts
+    '@CraftKeenCMSThemeBundle/Resources/public/FCR/dist/js/googleMap.js'
+    'bower_components/symfony-collection/jquery.collection.js'
+    'bundles/craftkeenfcr/Property/dist/js/property-wizard.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <section class="container-fluid">
+        <div class="row grid">
+            <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+                <div class="">
+                    <section class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 buffer-7-top buffer-7-bottom">
+                                <div class="row">
+                                    <div class="col-lg-10 col-lg-offset-1">
+
+                                        {% if property.isHidden %}
+                                            <div class="alert alert-info">
+                                                {{ 'ATTENTION: This property is hidden. To change it, please scroll to the bottom of the form.'|trans }}
+                                            </div>
+                                        {% endif %}
+                                        {% if property.status == 'draft' %}
+                                            <div class="alert alert-warning">
+                                                {{ "ATTENTION: This property is a draft and won't be published. Please send for Approval first."|trans }}
+                                            </div>
+                                        {% endif %}
+                                        {% if property.status == 'pending_approval' %}
+                                            <div class="alert alert-danger">
+                                                {{  'ATTENTION: This property is locked. Property awaiting approval'|trans }}
+                                            </div>
+                                        {% endif %}
+                                        <div class="alert alert-info">
+                                            {{ 'Language:'|trans }} {{ property.lang|upper }}
+                                            - {{ 'Translation of:'|trans }}
+                                            <a href="{{ path('craftkeen_fcr_property_edit_wizard', {'id':property.langParent.id}) }}">
+                                                {{ property.langParent }}
+                                                ({{ property.langParent.lang|upper }})
+                                            </a>
+                                        </div>
+                                        {{ form_start(form) }}
+                                        <div class="row">
+                                            <div class="col-lg-6 main-column">
+                                                <fieldset>
+                                                    <legend>{{ 'Main'|trans }}</legend>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.parentName) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.childName) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            {{ form_row(form.details.marketingPdf) }}
+                                                            {{ form_row(form.details.sitePlanPdf) }}
+                                                            {{ form_row(form.details.heroImage) }}
+                                                            <p>{{ 'Social Media'|trans }}</p>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    {{ form_row(form.details.socialUrl) }}
+                                                                    {{ form_row(form.details.socialFacebook) }}
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    {{ form_row(form.details.socialTwitter) }}
+                                                                    {{ form_row(form.details.videoUrl) }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-6 geo-column">
+                                                <fieldset>
+                                                    <legend>{{ 'Geo'|trans }}:</legend>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoAddress1) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoAddress2) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoCountry) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoCity) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoProvince) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoProvinceRegion) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoIntersetion) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoPostal) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoLat) }}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            {{ form_row(form.details.geoLng) }}
+                                                        </div>
+                                                    </div>
+
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <fieldset>
+                                                    <legend>{{ 'Details'|trans }}:</legend>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            {{ form_row(form.details.description) }}
+                                                            {{ form_row(form.details.leedDescription) }}
+                                                            {{ form_row(form.details.sqft) }}
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <fieldset>
+                                                    <legend>{{ 'Search & SEO'|trans }}:</legend>
+                                                    {{ form_row(form.details.seoTitle) }}
+                                                    {{ form_row(form.details.seoDescription) }}
+                                                    {{ form_row(form.details.seoKeywords) }}
+                                                    {{ form_row(form.details.seoIsIndex) }}
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        {{ form_widget(form) }}
+                                        <hr/>
+                                        <input type="submit" class="btn btn-primary" value="{{ 'Save Translation.'|trans }}"/>
+                                        {% if property.id %}
+                                            <a class="btn btn-info" href="{{ path('craftkeen_fcr_property_edit_wizard', {'id':property.id}) }}">{{ 'Edit Property'|trans }}</a>
+                                        {% endif %}
+                                        {{ form_end(form) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

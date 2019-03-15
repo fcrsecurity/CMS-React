@@ -1,0 +1,393 @@
+CraftKeen\CMS\PageBundle\Entity\Page:
+# Home Page
+    Page0:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Home
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1        
+        template: 'main'
+        layout: '{"R1":{"R1C1":{"id":"ctabox-widget-wrap","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 cta-wrapper-col buffer-5-bottom","content":{"R1C1R1":{"R1C1R1C1":{"id":"ctabox-widget1","class":"cta-col col-xs-12 col-sm-6 col-md-6 col-lg-3","content":"[widget-ctabox-callback1]"},"R1C1R1C2":{"id":"ctabox-widget2","class":"cta-col col-xs-12 col-sm-6 col-md-6 col-lg-3","content":"[widget-ctabox-callback2]"},"R1C1R1C3":{"id":"ctabox-widget3","class":"cta-col col-xs-12 col-sm-6 col-md-6 col-lg-3","content":"[widget-ctabox-callback3]"},"R1C1R1C4":{"id":"ctaboxfinance-widget","class":"cta-col col-xs-12 col-sm-6 col-md-6 col-lg-3","content":"[widget-ctaboxfinance-callback]"}}}}},"R2":{"R2C1":{"id":"title1","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2","content":"[widget-title-callback]"}},"R3":{"R3C1":{"id":"text1","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2","content":"[widget-text-callback]"}},"R4":{"R4C1":{"id":"result1","class":"col-xs-12 col-sm-12 col-md-12 col-lg-12","content":"[widget-result-callback]"}},"R5":{"R5C1":{"id":"slider-widget1","class":"col-xs-12 col-sm-12 col-md-12 col-lg-12","content":"[widget-featureslider-callback]"}},"R6":{"R6C1":{"id":"title-widget","class":"col-lg-10 col-lg-offset-1","content":"[widget-title-callback2]"}},"R7":{"R7C1":{"id":"text-widget","class":"col-lg-10 col-lg-offset-1","content":"[widget-text-callback2]"}},"R8":{"R8C1":{"id":"text-widget","class":"col-xs-12 col-sm-12 col-md-12 col-lg-12 col-arts","content":"[widget-video-callback]"}},"R9":{"R9C1":{"id":"title-widget","class":"col-xs-12 col-sm-12 col-md-12 col-lg-12","content":"[widget-title-callback3]"}},"R10":{"R10C1":{"id":"link-icon-list-widget","class":"cols col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 buffer-6-top buffer-5-padding-bottom","content":"[widget-LinkIconList-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/homepage.jpg'
+        hero_video: 'https://player.vimeo.com/video/196023530'
+        hero_title: 'Shopping for everyday life'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:18:"ROLE_ADMINISTRATOR";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:18:"ROLE_ADMINISTRATOR";}}
+# Investors
+    Page1:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Investors
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1        
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"FinanceBlock-widget","class":"col-md-4 grey-wrapper","content":"[widget-FinanceBlock-callback]"},"R1C2":{"id":"widget-LinkIconList-callback","class":"col-md-8 grey-wrapper ir-link","content":"[widget-LinkIconList-callback]"}},"R2":{"R2C1":{"id":"result-widget","class":"col-md-12","content":"[widget-result-callback]"}},"R3":{"R3C1":{"id":"intro","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1","content":"[widget-intro-callback]"}},"R4":{"R4C1":{"id":"result-widget1","class":"col-md-12","content":"[widget-result1-callback]"}},"R5":{"R5C1":{"id":"title1-widget","class":"col-md-12","content":"[widget-title1-callback]"}},"R6":{"R6C1":{"id":"text1-widget","class":"col-md-12","content":"[widget-text1-callback]"}},"R7":{"R7C1":{"id":"macros-chart1","class":"col-md-colcol-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3-md-12","content":"[macros-chart1-callback]"},"R7C2":{"id":"macros-chart2","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-3 col-md-offset-0 col-lg-3 col-lg-offset-0","content":"[macros-chart2-callback]"}},"R8":{"R8C1":{"id":"introChart","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1","content":"[widget-introChart-callback]"}},"R9":{"R9C1":{"id":"slider-widget","class":"col-md-12","content":"[widget-featureslider-callback]"}},"R10":{"R10C1":{"id":"title2-widget","class":"col-md-12","content":"[widget-title2-callback]"}},"R11":{"R11C1":{"id":"macros-chart2","class":"col-xs-12 col-md-8 col-md-offset-2","content":"[macros-chart3-callback]"}},"R12":{"R12C1":{"id":"button1","class":"col-md-12","content":"[widget-button-callback]"}},"R13":{"R13C1":{"id":"advanced","class":"col-md-12 pressRelease-wrapper-ir","content":{"R13C1R1":{"R13C1R1C1":{"id":"title3-widget","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2","content":"[widget-title3-callback]"}},"R13C1R2":{"R13C1R2C1":{"id":"advanced-link-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1","content":"[widget-advanced-link-callback]"}}}}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-home.jpg'
+        hero_title: 'Delivering Growth & Opportunity'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+        scripts: 'js/barChart.js'
+    Page2:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Financial Reports
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"tabs-widget","class":"col-lg-12","content":"[widget-FinancialReports-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-financialreports.jpg'
+        hero_title: 'Financial Reports'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page3:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Conference Calls
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"ConferenceCalls","class":"col-lg-12","content":"[widget-ConferenceCallsMacro-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-conferencecalls.jpg'
+        hero_title: 'Conference Calls'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page4:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Shareholder Meeting
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"title-widget","class":"col-md-12","content":"[widget-title-callback]"}},"R2":{"R2C1":{"id":"simple-text-widget","class":"col-md-12","content":"[widget-text-callback]"}},"R3":{"R2C1":{"id":"doc-link-list-widget","class":"col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2","content":"[widget-LinkIconList-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-shareholdermeetings.jpg'
+        hero_title: 'Shareholder Meeting'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page5:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Governance
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1": {"R1C1": {"id": "governance-tabs-widgets","class": "col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 tabs sectionWrapper","content": "[widget-governance-tabs-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-governance.jpg'
+        hero_title: 'Governance'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page6:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Quote & Charts
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"finance-quote-widget","class":"","content":"[quotes-charts-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-quotesandcharts.jpg'
+        hero_title: 'Quote & Charts'
+        scripts: 'js/quotes-charts.js'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page7:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Dividends
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"tabs-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 tabs","content":"[widget-CustomTabs-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-dividends.jpg'
+        hero_title: 'Dividends'
+        scripts: 'js/dividends.js'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page8:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Debentures
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"tabs-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 tabs","content":"[widget-CustomTabs-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-debentures.jpg'
+        hero_title: 'Debentures'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page9:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Analyst Coverage
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"analyst-coverage","class":"col-accordion col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1","content":"[widget-analyst-coverage-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-analystcoverage.jpg'
+        hero_title: 'Analyst Coverage'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+    Page10:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: FAQ
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"faq","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1","content":"[widget-faq-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/investors-faq.jpg'
+        hero_title: 'FAQ'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}
+# Community
+    Page11:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Community
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"result","class":"col-lg-12","content":"[widget-result-callback]"}},"R2":{"R2C1":{"id":"intro","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1","content":"[widget-intro-callback]"}},"R3":{"R3C1":{"id":"title","class":"col-lg-12","content":"[widget-title-callback]"}},"R4":{"R4C1":{"id":"video","class":"cols col-xs-12 col-sm-12 col-md-12 col-lg-12 col-arts","content":"[widget-video-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/community-hero.jpg'
+        hero_title: 'In The Community'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:7:"ROLE_HR";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:7:"ROLE_HR";}}
+    Page11-blog:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Retail Life & Arts
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"intro","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10","content":"[widget-intro-callback]"}},"R2":{"R2C1":{"id":"RetailLifeArts","class":"col-lg-12","content":"[widget-RetailLifeArts-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: 'https://fcr.ca/uploads/community/retail-life/retaillifeandarts-hero.jpg'
+        hero_title: Retail Life & Arts
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:7:"ROLE_HR";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:7:"ROLE_HR";}}
+    Page12:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Sustainability
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"intro","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-intro-callback]"}},"R2":{"R2C1":{"id":"button","class":"col-lg-12","content":"[widget-button-callback]"}},"R3":{"R3C1":{"id":"slider-with-info","class":"cols col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1","content":"[widget-sustainabilitySlider-callback]"}},"R4":{"R4C1":{"id":"title0","class":"col-lg-12","content":"[widget-title0-callback]"}},"R5":{"R5C1":{"id":"accomplishments","class":"col-lg-12","content":"[widget-richtext-callback]"}},"R6":{"R6C1":{"id":"title-sustainability","class":"col-lg-12 grey-bg-block","content":{"R6C1R1":{"R6C1R1C1":{"id":"title1","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3 ","content":"[widget-title1-callback]"}},"R6C1R2":{"R6C1R2C1":{"id":"sustainability-reports","class":"col-lg-12","content":"[widget-sustainabilityReports-callback]"}}}}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Sustainability'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:7:"ROLE_HR";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:7:"ROLE_HR";}}
+# About
+    Page13:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: About
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"result","class":"col-lg-12","content":"[widget-result-callback]"}},"R2":{"R2C1":{"id":"intro","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-intro-callback]"}},"R3":{"R3C1":{"id":"featured-slider","class":"col-lg-12","content":"[widget-featureslider-callback]"}},"R4":{"R4C1":{"id":"title1","class":"col-lg-12","content":"[widget-title1-callback]"}},"R5":{"R5C1":{"id":"text1","class":"col-lg-8 col-lg-offset-2","content":"[widget-text1-callback]"}},"R6":{"R6C1":{"id":"button1","class":"col-lg-12","content":"[widget-button1-callback]"}},"R7":{"R7C1":{"id":"personal-baner","class":"col-lg-12","content":"[widget-personbaner-callback]"}},"R8":{"R8C1":{"id":"title2","class":"col-lg-12","content":"[widget-title2-callback]"}},"R9":{"R9C1":{"id":"text2","class":"col-lg-6 col-lg-offset-3","content":"[widget-text2-callback]"}},"R10":{"R10C1":{"id":"button2","class":"col-lg-12","content":"[widget-button2-callback]"}},"R11":{"R11C1":{"id":"conference-call","class":"col-lg-12 conference-call","content":{"R11C1R1":{"R11C1R1C1":{"id":"title-call","class":"col-lg-4 col-lg-offset-4 text-center text-call-block","content":"[widget-titleCall-callback]"}},"R11C1R2":{"R11C1R2C1":{"id":"text-call","class":"col-lg-4 col-lg-offset-4 text-center text-call-block","content":"[widget-textCall-callback]"}},"R11C1R3":{"R11C1R3C1":{"id":"Link-call","class":"col-lg-4 col-lg-offset-4 text-center text-call-block","content":"[widget-LinkIconCall-callback]"}}}}},"R12":{"R12C1":{"id":"download-documents-title","class":"col-lg-12","content":"[widget-title3-callback]"}},"R13":{"R13C1":{"id":"download-documents","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-LinkIconList-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/about_hero.jpg'
+        hero_title: 'Get To Know Us'
+        hero_video: 'https://player.vimeo.com/video/196023530'
+    Page14:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Executive Leadership
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"directors-grid","class":"col-lg-12","content":"[widget-ExecutivePersonBlockMacro-callback]"}},"R2":{"R2C1":{"id":"button","class":"col-lg-12","content":"[widget-button-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/about-executiveleadership.jpg'
+        hero_title: 'Our Executive Leadership Team'
+    Page15:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Board of Directors
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"directors-grid","class":"col-lg-12","content":"[widget-BoardPersonBlockMacro-callback]"}},"R2":{"R2C1":{"id":"button","class":"col-lg-12","content":"[widget-button-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/about-ourboardofdirectors.jpg'
+        hero_title: 'Our Board of Directors'
+# Contact Us
+    Page16:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Contact Us
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"title-widget","class":"col-lg-12 contact_us-grey-block contact_us-h2-padding-bottom-40","content":"[widget-title-callback]"},"R1C2":{"id":"headquarters","class":"col-lg-12 contact-us contact_us-grey-block contact_us-padding-bottom-60","content":"[widget-headquarters-callback]"}},"R2":{"R3C1":{"id":"otheroffices","class":"col-lg-12 contact-us contact_us-padding-top-60 contact_us-padding-bottom-60","content":"[widget-otheroffices-callback]"}},"R3":{"R4C1":{"id":"googlemap","class":"col-lg-12","content":"[widget-googlemap-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/about-contactus.jpg'
+        hero_title: 'Contact Us'
+# Careers
+    Page17:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Careers
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"intro","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-intro-callback]"}},"R2":{"R2C1":{"id":"slider-info","class":"col-lg-12","content":"[widget-CareersSliderInfoMacro-callback]"}},"R3":{"R3C1":{"id":"team-tabs","class":"col-lg-12 wrapper-team-tabs","content":{"R3C1R1":{"R3C1R1C1":{"id":"title0","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2","content":"[widget-title0-callback]"}},"R3C1R2":{"R3C1R2C1":{"id":"text0","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-text0-callback]"}},"R3C1R3":{"R3C1R3C1":{"id":"tabs-block","class":"col-lg-12","content":"[widget-teamTabs-callback]"}}}}},"R4":{"R4C1":{"id":"personblock-faq","class":"col-md-12 personblock-faq-wrapper","content":{"R4C1R1":{"R4C1R1C1":{"id":"title1","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2","content":"[widget-title1-callback]"}},"R4C1R2":{"R4C1R2C1":{"id":"text1","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-text1-callback]"}},"R4C1R3":{"R4C1R3C1":{"id":"person-block1","class":"col-lg-12","content":"[widget-CareersPersonBlockMacro-callback]"}},"R4C1R4":{"R4C1R4C1":{"id":"button","class":"col-lg-12","content":"[widget-button-callback]"}},"R4C1R5":{"R4C1R5C1":{"id":"title2","class":"col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2","content":"[widget-title2-callback]"}},"R4C1R6":{"R4C1R6C1":{"id":"interview-faq","class":"col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-CareersFAQMacro-callback]"}}}}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero: '/bundles/craftkeencmstheme/FCR/assets/images/hero/careers-hero.jpg'
+        hero_title: 'We Invest in People'
+        hero_video: 'https://player.vimeo.com/video/196023513'
+# Investors
+    Page18:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Delivering Growth & Opportunity
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"finance-widget","class":"col-md-4","content":"[widget-finance-callback]"},"R1C2":{"id":"doc-link-list-widget","class":"col-md-8","content":"[widget-doc-link-list-callback]"}},"R2":{"R2C1":{"id":"result-widget","class":"col-md-12","content":"[widget-result-callback]"}},"R3":{"R3C1":{"id":"simple-text-widget1","class":"col-md-12","content":"[widget-simple-text-callback]"}},"R4":{"R4C1":{"id":"result-widget2","class":"col-md-12","content":"[widget-result-callback]"}},"R5":{"R5C1":{"id":"title-widget1","class":"col-md-12","content":"[widget-title-callback]"}},"R6":{"R6C1":{"id":"simple-text-widget2","class":"col-md-12","content":"[widget-simple-text-callback]"}},"R7":{"R7C1":{"id":"bar-chart-type1-widget","class":"col-md-12","content":"[widget-bar-chart-type1-callback]"}},"R8":{"R8C1":{"id":"slider-widget","class":"col-md-12","content":"[widget-slider-callback]"}},"R9":{"R9C1":{"id":"title-widget2","class":"col-md-12","content":"[widget-title-callback]"}},"R10":{"R10C1":{"id":"bar-chart-type2-widget","class":"col-md-12","content":"[widget-bar-chart-type2-callback]"}},"R11":{"R11C1":{"id":"title-widget3","class":"col-md-12","content":"[widget-title-callback]"}},"R12":{"R12C1":{"id":"advanced-link-widget","class":"col-md-12","content":"[widget-advanced-link-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Delivering Growth & Opportunity'
+# Portfolio-Leasing
+    Page19:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Portfolio & Leasing
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'portfolio-leasing'
+        layout: '{"R1":{"R1C1":{"id":"","class":"","content":"[widget-text-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Portfolio & Leasing'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:12:"ROLE_LEASING";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:12:"ROLE_LEASING";}}
+# Terms
+    Page20:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Terms
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"title-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-title2-callback]"}},"R2":{"R2C1":{"id":"text-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 buffer-7-padding-bottom","content":"[widget-text-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Terms & Conditions'
+# Suppliers
+    Page21:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Suppliers
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"title-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-title2-callback]"}},"R2":{"R2C1":{"id":"text-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 buffer-7-padding-bottom","content":"[widget-text-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Suppliers'
+# Privacy
+    Page22:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Privacy
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"title-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-title2-callback]"}},"R2":{"R2C1":{"id":"text-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 buffer-7-padding-bottom","content":"[widget-text-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Privacy'
+# Suppliers
+    Page23:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Accessible
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"title-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2","content":"[widget-title2-callback]"}},"R2":{"R2C1":{"id":"text-widget","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 buffer-7-padding-bottom","content":"[widget-text-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Accessible Customer Service Policy'
+    # Press Releases
+    Page24:
+        site: '@Site0->id'
+        lang: '@Lang0->id'
+        name: Press Releases
+        status: live
+        created: '<dateTimeBetween("-200 days", "now")>'
+        version: 1
+        isIndexed: 1
+        template: 'page'
+        layout: '{"R1":{"R1C1":{"id":"PressReleases","class":"col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 fullwidth480","content":"[widget-PressReleases-callback]"}}}'
+        createdBy: '@User1->id'
+        updatedBy: '@User1->id'
+        hero_title: 'Press Releases'
+        hero: 'https://fcr.ca/_pages/ir/press-releases/images/investors-pressreleases.jpg'
+        access: a:5:{s:6:"CREATE";N;s:4:"READ";N;s:6:"UPDATE";a:1:{i:0;s:14:"ROLE_INVESTORS";}s:6:"DELETE";N;s:7:"APPROVE";a:1:{i:0;s:14:"ROLE_INVESTORS";}}

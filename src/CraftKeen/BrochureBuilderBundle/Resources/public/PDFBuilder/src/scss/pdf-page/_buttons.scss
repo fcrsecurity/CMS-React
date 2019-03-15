@@ -1,0 +1,22 @@
+.bb- {
+    &button {
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: $radius;
+        color: $white;
+        padding: 0 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        &.reject {
+            background: $reject;
+        }
+        &.accept {
+            background: $accept;
+        }
+        &.edit {
+            background: $editor-btn-edit-bg;
+        }
+    }
+}

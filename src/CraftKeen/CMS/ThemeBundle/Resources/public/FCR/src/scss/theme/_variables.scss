@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+// TODO: It is necessary to optimize this code
+
+/* Pixel Heights */
+$height-12: 12px;
+$height-22: 22px;
+$height-40: 40px;
+$height-60: 60px;
+$height-80: 80px;
+
+/* Colours */
+
+$color-black: #000000;
+
+$color-fcr-blue: #0861AA;
+$color-grey-text: #6D6D6D;
+
+
+$color-blue-shade: #075B93; // C1
+$color-blue: #0861AA; // C2
+$color-blue-highlight: #0079BC; // C3
+// $color-teal: #00A79D; //#47C3D4; // C4
+$color-blue-edge: #C9DCEC; // C5
+$color-grey-dark: #565656; // C6
+$color-grey: #5D5D5D; // C7
+$color-grey-light4: #8C8C8C; // C9
+$color-grey-light3: #D8D8D8; // C10
+$color-grey-light2: #E8E8E8; // C11
+$color-grey-light1: #F5F5F6; // C12
+$color-green-dark: #AABCB4; // C13
+$color-green: #C0D8CE; // C14
+$color-green-light: #D8EFE5; // C15
+$color-tan-dark: #C4BCB5; // C16
+$color-tan: #E0D6CD; // C17
+$color-tan-light: #F7ECE4; // C18
+$color-black: #000000;
+$color-black-shadow: rgba(0, 0, 0, 0.2); // C19
+$color-green: #39B54A; // C20
+$color-red: #D61E1E; // C21
+$color-red-2: #DB5252; 
+$color-blue-dark: #085487; // C22 
+$color-grey-light5: #C2DDED; // C23 
+$color-blue-light1: #0861AA; // C24 
+$color-grey-dark1: #868589; // C25 
+$color-blue-light2: #A3C4DD; // C26
+$color-grey-dark2: #A7AAAC; // C27
+$color-blue-light3: #83A3C4; //C28
+$color-blue-light4: #DCE8EF; //C29
+//$color-blue-dark: #00314F; //C30
+$color-grey-light6: #f3f3f3; // C31 
+$color-grey-light7: #E6E7E8; // C32
+$color-grey-light8: #B2B2B3; // C33
+
+$color-pink-arrow: #dd8585;
+$color-grey-dark4: #898687;
+
+// Buttons Hover
+$color-block-hover:#00A79D;
+$color-blue-muted: #0079BC; // OLD
+$color-shade: #F5F5F6; // OLD
+
+
+// New Backgrounds
+$color-bg-grey-light: #F1F2F2;
+
+/*Spacing Styles. Margins*/
+$spacing-buffer-1: 195px;
+$spacing-buffer-2: 185px;
+$spacing-buffer-3: 160px;
+$spacing-buffer-4: 130px;
+$spacing-buffer-5: 95px;
+$spacing-buffer-6: 75px;
+$spacing-buffer-7: 20px;
+
+$spasing-1: 22px;
+$spasing-2: 12px;
+
+$section-default-height: 400px;
+
+
+/*NEW ----------------------*/
+/* Fonts + Sizes */
+$font-family-default: 'yantramanavlight';
+$font-family-default-light: 'yantramanavlight',sans-serif;
+$font-family-default-black: 'yantramanavblack',sans-serif;
+$font-family-default-bold: 'yantramanavbold',sans-serif;
+$font-family-headers: 'yantramanavregular',sans-serif;
+$font-family-info: 'Noto Serif', serif;
+$font-size-default: 18px;
+
+/* Colours */
+$color-white: #FFFFFF;
+$color-blue: #0861AA;
+$color-blue-edge: #C9DCEC;
+$color-maphead: #03344f;
+$color-teal: #288DA7; // Selected and onHover
+
+/*Responsive settings*/
+$mobile-devices-width:480px;
+$small-devices-width: 768px;
+$medium-devices-width: 960px;
+$large-devices-width: 1200px;
+$verylarge-devices-width: 1600px;
+$medium-devices-width-bootstrap: 992px;
+$max-width-mobile: 767px;
+$max-width-tables: 991px;
+
+/*FOR FROM*/
+$form-container-padding: 20px;
+$form-bg-color-grey:  $color-shade;
+$form-bg-color-white: #ffffff;
+$form-inputs-spacing: 15px;
+$form-portfolio-inputs-spacing: 10px;
+$form-error-color: #ed1c24;
+$form-success-color:#00a14b;

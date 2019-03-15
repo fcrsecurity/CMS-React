@@ -1,0 +1,16 @@
+{% set fields = ['text'] %}
+
+{% set widget = widget|merge({'data' : checkWidgetFields(widget.data, fields) }) %}
+
+{{
+    react_component(
+        widget.dataType, {
+            'props':{
+                "isLoggedIn": logged,
+                "id": widget.id,
+                "text": widget.data.text,
+                "config": widget.config
+    }
+        }
+    )
+}}

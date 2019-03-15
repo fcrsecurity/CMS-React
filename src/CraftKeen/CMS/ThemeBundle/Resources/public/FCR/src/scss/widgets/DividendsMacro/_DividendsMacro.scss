@@ -1,0 +1,104 @@
+/*TODO: Optimize Styles*/
+#bar-chart-dividends {
+    .domain,
+    line {
+        stroke: $color-blue-highlight;
+    }
+    .serie {
+        & .bar:hover {
+            fill: $color-blue-edge;
+        }
+        & .bar2:hover {
+            opacity: .7;
+        }
+    }
+    .axis text,
+    .axis-bar-chart-dividends text {
+        fill: $color-blue-highlight;
+        font-size: 1.5em;
+    }
+    .left-chart-label,
+    .bar-label,
+    .bar-label-2 {
+        fill: $color-blue-highlight;
+        font-size: .65em;
+        text-align: center;
+    }
+    .bar-label-2 {
+        fill: $color-white;
+    }
+}
+
+$spacing-cells: 7px;
+$font-size-td-default: 14px;
+.tables {
+    .table.table-footnote {
+        margin-bottom: 0;
+    }
+    .table {
+        border-bottom: solid 1px $color-blue;
+        margin-bottom: 50px;
+        th,
+        .headers {
+            color: $color-blue;
+            font-weight: normal;
+            font-size: $font-size-default;
+        }
+        thead > tr > th {
+            border-bottom: solid 1px $color-blue;
+            padding: $spacing-cells $spacing-cells 5px $spacing-cells;
+            font-weight: normal;
+        }
+        .headers {}
+        .totals {
+            background: $color-blue-edge;
+            color: $color-blue;
+        }
+        tbody > tr > td {
+            padding: $spacing-cells;
+            border-top: 1px solid #ddd;
+            font-size: $font-size-default;
+            color: $color-grey;
+            vertical-align: middle;
+        }
+    }
+
+}
+.h4{
+    font-size: 200%;
+}
+.table-responsive {
+    border: none;
+    overflow-x: inherit;
+}
+
+@media screen and (min-width: 380px) {
+    .table_container {
+        overflow-x: scroll;
+    }
+}
+/* Medium devices (desktops 960px and up) */
+@media screen and (min-width: $medium-devices-width) {
+    .table_container {
+        width: 100%;
+        display: inline-block;
+        overflow-x: hidden;
+    }
+}
+
+/* Large devices (desktops 1920px and up) */
+@media screen and (min-width: $verylarge-devices-width) {
+    #bar-chart-dividends {
+        .axis text,
+        .axis-bar-chart-dividends text {
+            font-size: 2.5em;
+        }
+        .left-chart-label,
+        .bar-label,
+        .bar-label-2 {
+            font-size: 1.2em;
+        }
+    }
+}
+
+@import "DividendsMacro_queries";

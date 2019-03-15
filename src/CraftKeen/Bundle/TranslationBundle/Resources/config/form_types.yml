@@ -1,0 +1,7 @@
+services:
+    craft_keen.translation.form.type.language:
+        class: 'CraftKeen\Bundle\TranslationBundle\Form\Type\LanguageType'
+        tags:
+            - { name: form.type, alias: craft_keen_language }
+        calls:
+            - [setDataClass, ['%craft_keen.translation.entity.language.class%']]

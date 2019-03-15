@@ -1,0 +1,213 @@
+services:
+    craft_keen_widget.widget.abstract:
+        abstract: true
+        class: CraftKeen\Bundle\WidgetBundle\Model\AbstractWidget
+
+    craft_keen_widget.widget.text:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\TextWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/text.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: text }
+
+    craft_keen_widget.widget.button:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ButtonWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/Button.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Button }
+
+    craft_keen_widget.widget.chartmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ChartMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ChartMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: ChartMacro }
+
+    craft_keen_widget.widget.conferencecall:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ConferenceCallWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ConferenceCall.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: ConferenceCall }
+
+    craft_keen_widget.widget.ctabox:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\CtaboxWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ctabox.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Ctabox }
+
+    craft_keen_widget.widget.ctaboxfinance:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\CtaboxfinanceWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ctaboxfinance.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Ctaboxfinance }
+
+    craft_keen_widget.widget.faq:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\FAQWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/FAQ.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: FAQ }
+
+    craft_keen_widget.widget.googlemap:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\GoogleMapWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/GoogleMap.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: GoogleMap }
+
+    craft_keen_widget.widget.governancetabs:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\GovernanceTabsWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/GovernanceTabs.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: GovernanceTabs }
+
+    craft_keen_widget.widget.linkiconlist:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\LinkIconListWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/LinkIconList.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: LinkIconList }
+
+    craft_keen_widget.widget.personbaner:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\PersonBanerWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/PersonBaner.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: PersonBaner }
+
+    craft_keen_widget.widget.personblock:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\PersonBlockWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/PersonBlock.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: PersonBlock }
+
+    craft_keen_widget.widget.quotescharts:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\QuotesChartsWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/QuotesCharts.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: QuotesCharts }
+
+    craft_keen_widget.widget.result:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ResultWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/result.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Result }
+
+    craft_keen_widget.widget.richeditor:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\RichEditorWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/RichEditor.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: RichEditor }
+
+    craft_keen_widget.widget.stockpricemacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\StockPriceMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/StockPriceMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: StockPriceMacro }
+
+    craft_keen_widget.widget.title:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\TitleWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/title.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Title }
+
+    craft_keen_widget.widget.video:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\VideoWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/Video.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Video }
+
+    craft_keen_widget.widget.accordion:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\AccordionWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/accordion.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: accordion }
+
+    craft_keen_widget.widget.chartbarinvestors1:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ChartBarInvestors1Widget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ChartBarInvestors1.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: ChartBarInvestors1 }
+
+    craft_keen_widget.widget.chartbarinvestors2:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ChartBarInvestors2Widget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ChartBarInvestors2.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: ChartBarInvestors2 }
+
+    craft_keen_widget.widget.conferencecallsmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\ConferenceCallsMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/ConferenceCallsMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: ConferenceCallsMacro }
+
+    craft_keen_widget.widget.financeblock:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\FinanceBlockWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/FinanceBlock.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: FinanceBlock }
+
+    craft_keen_widget.widget.richtextmacro:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\RichTextMacroWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/RichTextMacro.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: RichTextMacro }
+
+    craft_keen_widget.widget.sliderinfo:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\SliderInfoWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/SliderInfo.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: SliderInfo }
+
+    craft_keen_widget.widget.tabs:
+        parent: craft_keen_widget.widget.abstract
+        class: CraftKeen\Bundle\WidgetBundle\Model\TabsWidget
+        calls:
+            - [setTemplate, ['CraftKeenWidgetBundle:%s:PageWidgets/Tabs.html.twig']]
+        tags:
+            - { name: craft_keen_widget.widget, alias: Tabs }
+

@@ -1,0 +1,40 @@
+{% extends 'CraftKeenCMSAdminBundle::layout.html.twig' %}
+
+{% block admin_block_title %}{{ 'craft_keen.translation.admin.language'|trans }}{% endblock %}
+
+{% block admin_block_breadcrumb %}
+    <li class="active">{{ 'craft_keen.translation.admin.language'|trans }}</li>
+{% endblock %}
+
+{% block admin_block_body %}
+    {% if entities is defined and entities|length %}
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>LOCALE</th>
+                <th>CODE</th>
+                <th>
+                    <a class="btn btn-success"
+                       href="{{ path('craftkeen_translation_admin_language_add') }}"
+                       target="_self">
+                        {{ 'craft_keen.translation.admin.language.add'|trans }}
+                    </a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>{{ entity.id }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.locale }}</td>
+                    <td>{{ entity.code }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    {% endif %}
+{% endblock admin_block_body %}

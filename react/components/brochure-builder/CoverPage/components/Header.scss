@@ -1,0 +1,62 @@
+
+@import "../../variables";
+
+.content {
+	// position: relative;
+	position: absolute;
+	display: flex;
+	// margin-bottom: -140px;
+	// padding-top: 35px;
+	top: 35px;
+	z-index: 1;
+	width: 100%;
+}
+
+.caption {
+	background: $blue-type2;
+	flex-grow: 1;
+	color: $white;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	// font-style:italic;
+	display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+
+	&_header {
+		margin-top: 0;
+		font-size: 35px;
+		font-weight: bold;
+		// font-size: 26px;
+		line-height: 0.9 !important;
+		margin-bottom: 0px;
+		width:100%;
+		font-family: 'yantramanavblack';
+	}
+
+	&_underheader {
+		font-size: 14px;
+		margin-bottom: -5px;
+	}
+}
+
+.logo {
+	padding-left: 45px;
+	padding-right: 35px;
+	//width: 65px;
+	height: 110px;
+	box-sizing: content-box;
+	img {
+		//width: 65px;
+		height: 110px;
+	}
+}
+
+.image {
+	position: relative;
+	display: flex;
+	height: $pdf-page-height * 3 / 4;
+	overflow: hidden;
+	background-size: cover;
+	object-fit: cover;
+}

@@ -1,0 +1,79 @@
+CraftKeen\FCRBundle\Entity\CareersEmployee:
+    CareersEmployee_1:
+        name: 'ERIC SHERMAN'
+        position: 'Leasing Manager'
+        img: 'https://fcr.ca/uploads/careers/team/eric_sherman.jpg'
+        imageAlt: '@CareersEmployee_1->name'
+        description: '<p>Eric is a Leasing Manager who works with both new and existing tenants to structure and negotiate new deals, renewals, and other lease transactions for various high profile First Capital assets. Born and raised in Toronto, Eric still calls downtown his home. His job demands an ability to liase across a wide variety of disciplines in the company, a part of his job Eric really loves… to get involved in the full scope of the business.</p>'
+        questions: '<div class="row"> <div class="col-lg-6"> <ol > <li> <p><em>On a list of people you admire, who is first? </em><br/> &ldquo;My Dad. He&rsquo;s a great sounding board and even serves as a moral compass for me. When I have tough decisions to make or am in a difficult situation, I like to think, &lsquo;What would Dad do?&rsquo;&rdquo; </p></li><li> <p><em>Where is the first place you lived in your present city?</em><br/> &ldquo;The neighborhood around York Mills and Bayview in North York. Great place to grow up&hellip; lots of kids, lots of families, lots to do. Also, I now handle the Leasing at the predominant Shopping Centre in the area at York Mills and Leslie, so things have kind of come full circle.&rdquo; </p></li><li> <p><em>What words or phrases do you overuse first and foremost?</em><br/> &ldquo;That&rsquo;s epic&rdquo; </p></li><li> <p><em>What&rsquo;s the first talent your colleagues would say you have?</em><br/> &ldquo;Someone who is a doer. I think they&rsquo;d say I am someone that takes initiative to get things done.&rdquo; </p></li><li> <p><em>What is the first quality you most like in a colleague?</em><br/> &ldquo;Someone who is a humble&hellip; who is a team player and is real and up front.&rdquo; </p></li></ol> </div><div class="col-lg-6"> <ol start="6"> <li> <p><em>What is the first quality you most like in a boss?</em><br/> &ldquo;Actually I really like to work for people who are both transparent and who make themselves available.&rdquo; </p></li><li> <p><em>If you could live anywhere in the world, where would be first on your list?</em><br/> &ldquo;Asia&hellip; specifically Hong Kong. Just loved it when I visited.&rdquo; </p></li><li> <p><em>On a list of favourite fictional heroes, who is first?</em><br/> &ldquo;Jack Bauer, the best special agent out there&rdquo; </p></li><li> <p><em>What did you first want to be when you were 12?</em><br/> &ldquo;Either an architect or a professional baseball player.&rdquo; </p></li><li> <p>What is the first thing you think of ordering when you walk into Starbucks?<br/> &ldquo;A Tall Blonde&rdquo; </p></li></ol> </div></div>'
+        lang: '@Lang0->id'
+        langParent: null
+        sortOrder: 0
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersEmployee_2:
+        name: 'SANDRA LINCZ'
+        position: 'Regional Coordinator'
+        img: 'https://fcr.ca/uploads/careers/team/sandra_lincz.jpg'
+        imageAlt: '@CareersEmployee_2->name'
+        description: '<p>Sandra is a Regional Coordinator who has been with the company for 11 years. She likes the variety her position offers and just loves the company. Married with four grown children, Sandra likes to travel, garden and hibernate with a good book when the winter winds blow off the lake in her hometown of Oakville, Ontario.</p>'
+        questions: '<div class="row"> <div class="col-lg-6"> <ol > <li> <p><em>On a list of people you admire, who is first?</em><br/> &ldquo;Not that I want to be corny, but my husband.&rdquo; </p></li><li> <p><em>Where is the first place you lived in your present city?</em><br/> &ldquo;The first place we lived in Oakville was in the neighborhood, Glen Abbey area and we&rsquo;re still there. Great kid-friendly place to live and you know, not much has changed over the 16 years we&rsquo;ve been there. </p></li><li> <p><em>What words or phrases do you overuse first and foremost?</em><br/> &ldquo;Just sayin&rsquo;&rdquo; </p></li><li> <p><em>What&rsquo;s the first talent your colleagues would say you have?</em><br/> &ldquo;I think they would say I am very professional&rdquo; </p></li><li> <p><em>What is the first quality you most like in a colleague?</em><br/> &ldquo;You know, I like to work with people who are approachable.&rdquo; </p></li></ol> </div><div class="col-lg-6"> <ol start="6"> <li> <p><em>What is the first quality you most like in a boss?</em><br/> &ldquo;That&rsquo;s easy&hellip; a sense of humour.&rdquo; </p></li><li> <p><em>If you could live anywhere in the world, where would be first on your list?</em><br/> I would stay where I am.&rdquo; </p></li><li> <p><em>On a list of favourite fictional heroes, who is first?</em><br/> &ldquo;The girl from the movie Brooklyn&hellip;Eilis.&rdquo; </p></li><li> <p><em>What did you first want to be when you were 12?</em><br/> &ldquo;I wanted to be a social worker, and was for a few years.&rdquo; </p></li><li> <p>What is the first thing you think of ordering when you walk into Starbucks?<br/> &ldquo;Uh, can I say a Timmy&rsquo;s? ok, but if I am a Starbucks well then a skinny vanilla latte&hellip; </p></li></ol> </div></div>'
+        lang: '@Lang0->id'
+        langParent: null
+        sortOrder: 0
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersEmployee_3:
+        name: 'ROSE TASSONE'
+        position: 'Assistant Controller'
+        img: 'https://fcr.ca/uploads/careers/team/rose_tassone.jpg'
+        imageAlt: '@CareersEmployee_3->name'
+        description: '<p>As an Assistant Controller Rose Tassone handles a variety of accounting functions… a real mixed bag she says.</p>'
+        questions: '<div class="row"> <div class="col-lg-6"> <ol > <li> <p><em>On a list of people you admire, who is first?</em><br/> &ldquo;Hilary Clinton. I&rsquo;ve read her book and heard her speak and think she is quite remarkable&rdquo; </p></li><li> <p><em>Where is the first place you lived in your present city?</em><br/> &ldquo;Mimico&hellip; right near the lake. It has lots of green space, bike paths&hellip; it&rsquo;s convenient for work and has really come alive recently with a lot of young people moving in.&rdquo; </p></li><li> <p><em>What words or phrases do you overuse first and foremost?</em><br/> &ldquo;There isn&rsquo;t one phrase in particular I overuse&hellip;. Thinking about it, I actually do often say to focus on solutions, not problems.&rdquo; </p></li><li> <p><em>What&rsquo;s the first talent your colleagues would say you have?</em><br/> &ldquo;That I am a quick study and have great shoes.&rdquo; </p></li><li> <p><em>What is the first quality you most like in a colleague?</em><br/> &ldquo;Smart, quick and a team player. I value colleagues who collaborate.&rdquo; </p></li></ol> </div><div class="col-lg-6"> <ol start="6"> <li> <p><em>What is the first quality you most like in a boss?</em><br/> &ldquo;I like when they are able to find the right balance between leaving me to do my work but knowing when I need their support.&rdquo; </p></li><li> <p><em>If you could live anywhere in the world, where would be first on your list?</em><br/> &ldquo;Easy. Paris&hellip; France.&rdquo; </p></li><li> <p><em>On a list of favourite fictional heroes, who is first?</em><br/> &ldquo;A hero like Batman? Actually&hellip; Miranda Priestly from the <em>The Devil Wears Prada.</em>&rdquo; </p></li><li> <p><em>What did you first want to be when you were 12?</em><br/> &ldquo;I went back and forth between wanting to have a career in fashion and being a lawyer.&rdquo; </p></li><li> <p>What is the first thing you think of ordering when you walk into Starbucks?<br/> &ldquo;Nothing&hellip; oh ok&hellip; one pump skinny Vanilla Latte.&rdquo; </p></li></ol> </div></div>'
+        lang: '@Lang0->id'
+        langParent: null
+        sortOrder: 0
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersEmployee_4:
+        name: 'SIMON STREETER'
+        position: 'Director, Applications Support, Information Technology'
+        img: 'https://fcr.ca/uploads/careers/team/simon_streeter_overlay.jpg'
+        imageAlt: '@CareersEmployee_4->name'
+        description: '<p>As Director, Applications Support, Information Technology, Simon oversees the change management process of implementation of new applications that support the First Capital Reality business. Simon is married with four very active kids.</p>'
+        questions: '<div class="row"> <div class="col-lg-6"> <ol > <li> <p><em>On a list of people you admire, who is first?</em><br/> &ldquo;Hmm, well I admire Ian our CIO&hellip; he&rsquo;s a real problem solver. I also admire anyone who can hit a golf ball, someone like Jordan Spieth. But seriously, now that I think about it, I admire my parents. They are in their 70s and are still doing mission work in Nepal.&rdquo; </p></li><li> <p><em>What words or phrases do you overuse first and foremost?</em><br/> &ldquo;Have you tested it?&rdquo; </p></li><li> <p><em>What is the first quality you most like in a colleague?</em><br/> &ldquo;Patience and a positive attitude.&rdquo; </p></li><li> <p><em>If you could live anywhere in the world, where would be first on your list?</em><br/> &ldquo;Canada and Florida&hellip; the Gulf Coast.&rdquo; </p></li><li> <p><em>What did you first want to be when you were 12?</em><br/> &ldquo;I wanted to be an actor. We used to put on plays.&rdquo; </p></li></ol> </div><div class="col-lg-6"> <ol start="6"> <li> <p><em>Where is the first place you lived in your present city?</em><br/> &ldquo;The Westhill neighborhood&hellip; Port Union and Kingston Road.&rdquo; </p></li><li> <p><em>What&rsquo;s the first talent your colleagues would say you have?</em><br/> &ldquo;I think they&rsquo;d say I have a positive attitude and am patient.&rdquo; </p></li><li> <p><em>What is the first quality you most like in a boss?</em><br/> &ldquo;Patience and a positive attitude.&rdquo; </p></li><li> <p><em>On a list of favourite fictional heroes, who is first?</em><br/> &ldquo;Luke Skywalker&rdquo; </p></li><li> <p>What is the first thing you think of ordering when you walk into Starbucks?<br/> &ldquo;A Tim Horton&rsquo;s medium double-double&rdquo; </p></li></ol> </div></div>'
+        lang: '@Lang0->id'
+        langParent: null
+        sortOrder: 0
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersEmployee_5:
+        name: 'Emeka Mayes'
+        position: 'Director, Acquisitions for Eastern and Central Canada.'
+        img: 'https://fcr.ca/uploads/careers/team/emeka_mayes_overlay.jpg'
+        imageAlt: '@CareersEmployee_5->name'
+        description: '<p>A six year veteran of First Capital Realty, Emeka is Director, Acquisitions for Eastern and Central Canada. A self-proclaimed ‘out doorsy’ person, Emeka lives in Montreal and is not surprisingly passionate about cooking.</p>'
+        questions: '<div class="row"> <div class="col-lg-6"> <ol > <li> <p><em>On a list of people you admire, who is first?</em><br/> &ldquo;Dori who built such a great company for sure would be on the list. And since I was a kid, I’ve always looked up to Boris Becker.&rdquo; </p></li><li> <p><em>What words or phrases do you overuse first and foremost?</em><br/> &ldquo;Ok&rdquo; </p></li><li> <p><em>What is the first quality you most like in a colleague?</em><br/> &ldquo;A good personality… a strong work ethic and attention to detail.&rdquo; </p></li><li> <p><em>If you could live anywhere in the world, where would be first on your list?</em><br/> &ldquo;I like Montreal… Westmount.&rdquo; </p></li><li> <p><em>What did you first want to be when you were 12?</em><br/> &ldquo;That’s easy. I wanted to be a professional tennis player.&rdquo; </p></li></ol> </div><div class="col-lg-6"> <ol start="6"> <li> <p><em>Where is the first place you lived in your present city?</em><br/> &ldquo;Westmount. Loved it. I lived in the lower part… lots of kids in the neighborhood playing all the time.&rdquo; </p></li><li> <p><em>What&rsquo;s the first talent your colleagues would say you have?</em><br/> &ldquo;Perseverance.&rdquo; </p></li><li> <p><em>What is the first quality you most like in a boss?</em><br/> &ldquo;Clear direction.&rdquo; </p></li><li> <p><em>On a list of favourite fictional heroes, who is first?</em><br/> &ldquo;Wolverine.&rdquo; </p></li><li> <p>What is the first thing you think of ordering when you walk into Starbucks?<br/> &ldquo;Cappuccino.&rdquo; </p></li></ol> </div></div>'
+        lang: '@Lang0->id'
+        langParent: null
+        sortOrder: 0
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'
+    CareersEmployee_6:
+        name: 'Sylvie Paquette'
+        position: 'Senior Property Manager'
+        img: 'https://fcr.ca/uploads/careers/team/sylvie_paquette_overlay.jpg'
+        imageAlt: '@CareersEmployee_6->name'
+        description: '<p>Sylvie is a Senior Property Manager working in our Montreal operation. She has been with FCR for three years. Sylvie likens her role to both mother and mayor to her tenants. The properties she oversees are like a small city, she says, and she wants the retailers to feel like they are part of the community.</p>'
+        questions: ' <div class="row"> <div class="col-lg-6"> <ol > <li> <p><em>On a list of people you admire, who is first?</em><br/> &ldquo;My mother. She&rsquo;s the reason I became the person I&rsquo;ve become.&rdquo; </p></li><li> <p><em>What words or phrases do you overuse first and foremost?</em><br/> &ldquo;Hmm&hellip; I&rsquo;m not sure if there is just one. I do say &lsquo;Let&rsquo;s find a solution&rsquo; a lot. I am also fond of saying &lsquo;Let&rsquo;s have a beer over this&rsquo;, by which I mean when we have a problem to solve, let&rsquo;s take it out of the office&hellip; let&rsquo;s think outside of the box.&rdquo; </p></li><li> <p><em>What is the first quality you most like in a colleague?</em><br/> &ldquo;Talent and the ability to believe in themselves and their colleagues.&rdquo; </p></li><li> <p><em>If you could live anywhere in the world, where would be first on your list?</em><br/> &ldquo;Oh&hellip; I&rsquo;d go to Maui. Been there and I love it.&rdquo; </p></li><li> <p><em>What did you first want to be when you were 12?</em><br/> &ldquo;A nurse.&rdquo; </p></li></ol> </div><div class="col-lg-6"> <ol start="6"> <li> <p><em>Where is the first place you lived in your present city?</em><br/> &ldquo;The Rosemount part of Montreal&hellip; I grew up there in flats between the road and the backstreet.&rdquo; </p></li><li> <p><em>What&rsquo;s the first talent your colleagues would say you have?</em><br/> &ldquo;Getting people together.&rdquo; </p></li><li> <p><em>What is the first quality you most like in a boss?</em><br/> &ldquo;Trust.&rdquo; </p></li><li> <p><em>On a list of favourite fictional heroes, who is first?</em><br/> &ldquo;As a kid it was Dick Tracy and Mandrake the Magician… from the comics, or maybe Popeye.&rdquo; </p></li><li> <p>What is the first thing you think of ordering when you walk into Starbucks?<br/> &ldquo;A Chai tea&rdquo; </p></li></ol> </div></div>'
+        lang: '@Lang0->id'
+        langParent: null
+        sortOrder: 0
+        createdBy: '@User0->id'
+        status: 'live'
+        site: '@Site0->id'

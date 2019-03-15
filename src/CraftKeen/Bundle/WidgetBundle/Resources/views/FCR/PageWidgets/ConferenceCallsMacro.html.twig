@@ -1,0 +1,11 @@
+{% import 'CraftKeenCMSThemeBundle:'~theme~':macros.html.twig' as M %}
+
+<div class="buffer-6-padding-top buffer-6-padding-bottom page-conference-calls inline-mode">
+	<a href="{{ path('admin_investors_conference-call_index') }}" class="button-edit-element" title="Edit element" ></a>
+	<div class="row">
+		{{ M.ConferenceCallElemenent('general') }} 
+	</div>
+	<div class="row">
+		{{ M.ConferenceCallElemenent('agm') }}
+	</div>
+</div>
